@@ -1,0 +1,59 @@
+{
+ "K": 2784,
+ "K_struct": 114059,
+ "n_raw": 5040,
+ "pipeline": {
+  "table_NO": {
+   "best_cont": 0.7850651771420485,
+   "cfg_cont": 1673,
+   "ab_cont": [
+    3.591266816463264,
+    5.580608456989959
+   ],
+   "best_struct": 2.9412669436016405,
+   "cfg_struct": 3426,
+   "pt_struct": 17,
+   "cfg_cont_name": "V.X.P.Vd|DEM|r4c5",
+   "cfg_struct_name": "V.X.P.Vd|HEX|r1c0"
+  },
+  "table_IO": {
+   "best_cont": 2.6989763071081185,
+   "cfg_cont": 2544,
+   "ab_cont": [
+    1.4846909908464498,
+    2.500267809816879
+   ],
+   "best_struct": 8.40310197451517,
+   "cfg_struct": 3282,
+   "pt_struct": 25,
+   "cfg_cont_name": "Vc.P.X.VT|BM|r0c0",
+   "cfg_struct_name": "V.X.P.Vd|TBM|r1c0"
+  },
+  "gauss_NO": {
+   "best_cont": 0.674262143543658,
+   "cfg_cont": 1673,
+   "ab_cont": [
+    3.5846253923335585,
+    5.569680422542749
+   ],
+   "best_struct": 5.631343537740916,
+   "cfg_struct": 4140,
+   "pt_struct": 3,
+   "cfg_cont_name": "V.X.P.Vd|DEM|r4c5",
+   "cfg_struct_name": "Vd.X.P.V|HEX|r0c0"
+  },
+  "gauss_IO": {
+   "best_cont": 6.121433080887132,
+   "cfg_cont": 1460,
+   "ab_cont": [
+    1.3276482048900258,
+    0.5761459013931662
+   ],
+   "best_struct": 8.355509202294662,
+   "cfg_struct": 3282,
+   "pt_struct": 25,
+   "cfg_cont_name": "V.X.P.Vd|BM|r0c2",
+   "cfg_struct_name": "V.X.P.Vd|TBM|r1c0"
+  }
+ }
+}

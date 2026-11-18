@@ -1,0 +1,27 @@
+{
+ "meta": {
+  "description": "Standard Model inputs for RG running (src/rg.py). Two blocks: raw PDG 2026 electroweak/QCD values, and the full-SM MSbar couplings at M_Z derived from PDG 2024 inputs by Antusch, Hinze, Saad (2025). The second block is a derived (two-loop matched) parameter set, used as the RG boundary condition for the gauge couplings, Higgs quartic and vev; fermion Yukawas are NOT taken from it (src/rg.py derives them from data/masses.json).",
+  "accessed": "2026-11-18",
+  "build_note": "Hand-transcribed; see experiments/20261118-008-rg-module/README.md (section 'Data sources')."
+ },
+ "pdg2026": {
+  "source": "PDG 2026 Review of Particle Physics, 'Physical constants' table (rpp2026-rev-phys-constants.pdf) and Electroweak review Table 10.2 (rpp2026-rev-standard-model.pdf); M_H from PDG2026 API S126M",
+  "alpha_s_MZ": {"value": 0.1180, "err_plus": 0.0009, "err_minus": 0.0009, "scale": "mu = M_Z", "scheme": "MSbar, 5 active flavours"},
+  "sin2_theta_W_MSbar_MZ": {"value": 0.23122, "err_plus": 0.00006, "err_minus": 0.00006, "scale": "mu = M_Z", "scheme": "MSbar (PDG s^2_Z)"},
+  "M_Z": {"value": 91.1879, "err_plus": 0.0020, "err_minus": 0.0020, "unit": "GeV", "scheme": "pole (Breit-Wigner)"},
+  "M_W": {"value": 80.3625, "err_plus": 0.0077, "err_minus": 0.0077, "unit": "GeV", "scheme": "pole"},
+  "M_H": {"value": 125.13, "err_plus": 0.11, "err_minus": 0.11, "unit": "GeV", "scheme": "pole", "source": "PDG2026 API S126M"},
+  "G_F": {"value": 1.1663785e-5, "err_plus": 6e-12, "err_minus": 6e-12, "unit": "GeV^-2"},
+  "alpha_0_inv": {"value": 137.035999177, "err_plus": 2.1e-8, "err_minus": 2.1e-8, "scheme": "Thomson limit, CODATA via PDG"}
+ },
+ "ahs2025_msbar_MZ": {
+  "source": "S. Antusch, K. Hinze, S. Saad, 'Updated running quark and lepton parameters at various scales', arXiv:2510.01312v2, Eq. (4) (2024 PDG inputs, full SM, top not decoupled) and text (v at mu = M_t)",
+  "convention": "g1 in GUT normalisation g1^2 = (5/3) g'^2; lambda in the REAP convention V = (lambda/4)(H^dag H)^2, m_H^2 = lambda v^2 / 2 at tree level; m_f = y_f v / sqrt(2)",
+  "g1": {"value": 0.461228, "err_plus": 0.000026, "err_minus": 0.000026},
+  "g2": {"value": 0.65096, "err_plus": 0.00004, "err_minus": 0.00004},
+  "g3": {"value": 1.2123, "err_plus": 0.0046, "err_minus": 0.0046},
+  "lambda_reap": {"value": 0.55853, "err_plus": 0.00157, "err_minus": 0.00157},
+  "v_MZ": {"value": 248.401, "err_plus": 0.032, "err_minus": 0.032, "unit": "GeV"},
+  "v_Mt": {"value": 246.604, "unit": "GeV", "note": "MSbar vev at mu = M_t quoted in the text of arXiv:2510.01312"}
+ }
+}

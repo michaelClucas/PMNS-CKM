@@ -80,3 +80,6 @@ The relation is assumed to hold at a stated scale, so a candidate states whether
    - PyR@TE 3 (Python, arXiv:2007.12700): generates RGEs for non-supersymmetric gauge theories up to three loops for gauge couplings; can be used to generate/check the SM beta functions (and non-SUSY extensions such as type-II seesaw triplets). Not for the MSSM.
    - SMDR (C library, Martin-Robertson arXiv:1907.02500): precise SM MS-bar inputs at M_Z; overkill for angles.
 5. **Neural emulator:** once the integrator exists, the RG map (low-scale angles, tan β, m_lightest, Majorana phases) → GUT-scale angles is smooth and cheap to emulate; that makes F3/F4 generators fast enough for SBI.
+
+## Erratum (overseer, iteration 2)
+"M_Z θ12 = 0.2251" above is sin θ12; the angle is 0.2270 rad. With that fixed, SM θ_C runs +0.04% from M_Z to 1e16 GeV, not +0.9%, and the MSSM +0.85% figure is wrong the same way. Validated running numbers: `experiments/20261118-008-rg-module/README.md`.

@@ -1,0 +1,64 @@
+[null b] seed 2002, 0 done, 300 to run, 3 workers
+[null b] 10/300 fakes, 72 s
+[null b] 20/300 fakes, 125 s
+[null b] 30/300 fakes, 182 s
+[null b] 40/300 fakes, 254 s
+[null b] 50/300 fakes, 308 s
+[null b] 60/300 fakes, 367 s
+[null b] 70/300 fakes, 434 s
+[null b] 80/300 fakes, 483 s
+[null b] 90/300 fakes, 533 s
+[null b] 100/300 fakes, 595 s
+[null b] 110/300 fakes, 648 s
+[null b] 120/300 fakes, 699 s
+[null b] 130/300 fakes, 757 s
+[null b] 140/300 fakes, 808 s
+[null b] 150/300 fakes, 871 s
+[null b] 160/300 fakes, 951 s
+[null b] 170/300 fakes, 1017 s
+[null b] 180/300 fakes, 1078 s
+[null b] 190/300 fakes, 1150 s
+[null b] 200/300 fakes, 1238 s
+[null b] 210/300 fakes, 1334 s
+[null b] 220/300 fakes, 1420 s
+[null b] 230/300 fakes, 1500 s
+[null b] 240/300 fakes, 1577 s
+[null b] 250/300 fakes, 1652 s
+[null b] 260/300 fakes, 1726 s
+[null b] 270/300 fakes, 1779 s
+[null b] 280/300 fakes, 1817 s
+[null b] 290/300 fakes, 1864 s
+[null b] 300/300 fakes, 1912 s
+dcp_deg': 199.21804, 'pull_s12sq': 0.18, 'pull_s13sq': -0.16, 'pull_s23sq': -0.69, 'pull_dcp_deg': -0.39}
+[real]    {'rank': 2, 'config': 'Vd.X.P.V|GR2|r1c2', 'chi2': 0.8654, 'p_dof2': '0.6488', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(213.794), 'beta_deg': np.float64(142.447), 's12sq': 0.308, 's13sq': 0.0224, 's23sq': 0.45735, 'dcp_deg': 207.42266, 'pull_s12sq': -0.12, 'pull_s13sq': -0.16, 'pull_s23sq': -0.9, 'pull_dcp_deg': 0.02}
+[real]    {'rank': 3, 'config': 'Vd.X.P.V|TBM|r1c2', 'chi2': 0.9126, 'p_dof2': '0.6336', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(207.936), 'beta_deg': np.float64(136.565), 's12sq': 0.30826, 's13sq': 0.0224, 's23sq': 0.45736, 'dcp_deg': 204.99999, 'pull_s12sq': -0.08, 'pull_s13sq': -0.16, 'pull_s23sq': -0.9, 'pull_dcp_deg': -0.1}
+[real]    {'rank': 4, 'config': 'V.X.P.Vd|HEX|r1c0', 'chi2': 1.0448, 'p_dof2': '0.5931', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(194.819), 'beta_deg': np.float64(138.399), 's12sq': 0.308, 's13sq': 0.0225, 's23sq': 0.54984, 'dcp_deg': 180.60342, 'pull_s12sq': -0.12, 'pull_s13sq': 0.02, 'pull_s23sq': 4.7, 'pull_dcp_deg': -1.32}
+[real]    {'rank': 5, 'config': 'Vd.X.P.V|BM|r0c0', 'chi2': 1.0626, 'p_dof2': '0.5878', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(258.21), 'beta_deg': np.float64(185.83), 's12sq': 0.308, 's13sq': 0.0224, 's23sq': 0.45649, 'dcp_deg': 218.64217, 'pull_s12sq': -0.12, 'pull_s13sq': -0.16, 'pull_s23sq': -0.97, 'pull_dcp_deg': 0.51}
+[real] full fit IO: best chi2 2.699 (Vc.P.X.VT|BM|r0c0), #configs chi2<2: 0, chi2<6: 2
+[real]    {'rank': 1, 'config': 'Vc.P.X.VT|BM|r0c0', 'chi2': 2.699, 'p_dof2': '0.2594', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(85.067), 'beta_deg': np.float64(143.255), 's12sq': 0.30755, 's13sq': 0.0223, 's23sq': 0.475, 'dcp_deg': 278.06155, 'pull_s12sq': -0.19, 'pull_s13sq': -0.55, 'pull_s23sq': -5.0, 'pull_dcp_deg': -0.18}
+[real]    {'rank': 2, 'config': 'V.P.X.Vd|BM|r0c0', 'chi2': 4.1677, 'p_dof2': '0.1245', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(81.542), 'beta_deg': np.float64(8.601), 's12sq': 0.314, 's13sq': 0.02322, 's23sq': 0.465, 'dcp_deg': 274.42656, 'pull_s12sq': 0.78, 'pull_s13sq': 1.08, 'pull_s23sq': -5.62, 'pull_dcp_deg': -0.31}
+[real]    {'rank': 3, 'config': 'Vd.P.X|TBM|r0c0', 'chi2': 6.0237, 'p_dof2': '0.0492', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(283.66), 'beta_deg': np.float64(240.665), 's12sq': 0.308, 's13sq': 0.02353, 's23sq': 0.45661, 'dcp_deg': 266.28295, 'pull_s12sq': -0.12, 'pull_s13sq': 1.65, 'pull_s23sq': -6.15, 'pull_dcp_deg': -0.6}
+[real]    {'rank': 4, 'config': 'VT.P.X|TBM|r0c0', 'chi2': 6.1307, 'p_dof2': '0.04664', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(281.374), 'beta_deg': np.float64(324.36), 's12sq': 0.31, 's13sq': 0.02353, 's23sq': 0.45661, 'dcp_deg': 263.37524, 'pull_s12sq': 0.18, 'pull_s13sq': 1.65, 'pull_s23sq': -6.15, 'pull_dcp_deg': -0.7}
+[real]    {'rank': 5, 'config': 'V.X.P.Vd|BM|r0c2', 'chi2': 6.1628, 'p_dof2': '0.04589', 'p_trials': '1', 'k_cont': 2, 'k_bits': np.float64(11.44), 'alpha_deg': np.float64(75.797), 'beta_deg': np.float64(33.316), 's12sq': 0.308, 's13sq': 0.0226, 's23sq': 0.55933, 'dcp_deg': 214.276, 'pull_s12sq': -0.12, 'pull_s13sq': -0.02, 'pull_s23sq': 0.33, 'pull_dcp_deg': -2.45}
+[real] structured NO: best chi2 2.9413 (V.X.P.Vd|HEX|r1c0, alpha 180, beta 240)
+[real]    {'rank': 1, 'config': 'V.X.P.Vd|HEX|r1c0', 'chi2': 2.9413, 'p_dof4': '0.5677', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 180, 'beta_deg': 240, 's12sq': 0.31154, 's13sq': 0.02181, 's23sq': 0.54534, 'dcp_deg': 174.54603, 'pull_s12sq': 0.41, 'pull_s13sq': -1.2, 'pull_s23sq': 4.43, 'pull_dcp_deg': -1.62}
+[real]    {'rank': 2, 'config': 'V.X.P.Vd|HEX|r1c0', 'chi2': 4.6475, 'p_dof4': '0.3254', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 180, 'beta_deg': 120, 's12sq': 0.31193, 's13sq': 0.02351, 's23sq': 0.54877, 'dcp_deg': 187.85695, 'pull_s12sq': 0.47, 'pull_s13sq': 1.79, 'pull_s23sq': 4.63, 'pull_dcp_deg': -0.96}
+[real]    {'rank': 3, 'config': 'VT.P.X.Vc|HEX|r0c0', 'chi2': 4.7713, 'p_dof4': '0.3116', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 0, 'beta_deg': 240, 's12sq': 0.31863, 's13sq': 0.02179, 's23sq': 0.5464, 'dcp_deg': 184.15623, 'pull_s12sq': 1.47, 'pull_s13sq': -1.22, 'pull_s23sq': 4.49, 'pull_dcp_deg': -1.14}
+[real]    {'rank': 4, 'config': 'Vd.P.X.V|HEX|r0c0', 'chi2': 4.8581, 'p_dof4': '0.3022', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 0, 'beta_deg': 120, 's12sq': 0.31863, 's13sq': 0.02179, 's23sq': 0.5464, 'dcp_deg': 175.84377, 'pull_s12sq': 1.47, 'pull_s13sq': -1.22, 'pull_s23sq': 4.49, 'pull_dcp_deg': -1.56}
+[real]    {'rank': 5, 'config': 'Vd.P.X.V|HEX|r0c0', 'chi2': 5.5335, 'p_dof4': '0.2368', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 0, 'beta_deg': 180, 's12sq': 0.31937, 's13sq': 0.02204, 's23sq': 0.56786, 'dcp_deg': 177.93716, 'pull_s12sq': 1.58, 'pull_s13sq': -0.79, 'pull_s23sq': 5.76, 'pull_dcp_deg': -1.45}
+[real] structured IO: best chi2 8.4031 (V.X.P.Vd|TBM|r1c0, alpha 120, beta 90)
+[real]    {'rank': 1, 'config': 'V.X.P.Vd|TBM|r1c0', 'chi2': 8.4031, 'p_dof4': '0.07788', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 120, 'beta_deg': 90, 's12sq': 0.313, 's13sq': 0.02208, 's23sq': 0.56316, 'dcp_deg': 210.74225, 'pull_s12sq': 0.63, 'pull_s13sq': -0.95, 'pull_s23sq': 0.63, 'pull_dcp_deg': -2.58}
+[real]    {'rank': 2, 'config': 'Vc.P.X.VT|BM|r0c0', 'chi2': 9.0144, 'p_dof4': '0.06074', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 90, 'beta_deg': 120, 's12sq': 0.295, 's13sq': 0.0233, 's23sq': 0.48903, 'dcp_deg': 271.72881, 'pull_s12sq': -2.09, 'pull_s13sq': 1.23, 'pull_s23sq': -4.12, 'pull_dcp_deg': -0.4}
+[real]    {'rank': 3, 'config': 'Vc.P.X.VT|BM|r0c0', 'chi2': 9.1073, 'p_dof4': '0.05847', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 90, 'beta_deg': 180, 's12sq': 0.29395, 's13sq': 0.02255, 's23sq': 0.45252, 'dcp_deg': 274.71616, 'pull_s12sq': -2.25, 'pull_s13sq': -0.1, 'pull_s23sq': -6.4, 'pull_dcp_deg': -0.3}
+[real]    {'rank': 4, 'config': 'Vc.P.X.VT|BM|r1c2', 'chi2': 11.9354, 'p_dof4': '0.01784', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 90, 'beta_deg': 90, 's12sq': 0.29463, 's13sq': 0.02371, 's23sq': 0.49491, 'dcp_deg': 269.4382, 'pull_s12sq': -2.15, 'pull_s13sq': 1.97, 'pull_s23sq': -3.76, 'pull_dcp_deg': -0.48}
+[real]    {'rank': 5, 'config': 'V.X.P.Vd|GR2|r1c0', 'chi2': 13.3549, 'p_dof4': '0.009666', 'p_trials': '1', 'k_cont': 0, 'k_bits': np.float64(16.8), 'alpha_deg': 120, 'beta_deg': 90, 's12sq': 0.32393, 's13sq': 0.02196, 's23sq': 0.563, 'dcp_deg': 210.61961, 'pull_s12sq': 2.26, 'pull_s13sq': -1.17, 'pull_s23sq': 0.62, 'pull_dcp_deg': -2.59}
+[real] CKM spread: 4000 samples, seed 3003, written ckm_spread.csv
+[real] done in 326 s
+null a NO cont  : real   0.674  hits  25/300  rate 0.083 [0.055, 0.121] (95% CP), one-sided 95% upper 0.114; fake median 12.87
+null a NO struct: real   5.631  hits  15/300  rate 0.050 [0.028, 0.081] (95% CP), one-sided 95% upper 0.076; fake median 47.96
+null a IO cont  : real   6.121  hits 109/300  rate 0.363 [0.309, 0.421] (95% CP), one-sided 95% upper 0.412; fake median 12.14
+null a IO struct: real   8.356  hits  23/300  rate 0.077 [0.049, 0.113] (95% CP), one-sided 95% upper 0.107; fake median 45.77
+null b NO cont  : real   0.785  hits 108/300  rate 0.360 [0.306, 0.417] (95% CP), one-sided 95% upper 0.408; fake median 1.78
+null b NO struct: real   2.941  hits  56/300  rate 0.187 [0.144, 0.235] (95% CP), one-sided 95% upper 0.228; fake median 9.95
+null b IO cont  : real   2.699  hits  58/300  rate 0.193 [0.150, 0.243] (95% CP), one-sided 95% upper 0.235; fake median 7.19
+null b IO struct: real   8.403  hits  47/300  rate 0.157 [0.117, 0.203] (95% CP), one-sided 95% upper 0.195; fake median 23.08

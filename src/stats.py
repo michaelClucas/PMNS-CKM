@@ -97,6 +97,9 @@ class Objective:
     masses : dict like `ckm` for mass observables.
     ckm_cov : optional (names, cov). Those CKM names use a correlated Gaussian with this
         covariance instead of independent asymmetric errors.
+    pmns_ordering_offset : chi^2 penalty of this ordering relative to the global best
+        (src.data.ordering_offset), added once. Pass the callable without relative_to="global".
+        The callable gets no `analysis` argument: bind it (functools.partial) if not default.
 
     Calling the objective with a dict `pred` (observable name -> predicted value, PMNS
     parameters under the PMNS_PARAMS names) returns an ObjectiveResult. A missing
@@ -116,6 +119,7 @@ class Objective:
         pmns_best: Mapping | None = None,
         masses: Mapping | None = None,
         ckm_cov=None,
+        pmns_ordering_offset: float = 0.0,
     ):
         if pmns_ordering not in ("NO", "IO"):
             raise ValueError("pmns_ordering must be 'NO' or 'IO'")
@@ -131,6 +135,13 @@ class Objective:
         self.pmns_params = tuple(pmns_params) if pmns_delta_chi2 is not None else ()
         self.pmns_mode = pmns_mode
         self.pmns_best = dict(pmns_best or {})
+        # IO-vs-NO penalty, added once. The callable must return within-ordering Delta chi^2:
+        # a loader wrapped with relative_to="global" would add the offset once per call.
+        kw = getattr(pmns_delta_chi2, "keywords", None) or {}
+        if pmns_mode == "sum1d" and kw.get("relative_to") == "global":
+            raise ValueError("sum1d with relative_to='global' counts the ordering offset per "
+                             "parameter; use pmns_ordering_offset instead")
+        self.pmns_ordering_offset = float(pmns_ordering_offset)
         if ckm_cov is not None:
             names, cov = ckm_cov
             self.cov_names = list(names)
@@ -172,12 +183,20 @@ class Objective:
             pulls = {}
             for p, v in vals.items():
                 d1 = max(float(self.pmns(self.ordering, **{p: v})), 0.0)
-                sgn = np.sign(v - self.pmns_best[p]) if p in self.pmns_best else 1.0
+                if p in self.pmns_best:
+                    diff = v - self.pmns_best[p]
+                    if p == "dcp_deg":
+                        diff = (diff + 180.0) % 360.0 - 180.0
+                    sgn = np.sign(diff)
+                else:
+                    sgn = 1.0
                 pulls[p] = float(sgn * np.sqrt(d1))
                 if self.pmns_mode == "sum1d":
                     res.terms[p] = d1
             if self.pmns_mode == "joint":
                 res.terms["pmns_joint"] = float(self.pmns(self.ordering, **vals))
+            if self.pmns_ordering_offset:
+                res.terms["pmns_ordering_offset"] = float(self.pmns_ordering_offset)
             res.pulls.update(pulls)
         res.chi2 = float(sum(res.terms.values()))
         return res
