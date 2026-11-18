@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "description": "CKM matrix from the PDG 2026 Review of Particle Physics, review 12 'CKM Quark-Mixing Matrix' (revised March 2026), Sec. 12.4 global SM fit (CKMfitter method, Refs. [6,113] of the review) and Sec. 12.2 direct determinations.",
+    "source_key": "PDG2026_CKM",
+    "scale_note": "PDG: below mu = m_W the CKM elements can be treated as constants (scale-independent); above the weak scale they run. Recorded scale is 'low energy (<= m_W)'.",
+    "errors": "err_plus / err_minus are the 1 sigma upper / lower errors as printed by PDG (both stored as positive numbers).",
+    "correlations": "PDG does not publish the correlation matrix of the global fit. Not available from the primary source; see experiments/20261118-001-data-build/README.md."
+  },
+  "wolfenstein": {
+    "lambda": {"value": 0.22517, "err_plus": 0.00068, "err_minus": 0.00068, "scale": "low energy (<= m_W)", "scheme": "Wolfenstein, exact definition PDG Eq. (12.4); SM global fit, CKMfitter method", "source": "PDG2026_CKM Eq. (12.26)"},
+    "A": {"value": 0.826, "err_plus": 0.017, "err_minus": 0.015, "scale": "low energy (<= m_W)", "scheme": "Wolfenstein, exact definition PDG Eq. (12.4); SM global fit, CKMfitter method", "source": "PDG2026_CKM Eq. (12.26)"},
+    "rhobar": {"value": 0.1576, "err_plus": 0.0092, "err_minus": 0.0091, "scale": "low energy (<= m_W)", "scheme": "Wolfenstein, exact definition PDG Eq. (12.4); SM global fit, CKMfitter method", "source": "PDG2026_CKM Eq. (12.26)"},
+    "etabar": {"value": 0.3556, "err_plus": 0.0071, "err_minus": 0.0069, "scale": "low energy (<= m_W)", "scheme": "Wolfenstein, exact definition PDG Eq. (12.4); SM global fit, CKMfitter method", "source": "PDG2026_CKM Eq. (12.26)"}
+  },
+  "wolfenstein_alternatives": {
+    "UTfit_method": {
+      "note": "Same inputs, Bayesian prescription of Refs. [114,134] of the review, quoted in Sec. 12.4 text",
+      "lambda": {"value": 0.22519, "err_plus": 0.00068, "err_minus": 0.00068},
+      "A": {"value": 0.820, "err_plus": 0.011, "err_minus": 0.011},
+      "rhobar": {"value": 0.1561, "err_plus": 0.0088, "err_minus": 0.0088},
+      "etabar": {"value": 0.3587, "err_plus": 0.0069, "err_minus": 0.0069},
+      "source": "PDG2026_CKM Sec. 12.4"
+    },
+    "tree_level_only": {
+      "note": "Fit using only tree-level inputs (|V_ij| not coupling to top, and gamma), quoted in Sec. 12.4 text",
+      "lambda": {"value": 0.22528, "err_plus": 0.00069, "err_minus": 0.00069},
+      "A": {"value": 0.802, "err_plus": 0.026, "err_minus": 0.026},
+      "rhobar": {"value": 0.166, "err_plus": 0.021, "err_minus": 0.020},
+      "etabar": {"value": 0.379, "err_plus": 0.022, "err_minus": 0.021},
+      "source": "PDG2026_CKM Sec. 12.4"
+    }
+  },
+  "standard_parametrization": {
+    "s12": {"value": 0.22517, "err_plus": 0.00068, "err_minus": 0.00068, "scale": "low energy (<= m_W)", "scheme": "sin(theta12), PDG standard parametrization Eq. (12.3), SM global fit", "source": "PDG2026_CKM Eq. (12.28)"},
+    "s13": {"value": 0.003763, "err_plus": 0.000088, "err_minus": 0.000083, "scale": "low energy (<= m_W)", "scheme": "sin(theta13), PDG standard parametrization Eq. (12.3), SM global fit", "source": "PDG2026_CKM Eq. (12.28)"},
+    "s23": {"value": 0.04189, "err_plus": 0.00081, "err_minus": 0.00069, "scale": "low energy (<= m_W)", "scheme": "sin(theta23), PDG standard parametrization Eq. (12.3), SM global fit", "source": "PDG2026_CKM Eq. (12.28)"},
+    "delta_rad": {"value": 1.154, "err_plus": 0.025, "err_minus": 0.025, "scale": "low energy (<= m_W)", "scheme": "CP phase delta in radians, PDG standard parametrization Eq. (12.3), SM global fit", "source": "PDG2026_CKM Eq. (12.28)"}
+  },
+  "jarlskog": {
+    "J": {"value": 3.16e-5, "err_plus": 0.13e-5, "err_minus": 0.11e-5, "scale": "low energy (<= m_W)", "scheme": "Jarlskog invariant, SM global fit", "source": "PDG2026_CKM Sec. 12.4"}
+  },
+  "magnitudes_global_fit": {
+    "Vud": {"value": 0.97431, "err_plus": 0.00016, "err_minus": 0.00016, "scale": "low energy (<= m_W)", "scheme": "|V_ud|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vus": {"value": 0.22517, "err_plus": 0.00068, "err_minus": 0.00068, "scale": "low energy (<= m_W)", "scheme": "|V_us|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vub": {"value": 0.003763, "err_plus": 0.000088, "err_minus": 0.000083, "scale": "low energy (<= m_W)", "scheme": "|V_ub|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vcd": {"value": 0.22503, "err_plus": 0.00068, "err_minus": 0.00068, "scale": "low energy (<= m_W)", "scheme": "|V_cd|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vcs": {"value": 0.97345, "err_plus": 0.00016, "err_minus": 0.00016, "scale": "low energy (<= m_W)", "scheme": "|V_cs|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vcb": {"value": 0.04189, "err_plus": 0.00081, "err_minus": 0.00069, "scale": "low energy (<= m_W)", "scheme": "|V_cb|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vtd": {"value": 0.00863, "err_plus": 0.00019, "err_minus": 0.00017, "scale": "low energy (<= m_W)", "scheme": "|V_td|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vts": {"value": 0.04117, "err_plus": 0.00079, "err_minus": 0.00068, "scale": "low energy (<= m_W)", "scheme": "|V_ts|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"},
+    "Vtb": {"value": 0.999115, "err_plus": 0.000029, "err_minus": 0.000034, "scale": "low energy (<= m_W)", "scheme": "|V_tb|, SM global fit (unitarity imposed)", "source": "PDG2026_CKM Eq. (12.27)"}
+  },
+  "magnitudes_direct": {
+    "note": "Direct determinations, no unitarity imposed (Sec. 12.2). Use these for unitarity tests, not as fit targets together with the global fit.",
+    "Vud": {"value": 0.97367, "err_plus": 0.00032, "err_minus": 0.00032, "scale": "low energy", "scheme": "superallowed 0+ -> 0+ beta decays", "source": "PDG2026_CKM Eq. (12.7)"},
+    "Vus": {"value": 0.22431, "err_plus": 0.00085, "err_minus": 0.00085, "scale": "low energy", "scheme": "average of K_l3 and K_l2/pi_l2 determinations", "source": "PDG2026_CKM Eq. (12.8)"},
+    "Vcd": {"value": 0.2247, "err_plus": 0.0022, "err_minus": 0.0022, "scale": "low energy", "scheme": "average of leptonic/semileptonic D and neutrino determinations", "source": "PDG2026_CKM Eq. (12.9)"},
+    "Vcs": {"value": 0.969, "err_plus": 0.005, "err_minus": 0.005, "scale": "low energy", "scheme": "average of leptonic D_s and semileptonic D determinations", "source": "PDG2026_CKM Eq. (12.10)"},
+    "Vcb": {"value": 0.0407, "err_plus": 0.0013, "err_minus": 0.0013, "scale": "low energy", "scheme": "inclusive + exclusive combination, error scaled", "source": "PDG2026_CKM Eq. (12.11)"},
+    "Vub": {"value": 0.00389, "err_plus": 0.00016, "err_minus": 0.00016, "scale": "low energy", "scheme": "inclusive + exclusive combination, error scaled", "source": "PDG2026_CKM Eq. (12.12)"},
+    "Vtd": {"value": 0.0086, "err_plus": 0.0002, "err_minus": 0.0002, "scale": "low energy", "scheme": "B-Bbar mixing with lattice QCD", "source": "PDG2026_CKM Eq. (12.13)"},
+    "Vts": {"value": 0.0415, "err_plus": 0.0009, "err_minus": 0.0009, "scale": "low energy", "scheme": "B_s-Bbar_s mixing with lattice QCD", "source": "PDG2026_CKM Eq. (12.13)"},
+    "Vtb": {"value": 1.002, "err_plus": 0.024, "err_minus": 0.024, "scale": "low energy", "scheme": "single-top production, Tevatron + LHC average", "source": "PDG2026_CKM Eq. (12.15)"}
+  },
+  "unitarity_checks_direct": {
+    "row1": {"value": 0.9984, "err_plus": 0.0007, "err_minus": 0.0007, "source": "PDG2026_CKM Sec. 12.4"},
+    "row2": {"value": 0.991, "err_plus": 0.010, "err_minus": 0.010, "source": "PDG2026_CKM Sec. 12.4"},
+    "col1": {"value": 0.9986, "err_plus": 0.0011, "err_minus": 0.0011, "source": "PDG2026_CKM Sec. 12.4"},
+    "col2": {"value": 0.991, "err_plus": 0.010, "err_minus": 0.010, "source": "PDG2026_CKM Sec. 12.4"}
+  }
+}

@@ -1,0 +1,459 @@
+{
+ "meta": {
+  "description": "Three-flavour neutrino oscillation parameters from NuFIT 6.1 (2025), fit to data available November 2025, table v61.tbl-parameters.pdf.",
+  "source_key": "NuFIT6.1",
+  "default_analysis": "IC23_woSKatm",
+  "default_analysis_reason": "NuFIT does not name a recommended analysis. IC23 w/o SK-atm is the upper section of the NuFIT parameter table and the analysis used for the filled regions and the mass-scale plots on the release page; IC24 with SK-atm additionally includes the tabulated atmospheric chi^2 data provided by the Super-Kamiokande and IceCube collaborations. Both are stored.",
+  "ranges": "value = best fit; err_plus/err_minus = 1 sigma (Delta chi^2 = 1) relative to the local minimum of that ordering; range_3sigma = Delta chi^2 = 9 range (1 dof).",
+  "delta_chi2_IO_minus_NO_note": "Delta chi^2 of the IO local minimum relative to the global (NO) minimum, as printed in the table header. The chi^2 data tables give 1.486 (IC23 w/o SK-atm) and 5.908 (IC24 with SK-atm).",
+  "scale": "low energy (oscillation experiments, neutrino energies MeV-GeV)"
+ },
+ "analyses": {
+  "IC23_woSKatm": {
+   "delta_chi2_IO_minus_NO": 1.5,
+   "NO": {
+    "s12sq": {
+     "value": 0.3088,
+     "err_plus": 0.0067,
+     "err_minus": 0.0066,
+     "range_3sigma": [
+      0.2893,
+      0.3295
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta12), PDG/NuFIT standard parametrization",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "theta12_deg": {
+     "value": 33.76,
+     "err_plus": 0.42,
+     "err_minus": 0.41,
+     "range_3sigma": [
+      32.54,
+      35.03
+     ],
+     "scale": "low energy",
+     "scheme": "theta12 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "s23sq": {
+     "value": 0.47,
+     "err_plus": 0.017,
+     "err_minus": 0.014,
+     "range_3sigma": [
+      0.432,
+      0.587
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta23)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "theta23_deg": {
+     "value": 43.27,
+     "err_plus": 1.0,
+     "err_minus": 0.82,
+     "range_3sigma": [
+      41.11,
+      50.02
+     ],
+     "scale": "low energy",
+     "scheme": "theta23 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "s13sq": {
+     "value": 0.02249,
+     "err_plus": 0.00057,
+     "err_minus": 0.00057,
+     "range_3sigma": [
+      0.0207,
+      0.0242
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta13)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "theta13_deg": {
+     "value": 8.62,
+     "err_plus": 0.11,
+     "err_minus": 0.11,
+     "range_3sigma": [
+      8.27,
+      8.95
+     ],
+     "scale": "low energy",
+     "scheme": "theta13 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "dcp_deg": {
+     "value": 207,
+     "err_plus": 23,
+     "err_minus": 20,
+     "range_3sigma": [
+      114,
+      405
+     ],
+     "scale": "low energy",
+     "scheme": "Dirac CP phase delta_CP in degrees, NuFIT convention [0,360); 3sigma range may exceed 360 when it wraps",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "dm21sq_1e-5eV2": {
+     "value": 7.537,
+     "err_plus": 0.094,
+     "err_minus": 0.1,
+     "range_3sigma": [
+      7.236,
+      7.823
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 in units of 1e-5 eV^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "dm3l_sq_1e-3eV2": {
+     "value": 2.521,
+     "err_plus": 0.026,
+     "err_minus": 0.018,
+     "range_3sigma": [
+      2.454,
+      2.592
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_3l in units of 1e-3 eV^2: Delta m^2_31 > 0 for NO, Delta m^2_32 < 0 for IO",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    }
+   },
+   "IO": {
+    "s12sq": {
+     "value": 0.3088,
+     "err_plus": 0.0067,
+     "err_minus": 0.0066,
+     "range_3sigma": [
+      0.2893,
+      0.3295
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta12), PDG/NuFIT standard parametrization",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "theta12_deg": {
+     "value": 33.76,
+     "err_plus": 0.42,
+     "err_minus": 0.41,
+     "range_3sigma": [
+      32.54,
+      35.03
+     ],
+     "scale": "low energy",
+     "scheme": "theta12 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "s23sq": {
+     "value": 0.555,
+     "err_plus": 0.013,
+     "err_minus": 0.016,
+     "range_3sigma": [
+      0.437,
+      0.59
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta23)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "theta23_deg": {
+     "value": 48.15,
+     "err_plus": 0.75,
+     "err_minus": 0.92,
+     "range_3sigma": [
+      41.4,
+      50.21
+     ],
+     "scale": "low energy",
+     "scheme": "theta23 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "s13sq": {
+     "value": 0.02261,
+     "err_plus": 0.00056,
+     "err_minus": 0.00056,
+     "range_3sigma": [
+      0.02091,
+      0.02433
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta13)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "theta13_deg": {
+     "value": 8.65,
+     "err_plus": 0.11,
+     "err_minus": 0.11,
+     "range_3sigma": [
+      8.31,
+      8.97
+     ],
+     "scale": "low energy",
+     "scheme": "theta13 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "dcp_deg": {
+     "value": 283,
+     "err_plus": 24,
+     "err_minus": 28,
+     "range_3sigma": [
+      202,
+      347
+     ],
+     "scale": "low energy",
+     "scheme": "Dirac CP phase delta_CP in degrees, NuFIT convention [0,360); 3sigma range may exceed 360 when it wraps",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "dm21sq_1e-5eV2": {
+     "value": 7.537,
+     "err_plus": 0.094,
+     "err_minus": 0.1,
+     "range_3sigma": [
+      7.236,
+      7.822
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 in units of 1e-5 eV^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "dm3l_sq_1e-3eV2": {
+     "value": -2.5,
+     "err_plus": 0.024,
+     "err_minus": 0.023,
+     "range_3sigma": [
+      -2.569,
+      -2.43
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_3l in units of 1e-3 eV^2: Delta m^2_31 > 0 for NO, Delta m^2_32 < 0 for IO",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    }
+   }
+  },
+  "IC24_wSKatm": {
+   "delta_chi2_IO_minus_NO": 5.9,
+   "NO": {
+    "s12sq": {
+     "value": 0.3088,
+     "err_plus": 0.0067,
+     "err_minus": 0.0066,
+     "range_3sigma": [
+      0.2893,
+      0.3295
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta12), PDG/NuFIT standard parametrization",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "theta12_deg": {
+     "value": 33.76,
+     "err_plus": 0.42,
+     "err_minus": 0.41,
+     "range_3sigma": [
+      32.54,
+      35.03
+     ],
+     "scale": "low energy",
+     "scheme": "theta12 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "s23sq": {
+     "value": 0.47,
+     "err_plus": 0.017,
+     "err_minus": 0.014,
+     "range_3sigma": [
+      0.435,
+      0.584
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta23)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "theta23_deg": {
+     "value": 43.29,
+     "err_plus": 0.96,
+     "err_minus": 0.79,
+     "range_3sigma": [
+      41.27,
+      49.86
+     ],
+     "scale": "low energy",
+     "scheme": "theta23 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "s13sq": {
+     "value": 0.02248,
+     "err_plus": 0.00055,
+     "err_minus": 0.00059,
+     "range_3sigma": [
+      0.02064,
+      0.02418
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta13)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "theta13_deg": {
+     "value": 8.62,
+     "err_plus": 0.11,
+     "err_minus": 0.11,
+     "range_3sigma": [
+      8.26,
+      8.95
+     ],
+     "scale": "low energy",
+     "scheme": "theta13 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "dcp_deg": {
+     "value": 212,
+     "err_plus": 26,
+     "err_minus": 36,
+     "range_3sigma": [
+      125,
+      365
+     ],
+     "scale": "low energy",
+     "scheme": "Dirac CP phase delta_CP in degrees, NuFIT convention [0,360); 3sigma range may exceed 360 when it wraps",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "dm21sq_1e-5eV2": {
+     "value": 7.537,
+     "err_plus": 0.094,
+     "err_minus": 0.1,
+     "range_3sigma": [
+      7.236,
+      7.823
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 in units of 1e-5 eV^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "dm3l_sq_1e-3eV2": {
+     "value": 2.511,
+     "err_plus": 0.021,
+     "err_minus": 0.02,
+     "range_3sigma": [
+      2.45,
+      2.576
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_3l in units of 1e-3 eV^2: Delta m^2_31 > 0 for NO, Delta m^2_32 < 0 for IO",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    }
+   },
+   "IO": {
+    "s12sq": {
+     "value": 0.3088,
+     "err_plus": 0.0067,
+     "err_minus": 0.0066,
+     "range_3sigma": [
+      0.2893,
+      0.3295
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta12), PDG/NuFIT standard parametrization",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "theta12_deg": {
+     "value": 33.76,
+     "err_plus": 0.42,
+     "err_minus": 0.41,
+     "range_3sigma": [
+      32.54,
+      35.03
+     ],
+     "scale": "low energy",
+     "scheme": "theta12 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "s23sq": {
+     "value": 0.55,
+     "err_plus": 0.013,
+     "err_minus": 0.016,
+     "range_3sigma": [
+      0.439,
+      0.584
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta23)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "theta23_deg": {
+     "value": 47.9,
+     "err_plus": 0.73,
+     "err_minus": 0.92,
+     "range_3sigma": [
+      41.51,
+      49.83
+     ],
+     "scale": "low energy",
+     "scheme": "theta23 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "s13sq": {
+     "value": 0.02262,
+     "err_plus": 0.00057,
+     "err_minus": 0.00056,
+     "range_3sigma": [
+      0.02093,
+      0.02441
+     ],
+     "scale": "low energy",
+     "scheme": "sin^2(theta13)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "theta13_deg": {
+     "value": 8.65,
+     "err_plus": 0.11,
+     "err_minus": 0.11,
+     "range_3sigma": [
+      8.32,
+      8.99
+     ],
+     "scale": "low energy",
+     "scheme": "theta13 in degrees",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "dcp_deg": {
+     "value": 274,
+     "err_plus": 22,
+     "err_minus": 25,
+     "range_3sigma": [
+      203,
+      335
+     ],
+     "scale": "low energy",
+     "scheme": "Dirac CP phase delta_CP in degrees, NuFIT convention [0,360); 3sigma range may exceed 360 when it wraps",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "dm21sq_1e-5eV2": {
+     "value": 7.537,
+     "err_plus": 0.094,
+     "err_minus": 0.1,
+     "range_3sigma": [
+      7.236,
+      7.822
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 in units of 1e-5 eV^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "dm3l_sq_1e-3eV2": {
+     "value": -2.483,
+     "err_plus": 0.02,
+     "err_minus": 0.02,
+     "range_3sigma": [
+      -2.547,
+      -2.421
+     ],
+     "scale": "low energy",
+     "scheme": "Delta m^2_3l in units of 1e-3 eV^2: Delta m^2_31 > 0 for NO, Delta m^2_32 < 0 for IO",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    }
+   }
+  }
+ }
+}

@@ -6,3 +6,5 @@ artifacts/
 *.ckpt
 .ipynb_checkpoints/
 .claude/settings.local.json
+sbi-logs/
+outputs/

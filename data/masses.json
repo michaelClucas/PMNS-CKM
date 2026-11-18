@@ -1,0 +1,285 @@
+{
+ "meta": {
+  "description": "Fermion masses. Quark and charged-lepton masses from the PDG 2026 summary tables (PDG API SQLite pdg-2026.0); neutrino mass-squared splittings from NuFIT 6.1.",
+  "pdg_edition": "2026",
+  "pdg_data_release": "2026-05-30 13:41:24 PDT",
+  "pdg_citation": "F. Takahashi et al. (Particle Data Group), Int. J. Mod. Phys. A 41, 2630011 (2026)",
+  "units": "GeV for masses; eV^2 for splittings",
+  "note": "Quark masses are in different schemes and at different scales; run them to a common scale before comparing (not done here)."
+ },
+ "quarks": {
+  "m_u": {
+   "value": 0.00216,
+   "err_plus": 7e-05,
+   "err_minus": 7e-05,
+   "unit": "GeV",
+   "scale": "mu = 2 GeV",
+   "scheme": "MSbar (PDG normalizes light-quark MSbar masses at mu = 2 GeV)",
+   "pdg_display": "2.16+-0.07 MeV",
+   "source": "PDG2026 API Q123UM (u-QUARK MASS)"
+  },
+  "m_d": {
+   "value": 0.0047,
+   "err_plus": 7e-05,
+   "err_minus": 7e-05,
+   "unit": "GeV",
+   "scale": "mu = 2 GeV",
+   "scheme": "MSbar (PDG normalizes light-quark MSbar masses at mu = 2 GeV)",
+   "pdg_display": "4.70+-0.07 MeV",
+   "source": "PDG2026 API Q123DM (d-QUARK MASS)"
+  },
+  "m_s": {
+   "value": 0.0929,
+   "err_plus": 0.0007,
+   "err_minus": 0.0007,
+   "unit": "GeV",
+   "scale": "mu = 2 GeV",
+   "scheme": "MSbar (PDG normalizes light-quark MSbar masses at mu = 2 GeV)",
+   "pdg_display": "92.9+-0.7 MeV",
+   "source": "PDG2026 API Q123SM (s-QUARK MASS)"
+  },
+  "m_c": {
+   "value": 1.2729,
+   "err_plus": 0.0045,
+   "err_minus": 0.0045,
+   "unit": "GeV",
+   "scale": "mu = mbar_c",
+   "scheme": "MSbar running mass mbar_c(mbar_c)",
+   "pdg_display": "1.2729+-0.0045 GeV",
+   "source": "PDG2026 API Q004M (c-QUARK MASS)"
+  },
+  "m_b": {
+   "value": 4.186,
+   "err_plus": 0.006,
+   "err_minus": 0.006,
+   "unit": "GeV",
+   "scale": "mu = mbar_b",
+   "scheme": "MSbar running mass mbar_b(mbar_b)",
+   "pdg_display": "4.186+-0.006 GeV",
+   "source": "PDG2026 API Q005M (b-QUARK MASS)"
+  },
+  "m_t_direct": {
+   "value": 172.603559587,
+   "err_plus": 0.271375002028,
+   "err_minus": 0.273047806742,
+   "unit": "GeV",
+   "scale": "pole-like",
+   "scheme": "top mass from kinematic reconstruction (MC mass, usually interpreted as pole mass; PDG says the interpretation uncertainty is hard to quantify)",
+   "pdg_display": "172.60+-0.27 GeV",
+   "source": "PDG2026 API Q007TP (t-Quark Mass (Direct Measurements))"
+  },
+  "m_t_pole_xsec": {
+   "value": 172.054218792,
+   "err_plus": 0.614086447001,
+   "err_minus": 0.589677620643,
+   "unit": "GeV",
+   "scale": "pole",
+   "scheme": "top pole mass from t-tbar cross-section measurements",
+   "pdg_display": "172.1+-0.6 GeV",
+   "source": "PDG2026 API Q007TP4 (t-Quark Pole Mass from Cross-Section Measurements)"
+  },
+  "m_t_msbar_xsec": {
+   "value": 162.500284698,
+   "err_plus": 2.13161370879,
+   "err_minus": 1.53243343055,
+   "unit": "GeV",
+   "scale": "MSbar, scale not stated in PDG text (conventionally mu = mbar_t)",
+   "scheme": "top MSbar mass from t-tbar cross-section measurements",
+   "pdg_display": "162.5+2.1-1.5 GeV",
+   "source": "PDG2026 API Q007TP2 (t-Quark Mass from Cross-Section Measurements)"
+  }
+ },
+ "charged_leptons": {
+  "m_e": {
+   "value": 0.00051099895069,
+   "err_plus": 1.6e-13,
+   "err_minus": 1.6e-13,
+   "unit": "GeV",
+   "scale": "low energy",
+   "scheme": "pole (physical) mass",
+   "pdg_display": "0.51099895069+-0.00000000016 MeV",
+   "source": "PDG2026 API S003M (e MASS)"
+  },
+  "m_mu": {
+   "value": 0.1056583755,
+   "err_plus": 2.3e-09,
+   "err_minus": 2.3e-09,
+   "unit": "GeV",
+   "scale": "low energy",
+   "scheme": "pole (physical) mass",
+   "pdg_display": "105.6583755+-0.0000023 MeV",
+   "source": "PDG2026 API S004M (mu MASS)"
+  },
+  "m_tau": {
+   "value": 1.77693246513,
+   "err_plus": 8.49149539132e-05,
+   "err_minus": 8.75801917341e-05,
+   "unit": "GeV",
+   "scale": "low energy",
+   "scheme": "pole (physical) mass",
+   "pdg_display": "1776.93+-0.09 MeV",
+   "source": "PDG2026 API S035M (tau MASS)"
+  }
+ },
+ "quark_mass_ratios": {
+  "m_u_over_m_d": {
+   "value": 0.462,
+   "err_plus": 0.02,
+   "err_minus": 0.02,
+   "unit": "",
+   "scale": "scale independent (ratio of masses in the same scheme at the same scale)",
+   "scheme": "MSbar ratio",
+   "pdg_display": "0.462+-0.020",
+   "source": "PDG2026 API Q123MR0 (mass(u)/mass(d) MASS RATIO)"
+  },
+  "m_c_over_m_s": {
+   "value": 11.761,
+   "err_plus": 0.047,
+   "err_minus": 0.047,
+   "unit": "",
+   "scale": "scale independent (ratio of masses in the same scheme at the same scale)",
+   "scheme": "MSbar ratio",
+   "pdg_display": "11.761+-0.047",
+   "source": "PDG2026 API Q004MSR (mass(c)/mass(s) MASS RATIO)"
+  },
+  "m_b_over_m_c": {
+   "value": 4.58,
+   "err_plus": 0.01,
+   "err_minus": 0.01,
+   "unit": "",
+   "scale": "scale independent (ratio of masses in the same scheme at the same scale)",
+   "scheme": "MSbar ratio",
+   "pdg_display": "4.58+-0.01",
+   "source": "PDG2026 API Q004MBR (mass(b)/mass(c) MASS RATIO)"
+  },
+  "m_b_over_m_s": {
+   "value": 53.87683811928053,
+   "err_plus": 0.1172418913691991,
+   "err_minus": 0.1172418913691991,
+   "unit": "",
+   "scale": "scale independent (ratio of masses in the same scheme at the same scale)",
+   "scheme": "MSbar ratio",
+   "pdg_display": "53.88+-0.12",
+   "source": "PDG2026 API Q005A00 (mass(b)/mass(s) MASS RATIO)"
+  }
+ },
+ "neutrino_splittings": {
+  "IC23_woSKatm": {
+   "NO": {
+    "dm21sq": {
+     "value": 7.537e-05,
+     "err_plus": 9.4e-07,
+     "err_minus": 1e-06,
+     "range_3sigma": [
+      7.236e-05,
+      7.823e-05
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 = m2^2 - m1^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    },
+    "dm31sq": {
+     "value": 0.002521,
+     "err_plus": 2.6e-05,
+     "err_minus": 1.8e-05,
+     "range_3sigma": [
+      0.002454,
+      0.002592
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_31 = m3^2 - m1^2 (NO)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, NO"
+    }
+   },
+   "IO": {
+    "dm21sq": {
+     "value": 7.537e-05,
+     "err_plus": 9.4e-07,
+     "err_minus": 1e-06,
+     "range_3sigma": [
+      7.236e-05,
+      7.822e-05
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 = m2^2 - m1^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    },
+    "dm32sq": {
+     "value": -0.0025,
+     "err_plus": 2.4e-05,
+     "err_minus": 2.3e-05,
+     "range_3sigma": [
+      -0.002569,
+      -0.00243
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_32 = m3^2 - m2^2 (IO)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC23_woSKatm, IO"
+    }
+   }
+  },
+  "IC24_wSKatm": {
+   "NO": {
+    "dm21sq": {
+     "value": 7.537e-05,
+     "err_plus": 9.4e-07,
+     "err_minus": 1e-06,
+     "range_3sigma": [
+      7.236e-05,
+      7.823e-05
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 = m2^2 - m1^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    },
+    "dm31sq": {
+     "value": 0.002511,
+     "err_plus": 2.1e-05,
+     "err_minus": 2e-05,
+     "range_3sigma": [
+      0.00245,
+      0.002576
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_31 = m3^2 - m1^2 (NO)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, NO"
+    }
+   },
+   "IO": {
+    "dm21sq": {
+     "value": 7.537e-05,
+     "err_plus": 9.4e-07,
+     "err_minus": 1e-06,
+     "range_3sigma": [
+      7.236e-05,
+      7.822e-05
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_21 = m2^2 - m1^2",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    },
+    "dm32sq": {
+     "value": -0.002483,
+     "err_plus": 2e-05,
+     "err_minus": 2e-05,
+     "range_3sigma": [
+      -0.002547,
+      -0.002421
+     ],
+     "unit": "eV^2",
+     "scale": "low energy",
+     "scheme": "Delta m^2_32 = m3^2 - m2^2 (IO)",
+     "source": "NuFIT6.1 v61.tbl-parameters.pdf, IC24_wSKatm, IO"
+    }
+   }
+  },
+  "default_analysis": "IC23_woSKatm"
+ }
+}

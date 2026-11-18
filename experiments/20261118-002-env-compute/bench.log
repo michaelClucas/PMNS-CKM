@@ -1,0 +1,46 @@
+### Run 1: repo .venv (torch CPU build)
+python 3.14.7  numpy 2.5.5  torch 2.15.0+cpu
+os.cpu_count() = 14  default torch.get_num_threads() = 12
+torch.xpu.is_available() = False
+
+== MLP emulator 8-256-256-256-8, batch 4096, float32, Adam: train steps/sec ==
+cpu threads= 1:      9.5 steps/s
+cpu threads= 2:     23.4 steps/s
+cpu threads= 4:     17.0 steps/s
+cpu threads= 8:     24.6 steps/s
+
+== Batched 3x3 complex128, N=1000000: seconds (best of reps) ==
+torch threads=1: numpy matmul=0.245  torch matmul=0.133  numpy eigh=2.844  torch eigh=2.634  numpy svd=4.975  torch svd=5.912  torch eigh c64=2.305  torch svd c64=6.010
+torch threads=4: numpy matmul=0.269  torch matmul=0.037  numpy eigh=2.374  torch eigh=3.490  numpy svd=6.285  torch svd=6.158  torch eigh c64=3.259  torch svd c64=7.645
+torch threads=8: numpy matmul=0.413  torch matmul=0.023  numpy eigh=3.035  torch eigh=4.123  numpy svd=8.272  torch svd=10.874  torch eigh c64=4.082  torch svd c64=9.125
+
+### Run 2: torch 2.15.0+xpu in a scratch venv outside the repo, `bench.py --quick` (unbuffered)
+python 3.14.7  numpy 2.5.5  torch 2.15.0+xpu
+os.cpu_count() = 14  default torch.get_num_threads() = 12
+torch.xpu.is_available() = True
+xpu device: Intel(R) Graphics
+
+== MLP emulator 8-256-256-256-8, batch 4096, float32, Adam: train steps/sec ==
+cpu threads= 1:      4.6 steps/s
+cpu threads= 2:      5.3 steps/s
+cpu threads= 4:      6.7 steps/s
+cpu threads= 8:     10.0 steps/s
+[xpu MLP: no result after >4 min (10 warmup + 50 timed steps); process killed]
+
+### Run 3: xpu_probe_mlp.py (timeout 150 s)
+alloc 0.447
+matmul 0 0.4945
+matmul 1 0.001
+matmul 2 0.0007
+matmul 3 0.0006
+matmul 4 0.0006
+[first training step did not finish before timeout]
+
+### Run 4: xpu_probe_ops.py (timeout 120 s), seconds per first call
+linear fwd 0.733
+silu fwd 0.053
+[mse_loss did not finish before timeout]
+
+### Run 5: xpu_probe_reduce.py (timeout 200 s), seconds per first call
+elementwise sq 85.662
+[sum did not finish in the remaining ~114 s]

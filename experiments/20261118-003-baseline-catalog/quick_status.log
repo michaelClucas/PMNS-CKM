@@ -1,0 +1,143 @@
+CKM input: theta_C = 13.013 deg, theta_cb = 2.401 deg, theta_ub = 0.2156 deg, delta = 1.154 rad
+
+=== IC23_woSKatm NO
+  QLC  th12 = 45 - theta_C [deg]               pred   31.9871  data   33.7600  pull   -4.32
+  QLC  th23 = 45 - theta_cb [deg]              pred   42.5992  data   43.2700  pull   -0.82
+  QLC' th23 = 45 + theta_cb [deg]              pred   47.4008  data   43.2700  pull   +4.13
+  SC   th12 = 45 - th13(data) [deg]            pred   36.3800  data   33.7600  pull   +6.24
+  TBM  s12^2 (LO)                              pred    0.3333  data    0.3088  pull   +3.66
+  BM   s12^2 (LO)                              pred    0.5000  data    0.3088  pull  +28.54
+  GR1  s12^2 (LO)                              pred    0.2764  data    0.3088  pull   -4.91
+  GR2  s12^2 (LO)                              pred    0.3455  data    0.3088  pull   +5.48
+  HEX  s12^2 (LO)                              pred    0.2500  data    0.3088  pull   -8.91
+  TBM/BM/GR/HEX s23^2 = 1/2 (LO)               pred    0.5000  data    0.4700  pull   +1.76
+  TBC  th13 = asin(s_C/sqrt2) [deg]            pred    9.1616  data    8.6200  pull   +4.92
+  lepton-GST th13 = asin(sqrt(me/mmu)/sqrt2)   pred    2.8186  data    8.6200  pull  -52.74
+  TM1  s12^2 from th13(data)                   pred    0.3180  data    0.3088  pull   +1.38
+  TM2  s12^2 from th13(data)                   pred    0.3410  data    0.3088  pull   +4.80
+  TM1  cos(delta) from data angles             -0.131  (data delta = 207 deg, cos = -0.891)
+  TM2  cos(delta) from data angles             +0.277  (data delta = 207 deg, cos = -0.891)
+  solar sum rule TBM  cos(delta)               -0.105
+  solar sum rule BM   cos(delta)               -1.267
+  solar sum rule GR1  cos(delta)               +0.292
+  solar sum rule GR2  cos(delta)               -0.190
+  solar sum rule HEX  cos(delta)               +0.476
+  Vdag_X   X=TBM  best over 2 phases: sum pull^2(angles) =    4.74  th12 33.50 th13 8.83 th23 42.57 delta 265
+  Vdag_X   X=BM   best over 2 phases: sum pull^2(angles) =   19.34  th12 35.38 th13 8.81 th23 42.30 delta 182
+  Vdag_X   X=GR1  best over 2 phases: sum pull^2(angles) =    4.60  th12 33.97 th13 8.83 th23 42.57 delta 74
+  Vdag_X   X=GR2  best over 2 phases: sum pull^2(angles) =    4.49  th12 33.92 th13 8.83 th23 42.57 delta 101
+  Vdag_X   X=HEX  best over 2 phases: sum pull^2(angles) =    4.42  th12 33.87 th13 8.83 th23 42.57 delta 64
+  V_X_Vdag X=TBM  best over 2 phases: sum pull^2(angles) =   56.30  th12 31.58 th13 8.04 th23 43.07 delta 354
+  V_X_Vdag X=BM   best over 2 phases: sum pull^2(angles) =    0.20  th12 33.69 th13 8.58 th23 43.50 delta 82
+  V_X_Vdag X=GR1  best over 2 phases: sum pull^2(angles) =  208.30  th12 28.13 th13 8.13 th23 43.19 delta 359
+  V_X_Vdag X=GR2  best over 2 phases: sum pull^2(angles) =   41.42  th12 31.98 th13 8.10 th23 43.07 delta 345
+  V_X_Vdag X=HEX  best over 2 phases: sum pull^2(angles) =  335.10  th12 26.44 th13 8.18 th23 43.16 delta 3
+  KM phases: delta_KM^q = 88.9, delta_KM^l = 208.6, sum mod 360 -> -62.4 deg
+
+=== IC23_woSKatm IO
+  QLC  th12 = 45 - theta_C [deg]               pred   31.9871  data   33.7600  pull   -4.32
+  QLC  th23 = 45 - theta_cb [deg]              pred   42.5992  data   48.1500  pull   -6.03
+  QLC' th23 = 45 + theta_cb [deg]              pred   47.4008  data   48.1500  pull   -0.81
+  SC   th12 = 45 - th13(data) [deg]            pred   36.3500  data   33.7600  pull   +6.17
+  TBM  s12^2 (LO)                              pred    0.3333  data    0.3088  pull   +3.66
+  BM   s12^2 (LO)                              pred    0.5000  data    0.3088  pull  +28.54
+  GR1  s12^2 (LO)                              pred    0.2764  data    0.3088  pull   -4.91
+  GR2  s12^2 (LO)                              pred    0.3455  data    0.3088  pull   +5.48
+  HEX  s12^2 (LO)                              pred    0.2500  data    0.3088  pull   -8.91
+  TBM/BM/GR/HEX s23^2 = 1/2 (LO)               pred    0.5000  data    0.5550  pull   -3.44
+  TBC  th13 = asin(s_C/sqrt2) [deg]            pred    9.1616  data    8.6500  pull   +4.65
+  lepton-GST th13 = asin(sqrt(me/mmu)/sqrt2)   pred    2.8186  data    8.6500  pull  -53.01
+  TM1  s12^2 from th13(data)                   pred    0.3179  data    0.3088  pull   +1.36
+  TM2  s12^2 from th13(data)                   pred    0.3410  data    0.3088  pull   +4.81
+  TM1  cos(delta) from data angles             +0.238  (data delta = 283 deg, cos = +0.225)
+  TM2  cos(delta) from data angles             -0.504  (data delta = 283 deg, cos = +0.225)
+  solar sum rule TBM  cos(delta)               -0.145
+  solar sum rule BM   cos(delta)               -1.508
+  solar sum rule GR1  cos(delta)               +0.321
+  solar sum rule GR2  cos(delta)               -0.244
+  solar sum rule HEX  cos(delta)               +0.537
+  Vdag_X   X=TBM  best over 2 phases: sum pull^2(angles) =   29.30  th12 33.72 th13 9.02 th23 44.28 delta 265
+  Vdag_X   X=BM   best over 2 phases: sum pull^2(angles) =   47.97  th12 35.56 th13 9.00 th23 44.07 delta 183
+  Vdag_X   X=GR1  best over 2 phases: sum pull^2(angles) =   29.29  th12 33.73 th13 9.02 th23 44.28 delta 74
+  Vdag_X   X=GR2  best over 2 phases: sum pull^2(angles) =   29.29  th12 33.76 th13 9.02 th23 44.28 delta 101
+  Vdag_X   X=HEX  best over 2 phases: sum pull^2(angles) =   29.41  th12 33.62 th13 9.02 th23 44.28 delta 64
+  V_X_Vdag X=TBM  best over 2 phases: sum pull^2(angles) =   79.62  th12 31.60 th13 8.00 th23 44.42 delta 353
+  V_X_Vdag X=BM   best over 2 phases: sum pull^2(angles) =   14.49  th12 33.68 th13 8.73 th23 44.72 delta 86
+  V_X_Vdag X=GR1  best over 2 phases: sum pull^2(angles) =  228.95  th12 28.20 th13 8.05 th23 44.49 delta 1
+  V_X_Vdag X=GR2  best over 2 phases: sum pull^2(angles) =   64.67  th12 31.99 th13 8.05 th23 44.42 delta 343
+  V_X_Vdag X=HEX  best over 2 phases: sum pull^2(angles) =  353.55  th12 26.51 th13 8.09 th23 44.52 delta 0
+  KM phases: delta_KM^q = 88.9, delta_KM^l = 284.4, sum mod 360 -> +13.4 deg
+
+=== IC24_wSKatm NO
+  QLC  th12 = 45 - theta_C [deg]               pred   31.9871  data   33.7600  pull   -4.32
+  QLC  th23 = 45 - theta_cb [deg]              pred   42.5992  data   43.2900  pull   -0.87
+  QLC' th23 = 45 + theta_cb [deg]              pred   47.4008  data   43.2900  pull   +4.28
+  SC   th12 = 45 - th13(data) [deg]            pred   36.3800  data   33.7600  pull   +6.24
+  TBM  s12^2 (LO)                              pred    0.3333  data    0.3088  pull   +3.66
+  BM   s12^2 (LO)                              pred    0.5000  data    0.3088  pull  +28.54
+  GR1  s12^2 (LO)                              pred    0.2764  data    0.3088  pull   -4.91
+  GR2  s12^2 (LO)                              pred    0.3455  data    0.3088  pull   +5.48
+  HEX  s12^2 (LO)                              pred    0.2500  data    0.3088  pull   -8.91
+  TBM/BM/GR/HEX s23^2 = 1/2 (LO)               pred    0.5000  data    0.4700  pull   +1.76
+  TBC  th13 = asin(s_C/sqrt2) [deg]            pred    9.1616  data    8.6200  pull   +4.92
+  lepton-GST th13 = asin(sqrt(me/mmu)/sqrt2)   pred    2.8186  data    8.6200  pull  -52.74
+  TM1  s12^2 from th13(data)                   pred    0.3180  data    0.3088  pull   +1.38
+  TM2  s12^2 from th13(data)                   pred    0.3410  data    0.3088  pull   +4.80
+  TM1  cos(delta) from data angles             -0.130  (data delta = 212 deg, cos = -0.848)
+  TM2  cos(delta) from data angles             +0.274  (data delta = 212 deg, cos = -0.848)
+  solar sum rule TBM  cos(delta)               -0.105
+  solar sum rule BM   cos(delta)               -1.267
+  solar sum rule GR1  cos(delta)               +0.292
+  solar sum rule GR2  cos(delta)               -0.190
+  solar sum rule HEX  cos(delta)               +0.476
+  Vdag_X   X=TBM  best over 2 phases: sum pull^2(angles) =    4.85  th12 33.50 th13 8.83 th23 42.57 delta 265
+  Vdag_X   X=BM   best over 2 phases: sum pull^2(angles) =   19.51  th12 35.38 th13 8.81 th23 42.30 delta 182
+  Vdag_X   X=GR1  best over 2 phases: sum pull^2(angles) =    4.71  th12 33.97 th13 8.83 th23 42.57 delta 74
+  Vdag_X   X=GR2  best over 2 phases: sum pull^2(angles) =    4.60  th12 33.92 th13 8.83 th23 42.57 delta 101
+  Vdag_X   X=HEX  best over 2 phases: sum pull^2(angles) =    4.52  th12 33.87 th13 8.83 th23 42.57 delta 64
+  V_X_Vdag X=TBM  best over 2 phases: sum pull^2(angles) =   56.31  th12 31.58 th13 8.04 th23 43.26 delta 354
+  V_X_Vdag X=BM   best over 2 phases: sum pull^2(angles) =    0.20  th12 33.69 th13 8.58 th23 43.50 delta 82
+  V_X_Vdag X=GR1  best over 2 phases: sum pull^2(angles) =  208.31  th12 28.13 th13 8.13 th23 43.19 delta 359
+  V_X_Vdag X=GR2  best over 2 phases: sum pull^2(angles) =   41.44  th12 31.98 th13 8.10 th23 43.07 delta 345
+  V_X_Vdag X=HEX  best over 2 phases: sum pull^2(angles) =  335.10  th12 26.44 th13 8.18 th23 43.34 delta 3
+  KM phases: delta_KM^q = 88.9, delta_KM^l = 213.8, sum mod 360 -> -57.3 deg
+
+=== IC24_wSKatm IO
+  QLC  th12 = 45 - theta_C [deg]               pred   31.9871  data   33.7600  pull   -4.32
+  QLC  th23 = 45 - theta_cb [deg]              pred   42.5992  data   47.9000  pull   -5.76
+  QLC' th23 = 45 + theta_cb [deg]              pred   47.4008  data   47.9000  pull   -0.54
+  SC   th12 = 45 - th13(data) [deg]            pred   36.3500  data   33.7600  pull   +6.17
+  TBM  s12^2 (LO)                              pred    0.3333  data    0.3088  pull   +3.66
+  BM   s12^2 (LO)                              pred    0.5000  data    0.3088  pull  +28.54
+  GR1  s12^2 (LO)                              pred    0.2764  data    0.3088  pull   -4.91
+  GR2  s12^2 (LO)                              pred    0.3455  data    0.3088  pull   +5.48
+  HEX  s12^2 (LO)                              pred    0.2500  data    0.3088  pull   -8.91
+  TBM/BM/GR/HEX s23^2 = 1/2 (LO)               pred    0.5000  data    0.5500  pull   -3.13
+  TBC  th13 = asin(s_C/sqrt2) [deg]            pred    9.1616  data    8.6500  pull   +4.65
+  lepton-GST th13 = asin(sqrt(me/mmu)/sqrt2)   pred    2.8186  data    8.6500  pull  -53.01
+  TM1  s12^2 from th13(data)                   pred    0.3179  data    0.3088  pull   +1.36
+  TM2  s12^2 from th13(data)                   pred    0.3410  data    0.3088  pull   +4.81
+  TM1  cos(delta) from data angles             +0.219  (data delta = 274 deg, cos = +0.070)
+  TM2  cos(delta) from data angles             -0.464  (data delta = 274 deg, cos = +0.070)
+  solar sum rule TBM  cos(delta)               -0.143
+  solar sum rule BM   cos(delta)               -1.494
+  solar sum rule GR1  cos(delta)               +0.319
+  solar sum rule GR2  cos(delta)               -0.241
+  solar sum rule HEX  cos(delta)               +0.533
+  Vdag_X   X=TBM  best over 2 phases: sum pull^2(angles) =   27.09  th12 33.72 th13 9.02 th23 44.28 delta 265
+  Vdag_X   X=BM   best over 2 phases: sum pull^2(angles) =   45.55  th12 35.54 th13 8.97 th23 43.86 delta 183
+  Vdag_X   X=GR1  best over 2 phases: sum pull^2(angles) =   27.08  th12 33.73 th13 9.02 th23 44.28 delta 74
+  Vdag_X   X=GR2  best over 2 phases: sum pull^2(angles) =   27.08  th12 33.76 th13 9.02 th23 44.28 delta 101
+  Vdag_X   X=HEX  best over 2 phases: sum pull^2(angles) =   27.20  th12 33.62 th13 9.02 th23 44.28 delta 64
+  V_X_Vdag X=TBM  best over 2 phases: sum pull^2(angles) =   77.49  th12 31.46 th13 8.03 th23 44.41 delta 348
+  V_X_Vdag X=BM   best over 2 phases: sum pull^2(angles) =   12.53  th12 33.68 th13 8.73 th23 44.72 delta 86
+  V_X_Vdag X=GR1  best over 2 phases: sum pull^2(angles) =  226.85  th12 28.20 th13 8.05 th23 44.49 delta 1
+  V_X_Vdag X=GR2  best over 2 phases: sum pull^2(angles) =   62.54  th12 31.99 th13 8.05 th23 44.42 delta 343
+  V_X_Vdag X=HEX  best over 2 phases: sum pull^2(angles) =  351.48  th12 26.51 th13 8.09 th23 44.52 delta 0
+  KM phases: delta_KM^q = 88.9, delta_KM^l = 276.1, sum mod 360 -> +5.0 deg
+
+=== within-sector mass relations
+  GST sqrt(m_d/m_s) = 0.2249 (m_d, m_s at 2 GeV) vs |V_us| = 0.2252; m_s/m_d error alone gives +-0.0019
+  Koide m_tau pred = 1776.969 MeV vs 1776.932 +0.085 MeV, pull +0.43
+  Koide-type neutrino (NO, signs (1, 1, 1)): m1 roots [eV] = []
+  Koide-type neutrino (NO, signs (-1, 1, 1)): m1 roots [eV] = [np.float64(0.00037)]

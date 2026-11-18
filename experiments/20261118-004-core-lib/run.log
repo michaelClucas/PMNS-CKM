@@ -1,0 +1,7 @@
+numpy 2.5.5, N = 1000000
+haar_unitary(1e6)                                2.471 s
+sample_haar_angles(1e6)                          0.114 s
+standard_matrix(1e6)                             0.559 s
+extract_angles(1e6)                              0.679 s
+jarlskog(1e6)                                    0.067 s
+rephase_to_standard(1e5)                         2.463 s
