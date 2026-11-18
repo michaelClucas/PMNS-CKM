@@ -1,11 +1,12 @@
 # Candidates
 
-Leaderboard of candidate relations. k = fitted free parameters (incl. data-selected discrete choices), N = observables reproduced. Fake-universe rate = fraction of synthetic datasets where the same search finds an equally good relation.
+Leaderboard of candidate relations. k = fitted free parameters (incl. data-selected discrete choices), N = observables reproduced. Fake-universe rate = fraction of synthetic datasets where the same search finds an equally good relation. Per the criterion-4 protocol in `STATE.md`, null rates from exps 007-010 come from nulls without a power check, so a high rate means "no evidence", not "excluded".
 
 | id | relation | k | N | χ² / p | fake-universe rate | status |
 |----|----------|---|---|--------|--------------------|--------|
-| L1 | U_PMNS = V_CKM Φ U_BM V_CKM†, Φ = diag(1,e^{iα},e^{iβ}) | 2 cont + 2 discrete | 4 | NO 5.89, IO 4.17 (global 5.65); p undefined (dof 0) | covered by F1 null: 36% | dropped (exp 006, 007) |
-| F1-best | U_PMNS = V X Φ V†, X = DEM (perm r4c5), α, β fitted | 2 cont + 11.4 bits | 4 | NO 0.79, local p 0.68, trials p 1 | 36% hierarchical null, 8% Haar null | ruled out (exp 007) |
-| F1-struct | V X Φ V†, X = HEX r1c0, α=180°, β=240° | 16.8 bits | 4 | NO 2.94, local p 0.57, trials p 1 | 19% hierarchical, 5% Haar | ruled out (exp 007) |
+| T1 | GUT scale: θ12 = sin(3 (m_u/m_c)^{1/4}), θ13 = sin(3 (m_u/m_t)^{1/4}) | ≈20 bits | 2 | NO 0.058, IO 0.046 | ~1% for its cell, ~8% after cell selection | lead; fails compression; fails at M_Z (exp 010) |
+| F2-LO | U_e(θ12e=θ_C, θ23e=θ_cb)† Φ U_TBM/GR2 | 1 + 14.1 bits | 4 | NO 7.21, p 0.065, trials p 1 | 46% hierarchical null | fails compression; no evidence (exp 009) |
+| F1-best | U_PMNS = V X Φ V†, X = DEM, α, β fitted | 2 + 11.4 bits | 4 | NO 0.79, local p 0.68, trials p 1 | 36% hierarchical, 8% Haar | fails compression; no evidence (exp 007) |
+| L1 | V_CKM Φ U_BM V_CKM† | 2 + 2 discrete | 4 | NO 5.89, IO 4.17 | covered by F1 null | dropped (exp 006, 007) |
 
-Known baselines: official scores in `experiments/20261118-006-baseline-scores/results.csv`. None passes k ≤ N-2 with acceptable p.
+Known baselines: `experiments/20261118-006-baseline-scores/results.csv`. None passes k ≤ N-2 with acceptable p.

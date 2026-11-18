@@ -1,0 +1,39 @@
+{
+ "variant": "so10_II",
+ "n_heldout": 19999,
+ "I_pmns_ckm_given_masses_nats": -0.2152,
+ "stderr": 0.0066,
+ "mean_logq_ql": 9.921,
+ "mean_logq_mass": 10.136,
+ "ql_predictive_hpd_coverage_at_0.5_0.68_0.95": [
+  0.403,
+  0.583,
+  0.907
+ ],
+ "real_data_ql_predictive": {
+  "median": {
+   "s12sq": 0.0023,
+   "s13sq": 0.0001,
+   "s23sq": 0.0111,
+   "dl": 3.1172,
+   "lg_dm": -2.7273
+  },
+  "q16_84": [
+   [
+    -0.0072,
+    -0.0005,
+    -0.0073,
+    1.5894,
+    -3.366
+   ],
+   [
+    0.0116,
+    0.0008,
+    0.03,
+    4.8952,
+    -2.4917
+   ]
+  ],
+  "measured_hpd_level": 1.0
+ }
+}

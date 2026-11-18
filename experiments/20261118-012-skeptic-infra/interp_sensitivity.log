@@ -1,0 +1,4 @@
+TM1 NO: linear chi2 5.1146  cubic chi2 5.0841  (diff +0.0305)
+   random points within 3 sigma: linear - cubic: median +0.039, 95th pct 0.090, max |diff| 0.119
+TM1 IO: linear chi2 1.8208  cubic chi2 1.8031  (diff +0.0177)
+   random points within 3 sigma: linear - cubic: median +0.045, 95th pct 0.092, max |diff| 0.123

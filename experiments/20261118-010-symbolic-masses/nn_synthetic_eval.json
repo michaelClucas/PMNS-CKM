@@ -1,0 +1,41 @@
+{
+ "auc_planted_vs_haar": 0.7902302742004395,
+ "frac_true_var_leaves_in_top4": 0.42633333333333334,
+ "recovery_n": 40,
+ "recovery": {
+  "brute_C6": 24,
+  "nn_guided_C7": 7,
+  "random_alphabet_C7": 0
+ },
+ "recovery_by_planted_complexity": {
+  "5": {
+   "n": 14,
+   "brute_C6": 14,
+   "nn_C7": 2,
+   "random_C7": 0
+  },
+  "6": {
+   "n": 7,
+   "brute_C6": 7,
+   "nn_C7": 3,
+   "random_C7": 0
+  },
+  "7": {
+   "n": 12,
+   "brute_C6": 2,
+   "nn_C7": 2,
+   "random_C7": 0
+  },
+  "8": {
+   "n": 7,
+   "brute_C6": 1,
+   "nn_C7": 0,
+   "random_C7": 0
+  }
+ },
+ "guided_set_size_median": {
+  "nn": 243316.5,
+  "rand": 220433.5
+ },
+ "brute_set_size": 4793010
+}

@@ -1,0 +1,830 @@
+so10_I ql: 100 starts in 506s; chi2 quantiles [0. 0. 0. 0.]; n(chi2<6)=67
+  chi2 0.00 IO=0 pulls: lg_mu_mc=-0.0 lg_mc_mt=+0.0 lg_md_ms=+0.0 lg_ms_mb=-0.0 lg_mb_mt=+0.0 lg_me_mmu=+0.0 lg_mmu_mtau=+0.0 lg_mtau_mb=-0.0 s12q=-0.0 lg_s13q=+0.0 lg_s23q=+0.0 dq=+0.0 s12sq_l=-46.1 s13sq_l=-38.9 s23sq_l=-30.2 dl=+7.3 lg_dm21_dm3l=-72.9
+  chi2 0.00 IO=0 pulls: lg_mu_mc=-0.0 lg_mc_mt=-0.0 lg_md_ms=-0.0 lg_ms_mb=+0.0 lg_mb_mt=+0.0 lg_me_mmu=+0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=+0.0 s12q=-0.0 lg_s13q=+0.0 lg_s23q=-0.0 dq=-0.0 s12sq_l=-46.3 s13sq_l=-39.2 s23sq_l=-30.2 dl=+5.5 lg_dm21_dm3l=-77.6
+  chi2 0.00 IO=0 pulls: lg_mu_mc=+0.0 lg_mc_mt=+0.0 lg_md_ms=+0.0 lg_ms_mb=-0.0 lg_mb_mt=+0.0 lg_me_mmu=-0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=-0.0 s12q=+0.0 lg_s13q=-0.0 lg_s23q=+0.0 dq=+0.0 s12sq_l=-46.4 s13sq_l=-39.3 s23sq_l=-30.3 dl=+2.7 lg_dm21_dm3l=-79.7
+hi2 0.00 IO=0 pulls: lg_mu_mc=+0.0 lg_mc_mt=+0.0 lg_md_ms=-0.0 lg_ms_mb=-0.0 lg_mb_mt=+0.0 lg_me_mmu=-0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=-0.0 s12q=+0.0 lg_s13q=+0.0 lg_s23q=+0.0 dq=+0.0 s12sq_l=-46.2 s13sq_l=-39.2 s23sq_l=-30.2 dl=-1.7 lg_dm21_dm3l=-79.7
+so10_II ql: 32 starts in 175s; chi2 quantiles [0. 0. 0. 0.]; n(chi2<6)=18
+  chi2 0.00 IO=0 pulls: lg_mu_mc=-0.0 lg_mc_mt=+0.0 lg_md_ms=-0.0 lg_ms_mb=-0.0 lg_mb_mt=-0.0 lg_me_mmu=+0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=-0.0 s12q=+0.0 lg_s13q=+0.0 lg_s23q=+0.0 dq=+0.0 s12sq_l=-36.8 s13sq_l=-35.0 s23sq_l=-28.8 dl=-3.8 lg_dm21_dm3l=-92.3
+  chi2 0.00 IO=0 pulls: lg_mu_mc=-0.0 lg_mc_mt=-0.0 lg_md_ms=+0.0 lg_ms_mb=+0.0 lg_mb_mt=+0.0 lg_me_mmu=-0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=+0.0 s12q=-0.0 lg_s13q=-0.0 lg_s23q=-0.0 dq=+0.0 s12sq_l=-44.7 s13sq_l=-37.7 s23sq_l=-29.8 dl=-7.1 lg_dm21_dm3l=-89.7
+  chi2 0.00 IO=0 pulls: lg_mu_mc=+0.0 lg_mc_mt=+0.0 lg_md_ms=-0.0 lg_ms_mb=-0.0 lg_mb_mt=+0.0 lg_me_mmu=-0.0 lg_mmu_mtau=-0.0 lg_mtau_mb=-0.0 s12q=+0.0 lg_s13q=+0.0 lg_s23q=+0.0 dq=+0.0 s12sq_l=-45.1 s13sq_l=-35.8 s23sq_l=-29.1 dl=+7.4 lg_dm21_dm3l=-46.3
+broad_so10_I: ds=ds_broad_so10_I.npz variant=so10_I target=theta cond=  so10_I ql it 4000/20000 acc 0.020 median -  epoch 1 train 1.0265 val 1.6233 lr 1.0e-03 t=687s
+broad_so10_I: done, best val NLL 1.6233 (standardised units), 1 epochs, 687s
+5 median -2lnL 6.91 min 2.40 t=155s
+  so10_I ql it 10000/20000 acc 0.014 median -2lnL 7.09 min 2.26 t=196s
+  so10_I ql it 12000/20000 acc 0.013 median -2lnL 7.16 min 2.36 t=236s
+  so10_I ql it 14000/20000 acc 0.013 median -2lnL 7.04 min 1.99 t=273s
+  so10_I ql it 16000/20000 acc 0.012 median -2lnL 8.04 min 0.90 t=316s
+  so10_I ql it 18000/20000 acc 0.012 median -2lnL 7.52 min 1.39 t=361s
+  so10_I ql it 20000/20000 acc 0.012 median -2lnL 8.00 min 1.84 t=406s
+so10_I ql: saved 38400 samples
+  so10_II ql it 2000/20000 acc 0.026 median -2lnL 3.26 min 0.40 t=35s
+  so10_II ql it 4000/20000 acc 0.020 median -2lnL 5.16 min 1.26 t=72s
+  so10_II ql it 6000/20000 acc 0.017 median -2lnL 6.38 min 1.79 t=150s
+  so10_II ql it 8000/20000 acc 0.015 median -2lnL 6.91 min 2.40 t=219s
+  so10_II ql it 10000/20000 acc 0.014 median -2lnL 7.09 min 2.26 t=291s
+broad_so10_II: ds=ds_broad_so10_II.npz variant=so10_II target=theta cond=  so10_II ql it 14000/20000 acc 0.013 median  epoch 1 train 0.2299 val -3.1878 lr 1.0e-03 t=665s
+broad_so10_II: done, best val NLL -3.1878 (standardised units), 1 epochs, 665s
+0.012 median -2lnL 7.52 min 1.39 t=401s
+  so10_II ql it 20000/20000 acc 0.012 median -2lnL 8.00 min 1.84 t=423s
+so10_II ql: saved 38400 samples
+  so10_I all it 2000/20000 acc 0.015 median -2lnL 229.32 min 184.05 t=22s
+  so10_I all it 4000/20000 acc 0.012 median -2lnL 179.18 min 157.48 t=43s
+  so10_I all it 6000/20000 acc 0.012 median -2lnL 160.87 min 147.07 t=67s
+  so10_I all it 8000/20000 acc 0.013 median -2lnL 151.29 min 138.62 t=92s
+  so10_I all it 10000/20000 acc 0.013 median -2lnL 147.67 min 135.11 t=117s
+  so10_I all it 12000/20000 acc 0.014 median -2lnL 144.85 min 133.42 t=140s
+  so10_I all it 14000/20000 acc 0.014 median -2lnL 143.03 min 134.37 t=161s
+  so10_I all it 16000/20000 acc 0.015 median -2lnL 142.82 min 134.66 t=183s
+  so10_I all it 18000/20000 acc 0.015 median -2lnL 142.42 min 132.86 t=204s
+  so10_I all it 20000/20000 acc 0.015 median -2lnL 141.94 min 133.10 t=225s
+so10_I all: saved 38400 samples
+  so10_II all it 2000/20000 acc 0.025 median -2lnL 488.98 min 469.80 t=19s
+  so10_II all it 4000/20000 acc 0.021 median -2lnL 477.26 min 465.20 t=40s
+  so10_II all it 6000/20000 acc 0.020 median -2lnL 473.88 min 464.75 t=61s
+  so10_II all it 8000/20000 acc 0.020 median -2lnL 473.37 min 464.36 t=93s
+  so10_II all it 10000/20000 acc 0.019 median -2lnL 474.00 min 463.53 t=137s
+  so10_II all it 12000/20000 acc 0.019 median -2lnL 473.28 min 463.97 t=193s
+  so10_II all it 14000/20000 acc 0.018 median -2lnL 473.90 min 464.43 t=241s
+  so10_II all it 16000/20000 acc 0.018 median -2lnL 473.44 min 463.37 t=256s
+  so10_II all it 18000/20000 acc 0.018 median -2lnL 473.57 min 464.34 t=269s
+  so10_II all it 20000/20000 acc 0.018 median -2lnL 473.12 min 463.53 t=282s
+so10_II all: saved 38400 samples
+LANE_B_DONE
+{
+ "ql_posterior": {
+  "n": 38400,
+  "n_chains": 192,
+  "frac_IO": 0.0,
+  "chi2_ql_median": 7.49
+ },
+ "heldout_pmns_from_ql": {
+  "s12sq_l": {
+   "measured": 0.30882904621786955,
+   "PIT": 0.9995,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0002,
+    0.0006,
+    0.0013,
+    0.0025,
+    0.0039
+   ]
+  },
+  "s13sq_l": {
+   "measured": 0.022464164178239956,
+   "PIT": 0.9998,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0001,
+    0.0002,
+    0.0003
+   ]
+  },
+  "s23sq_l": {
+   "measured": 0.4698441600650373,
+   "PIT": 1.0,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0002,
+    0.0003,
+    0.0008,
+    0.0014,
+    0.0023
+   ]
+  },
+  "dl": {
+   "measured": 207.00023714551446,
+   "PIT": 0.3892,
+   "pred_q2.5_16_50_84_97.5": [
+    6.1207,
+    65.0413,
+    221.4136,
+    319.9252,
+    352.0952
+   ]
+  },
+  "lg_dm21_dm3l": {
+   "measured": -1.5243603704167268,
+   "PIT": 0.9985,
+   "pred_q2.5_16_50_84_97.5": [
+    -2.6979,
+    -2.6082,
+    -2.5098,
+    -2.3892,
+    -2.3346
+   ]
+  },
+  "chi2_gauss_5obs": {
+   "min": 970.27,
+   "q05_50": [
+    8616.2,
+    10335.2
+   ],
+   "frac_below_11.07": 0.0
+  },
+  "nufit_dchi2_4par": {
+   "min": 10000.0,
+   "median": 10000.0,
+   "frac_below_9.49": 0.0
+  }
+ },
+ "prior_predictive_pmns": {
+  "s12sq_l": {
+   "measured": 0.30882904621786955,
+   "PIT": 0.9917,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0008,
+    0.0256,
+    0.1676
+   ]
+  },
+  "s13sq_l": {
+   "measured": 0.022464164178239956,
+   "PIT": 0.9993,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0,
+    0.0001,
+    0.0013
+   ]
+  },
+  "s23sq_l": {
+   "measured": 0.4698441600650373,
+   "PIT": 0.9995,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0001,
+    0.0016,
+    0.0216
+   ]
+  },
+  "dl": {
+   "measured": 207.00023714551446,
+   "PIT": 0.4413,
+   "pred_q2.5_16_50_84_97.5": [
+    4.369,
+    36.8962,
+    179.8642,
+    322.4967,
+    355.4132
+   ]
+  },
+  "lg_dm21_dm3l": {
+   "measured": -1.5243603704167268,
+   "PIT": 0.9953,
+   "pred_q2.5_16_50_84_97.5": [
+    -6.3321,
+    -5.0852,
+    -3.976,
+    -2.9035,
+    -2.3283
+   ]
+  },
+  "chi2_gauss_5obs": {
+   "min": 232.37,
+   "q05_50": [
+    9791.0,
+    39936.7
+   ],
+   "frac_below_11.07": 0.0
+  },
+  "nufit_dchi2_4par": {
+   "min": 10000.0,
+   "median": 10000.0,
+   "frac_below_9.49": 0.0
+  }
+ }
+}
+{
+ "source": "best DE-MC 'all' sample (no least-squares full fit available)",
+ "best_chi2_17obs": 131.75,
+ "best_is_IO": 0,
+ "pulls_at_best": {
+  "lg_mu_mc": 0.11,
+  "lg_mc_mt": 2.54,
+  "lg_md_ms": -4.24,
+  "lg_ms_mb": -1.53,
+  "lg_mb_mt": -0.17,
+  "lg_me_mmu": 0.05,
+  "lg_mmu_mtau": -0.63,
+  "lg_mtau_mb": -0.35,
+  "s12q": 3.47,
+  "lg_s13q": -0.0,
+  "lg_s23q": 1.11,
+  "dq": 4.18,
+  "s12sq_l": 0.15,
+  "s13sq_l": -0.53,
+  "s23sq_l": -5.34,
+  "dl": 6.5,
+  "lg_dm21_dm3l": 1.59
+ },
+ "n_starts_chi2_below_17": 0,
+ "n_starts": 38400,
+ "mcmc_chi2_q05_50_95": [
+  136.56,
+  143.61,
+  156.26
+ ]
+}
+MI pmns vs theta: {"s12sq_l": {"arg_s": 1.475, "a3": 1.418, "lg_r": 1.418, "a3_sin": 1.404, "phi2_sin": 1.403, "lg_abs_s": 1.402}, "s13sq_l": {"arg_s": 1.447, "lg_abs_s": 1.415, "lg_r": 1.366, "a3": 1.356, "a2_sin": 1.355, "a3_sin": 1.35}, "s23sq_l": {"arg_s": 1.481, "lg_abs_s": 1.44, "a3": 1.431, "phi2_sin": 1.426, "lg_r": 1.425, "phi1": 1.406}, "dl": {"arg_s": 1.699, "lg_r": 1.625, "arg_s_sin": 1.595, "lg_abs_s": 1.574, "a2": 1.546, "phi1": 1.545}, "lg_dm21_dm3l": {"arg_s": 1.583, "arg_s_sin": 1.544, "lg_r": 1.531, "lg_abs_s": 1.468, "a3_sin": 1.416, "phi3": 1.396}}
+MI pmns vs ql obs: {"s12sq_l": {"lg_mu_mc": 1.075, "lg_mc_mt": 1.182, "lg_md_ms": 1.232, "lg_ms_mb": 1.263, "lg_mb_mt": 1.341, "lg_me_mmu": 0.734, "lg_mmu_mtau": 0.946, "lg_mtau_mb": 1.256, "s12q": 1.254, "lg_s13q": 1.203, "lg_s23q": 1.311, "dq": 1.267}, "s13sq_l": {"lg_mu_mc": 1.059, "lg_mc_mt": 1.174, "lg_md_ms": 1.23, "lg_ms_mb": 1.246, "lg_mb_mt": 1.334, "lg_me_mmu": 0.722, "lg_mmu_mtau": 0.969, "lg_mtau_mb": 1.233, "s12q": 1.217, "lg_s13q": 1.162, "lg_s23q": 1.291, "dq": 1.184}, "s23sq_l": {"lg_mu_mc": 1.065, "lg_mc_mt": 1.188, "lg_md_ms": 1.255, "lg_ms_mb": 1.259, "lg_mb_mt": 1.383, "lg_me_mmu": 0.704, "lg_mmu_mtau": 0.911, "lg_mtau_mb": 1.242, "s12q": 1.229, "lg_s13q": 1.237, "lg_s23q": 1.34, "dq": 1.22}, "dl": {"lg_mu_mc": 1.121, "lg_mc_mt": 1.221, "lg_md_ms": 1.331, "lg_ms_mb": 1.344, "lg_mb_mt": 1.477, "lg_me_mmu": 0.735, "lg_mmu_mtau": 1.066, "lg_mtau_mb": 1.28, "s12q": 1.28, "lg_s13q": 1.268, "lg_s23q": 1.422, "dq": 1.289}, "lg_dm21_dm3l": {"lg_mu_mc": 1.111, "lg_mc_mt": 1.178, "lg_md_ms": 1.221, "lg_ms_mb": 1.324, "lg_mb_mt": 1.36, "lg_me_mmu": 0.785, "lg_mmu_mtau": 1.117, "lg_mtau_mb": 1.229, "s12q": 1.252, "lg_s13q": 1.233, "lg_s23q": 1.34, "dq": 1.25}}
+{
+ "ql_posterior": {
+  "n": 38400,
+  "n_chains": 192,
+  "frac_IO": 0.0,
+  "chi2_ql_median": 7.49
+ },
+ "heldout_pmns_from_ql": {
+  "s12sq_l": {
+   "measured": 0.30882904621786955,
+   "PIT": 0.8578,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0089,
+    0.0114,
+    0.0274,
+    0.2937,
+    0.4662
+   ]
+  },
+  "s13sq_l": {
+   "measured": 0.022464164178239956,
+   "PIT": 1.0,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0009,
+    0.0012,
+    0.0039,
+    0.0088,
+    0.0112
+   ]
+  },
+  "s23sq_l": {
+   "measured": 0.4698441600650373,
+   "PIT": 1.0,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0069,
+    0.0084,
+    0.0306,
+    0.0712,
+    0.0954
+   ]
+  },
+  "dl": {
+   "measured": 207.00023714551446,
+   "PIT": 0.4494,
+   "pred_q2.5_16_50_84_97.5": [
+    2.7613,
+    21.672,
+    64.4535,
+    341.1436,
+    356.79
+   ]
+  },
+  "lg_dm21_dm3l": {
+   "measured": -1.5243603704167268,
+   "PIT": 0.8954,
+   "pred_q2.5_16_50_84_97.5": [
+    -2.9822,
+    -2.7336,
+    -2.2291,
+    -1.6889,
+    -1.3165
+   ]
+  },
+  "chi2_gauss_5obs": {
+   "min": 1185.68,
+   "q05_50": [
+    2694.7,
+    6081.6
+   ],
+   "frac_below_11.07": 0.0
+  },
+  "nufit_dchi2_4par": {
+   "min": 10000.0,
+   "median": 10000.0,
+   "frac_below_9.49": 0.0
+  }
+ },
+ "prior_predictive_pmns": {
+  "s12sq_l": {
+   "measured": 0.30882904621786955,
+   "PIT": 0.9954,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0001,
+    0.0056,
+    0.0953
+   ]
+  },
+  "s13sq_l": {
+   "measured": 0.022464164178239956,
+   "PIT": 0.9997,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0005
+   ]
+  },
+  "s23sq_l": {
+   "measured": 0.4698441600650373,
+   "PIT": 0.9998,
+   "pred_q2.5_16_50_84_97.5": [
+    0.0,
+    0.0,
+    0.0,
+    0.0003,
+    0.0086
+   ]
+  },
+  "dl": {
+   "measured": 207.00023714551446,
+   "PIT": 0.49,
+   "pred_q2.5_16_50_84_97.5": [
+    7.4505,
+    52.8905,
+    180.2843,
+    306.8502,
+    352.5467
+   ]
+  },
+  "lg_dm21_dm3l": {
+   "measured": -1.5243603704167268,
+   "PIT": 0.9979,
+   "pred_q2.5_16_50_84_97.5": [
+    -5.7495,
+    -4.8411,
+    -3.9007,
+    -2.8932,
+    -2.3776
+   ]
+  },
+  "chi2_gauss_5obs": {
+   "min": 108.48,
+   "q05_50": [
+    10111.0,
+    37867.3
+   ],
+   "frac_below_11.07": 0.0
+  },
+  "nufit_dchi2_4par": {
+   "min": 10000.0,
+   "median": 10000.0,
+   "frac_below_9.49": 0.0
+  }
+ }
+}
+{
+ "source": "best DE-MC 'all' sample (no least-squares full fit available)",
+ "best_chi2_17obs": 462.62,
+ "best_is_IO": 0,
+ "pulls_at_best": {
+  "lg_mu_mc": 0.09,
+  "lg_mc_mt": 0.48,
+  "lg_md_ms": -0.94,
+  "lg_ms_mb": 3.69,
+  "lg_mb_mt": 0.04,
+  "lg_me_mmu": 0.23,
+  "lg_mmu_mtau": -0.57,
+  "lg_mtau_mb": -10.13,
+  "s12q": 0.56,
+  "lg_s13q": 0.07,
+  "lg_s23q": -3.98,
+  "dq": 2.44,
+  "s12sq_l": -1.28,
+  "s13sq_l": -0.6,
+  "s23sq_l": -16.39,
+  "dl": 7.21,
+  "lg_dm21_dm3l": 0.39
+ },
+ "n_starts_chi2_below_17": 0,
+ "n_starts": 38400,
+ "mcmc_chi2_q05_50_95": [
+  466.71,
+  473.42,
+  483.47
+ ]
+}
+MI pmns vs theta: {"s12sq_l": {"lg_r": 2.433, "arg_s": 2.419, "a3_sin": 2.394, "a2_sin": 2.373, "a3": 2.358, "phi2_sin": 2.354}, "s13sq_l": {"lg_r": 2.351, "arg_s": 2.191, "a3_sin": 2.144, "a3": 2.109, "lg_abs_s": 2.078, "arg_s_sin": 2.072}, "s23sq_l": {"lg_r": 2.723, "arg_s": 2.528, "a3": 2.463, "arg_s_sin": 2.447, "a2_sin": 2.439, "a3_sin": 2.439}, "dl": {"lg_r": 2.512, "a3_sin": 2.46, "a3": 2.455, "a2": 2.449, "phi1": 2.448, "phi2_sin": 2.442}, "lg_dm21_dm3l": {"lg_r": 2.701, "a3_sin": 2.605, "a3": 2.578, "a2": 2.564, "phi3": 2.562, "phi1": 2.559}}
+MI pmns vs ql obs: {"s12sq_l": {"lg_mu_mc": 1.492, "lg_mc_mt": 1.713, "lg_md_ms": 1.778, "lg_ms_mb": 1.84, "lg_mb_mt": 2.215, "lg_me_mmu": 0.731, "lg_mmu_mtau": 1.083, "lg_mtau_mb": 1.727, "s12q": 1.739, "lg_s13q": 1.71, "lg_s23q": 1.977, "dq": 1.809}, "s13sq_l": {"lg_mu_mc": 1.388, "lg_mc_mt": 1.579, "lg_md_ms": 1.679, "lg_ms_mb": 1.647, "lg_mb_mt": 2.005, "lg_me_mmu": 0.791, "lg_mmu_mtau": 1.167, "lg_mtau_mb": 1.743, "s12q": 1.641, "lg_s13q": 1.589, "lg_s23q": 1.803, "dq": 1.688}, "s23sq_l": {"lg_mu_mc": 1.533, "lg_mc_mt": 1.726, "lg_md_ms": 1.806, "lg_ms_mb": 1.857, "lg_mb_mt": 2.341, "lg_me_mmu": 0.773, "lg_mmu_mtau": 1.192, "lg_mtau_mb": 2.066, "s12q": 1.791, "lg_s13q": 1.747, "lg_s23q": 2.078, "dq": 1.849}, "dl": {"lg_mu_mc": 1.514, "lg_mc_mt": 1.769, "lg_md_ms": 1.813, "lg_ms_mb": 1.91, "lg_mb_mt": 2.209, "lg_me_mmu": 0.743, "lg_mmu_mtau": 1.111, "lg_mtau_mb": 1.747, "s12q": 1.776, "lg_s13q": 1.765, "lg_s23q": 2.055, "dq": 1.815}, "lg_dm21_dm3l": {"lg_mu_mc": 1.589, "lg_mc_mt": 1.8, "lg_md_ms": 1.893, "lg_ms_mb": 2.147, "lg_mb_mt": 2.464, "lg_me_mmu": 0.783, "lg_mmu_mtau": 1.227, "lg_mtau_mb": 1.867, "s12q": 1.885, "lg_s13q": 1.769, "lg_s23q": 2.196, "dq": 1.944}}
+so10_II 686 [([np.float64(-1.0), np.float64(-0.4)], 69, 0.0299, 0.0), ([np.float64(-0.4), np.float64(-0.2)], 73, 0.0207, 0.0), ([np.float64(-0.2), np.float64(-0.1)], 62, 0.0154, 0.0), ([np.float64(-0.1), np.float64(-0.05)], 31, 0.0096, 0.0323), ([np.float64(-0.05), np.float64(0.05)], 85, 0.0078, 0.0588), ([np.float64(0.05), np.float64(0.1)], 26, 0.0093, 0.0), ([np.float64(0.1), np.float64(0.2)], 65, 0.0036, 0.0), ([np.float64(0.2), np.float64(0.4)], 121, 0.0019, 0.0), ([np.float64(0.4), np.float64(1.0)], 148, 0.0004, 0.0)]
+so10_I 686 [([np.float64(-1.0), np.float64(-0.4)], 69, 0.0284, 0.0), ([np.float64(-0.4), np.float64(-0.2)], 73, 0.0207, 0.0), ([np.float64(-0.2), np.float64(-0.1)], 62, 0.0136, 0.0), ([np.float64(-0.1), np.float64(-0.05)], 31, 0.0114, 0.0), ([np.float64(-0.05), np.float64(0.05)], 85, 0.0103, 0.0), ([np.float64(0.05), np.float64(0.1)], 26, 0.0149, 0.0385), ([np.float64(0.1), np.float64(0.2)], 65, 0.0134, 0.0154), ([np.float64(0.2), np.float64(0.4)], 121, 0.0162, 0.0), ([np.float64(0.4), np.float64(1.0)], 148, 0.0028, 0.0068)]
+pred_ql_so10_II: ds=ds_broad_so10_II.npz variant=so10_II target=pmns cond=ql n_train=979960 n_val=19999 nf=5 nc=13
+  epoch 1 train 2.1861 val 3.4094 lr 1.0e-03 t=257s
+pred_ql_so10_II: done, best val NLL 3.4094 (standardised units), 1 epochs, 257s
+ad_so10_I",
+ "hpd_coverage": {
+  "0.05": 0.07,
+  "0.1": 0.167,
+  "0.15": 0.227,
+  "0.2": 0.28,
+  "0.25": 0.36,
+  "0.3": 0.453,
+  "0.35": 0.517,
+  "0.4": 0.55,
+  "0.45": 0.63,
+  "0.5": 0.69,
+  "0.55": 0.723,
+  "0.6": 0.76,
+  "0.65": 0.807,
+  "0.7": 0.837,
+  "0.75": 0.867,
+  "0.8": 0.91,
+  "0.85": 0.93,
+  "0.9": 0.953,
+  "0.95": 0.973
+ },
+ "real_NO": {
+  "frac_in_box": 0.53375,
+  "post_pred_chi2_all_quantiles_5_50_95": [
+   25758.5,
+   80255.2,
+   171611.2
+  ],
+  "post_pred_chi2_ql_quantiles_5_50_95": [
+   8479.7,
+   16232.2,
+   37295.3
+  ],
+  "post_pred_frac_IO": 0.0001873536299765808,
+  "post_mean": {
+   "lg_u1_u2": -2.64,
+   "lg_u2_u3": -2.519,
+   "lg_u3_d3": 1.895,
+   "lg_d1_d2": -1.294,
+   "lg_d2_d3": -1.623,
+   "s12q": 0.233,
+   "lg_s13q": -2.268,
+   "lg_s23q": -1.306,
+   "dq": 0.258,
+   "a2": 3.971,
+   "a3": 3.195,
+   "phi1": 2.588,
+   "phi2": 3.13,
+   "phi3": 3.199,
+   "lg_r": 1.499,
+   "lg_abs_s": -0.708,
+   "arg_s": 2.993
+  },
+  "post_sd_over_prior_sd": {
+   "lg_u1_u2": 0.046,
+   "lg_u2_u3": 0.237,
+   "lg_u3_d3": 0.049,
+   "lg_d1_d2": 0.048,
+   "lg_d2_d3": 0.136,
+   "s12q": 0.05,
+   "lg_s13q": 0.147,
+   "lg_s23q": 0.088,
+   "dq": 0.3,
+   "a2": 0.834,
+   "a3": 1.006,
+   "phi1": 1.031,
+   "phi2": 1.104,
+   "phi3": 1.165,
+   "lg_r": 0.368,
+   "lg_abs_s": 0.732,
+   "arg_s": 0.752
+  }
+ },
+ "real_IO": {
+  "frac_in_box": 0.4899,
+  "post_pred_chi2_all_quantiles_5_50_95": [
+   26199.1,
+   93673.3,
+   196421.5
+  ],
+  "post_pred_chi2_ql_quantiles_5_50_95": [
+   9242.1,
+   16532.4,
+   36229.2
+  ],
+  "post_pred_frac_IO": 0.0,
+  "post_mean": {
+   "lg_u1_u2": -2.609,
+   "lg_u2_u3": -2.542,
+   "lg_u3_d3": 1.925,
+   "lg_d1_d2": -1.243,
+   "lg_d2_d3": -1.578,
+   "s12q": 0.23,
+   "lg_s13q": -2.231,
+   "lg_s23q": -1.254,
+   "dq": 0.415,
+   "a2": 4.017,
+   "a3": 3.342,
+   "phi1": 2.148,
+   "phi2": 3.174,
+   "phi3": 3.085,
+   "lg_r": 1.531,
+   "lg_abs_s": -0.838,
+   "arg_s": 2.94
+  },
+  "post_sd_over_prior_sd": {
+   "lg_u1_u2": 0.054,
+   "lg_u2_u3": 0.278,
+   "lg_u3_d3": 0.045,
+   "lg_d1_d2": 0.032,
+   "lg_d2_d3": 0.182,
+   "s12q": 0.048,
+   "lg_s13q": 0.154,
+   "lg_s23q": 0.072,
+   "dq": 0.237,
+   "a2": 0.774,
+   "a3": 1.058,
+   "phi1": 1.004,
+   "phi2": 1.103,
+   "phi3": 1.151,
+   "lg_r": 0.335,
+   "lg_abs_s": 0.768,
+   "arg_s": 0.771
+  }
+ }
+}
+rank p-values: {'lg_u1_u2': 0.1088, 'lg_u2_u3': 0.0, 'lg_u3_d3': 0.0295, 'lg_d1_d2': 0.0032, 'lg_d2_d3': 0.0, 's12q': 0.0, 'lg_s13q': 0.0276, 'lg_s23q': 0.0, 'dq': 0.0, 'a2': 0.3896, 'a3': 0.8677, 'phi1': 0.6232, 'phi2': 0.0641, 'phi3': 0.5544, 'lg_r': 0.011, 'lg_abs_s': 0.1783, 'arg_s': 0.5075}
+65% marginal coverage: {'lg_u1_u2': 0.713, 'lg_u2_u3': 0.443, 'lg_u3_d3': 0.723, 'lg_d1_d2': 0.683, 'lg_d2_d3': 0.83, 's12q': 0.547, 'lg_s13q': 0.717, 'lg_s23q': 0.783, 'dq': 0.733, 'a2': 0.63, 'a3': 0.613, 'phi1': 0.62, 'phi2': 0.68, 'phi3': 0.667, 'lg_r': 0.66, 'lg_abs_s': 0.67, 'arg_s': 0.637}
+{
+ "variant": "so10_I",
+ "source": "mcmc_so10_I_ql.npz",
+ "n_run": 200,
+ "sec_per_sample": 0.108,
+ "mean_shift_GUT_to_MZ": {
+  "lg_mu_mc": 0.0,
+  "lg_mc_mt": 0.05456,
+  "lg_md_ms": -0.0001,
+  "lg_ms_mb": -0.05434,
+  "lg_mb_mt": 0.09455,
+  "lg_me_mmu": 0.0,
+  "lg_mmu_mtau": 1e-05,
+  "lg_mtau_mb": -0.41622,
+  "s12q": -4e-05,
+  "lg_s13q": -0.05452,
+  "lg_s23q": -0.05452,
+  "dq": 5e-05,
+  "s12sq_l": -0.0,
+  "s13sq_l": -0.0,
+  "s23sq_l": -0.0,
+  "dl": 0.0,
+  "lg_dm21_dm3l": -5e-05
+ },
+ "sd_shift_over_sigma": {
+  "lg_mu_mc": 0.0,
+  "lg_mc_mt": 0.112,
+  "lg_md_ms": 0.0,
+  "lg_ms_mb": 0.112,
+  "lg_mb_mt": 0.225,
+  "lg_me_mmu": 0.0,
+  "lg_mmu_mtau": 0.0,
+  "lg_mtau_mb": 0.113,
+  "s12q": 0.001,
+  "lg_s13q": 0.106,
+  "lg_s23q": 0.106,
+  "dq": 0.0,
+  "s12sq_l": 0.0,
+  "s13sq_l": 0.0,
+  "s23sq_l": 0.0,
+  "dl": 0.0,
+  "lg_dm21_dm3l": 0.0
+ },
+ "const_map_rms_resid_over_sigma": {
+  "lg_mu_mc": 0.0,
+  "lg_mc_mt": 0.116,
+  "lg_md_ms": 0.0,
+  "lg_ms_mb": 0.115,
+  "lg_mb_mt": 0.231,
+  "lg_me_mmu": 0.0,
+  "lg_mmu_mtau": 0.0,
+  "lg_mtau_mb": 0.117,
+  "s12q": 0.001,
+  "lg_s13q": 0.109,
+  "lg_s23q": 0.109,
+  "dq": 0.0,
+  "s12sq_l": 0.0,
+  "s13sq_l": 0.0,
+  "s23sq_l": 0.0,
+  "dl": 0.0,
+  "lg_dm21_dm3l": 0.0
+ },
+ "linear_map_rms_resid_over_sigma": {
+  "lg_mu_mc": 0.0,
+  "lg_mc_mt": 0.001,
+  "lg_md_ms": 0.0,
+  "lg_ms_mb": 0.001,
+  "lg_mb_mt": 0.003,
+  "lg_me_mmu": 0.0,
+  "lg_mmu_mtau": 0.0,
+  "lg_mtau_mb": 0.001,
+  "s12q": 0.001,
+  "lg_s13q": 0.001,
+  "lg_s23q": 0.001,
+  "dq": 0.0,
+  "s12sq_l": 0.0,
+  "s13sq_l": 0.0,
+  "s23sq_l": 0.0,
+  "dl": 0.0,
+  "lg_dm21_dm3l": 0.0
+ },
+ "linear_map_max_resid_over_sigma": {
+  "lg_mu_mc": 0.0,
+  "lg_mc_mt": 0.007,
+  "lg_md_ms": 0.0,
+  "lg_ms_mb": 0.007,
+  "lg_mb_mt": 0.013,
+  "lg_me_mmu": 0.0,
+  "lg_mmu_mtau": 0.0,
+  "lg_mtau_mb": 0.007,
+  "s12q": 0.008,
+  "lg_s13q": 0.007,
+  "lg_s23q": 0.006,
+  "dq": 0.0,
+  "s12sq_l": 0.0,
+  "s13sq_l": 0.0,
+  "s23sq_l": 0.0,
+  "dl": 0.0,
+  "lg_dm21_dm3l": 0.0
+ },
+ "frac_IO": 0.0
+}
+{
+ "name": "broad_so10_II",
+ "hpd_coverage": {
+  "0.05": 0.117,
+  "0.1": 0.187,
+  "0.15": 0.27,
+  "0.2": 0.33,
+   epoch 1 train 3.5998 val 3.1937 lr 1.0e-03 t=241s
+pred_mass_so10_II: done, best val NLL 3.1937 (standardised units), 1 epochs, 241s
+,
+  "0.65": 0.763,
+  "0.7": 0.81,
+  "0.75": 0.86,
+  "0.8": 0.903,
+  "0.85": 0.937,
+  "0.9": 0.97,
+  "0.95": 0.99
+ },
+ "real_NO": {
+  "frac_in_box": 0.48015,
+  "post_pred_chi2_all_quantiles_5_50_95": [
+   21934.8,
+   44187.9,
+   79150.7
+  ],
+  "post_pred_chi2_ql_quantiles_5_50_95": [
+   7238.6,
+   9666.4,
+   15453.9
+  ],
+  "post_pred_frac_IO": 0.0,
+  "post_mean": {
+   "lg_u1_u2": -2.8,
+   "lg_u2_u3": -2.433,
+   "lg_u3_d3": 1.764,
+   "lg_d1_d2": -1.349,
+   "lg_d2_d3": -1.671,
+   "s12q": 0.22,
+   "lg_s13q": -2.361,
+   "lg_s23q": -1.335,
+   "dq": 2.672,
+   "a2": 3.044,
+   "a3": 3.343,
+   "phi1": 2.842,
+   "phi2": 2.219,
+   "phi3": 2.691,
+   "lg_r": 1.637,
+   "lg_abs_s": 1.038,
+   "arg_s": 3.422
+  },
+  "post_sd_over_prior_sd": {
+   "lg_u1_u2": 0.139,
+   "lg_u2_u3": 0.334,
+   "lg_u3_d3": 0.317,
+   "lg_d1_d2": 0.215,
+   "lg_d2_d3": 0.257,
+   "s12q": 0.621,
+   "lg_s13q": 0.25,
+   "lg_s23q": 0.388,
+   "dq": 1.264,
+   "a2": 1.093,
+   "a3": 1.122,
+   "phi1": 0.992,
+   "phi2": 0.97,
+   "phi3": 1.079,
+   "lg_r": 0.296,
+   "lg_abs_s": 0.286,
+   "arg_s": 0.985
+  }
+ },
+ "real_IO": {
+  "frac_in_box": 0.2968,
+  "post_pred_chi2_all_quantiles_5_50_95": [
+   24113.7,
+   45768.4,
+   75039.7
+  ],
+  "post_pred_chi2_ql_quantiles_5_50_95": [
+   7637.1,
+   9717.8,
+   12946.9
+  ],
+  "post_pred_frac_IO": 0.0,
+  "post_mean": {
+   "lg_u1_u2": -2.831,
+   "lg_u2_u3": -2.452,
+   "lg_u3_d3": 1.756,
+   "lg_d1_d2": -1.33,
+   "lg_d2_d3": -1.662,
+   "s12q": 0.206,
+   "lg_s13q": -2.34,
+   "lg_s23q": -1.294,
+   "dq": 2.809,
+   "a2": 2.949,
+   "a3": 3.681,
+   "phi1": 2.845,
+   "phi2": 2.121,
+   "phi3": 1.737,
+   "lg_r": 1.59,
+   "lg_abs_s": 1.316,
+   "arg_s": 3.572
+  },
+  "post_sd_over_prior_sd": {
+   "lg_u1_u2": 0.132,
+   "lg_u2_u3": 0.348,
+   "lg_u3_d3": 0.389,
+   "lg_d1_d2": 0.247,
+   "lg_d2_d3": 0.308,
+   "s12q": 0.675,
+   "lg_s13q": 0.282,
+   "lg_s23q": 0.402,
+   "dq": 1.298,
+   "a2": 1.079,
+   "a3": 1.18,
+   "phi1": 1.059,
+   "phi2": 1.014,
+   "phi3": 0.75,
+   "lg_r": 0.243,
+   "lg_abs_s": 0.2,
+   "arg_s": 0.975
+  }
+ }
+}
+rank p-values: {'lg_u1_u2': 0.4071, 'lg_u2_u3': 0.0, 'lg_u3_d3': 0.0, 'lg_d1_d2': 0.0037, 'lg_d2_d3': 0.0001, 's12q': 0.0, 'lg_s13q': 0.0, 'lg_s23q': 0.111, 'dq': 0.0175, 'a2': 0.5009, 'a3': 0.8343, 'phi1': 0.0966, 'phi2': 0.5141, 'phi3': 0.7856, 'lg_r': 0.0891, 'lg_abs_s': 0.3398, 'arg_s': 0.7663}
+65% marginal coverage: {'lg_u1_u2': 0.66, 'lg_u2_u3': 0.72, 'lg_u3_d3': 0.713, 'lg_d1_d2': 0.653, 'lg_d2_d3': 0.73, 's12q': 0.733, 'lg_s13q': 0.66, 'lg_s23q': 0.69, 'dq': 0.67, 'a2': 0.63, 'a3': 0.64, 'phi1': 0.607, 'phi2': 0.697, 'phi3': 0.657, 'lg_r': 0.64, 'lg_abs_s': 0.637, 'arg_s': 0.67}
+pred_ql_so10_I: ds=ds_broad_so10_I.npz variant=so10_I target=pmns cond=ql n_train=979890 n_val=19997 nf=5 nc=13
+pred_mass_so10_I: ds=ds_broad_so10_I.npz variant=so10_I target=pmns cond=mass n_train=979890 n_val=19997 nf=5 nc=8
+  epoch 1 train 4.5925 val 3.7507 lr 1.0e-03 t=164s
+get); MI estimate only for so10_II
+{
+ "variant": "so10_II",
+ "n_heldout": 19999,
+ "I_pmns_ckm_given_masses_nats": -0.2152,
+ "stderr": 0.0066,
+ "mean_logq_ql": 9.921,
+ "mean_logq_mass": 10.136,
+ "ql_predictive_hpd_coverage_at_0.5_0.68_0.95": [
+  0.403,
+  0.583,
+  0.907
+ ],
+ "real_data_ql_predictive": {
+  "median": {
+   "s12sq": 0.0023,
+   "s13sq": 0.0001,
+   "s23sq": 0.0111,
+   "dl": 3.1172,
+   "lg_dm": -2.7273
+  },
+  "q16_84": [
+   [
+    -0.0072,
+    -0.0005,
+    -0.0073,
+    1.5894,
+    -3.366
+   ],
+   [
+    0.0116,
+    0.0008,
+    0.03,
+    4.8952,
+    -2.4917
+   ]
+  ],
+  "measured_hpd_level": 1.0
+ }
+}
+# check_gen.py
+(1) max |angle diff| vs src/rg.observables over 20 samples: 2.41e-08 rad
+(2) quark block |z - theta| max: 3.36e-09
+(3) |Mnu - (Md-Me)/4| max: 3.469446951953614e-17
+(4) so10_I        3.6s/2e5 ok=1.0000 IO=0.000 chi2_lepmass<9: 0.00e+00  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 6607.7
+(4) so10_II       4.2s/2e5 ok=1.0000 IO=0.000 chi2_lepmass<9: 0.00e+00  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 8370.8
+(4) so10_mixed    4.6s/2e5 ok=1.0000 IO=0.000 chi2_lepmass<9: 0.00e+00  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 7541.6
+(4) so10_120      4.6s/2e5 ok=1.0000 IO=0.032 chi2_lepmass<9: 1.00e-05  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 13640.1
+(4) su5_min       4.1s/2e5 ok=1.0000 IO=0.082 chi2_lepmass<9: 0.00e+00  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 6430.8
+(4) su5_gj        4.1s/2e5 ok=1.0000 IO=0.081 chi2_lepmass<9: 0.00e+00  chi2_ql<25: 0.00e+00  chi2_all<40: 0.00e+00  min chi2_all 3582.9
+LANE_A_DONE
+# pred_mass_so10_I (started by run_stage2 lane A) killed at start; all processes stopped

@@ -1,0 +1,17 @@
+scale,ordering,target,P_planted,guided_leaves,guided_ops
+MZ,NO,s12sq,0.4806281626224518,t12q r_uc r_em q_ds 2 1/2 1/3,sqrt asin atan + - /
+MZ,NO,s13sq,0.6573688983917236,t12q q_ct q_sb q_em 1/2 sqrt2 sqrt3,sqrt asin atan + * /
+MZ,NO,s23sq,0.5003599524497986,t23q r_ds r_sb q_uc 1/2 1/3 pi/4,sqrt asin atan - * /
+MZ,NO,dcp_deg,0.3828161060810089,t13q dq q_ds q_mt sqrt2 pi/2 pi,neg asin atan + * /
+MZ,IO,s12sq,0.4806281626224518,t12q r_uc r_em q_ds 2 1/2 1/3,sqrt asin atan + - /
+MZ,IO,s13sq,0.6560022830963135,t12q q_ct q_sb q_em 1/2 sqrt2 sqrt3,sqrt asin atan + * /
+MZ,IO,s23sq,0.38223734498023987,t23q q_uc q_ct q_em 1/2 1/3 pi/4,sqrt asin atan + * /
+MZ,IO,dcp_deg,0.33785906434059143,t13q dq q_ds q_mt 1/2 pi/2 pi,neg asin atan + - /
+GUT,NO,s12sq,0.4824208617210388,t12q r_uc r_em q_ds 2 1/2 1/3,sqrt asin atan + - /
+GUT,NO,s13sq,0.6576673984527588,t12q q_ct q_sb q_em 1/2 sqrt2 sqrt3,sqrt asin atan + * /
+GUT,NO,s23sq,0.49892479181289673,t23q r_ds r_sb q_uc 1/2 1/3 pi/4,sqrt asin atan - * /
+GUT,NO,dcp_deg,0.38533249497413635,t13q dq q_ds q_mt sqrt2 pi/2 pi,neg asin atan + * /
+GUT,IO,s12sq,0.4824208617210388,t12q r_uc r_em q_ds 2 1/2 1/3,sqrt asin atan + - /
+GUT,IO,s13sq,0.6562950015068054,t12q q_ct q_sb q_em 1/2 sqrt2 sqrt3,sqrt asin atan + * /
+GUT,IO,s23sq,0.3817210793495178,t23q q_uc q_ct q_em 1/2 1/3 pi/4,sqrt asin atan + * /
+GUT,IO,dcp_deg,0.33789581060409546,t13q dq q_ds q_mt 1/2 pi/2 pi,neg asin atan + - /

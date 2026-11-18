@@ -1,0 +1,101 @@
+{
+ "a_s13sq_vs_th12e_phi": {
+  "best": "sin(th12e)*sin(th12e)*0.5",
+  "pareto": [
+   {
+    "complexity": 1,
+    "loss": 0.0011463773,
+    "equation": "0.036486477"
+   },
+   {
+    "complexity": 3,
+    "loss": 0.00014319272,
+    "equation": "th12e * 0.17457509"
+   },
+   {
+    "complexity": 5,
+    "loss": 7.841544e-07,
+    "equation": "th12e * (th12e * 0.471717)"
+   },
+   {
+    "complexity": 6,
+    "loss": 1.9723801e-07,
+    "equation": "sin(th12e) * (th12e * 0.48571005)"
+   },
+   {
+    "complexity": 7,
+    "loss": 1.1367927e-17,
+    "equation": "(sin(th12e) * sin(th12e)) * 0.5"
+   }
+  ]
+ },
+ "b_th12e_inverted_NO": {
+  "best": "sqrt(s13sq/s23sq - 0.00021319668)",
+  "pareto": [
+   {
+    "complexity": 1,
+    "loss": 1.8934501e-05,
+    "equation": "0.21821605"
+   },
+   {
+    "complexity": 3,
+    "loss": 1.6363834e-05,
+    "equation": "s13sq + 0.19568887"
+   },
+   {
+    "complexity": 4,
+    "loss": 3.436436e-07,
+    "equation": "sqrt(s13sq / s23sq)"
+   },
+   {
+    "complexity": 5,
+    "loss": 3.04916e-07,
+    "equation": "sqrt(sin(s13sq / s23sq))"
+   },
+   {
+    "complexity": 6,
+    "loss": 1.0496161e-07,
+    "equation": "sqrt((s13sq / s23sq) - 0.00021319668)"
+   },
+   {
+    "complexity": 8,
+    "loss": 1.0441626e-07,
+    "equation": "sqrt(s13sq / s23sq) - (s13sq * s13sq)"
+   },
+   {
+    "complexity": 9,
+    "loss": 1.0441464e-07,
+    "equation": "sqrt(s13sq / s23sq) - (sin(s13sq) * s13sq)"
+   },
+   {
+    "complexity": 10,
+    "loss": 1.03004695e-07,
+    "equation": "sqrt((s13sq / s23sq) - ((s13sq * 0.42286325) * s13sq))"
+   },
+   {
+    "complexity": 11,
+    "loss": 1.0139845e-07,
+    "equation": "sqrt((s13sq / s23sq) - (sin(s23sq * s13sq) * 0.020218765))"
+   },
+   {
+    "complexity": 12,
+    "loss": 1.0123848e-07,
+    "equation": "sqrt((s13sq / s23sq) - ((s13sq * sin(sin(s23sq))) * s13sq))"
+   },
+   {
+    "complexity": 13,
+    "loss": 9.9278395e-08,
+    "equation": "sqrt((s13sq / s23sq) - (sin(s13sq * theta_cb) * (s23sq * s23sq)))"
+   },
+   {
+    "complexity": 14,
+    "loss": 9.927837e-08,
+    "equation": "sqrt((s13sq / s23sq) - sin((theta_cb * sin(s13sq * s23sq)) * s23sq))"
+   }
+  ]
+ },
+ "b_th12e_over_thetaC_stats": {
+  "mean": 0.9607959842765318,
+  "std": 0.019711613813254654
+ }
+}

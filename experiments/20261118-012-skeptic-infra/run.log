@@ -1,0 +1,61 @@
+[1] real data, V = I vs V = V_CKM (exp 007):
+    table_NO: cont 299.905 vs 0.785; struct 299.905 vs 2.941
+    table_IO: cont 290.336 vs 2.699; struct 290.336 vs 8.403
+    gauss_NO: cont 166.916 vs 0.674; struct 166.916 vs 5.631
+    gauss_IO: cont 152.417 vs 6.121; struct 152.417 vs 8.356
+[3] {
+ "NO_at_table_best": {
+  "pred": [
+   0.3099999939887628,
+   0.022399999822102317,
+   0.4603359107258587,
+   199.21803940579818
+  ],
+  "table_chi2": 0.7850651771420485,
+  "gauss_chi2": 0.6849093866326905
+ },
+ "NO_at_gauss_best": {
+  "pred": [
+   0.30935040026272864,
+   0.022416937734575863,
+   0.46016327881503477,
+   199.06514834495655
+  ],
+  "table_chi2": 0.801161979564792,
+  "gauss_chi2": 0.674262143543658
+ },
+ "IO_at_table_best": {
+  "pred": [
+   0.3075518714203356,
+   0.022300001062145417,
+   0.4750000731981699,
+   278.06155005060583
+  ],
+  "table_chi2": 2.6989763071081185,
+  "gauss_chi2": 25.373263727804645
+ },
+ "IO_at_gauss_best": {
+  "pred": [
+   0.30890690164335705,
+   0.022654757234219773,
+   0.5591113468971842,
+   214.32991043501016
+  ],
+  "table_chi2": 6.173407870605702,
+  "gauss_chi2": 6.121433080887132
+ }
+}
+[2] 10/100 fakes, 93 s
+[2] 20/100 fakes, 156 s
+[2] 30/100 fakes, 232 s
+[2] 40/100 fakes, 323 s
+[2] 50/100 fakes, 537 s
+[2] 60/100 fakes, 665 s
+[2] 70/100 fakes, 760 s
+[2] 80/100 fakes, 911 s
+[2] 90/100 fakes, 1117 s
+[2] 100/100 fakes, 1564 s
+[2] NO cont: hits V=I 10/100 vs V=CKM 6/100; median |diff| fake best 1403.423
+[2] NO struct: hits V=I 10/100 vs V=CKM 3/100; median |diff| fake best 1350.797
+[2] IO cont: hits V=I 9/100 vs V=CKM 28/100; median |diff| fake best 1416.131
+[2] IO struct: hits V=I 9/100 vs V=CKM 7/100; median |diff| fake best 1344.412
