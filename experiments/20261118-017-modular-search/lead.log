@@ -1,0 +1,12 @@
+=== lead scan Thu Nov 19 08:29:36 USMST 2026
+lead tasks 316
+S4 NO chi2_l 5.84 k_cont 3 s12sq 0.308 s13sq 0.0225 s23sq 0.503 d 238 r 0.0299 | S4 L~3p e[41p+61*+61p] nu[WSS]
+S4 NO chi2_l 6.68 k_cont 3 s12sq 0.308 s13sq 0.0225 s23sq 0.491 d 265 r 0.0299 | S4 L~3p e[41p+61p+81*] nu[WSS]
+S4 NO chi2_l 15.92 k_cont 3 s12sq 0.308 s13sq 0.0225 s23sq 0.503 d 122 r 0.0299 | S4 L~3 e[41+41p+61p*] nu[WSS]
+S4 NO chi2_l 21.56 k_cont 3 s12sq 0.308 s13sq 0.0225 s23sq 0.491 d 95 r 0.0299 | S4 L~3 e[41+61+81p*] nu[WSS]
+A4 NO chi2_l 37.99 k_cont 3 s12sq 0.337 s13sq 0.0205 s23sq 0.585 d 180 r 0.0306 | A4 L~3 e[21pp+41+61*] nu[WSS]
+A4 NO chi2_l 38.06 k_cont 3 s12sq 0.337 s13sq 0.0205 s23sq 0.585 d 180 r 0.0306 | A4 L~3 e[21pp+41pp+61*] nu[WSS]
+A4 NO chi2_l 98.37 k_cont 3 s12sq 0.360 s13sq 0.0244 s23sq 0.620 d 180 r 0.0300 | A4 L~3 e[21p+41pp+61pp*] nu[WSS]
+A4 NO chi2_l 142.91 k_cont 3 s12sq 0.300 s13sq 0.0209 s23sq 0.368 d 38 r 0.0291 | A4 L~3 e[41+41pp+81p*] nu[WSS]
+A4 NO chi2_l 142.91 k_cont 3 s12sq 0.300 s13sq 0.0209 s23sq 0.368 d 38 r 0.0291 | A4 L~3 e[41+41p+81p*] nu[WSS]
+S4 NO chi2_l 217.73 k_cont 3 s12sq 0.448 s13sq 0.0221 s23sq 0.508 d 291 r 0.0302 | S4 L~3 e[41+61+61p*] nu[WSS]

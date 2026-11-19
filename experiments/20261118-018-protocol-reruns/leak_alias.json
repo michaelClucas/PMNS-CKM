@@ -1,0 +1,292 @@
+{
+ "T1": {
+  "model": "T1",
+  "pred": {
+   "s12sq": 0.31056955575212564,
+   "s13sq": 0.022572165627800855
+  },
+  "declared": [
+   "m_u",
+   "m_c",
+   "m_t_direct"
+  ],
+  "n_flags": 16,
+  "flags": [
+   {
+    "key": "ckm_s12",
+    "record": "ckm.json/standard_parametrization/s12",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 5.992095708506895e-12,
+     "s13sq": 1.7099655025276661e-12
+    }
+   },
+   {
+    "key": "ckm_s13",
+    "record": "ckm.json/standard_parametrization/s13",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 9.95936666470243e-12,
+     "s13sq": 2.1375345937713064e-11
+    }
+   },
+   {
+    "key": "ckm_s23",
+    "record": "ckm.json/standard_parametrization/s23",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 8.428893139011961e-10,
+     "s13sq": 1.0962355467825091e-09
+    }
+   },
+   {
+    "key": "ckm_delta_rad",
+    "record": "ckm.json/standard_parametrization/delta_rad",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.522537734250818e-12,
+     "s13sq": 9.2148511043888e-15
+    }
+   },
+   {
+    "key": "theta12_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta12_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4403812304285566e-12,
+     "s13sq": 2.220446049250313e-16
+    }
+   },
+   {
+    "key": "theta23_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta23_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4376056728669937e-12,
+     "s13sq": 6.661338147750939e-16
+    }
+   },
+   {
+    "key": "theta13_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta13_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4468205239713825e-12,
+     "s13sq": 1.1102230246251565e-15
+    }
+   },
+   {
+    "key": "dcp_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/dcp_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4500401707427955e-12,
+     "s13sq": 4.440892098500626e-16
+    }
+   },
+   {
+    "key": "m_d",
+    "record": "masses.json/quarks/m_d",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 4.644173934309492e-12,
+     "s13sq": 4.973799150320701e-13
+    }
+   },
+   {
+    "key": "m_s",
+    "record": "masses.json/quarks/m_s",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 5.849476458763547e-11,
+     "s13sq": 2.1909252190255302e-11
+    }
+   },
+   {
+    "key": "m_b",
+    "record": "masses.json/quarks/m_b",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 7.076374369585636e-06,
+     "s13sq": 9.291697211311067e-06
+    }
+   },
+   {
+    "key": "m_e",
+    "record": "masses.json/charged_leptons/m_e",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 4.898748073856041e-12,
+     "s13sq": 2.220446049250313e-16
+    }
+   },
+   {
+    "key": "m_mu",
+    "record": "masses.json/charged_leptons/m_mu",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.44804176929847e-12,
+     "s13sq": 4.440892098500626e-16
+    }
+   },
+   {
+    "key": "m_tau",
+    "record": "masses.json/charged_leptons/m_tau",
+    "moved": [
+     "s12sq",
+     "s13sq"
+    ],
+    "rel_change": {
+     "s12sq": 7.071454533047472e-12,
+     "s13sq": 9.623513097523073e-11
+    }
+   },
+   {
+    "key": "dm21sq",
+    "record": "masses.json/neutrino_splittings/IC23_woSKatm/NO/dm21sq",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4285018440650674e-12,
+     "s13sq": 2.4424906541753444e-15
+    }
+   },
+   {
+    "key": "dm31sq",
+    "record": "masses.json/neutrino_splittings/IC23_woSKatm/NO/dm31sq",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.46391795855061e-12,
+     "s13sq": 6.661338147750939e-16
+    }
+   }
+  ],
+  "pmns_flags": [
+   {
+    "key": "theta12_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta12_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4403812304285566e-12,
+     "s13sq": 2.220446049250313e-16
+    }
+   },
+   {
+    "key": "theta23_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta23_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4376056728669937e-12,
+     "s13sq": 6.661338147750939e-16
+    }
+   },
+   {
+    "key": "theta13_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/theta13_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4468205239713825e-12,
+     "s13sq": 1.1102230246251565e-15
+    }
+   },
+   {
+    "key": "dcp_deg",
+    "record": "pmns.json/analyses/IC23_woSKatm/NO/dcp_deg",
+    "moved": [
+     "s12sq"
+    ],
+    "rel_change": {
+     "s12sq": 2.4500401707427955e-12,
+     "s13sq": 4.440892098500626e-16
+    }
+   }
+  ],
+  "alias_check": {
+   "use": [
+    "s12sq",
+    "s13sq"
+   ],
+   "inputs": [
+    "m_u",
+    "m_c",
+    "m_t_direct"
+   ],
+   "result": "ok"
+  },
+  "sec": 16.5133056640625
+ },
+ "F2LO": {
+  "model": "F2LO",
+  "pred": {
+   "s12sq": 0.30800000000290645,
+   "s13sq": 0.023228741691453437,
+   "s23sq": 0.4452608780699319,
+   "dcp_deg": 259.9304901881576
+  },
+  "declared": [
+   "ckm_s12",
+   "ckm_s13",
+   "ckm_s23",
+   "ckm_delta_rad"
+  ],
+  "n_flags": 0,
+  "flags": [],
+  "pmns_flags": [],
+  "alias_check": {
+   "use": [
+    "s12sq",
+    "s13sq",
+    "s23sq",
+    "dcp_deg"
+   ],
+   "inputs": [
+    "ckm_s12",
+    "ckm_s13",
+    "ckm_s23",
+    "ckm_delta_rad"
+   ],
+   "result": "ok"
+  },
+  "sec": 10.946367263793945
+ }
+}

@@ -1,6 +1,6 @@
 # State
 
-Iteration: 4 (2026-11-18)
+Iteration: 5 (2026-11-19)
 
 ## Status
 Infrastructure built, verified, and tested (458 tests pass: `.venv/Scripts/python -m pytest -q`; `pytest.ini` limits collection to `tests/`). Exp 012 skeptic findings H2, H3, M1-M4, M6, M7, L1 fixed in exp 013 (see below).
@@ -26,6 +26,9 @@ Infrastructure built, verified, and tested (458 tests pass: `.venv/Scripts/pytho
 - `pmns_delta_chi2` uses the 2D (s23sq, δ) table when both are given, otherwise sums 1D profiles; ignores θ13-θ23, θ13-δ, Δm²3ℓ-θ23 correlations. Default returns 0 at each ordering's own best fit; `relative_to="global"` adds the IO penalty (1.49 default analysis, 5.91 with SK-atm). Fixed in iteration 2: `stats.Objective` now takes `pmns_ordering_offset` (added once) and refuses a `relative_to="global"` partial in sum1d mode; δ pull sign now wraps.
 
 ## Known infrastructure gaps (open)
+- `src/nulls.py` (exp 018): criterion 4 is vacuous for any lead with k > N-2 (`is_hit`/`candidate_ok` require compression, so strict power is 0 by construction); `power_check` hardcodes `candidate_ok` (should take `ok_fn`) and needs a documented fit-only hit rule; `is_hit` compares p_global exactly (needs tolerance); no mass-side null (N3 redrawing mass ratios); `power_check` spawns a pool per injection (slow).
+- `src.evaluate` cannot score same-scale mass ratios (flavour-atom alias rule blocks them), Δm² or Δm² ratio, has no theory floor on masses, and cannot score GUT-scale predictions. Exps 014-017 all scored these outside the official scorer.
+- `src.rg.ckm_at` builds κ from PMNS data: 1e-12 crosstalk flagged by the leak probe. `rg.pmns_at` assumes m_lightest = 0. `derived_yukawas_mz` gives no uncertainties.
 - Exp 012 L2-L4: `Objective` defaults to sum1d; Δm² not scorable via `evaluate` (also blocks the Δm²21/Δm²3ℓ ratio); undefined δ scored as 0.
 - `src.evaluate` cannot score GUT-scale relations directly; `src.rg` lacks tanβ-enhanced SUSY threshold corrections and 2-loop MSSM Yukawa running.
 - Exp 012's own test file now XPASSes (bugs fixed); the adapted tests live in `tests/test_evaluate_audit.py`.
@@ -52,7 +55,12 @@ Official baseline scores (exp 006, no RG): no known relation has k ≤ N-2 with 
 - Real-parameter SO(10) 10+126+120 "FN" (Grimus-Kühböck hep-ph/0612132; exp 014): k 16 (+~3 bits) for N 17, not compressive. Fits our GUT data (χ² 0.30, 1 dof) but predicts neither δ_ℓ (exact fits for δ_ℓ 40°-317°) nor PMNS from the quark sector (posterior not converged; indicative). Posterior regression of PMNS on CKM + masses: R² ≤ 0.12, no better than prior; PMNS variation carried by free parameters, not CKM.
 - BSV pure type-II b-τ (hep-ph/0210207; exp 015): fails fit quality in SM and MSSM tanβ 5-55, M_SUSY 1-10 TeV: χ² 2700-4600 for N 18, pulls ≥ 35σ. Real model forces m_e ≈ 3 m_d (data m_d/2.5); m_b/m_τ(GUT) = 0.78 in MSSM (needs 0.998 for large θ23); δ_ℓ predicted 0-20°. Agrees with literature (Bertolini et al. hep-ph/0605006, Babu-Macesanu hep-ph/0505200, Joshipura-Patel 1102.5148). General complex variant did not converge (untested here). Known baseline.
 
+- Modular flavour, literature (exp 016, 39 papers in `survey.csv`): no published unified quark+lepton modular model has < 13 real parameters; with bits counted every one has k > N. Most compressive holomorphic model, 2O (arXiv:2307.14926, 2409.15823), reproduced exactly (their refit χ² 20.17 vs 20.3); with our data (2% light-quark floor) χ² 68.8, N 15, k_cont 10, p 1.8e-13; lepton sector alone χ² 14.4 (s12² 0.325). Published good fits rely on 12-53% light-quark errors. T' non-holomorphic (2506.19822) at its published point: χ² 170 with our data (not refit). Known baselines.
+- Modular flavour, common-τ catalog (exp 017): A4/S4/A5 forms to weight 8 verified (121 tests). 4.12M assignments (22 bits + 1). k ≥ 31 vs N - 2 = 13: fails compression by count. Best joint common-τ fit A4 IO χ² 446.5 (N 15). Leptons fit easily with their own τ; quark sector never fits (best A4 quarks χ² 255; search-limited, 30 of 12,100 A4 quark assignments fit exactly). Emulator useful as a coarse filter only (Spearman 0.15-0.77).
+- T1 and F2-LO under the protocol (exp 018): both "no evidence". T1: power 0/20, N1 rate 0.49 (T1 contains no CKM), N2 0.29-0.32. F2-LO: power 0-0.05, all nulls fail within 7-8 fakes, N2 rate 0.63. Dropped from CANDIDATES. Ran with a fit-only hit rule because the strict rule is vacuous for k > N-2.
+
 ## Leads (not candidates)
+- S4 τ-only neutrino sector (exp 017, from exp 016 lead): type-I seesaw, RH neutrinos in a triplet, constant M_D, one weight-2 form in M_N; L ~ 3', NO, τ = -0.180 + 1.098i, χ² 5.84 for 7 lepton observables (k_cont 5, p 0.054), pulls s23² +1.52, δ +1.26 (238°). Lepton-only, not compressive; likely the known NPPT S4 gCP family. Sharp test available: fix τ from leptons, ask whether any quark assignment fits at the same τ.
 - T1 (exp 010, GUT scale): θ12 = sin(3 (m_u/m_c)^{1/4}), θ13 = sin(3 (m_u/m_t)^{1/4}). Joint χ² 0.058 NO; null rate ~1% for that cell, ~8% after the 8-cell selection; fails at M_Z (s13² +2.2σ); the same f gives θ23 at -6.8σ. N=2, k ≈ 20 bits.
 - F2 LO: θ12e ≈ 0.96 θ_C. Revives only if a theory fixes it in advance (Clebsch on sinθ, thresholds) or ties it to mass ratios.
 
@@ -60,7 +68,10 @@ Official baseline scores (exp 006, no RG): no known relation has k ≤ N-2 with 
 - MSSM needs 2-loop Yukawa RGEs for < 2% accuracy on θ23^q, θ13^q.
 - Can any family reach k ≤ N-2? Every family tried (F1, F2, symbolic, SO(10) MN/FN, BSV) either has free phases/θν/Yukawa entries that absorb the CKM, or fails fit quality. Need families where quark and lepton sectors share a small number of continuous parameters by construction. Best-known class in the literature: modular flavour symmetry with a common modulus τ for quarks and leptons (few couplings, many observables).
 
-## Next planned tasks (iteration 5)
-1. Literature scout + reproduction: unified quark-lepton modular-flavour models (Γ_N, N=2..5, incl. double-cover and multiple-moduli variants; SU(5)/SO(10) modular GUTs) that claim k < N for both sectors. Tabulate claimed k, N, χ²; reproduce the most compressive one in our pipeline with our data and honest counting (discrete choices: group, weights, representations, which τ).
-2. Modular-form generator + NN emulator: Γ3/Γ4/Γ5 modular forms to weight ≥ 8, mass matrices for a catalog of weight/representation assignments, emulator over τ (fundamental domain) and couplings per assignment; fast search with `src/evaluate` + `src/nulls` (power check first). Discrete assignment space is large: NN-guided ranking of assignments.
-3. Protocol re-runs with `src/nulls.py`: F2-LO and T1 through N1/N2 + power check, to replace their no-power null verdicts with definitive ones.
+## Assessment after 5 iterations
+Seven families searched, all negative: shared rotation (F1), Clebsch corrections (F2), symbolic formulas, minimal and real SO(10), BSV type-II, modular flavour (literature + common-τ catalog). The recurring pattern: lepton mixing is always fitted by sector-specific freedom (phases, θν, Yukawa entries, couplings); whenever the quark and lepton sectors are forced to share parameters (BSV, common τ), the quark sector fails at PDG precision. The CKM is never used to predict PMNS. Light-quark mass precision (PDG 2026, ~2%) is the binding constraint that published "good fits" evade with 12-53% errors.
+
+## Next planned tasks (iteration 6)
+1. Infra: fix the `src/nulls.py` and `src/evaluate.py` gaps above (ok_fn + fit-only hit rule, p tolerance, N3 mass-side null, shared pool; same-scale mass ratios, Δm² ratio, theory floor, GUT-scale scoring; κ crosstalk).
+2. Sharp modular test: take τ from the S4 τ-only lepton lead (and the 2O lepton island) and run an exhaustive quark-assignment fit at that fixed τ (all 968 S4 quark assignments, exact fits, 2% floor). Couplings only, no τ freedom: this is the first test where leptons predict something on the quark side.
+3. Theory scout: given the assessment, propose families where quarks and leptons share parameters by construction and the shared count makes k ≤ N-2 achievable (e.g. modular + GUT Clebsch with one τ and a fixed assignment; Pati-Salam with SU(4) relations; quark-lepton complementarity derived from a symmetry), with explicit counts, and say which look viable at 2% light-quark precision. Also quantify what the negative results so far imply: an upper bound on how much CKM information PMNS could carry within the families tried.

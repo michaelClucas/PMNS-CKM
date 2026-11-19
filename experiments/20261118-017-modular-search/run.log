@@ -1,0 +1,139 @@
+=== gen Thu Nov 19 07:09:37 USMST 2026
+07:10:16 gen tasks 13550
+<repo>\experiments\20261118-017-modular-search\search.py:151: RuntimeWarning: divide by zero encountered in log
+  np.log(o["ckm_s13"]), np.log(o["ckm_s23"]), np.cos(o["ckm_delta_rad"]),
+<repo>\experiments\20261118-017-modular-search\search.py:151: RuntimeWarning: divide by zero encountered in log
+  np.log(o["ckm_s13"]), np.log(o["ckm_s23"]), np.cos(o["ckm_delta_rad"]),
+07:13:15 saved 3 q (2420000, 8) (2420000, 9)
+07:13:15 saved 3 l (149820, 7) (149820, 14)
+07:13:15 saved 4 q (299112, 8) (299112, 9)
+07:13:15 saved 4 l (149952, 7) (149952, 14)
+07:13:16 saved 5 q (300000, 8) (300000, 9)
+07:13:16 saved 5 l (150000, 7) (150000, 14)
+=== train Thu Nov 19 07:13:33 USMST 2026
+=== train killed (oversubscribed: 5 workers x 2 threads); restarting with 2 workers x 2 threads, 8 epochs
+=== train Thu Nov 19 07:14:41 USMST 2026
+[3l] epoch 0 train 0.8071 test 0.8278 (48s)
+[3l] epoch 1 train 0.6871 test 0.6916 (76s)
+[3l] epoch 2 train 0.5429 test 0.5438 (93s)
+[3l] epoch 3 train 0.4677 test 0.4833 (112s)
+[3q] epoch 0 train 0.7220 test 0.6706 (127s)
+[3l] epoch 4 train 0.4336 test 0.4497 (129s)
+[3l] epoch 5 train 0.4322 test 0.4305 (149s)
+[3l] epoch 6 train 0.4099 test 0.4185 (170s)
+[3l] epoch 7 train 0.4106 test 0.4162 (188s)
+07:18:34 trained 3 l test RMSE per output [5.228, 0.654, 0.199, 0.153, 0.214, 0.654, 0.7, 0.619, 0.178, 0.149, 0.209, 0.61, 0.659, 0.337]
+[3q] epoch 1 train 0.4795 test 0.4629 (206s)
+[4q] epoch 0 train 0.7461 test 0.7323 (35s)
+[4q] epoch 1 train 0.5006 test 0.4788 (74s)
+[3q] epoch 2 train 0.3457 test 0.3426 (283s)
+[4q] epoch 2 train 0.3423 test 0.3479 (109s)
+[4q] epoch 3 train 0.3113 test 0.3079 (271s)
+[3q] epoch 3 train 0.2915 test 0.2995 (552s)
+[4q] epoch 4 train 0.2856 test 0.2873 (421s)
+[4q] epoch 5 train 0.2544 test 0.2754 (482s)
+[3q] epoch 4 train 0.2803 test 0.2794 (678s)
+[4q] epoch 6 train 0.2727 test 0.2697 (549s)
+[3q] epoch 5 train 0.2729 test 0.2694 (780s)
+[4q] epoch 7 train 0.2720 test 0.2685 (619s)
+07:28:53 trained 4 q test RMSE per output [5.087, 0.533, 5.161, 0.605, 1.549, 1.758, 1.242, 0.705, 0.378]
+[4l] epoch 0 train 0.7621 test 0.7702 (35s)
+[4l] epoch 1 train 0.5802 test 0.5902 (67s)
+[3q] epoch 6 train 0.2561 test 0.2643 (880s)
+[4l] epoch 2 train 0.4770 test 0.4704 (101s)
+[4l] epoch 3 train 0.4020 test 0.4066 (136s)
+[4l] epoch 4 train 0.3790 test 0.3698 (162s)
+[3q] epoch 7 train 0.2732 test 0.2631 (977s)
+07:31:41 trained 3 q test RMSE per output [4.979, 0.48, 4.964, 0.478, 1.233, 1.544, 1.044, 0.671, 0.447]
+[4l] epoch 5 train 0.3342 test 0.3389 (190s)
+[5q] epoch 0 train 0.4477 test 0.4214 (42s)
+[4l] epoch 6 train 0.3219 test 0.3208 (214s)
+[4l] epoch 7 train 0.3022 test 0.3171 (240s)
+07:32:54 trained 4 l test RMSE per output [5.195, 0.637, 0.124, 0.108, 0.185, 0.595, 0.504, 0.715, 0.127, 0.11, 0.185, 0.541, 0.451, 0.43]
+[5q] epoch 1 train 0.3214 test 0.3156 (86s)
+[5l] epoch 0 train 0.7448 test 0.7331 (27s)
+[5q] epoch 2 train 0.2726 test 0.2967 (128s)
+[5l] epoch 1 train 0.5109 test 0.5011 (52s)
+[5l] epoch 2 train 0.3615 test 0.3520 (76s)
+[5q] epoch 3 train 0.2463 test 0.2728 (170s)
+[5l] epoch 3 train 0.2794 test 0.2837 (102s)
+[5l] epoch 4 train 0.2558 test 0.2481 (130s)
+[5q] epoch 4 train 0.2595 test 0.2628 (215s)
+[5l] epoch 5 train 0.2205 test 0.2292 (155s)
+[5q] epoch 5 train 0.2877 test 0.2577 (256s)
+[5l] epoch 6 train 0.2145 test 0.2163 (179s)
+[5l] epoch 7 train 0.2161 test 0.2143 (204s)
+07:36:25 trained 5 l test RMSE per output [9.485, 0.578, 0.103, 0.067, 0.13, 0.493, 0.351, 0.422, 0.094, 0.074, 0.125, 0.491, 0.344, 0.278]
+[5q] epoch 6 train 0.2257 test 0.2542 (297s)
+[5q] epoch 7 train 0.2767 test 0.2534 (2010s)
+08:05:13 trained 5 q test RMSE per output [9.338, 0.335, 9.328, 0.332, 1.049, 1.053, 0.611, 0.396, 0.15]
+=== rank Thu Nov 19 08:05:19 USMST 2026
+08:06:52 ranked 4 q NO n 968 min emu chi2 957.2078247070312
+08:06:58 ranked 5 q NO n 8 min emu chi2 5506.54833984375
+08:07:22 ranked 3 l NO n 330 min emu chi2 279.2772216796875
+08:07:49 ranked 3 l IO n 330 min emu chi2 271.6650085449219
+08:08:22 ranked 4 l NO n 132 min emu chi2 27.0991153717041
+08:08:40 ranked 4 l IO n 132 min emu chi2 328.86199951171875
+08:09:12 ranked 5 l NO n 12 min emu chi2 71.83592224121094
+08:09:19 ranked 5 l IO n 12 min emu chi2 1802.1282958984375
+08:20:26 ranked 3 q NO n 12100 min emu chi2 549.6566772460938
+=== exact Thu Nov 19 08:20:36 USMST 2026
+08:20:38 exact tasks 212
+08:29:27 exact done 212
+=== joint profiles Thu Nov 19 08:29:36 USMST 2026
+08:29:46 profile tasks 54
+08:35:05 profiles done
+=== score Thu Nov 19 09:06:08 USMST 2026
+trials per group {3: 3993000, 4: 127776, 5: 96} total 4120872 bits 22
+A4 NO grid 84.4 joint 410.2 ext 410.2 p_ext 8.6e-90 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21+21pp+81pp*] nu[W4]
+A4 NO grid 83.9 joint 1874.2 ext 1874.2 p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21+21p+61pp*] nu[W6]
+A4 NO grid 83.9 joint 1941.8 ext 1941.8 p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21pp+41pp+61pp*] nu[W6]
+A4 NO grid 84.9 joint 118873.9 ext inf p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21p+21pp+81p*] nu[W4]
+A4 IO grid 85.5 joint 6911.7 ext 6913.1 p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21pp+41p+81*] nu[W4]
+A4 IO grid 160.0 joint 902459.7 ext inf p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21p+41+41p] nu[W4]
+A4 IO grid 87.8 joint 445.1 ext 446.5 p_ext 1.1e-97 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[41+41p+61*] nu[W4]
+A4 IO grid 167.1 joint 3152.2 ext 3153.7 p_ext 0 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[21p+41pp+61p*] nu[W4]
+S4 NO grid 2162.7 joint 15042.4 ext inf p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3p e[41+61p+81*] nu[W4]
+S4 NO grid 2162.8 joint 2328.4 ext 2328.4 p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3p e[21+41p+81*] nu[W4]
+S4 NO grid 2163.7 joint 13243.0 ext inf p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3p e[41+61*+61p] nu[W4]
+S4 NO grid 2163.7 joint 4552.1 ext 4552.1 p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3 e[41p+61+81p*] nu[W6]
+S4 IO grid 2163.0 joint 4158.5 ext 4160.0 p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3 e[21p+41+41p] nu[W6]
+S4 IO grid 2169.4 joint 3877.0 ext 3878.3 p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3 e[41+61+61p*] nu[W4]
+S4 IO grid 2170.1 joint 13339.0 ext inf p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3 e[41p+61+81*] nu[W4]
+S4 IO grid 2173.7 joint 60163.8 ext inf p_ext 0 | S4 Q~3p u[21+41+61*] d[21+61p+81p*] | S4 L~3 e[21p+41+61] nu[W6]
+A5 NO grid 2774.5 joint 10632.8 ext 10632.8 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W6]
+A5 NO grid 3310.9 joint 17036.5 ext inf p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W4]
+A5 NO grid 3540.8 joint 14309.3 ext inf p_ext 0 | A5 Q~3 u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W6]
+A5 NO grid 4077.2 joint 4043.0 ext 4043.0 p_ext 0 | A5 Q~3 u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W4]
+A5 IO grid 2517.1 joint 4640.1 ext 4641.6 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W6]
+A5 IO grid 2517.1 joint 13435.0 ext inf p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W4]
+A5 IO grid 2547.8 joint 12332.2 ext 12333.7 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W4]
+A5 IO grid 2726.6 joint 46344.3 ext 46345.8 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W2]
+done 24
+=== score rerun after shared-grid fix Thu Nov 19 09:09:29 USMST 2026
+trials per group {3: 3993000, 4: 127776, 5: 96} total 4120872 bits 22
+A4 NO grid 1867.8 joint 468.4 ext 468.4 p_ext 1.9e-102 | A4 Q~3 u[21+21p+81p*] d[21pp+41pp+61pp*] | A4 L~3 e[21+21pp+81pp*] nu[W4]
+A4 NO grid 1916.5 joint 550.3 ext 550.3 p_ext 3.3e-120 | A4 Q~3 u[21+21p+81p*] d[21pp+41pp+61pp*] | A4 L~3 e[21pp+41pp+61pp*] nu[W6]
+A4 NO grid 1869.7 joint 470.4 ext 470.4 p_ext 7.3e-103 | A4 Q~3 u[21+21p+81p*] d[21pp+41pp+61pp*] | A4 L~3 e[21+21p+61pp*] nu[W6]
+A4 NO grid 1878.3 joint 475.4 ext 475.4 p_ext 5.7e-104 | A4 Q~3 u[21+21p+81p*] d[21pp+41pp+61pp*] | A4 L~3 e[21+41pp+61pp*] nu[W6]
+A4 IO grid 3722.8 joint 445.1 ext 446.5 p_ext 1.1e-97 | A4 Q~3 u[21+21p+81pp*] d[21pp+41pp+81p*] | A4 L~3 e[41+41p+61*] nu[W4]
+A4 IO grid 3898.6 joint 2135.5 ext 2137.0 p_ext 0 | A4 Q~3 u[21p+41+61*] d[21+41pp+81pp*] | A4 L~3 e[21p+41pp+81pp*] nu[W4]
+A4 IO grid 4361.8 joint 2730.4 ext 2731.9 p_ext 0 | A4 Q~3 u[41+41p+61p*] d[21+41pp+61*] | A4 L~3 e[21p+41pp+81pp*] nu[W4]
+A4 IO grid 4542.8 joint 1947.7 ext 1949.2 p_ext 0 | A4 Q~3 u[21+21p+81p*] d[21pp+41pp+61pp*] | A4 L~3 e[41+41p+61*] nu[W4]
+S4 NO grid 3439.3 joint 3409.3 ext 3409.3 p_ext 0 | S4 Q~3p u[41+41p+61*] d[41+41p+81*] | S4 L~3p e[41+61p+81*] nu[W4]
+S4 NO grid 3447.1 joint 3174.0 ext 3174.0 p_ext 0 | S4 Q~3p u[41+41p+61*] d[41+41p+81*] | S4 L~3p e[41+61*+61p] nu[W4]
+S4 NO grid 3516.9 joint 3191.3 ext 3191.3 p_ext 0 | S4 Q~3p u[41+41p+61*] d[21+61*+61p] | S4 L~3p e[41+61*+61p] nu[W4]
+S4 NO grid 3552.9 joint 3181.2 ext 3181.1 p_ext 0 | S4 Q~3p u[41+41p+61*] d[21+61*+61p] | S4 L~3p e[41+61p+81*] nu[W4]
+S4 IO grid 2775.0 joint 2763.9 ext 2765.4 p_ext 0 | S4 Q~3 u[41p+61+61p*] d[21p+61+61p*] | S4 L~3p e[41p+61p+81*] nu[W4]
+S4 IO grid 2601.6 joint 2210.3 ext 2211.8 p_ext 0 | S4 Q~3 u[41p+61+61p*] d[21p+61+61p*] | S4 L~3p e[41+41p+81p*] nu[W4]
+S4 IO grid 2790.9 joint 2138.3 ext 2139.8 p_ext 0 | S4 Q~3 u[41p+61+61p*] d[21p+61+61p*] | S4 L~3 e[41+61+61p*] nu[W4]
+S4 IO grid 2837.0 joint 2162.9 ext 2164.4 p_ext 0 | S4 Q~3 u[41p+61+61p*] d[21p+61+61p*] | S4 L~3 e[21p+41+61] nu[W6]
+A5 NO grid 5968.5 joint 5366.9 ext 5366.9 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W4]
+A5 NO grid 6098.0 joint 5644.0 ext 5644.0 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W6]
+A5 NO grid 10436.6 joint 5447.9 ext 5447.9 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W4]
+A5 NO grid 14345.3 joint 14241.1 ext inf p_ext 0 | A5 Q~3 u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W6]
+A5 IO grid 3893.5 joint 3267.9 ext 3269.4 p_ext 0 | A5 Q~3 u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W6]
+A5 IO grid 4385.6 joint 3430.9 ext 3432.4 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W4]
+A5 IO grid 5477.3 joint 4127.6 ext 4129.1 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3p e[21+41+61*] nu[W6]
+A5 IO grid 17119.7 joint 12496.8 ext 12390.1 p_ext 0 | A5 Q~3p u[21+41+61*] d[21+41+61*] | A5 L~3 e[21+41+61*] nu[W6]
+done 24

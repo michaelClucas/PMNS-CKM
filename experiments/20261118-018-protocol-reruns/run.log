@@ -1,0 +1,21 @@
+=== exp 018 protocol re-runs (2026-11-18) ===
+[18:22:39] T1 N1 NO: hits 5/7 (planned 1000, stopped_early True) rate 0.7143 CP95 upper 0.9466 passed False; strict hits 0; ref p_global 0.9525 [GUT|12+13|up|f#9412] 5s
+[18:22:56] T1 N1 IO: hits 5/10 (planned 1000, stopped_early True) rate 0.5000 CP95 upper 0.7776 passed False; strict hits 0; ref p_global 0.9525 [GUT|12+13|up|f#9412] 6s
+[18:23:00] T1 N2 NO: hits 5/16 (planned 1000, stopped_early True) rate 0.3125 CP95 upper 0.5483 passed False; strict hits 0; ref p_global 0.9525 [GUT|12+13|up|f#9412] 4s
+[18:23:05] T1 N2 IO: hits 5/21 (planned 1000, stopped_early True) rate 0.2381 CP95 upper 0.4370 passed False; strict hits 0; ref p_global 0.9525 [GUT|12+13|up|f#9412] 5s
+[18:24:27] T1 power N1 NO: 0/20 pass (fraction 0.00, adequate False); injected fits ok (fit-only) 20/20; fakes run per injection [4, 1, 1, 1, 3, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1]; 82s
+[18:25:51] T1 power N2 NO: 0/20 pass (fraction 0.00, adequate False); injected fits ok (fit-only) 20/20; fakes run per injection [1, 2, 4, 2, 2, 6, 4, 99, 3, 1, 1, 2, 1, 2, 3, 1, 4, 6, 3, 1]; 85s
+[18:26:14] F2LO N1 NO: hits 5/7 (planned 1000, stopped_early True) rate 0.7143 CP95 upper 0.9466 passed False; strict hits 0; ref p_global 0.06548 [GR2|c12=1|c23=1|c13=0|std|phi=287.080] 20s
+[18:26:38] F2LO N1 IO: hits 5/8 (planned 1000, stopped_early True) rate 0.6250 CP95 upper 0.8889 passed False; strict hits 0; ref p_global 0.06548 [GR2|c12=1|c23=1|c13=0|std|phi=287.080] 24s
+[18:26:59] F2LO N2 NO: hits 5/7 (planned 1000, stopped_early True) rate 0.7143 CP95 upper 0.9466 passed False; strict hits 0; ref p_global 0.06548 [GR2|c12=1|c23=1|c13=0|std|phi=287.080] 21s
+[18:27:13] F2LO N2 IO: hits 5/7 (planned 1000, stopped_early True) rate 0.7143 CP95 upper 0.9466 passed False; strict hits 0; ref p_global 0.06548 [GR2|c12=1|c23=1|c13=0|std|phi=287.080] 14s
+[07:13:01] --- resumed after pause (background jobs killed); F2LO power N1/N2 NO rerun from scratch with the same seeds ---
+[07:25:56] F2LO power N1 NO: 0/20 pass (fraction 0.00, adequate False); injected fits ok (fit-only) 19/20; fakes run per injection [1, 1, 26, 2, 2, 3, 15, 2, 1, 2, 1, 2, 3, 1, 2, 7, 2, 1, 1]; 742s
+[08:19:52] F2LO power N2 NO: 1/20 pass (fraction 0.05, adequate False); injected fits ok (fit-only) 19/20; fakes run per injection [6, 14, 300, 5, 19, 2, 90, 27, 9, 10, 2, 2, 2, 2, 18, 26, 4, 1, 6]; 3236s
+[08:24:30] T1 power N1 IO: 0/20 pass (fraction 0.00, adequate False); injected fits ok (fit-only) 20/20; fakes run per injection [1, 2, 4, 2, 1, 4, 2, 1, 2, 3, 1, 1, 2, 1, 1, 3, 9, 1, 1, 1]; 270s
+[08:27:52] T1 power N2 IO: 0/20 pass (fraction 0.00, adequate False); injected fits ok (fit-only) 20/20; fakes run per injection [6, 4, 9, 4, 3, 3, 1, 3, 1, 4, 2, 3, 3, 1, 14, 1, 10, 5, 2, 8]; 202s
+[08:32:28] T1 RATE N1 NO: hits 490/1000 rate 0.4900 CP95 two-sided [0.4586, 0.5215] one-sided upper 0.5165; strict hits 0 276s
+[08:33:20] T1 RATE N2 NO: hits 288/1000 rate 0.2880 CP95 two-sided [0.2601, 0.3172] one-sided upper 0.3125; strict hits 0 52s
+[08:34:21] T1 RATE N2 IO: hits 315/1000 rate 0.3150 CP95 two-sided [0.2863, 0.3448] one-sided upper 0.3400; strict hits 0 61s
+[08:41:10] F2LO RATE N2 NO: hits 63/100 rate 0.6300 CP95 two-sided [0.5276, 0.7244] one-sided upper 0.7106; strict hits 0 341s
+[08:50:56] F2LO RATE N1 NO (100 fakes) killed by a 14-min timeout at the end of the budget; no output (its spawn workers exited with the parent).
