@@ -1,0 +1,46 @@
+{
+ "best": {
+  "theta12e": 0.01,
+  "chi2": 10.185695654442238,
+  "phi": 0.17453292519943295,
+  "r": 0.101,
+  "s12sq": 0.3113071776619106,
+  "s13sq": 0.022522677985251358,
+  "s23sq": 0.5135446104890581,
+  "dcp_deg": 270.61778251103823
+ },
+ "theta12e_allowed_dchi2_lt4": [
+  0.0,
+  0.03
+ ],
+ "chi2_at_theta12e_0": 12.037746286530885,
+ "N": 5,
+ "k_cont": 3,
+ "note": "k_cont = r, theta12e, phi when both are free; in P1 theta12e and phi come from Y_d x Clebsch (0 extra)"
+}
+theta12e 0.000 chi2 12.04 phi 50
+theta12e 0.010 chi2 10.19 phi 10
+theta12e 0.020 chi2 10.27 phi 10
+theta12e 0.030 chi2 12.25 phi 10
+theta12e 0.040 chi2 16.21 phi 10
+theta12e 0.050 chi2 22.51 phi 10
+theta12e 0.060 chi2 31.49 phi 10
+theta12e 0.070 chi2 43.16 phi 10
+theta12e 0.080 chi2 55.00 phi 0
+theta12e 0.090 chi2 67.28 phi 0
+theta12e 0.100 chi2 81.38 phi 0
+theta12e 0.110 chi2 97.24 phi 0
+theta12e 0.120 chi2 117.20 phi 0
+theta12e 0.130 chi2 133.67 phi 220
+theta12e 0.140 chi2 142.41 phi 220
+theta12e 0.150 chi2 150.56 phi 220
+theta12e 0.160 chi2 159.87 phi 220
+theta12e 0.170 chi2 169.35 phi 220
+theta12e 0.180 chi2 180.42 phi 220
+theta12e 0.190 chi2 193.86 phi 220
+theta12e 0.200 chi2 204.45 phi 230
+theta12e 0.210 chi2 203.72 phi 230
+theta12e 0.220 chi2 205.68 phi 230
+theta12e 0.230 chi2 209.32 phi 230
+theta12e 0.240 chi2 215.59 phi 230
+theta12e 0.250 chi2 225.87 phi 230

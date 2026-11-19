@@ -53,6 +53,21 @@ with alpha = alpha(0) (good to ~0.2% vs the two-loop numbers of arXiv:2510.01312
 CKM: PDG standard parametrisation from data/ckm.json (treated as the M_Z value).
 PMNS: NuFIT from data/pmns.json, masses from m_lightest + splittings, Majorana phases
 (phi1, phi2) enter as kappa = (4/v^2) U^* diag(m1 e^{i phi1}, m2 e^{i phi2}, m3) U^dag.
+m_lightest (eV) is m1 (NO) or m3 (IO) at M_Z; any finite value >= 0 is accepted (exp 019).
+
+Quark-only paths (exp 019): ckm_at, derived_yukawas_mz and mass_ratios build their M_Z
+state with neutrinos=False (kappa = 0). kappa does not enter the one-loop Yukawa, gauge
+or quartic RGEs, so quark and charged-lepton outputs are unchanged except for adaptive
+step-control noise (~1e-12 relative), and they no longer read any PMNS or neutrino-
+splitting record (the leak probe used to flag that crosstalk, exp 018).
+
+Uncertainties (exp 019): derived_yukawas_mz_unc and mass_ratios(errors=True) propagate the
+PDG errors of UNC_MASS_INPUTS and alpha_s(M_Z) linearly. Each input x_i (1 sigma s_i = the
+mean of err_plus and err_minus) is stepped by h_i = max(s_i, 1e-6 |x_i|) both ways; the
+central difference gives d out / d x_i, and cov = J diag(s^2) J^T. Inputs are treated as
+independent (PDG publishes no mass correlations). Not included: the error of the one-loop
+QED pole -> MSbar conversion of the charged leptons (~0.2%, see above) and missing
+higher-order running. Those are theory errors (src.evaluate's mass_floor).
 """
 from __future__ import annotations
 
@@ -70,6 +85,7 @@ from src.mixing import extract_angles, jarlskog, standard_matrix
 __all__ = [
     "load_sm_inputs", "qcd_alpha_s", "quark_masses_mz", "derived_yukawas_mz", "build_mz_state",
     "run", "run_sm", "run_mssm", "observables", "ckm_at", "pmns_at", "neutrino_masses",
+    "derived_yukawas_mz_unc", "mass_ratios", "propagate", "MASS_RATIO_KEYS", "UNC_MASS_INPUTS",
 ]
 
 DATA = pathlib.Path(__file__).resolve().parents[1] / "data"
@@ -409,16 +425,35 @@ def run_mssm(mu_from, mu_to, inputs, tan_beta, m_susy=3000.0, rtol=1e-10):
 
 # ------------------------------------------------------------------ boundary values at M_Z
 
-def neutrino_masses(ordering, m_lightest, analysis=_data.DEFAULT_ANALYSIS):
-    """(m1, m2, m3) in eV from NuFIT splittings."""
-    sp = _data.load_masses()["neutrino_splittings"][analysis][ordering]
-    dm21 = sp["dm21sq"]["value"]
+def _check_m_lightest(m_lightest):
+    m = float(m_lightest)
+    if not np.isfinite(m) or m < 0:
+        raise ValueError(f"m_lightest must be a finite number >= 0 (eV), got {m_lightest!r}")
+    return m
+
+
+def neutrino_masses(ordering, m_lightest, analysis=_data.DEFAULT_ANALYSIS, splittings=None):
+    """(m1, m2, m3) in eV from NuFIT splittings.
+
+    m_lightest: m1 (NO) or m3 (IO) in eV, >= 0. splittings: optional (dm21sq, dm3l_sq) in
+    eV^2 overriding NuFIT (dm3l_sq = Delta m^2_31 > 0 for NO, Delta m^2_32 < 0 for IO).
+    """
+    _data._check_ordering(ordering)
+    ml = _check_m_lightest(m_lightest)
+    if splittings is None:
+        sp = _data.load_masses()["neutrino_splittings"][analysis][ordering]
+        dm21 = sp["dm21sq"]["value"]
+        dm3l = sp["dm31sq" if ordering == "NO" else "dm32sq"]["value"]
+    else:
+        dm21, dm3l = (float(x) for x in splittings)
     if ordering == "NO":
-        m1 = m_lightest
-        return np.array([m1, np.sqrt(m1 ** 2 + dm21), np.sqrt(m1 ** 2 + sp["dm31sq"]["value"])])
-    m3 = m_lightest
-    m2 = np.sqrt(m3 ** 2 - sp["dm32sq"]["value"])
-    return np.array([np.sqrt(m2 ** 2 - dm21), m2, m3])
+        if dm3l <= 0:
+            raise ValueError("NO needs Delta m^2_31 > 0")
+        return np.array([ml, np.sqrt(ml ** 2 + dm21), np.sqrt(ml ** 2 + dm3l)])
+    if dm3l >= 0:
+        raise ValueError("IO needs Delta m^2_32 < 0")
+    m2 = np.sqrt(ml ** 2 - dm3l)
+    return np.array([np.sqrt(m2 ** 2 - dm21), m2, ml])
 
 
 def _pmns_input(ordering, analysis):
@@ -435,13 +470,16 @@ def _ckm_input():
 
 
 def build_mz_state(ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), analysis=_data.DEFAULT_ANALYSIS,
-                   yukawas=None, ckm=None, pmns=None, masses=None, sm_inputs=None):
+                   yukawas=None, ckm=None, pmns=None, masses=None, sm_inputs=None, neutrinos=True,
+                   splittings=None):
     """SM state at M_Z.
 
     yukawas: optional dict y_u..y_tau overriding the values derived from data/ (used for
     validation against arXiv:2510.01312 Eq. (4)). ckm, pmns: optional (t12, t13, t23, delta).
     masses, sm_inputs: input overrides as in quark_masses_mz. masses only matters when
     yukawas is None (derived Yukawas); sm_inputs also sets g, lambda and v.
+    neutrinos=False: kappa = 0 and no PMNS or splitting record is read (quark-only paths).
+    splittings: optional (dm21sq, dm3l_sq) in eV^2, as in neutrino_masses.
     """
     sm = _merged_sm(_freeze_sm(sm_inputs)) if sm_inputs else load_sm_inputs()
     ahs = sm["ahs2025_msbar_MZ"]
@@ -452,14 +490,18 @@ def build_mz_state(ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), analysis=
     if yukawas is None:
         yukawas = derived_yukawas_mz(masses=masses, sm_inputs=sm_inputs)
     V = standard_matrix(*(ckm if ckm is not None else _ckm_input()))
-    U = standard_matrix(*(pmns if pmns is not None else _pmns_input(ordering, analysis)))
     Yu = np.diag([yukawas["y_u"], yukawas["y_c"], yukawas["y_t"]]).astype(complex)
     Yd = V @ np.diag([yukawas["y_d"], yukawas["y_s"], yukawas["y_b"]])
     Ye = np.diag([yukawas["y_e"], yukawas["y_mu"], yukawas["y_tau"]]).astype(complex)
-    m = neutrino_masses(ordering, m_lightest, analysis) * EV
-    D = np.diag(m * np.exp(1j * np.array([majorana[0], majorana[1], 0.0])))
-    kappa = 4 / v ** 2 * U.conj() @ D @ U.conj().T
-    kscale = 4 / v ** 2 * max(m.max(), 1e-3 * EV)
+    if neutrinos:
+        U = standard_matrix(*(pmns if pmns is not None else _pmns_input(ordering, analysis)))
+        m = neutrino_masses(ordering, m_lightest, analysis, splittings) * EV
+        D = np.diag(m * np.exp(1j * np.array([majorana[0], majorana[1], 0.0])))
+        kappa = 4 / v ** 2 * U.conj() @ D @ U.conj().T
+        kscale = 4 / v ** 2 * max(m.max(), 1e-3 * EV)
+    else:
+        kappa = np.zeros((3, 3), dtype=complex)
+        kscale = 4 / v ** 2 * 1e-3 * EV
     return {"g": g, "Yu": Yu, "Yd": Yd, "Ye": Ye, "lam": lam, "kappa": kappa, "kscale": kscale,
             "mu": mz, "normalisation": "SM", "ordering": ordering}
 
@@ -480,7 +522,7 @@ def _derived_yukawas_impl(q, sm, lep, sm_override=None):
 
     def yt_at_mt(yt):
         yy = dict(y, y_t=yt)
-        s = build_mz_state(yukawas=yy, sm_inputs=sm_override)
+        s = build_mz_state(yukawas=yy, sm_inputs=sm_override, neutrinos=False)
         s = run_sm(mz, Mt, s, rtol=1e-9)
         return np.linalg.svd(s["Yu"], compute_uv=False)[0]
 
@@ -554,6 +596,9 @@ def observables(state, tan_beta=None) -> dict:
                  "y_d": yd[0] * cb, "y_s": yd[1] * cb, "y_b": yd[2] * cb,
                  "y_e": ye[0] * cb, "y_mu": ye[1] * cb, "y_tau": ye[2] * cb},
            "g": state["g"].copy()}
+    if not np.any(state["kappa"]):
+        out["pmns"] = None  # quark-only state (neutrinos=False)
+        return out
     v = load_sm_inputs()["ahs2025_msbar_MZ"]["v_MZ"]["value"]
     k = Ue.T @ state["kappa"] @ Ue  # charged-lepton mass basis
     w, Un = np.linalg.eigh(k.conj().T @ k)
@@ -584,7 +629,7 @@ def _freeze_dict(d):
 @functools.lru_cache(maxsize=1024)
 def _ckm_at_cached(mu, model, tan_beta, m_susy, fy, fc, fm, fs):
     s = build_mz_state(yukawas=None if fy is None else dict(fy), ckm=fc,
-                       masses=dict(fm) or None, sm_inputs=_thaw_sm(fs))
+                       masses=dict(fm) or None, sm_inputs=_thaw_sm(fs), neutrinos=False)
     o = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)
     y = o["y"]
     r = {"mu_over_mc": y["y_u"] / y["y_c"], "mc_over_mt": y["y_c"] / y["y_t"],
@@ -600,7 +645,9 @@ def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None,
 
     yukawas, ckm: as in build_mz_state. masses, sm_inputs: input overrides as in
     quark_masses_mz (masses is ignored when yukawas is given; sm_inputs still sets g,
-    lambda, v). Results are memoised per argument set (cache=False bypasses the memo); the
+    lambda, v). No neutrino sector is run (kappa = 0), so no PMNS record is read.
+    "ratios" are same-scale mass ratios; mass_ratios() gives them with errors under the
+    src.evaluate names. Results are memoised per argument set (cache=False bypasses the memo); the
     returned dict is a fresh deep copy. ckm_at.cache_clear() drops the memo, which is
     needed only if you monkeypatch the loaders in-process.
     """
@@ -614,12 +661,152 @@ ckm_at.cache_clear = _ckm_at_cached.cache_clear
 ckm_at.cache_info = _ckm_at_cached.cache_info
 
 
+@functools.lru_cache(maxsize=256)
+def _pmns_at_cached(mu, ordering, m_lightest, majorana, model, tan_beta, m_susy, analysis, fp, fsp, fc, fm, fs):
+    s = build_mz_state(ordering, m_lightest, majorana, analysis, ckm=fc, pmns=fp,
+                       masses=dict(fm) or None, sm_inputs=_thaw_sm(fs), splittings=fsp)
+    p = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)["pmns"]
+    m = np.asarray(p["m"], dtype=float)
+    dm21 = m[1] ** 2 - m[0] ** 2
+    dm3l = m[2] ** 2 - (m[0] ** 2 if ordering == "NO" else m[1] ** 2)
+    return {**p, "m21_ratio": m[0] / m[1] if m[1] else np.nan, "dm21_over_dm3l": dm21 / abs(dm3l),
+            "dm21sq_eV2": float(dm21), "dm3l_sq_eV2": float(dm3l), "sum_m": float(m.sum()),
+            "m_lightest": float(m[0] if ordering == "NO" else m[2])}
+
+
 def pmns_at(mu, ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), model="SM", tan_beta=None,
-            m_susy=3000.0, analysis=_data.DEFAULT_ANALYSIS) -> dict:
-    """PMNS angles/delta and neutrino masses (eV, m_nu = kappa v(M_Z)^2/4) at scale mu."""
-    s = build_mz_state(ordering, m_lightest, majorana, analysis)
-    o = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)
-    p = o["pmns"]
-    m = p["m"]
-    return {**p, "m21_ratio": m[0] / m[1] if m[1] else np.nan,
-            "dm21_over_dm3l": (m[1] ** 2 - m[0] ** 2) / abs(m[2] ** 2 - (m[0] ** 2 if ordering == "NO" else m[1] ** 2))}
+            m_susy=3000.0, analysis=_data.DEFAULT_ANALYSIS, pmns=None, splittings=None, ckm=None,
+            masses=None, sm_inputs=None) -> dict:
+    """PMNS angles/delta and neutrino masses (eV, m_nu = kappa v(M_Z)^2/4) at scale mu.
+
+    m_lightest: m1 (NO) or m3 (IO) in eV at M_Z, any finite value >= 0 (ValueError
+    otherwise). majorana: (phi1, phi2). pmns: optional (t12, t13, t23, delta) at M_Z instead
+    of NuFIT; splittings: optional (dm21sq, dm3l_sq) eV^2 instead of NuFIT; ckm, masses,
+    sm_inputs: overrides as in ckm_at (they enter through the Yukawa traces).
+    Returns theta12..delta, J, m (m1, m2, m3), m21_ratio = m1/m2, dm21_over_dm3l =
+    Delta m^2_21 / |Delta m^2_3l| (3l = 31 for NO, 32 for IO), dm21sq_eV2, dm3l_sq_eV2
+    (signed, NuFIT convention), sum_m and m_lightest, all at mu. Memoised; returns a copy.
+    """
+    _data._check_ordering(ordering)
+    key = (float(mu), ordering, _check_m_lightest(m_lightest), tuple(float(x) for x in majorana), model,
+           None if tan_beta is None else float(tan_beta), float(m_susy), analysis, _freeze_seq(pmns),
+           _freeze_seq(splittings), _freeze_seq(ckm), _freeze_masses(masses), _freeze_sm(sm_inputs))
+    return copy.deepcopy(_pmns_at_cached(*key))
+
+
+pmns_at.cache_clear = _pmns_at_cached.cache_clear
+
+
+# ------------------------------------------------------------------ uncertainties
+
+UNC_MASS_INPUTS = ("m_u", "m_d", "m_s", "m_c", "m_b", "m_t_direct", "m_e", "m_mu", "m_tau")
+UNC_SM_INPUTS = (("pdg2026", "alpha_s_MZ"),)
+# same-scale mass ratios: src.evaluate name -> ckm_at "ratios" name. The seven are
+# independent in log space (7 directions of the 9 log masses), so every subset is too.
+MASS_RATIO_KEYS = {"mr_u_c": "mu_over_mc", "mr_c_t": "mc_over_mt", "mr_d_s": "md_over_ms",
+                   "mr_s_b": "ms_over_mb", "mr_e_mu": "me_over_mmu", "mr_mu_tau": "mmu_over_mtau",
+                   "mr_b_tau": "mb_over_mtau"}
+
+
+def _sigma(rec):
+    return 0.5 * (abs(rec["err_plus"]) + abs(rec["err_minus"]))
+
+
+def propagate(fn, masses=None, sm_inputs=None) -> dict:
+    """Linear error propagation of fn(masses_override, sm_override) -> {name: float}.
+
+    Inputs: UNC_MASS_INPUTS (data/masses.json records, central values with the `masses`
+    overrides applied, errors from the data) and UNC_SM_INPUTS. Central differences with
+    step max(sigma, 1e-6 |x|) (module docstring). Returns {"value", "err", "cov", "names",
+    "inputs", "jac"} with jac[i, j] = d out_i / d input_j * sigma_j.
+    """
+    fm = _freeze_masses(masses)
+    ms = _merged_masses(fm)
+    sm = _merged_sm(_freeze_sm(sm_inputs))
+    base_m = dict(fm)
+    base_s = {b: dict(e) for b, e in (_thaw_sm(_freeze_sm(sm_inputs)) or {}).items()}
+    val = fn(base_m or None, base_s or None)
+    names = tuple(val)
+    cols, labels = [], []
+    steps = [("m", k, ms[k]["value"], _sigma(_data.load_masses()[k])) for k in UNC_MASS_INPUTS]
+    steps += [("s", (b, k), sm[b][k]["value"], _sigma(load_sm_inputs()[b][k])) for b, k in UNC_SM_INPUTS]
+    for kind, k, x, sig in steps:
+        h = max(sig, 1e-6 * abs(x))
+        outs = []
+        for sgn in (1, -1):
+            if kind == "m":
+                o = fn(dict(base_m, **{k: x + sgn * h}), base_s or None)
+            else:
+                s2 = {b: dict(e) for b, e in base_s.items()}
+                s2.setdefault(k[0], {})[k[1]] = x + sgn * h
+                o = fn(base_m or None, s2)
+            outs.append(np.array([o[n] for n in names], dtype=float))
+        cols.append((outs[0] - outs[1]) / (2 * h) * sig)
+        labels.append(k if kind == "m" else "/".join(k))
+    jac = np.array(cols).T
+    cov = jac @ jac.T
+    return {"value": {n: float(val[n]) for n in names}, "err": dict(zip(names, np.sqrt(np.diag(cov)))),
+            "cov": cov, "names": names, "inputs": tuple(labels), "jac": jac}
+
+
+def _yuk_fn(m, s):
+    return derived_yukawas_mz(masses=m, sm_inputs=s)
+
+
+@functools.lru_cache(maxsize=8)
+def _yukawa_unc_cached(fm, fs):
+    return propagate(_yuk_fn, dict(fm) or None, _thaw_sm(fs))
+
+
+def derived_yukawas_mz_unc(masses=None, sm_inputs=None) -> dict:
+    """derived_yukawas_mz with linearly propagated uncertainties (module docstring).
+
+    Returns {"value": {y_u..y_tau}, "err": {...}, "cov", "names", "inputs", "jac"}.
+    """
+    return copy.deepcopy(_yukawa_unc_cached(_freeze_masses(masses), _freeze_sm(sm_inputs)))
+
+
+def _mz():
+    return load_sm_inputs()["pdg2026"]["M_Z"]["value"]
+
+
+def _ratios_fn(mu, model, tan_beta, m_susy, ckm):
+    def fn(m, s):
+        if mu is None:
+            y = derived_yukawas_mz(masses=m, sm_inputs=s)
+            r = {"mu_over_mc": y["y_u"] / y["y_c"], "mc_over_mt": y["y_c"] / y["y_t"],
+                 "md_over_ms": y["y_d"] / y["y_s"], "ms_over_mb": y["y_s"] / y["y_b"],
+                 "me_over_mmu": y["y_e"] / y["y_mu"], "mmu_over_mtau": y["y_mu"] / y["y_tau"],
+                 "mb_over_mtau": y["y_b"] / y["y_tau"]}
+        else:
+            r = ckm_at(mu, model, tan_beta, m_susy, ckm=ckm, masses=m, sm_inputs=s)["ratios"]
+        return {k: float(r[v]) for k, v in MASS_RATIO_KEYS.items()}
+    return fn
+
+
+@functools.lru_cache(maxsize=64)
+def _mass_ratios_cached(mu, model, tan_beta, m_susy, fc, fm, fs, errors):
+    fn = _ratios_fn(mu, model, tan_beta, m_susy, fc)
+    if not errors:
+        return {"value": fn(dict(fm) or None, _thaw_sm(fs)), "names": tuple(MASS_RATIO_KEYS)}
+    out = propagate(fn, dict(fm) or None, _thaw_sm(fs))
+    v = np.array([out["value"][n] for n in out["names"]])
+    out["cov_log"] = out["cov"] / np.outer(v, v)
+    return out
+
+
+def mass_ratios(mu=None, model="SM", tan_beta=None, m_susy=3000.0, ckm=None, masses=None, sm_inputs=None,
+                errors=True) -> dict:
+    """Same-scale running-mass ratios MASS_RATIO_KEYS (mr_u_c = m_u/m_c, ..., mr_b_tau = m_b/m_tau).
+
+    mu=None or M_Z (default): from derived_yukawas_mz (quarks MSbar nf = 5 at M_Z, charged
+    leptons MSbar at M_Z, top via y_t(M_Z)). This is the scale of the src.evaluate mr_*
+    observables. Other mu: ratios of SM-normalised Yukawa eigenvalues at mu (ckm_at with
+    model, tan_beta, m_susy, ckm). errors=True adds the linear propagation of `propagate`:
+    "err", "cov", "cov_log" (covariance of the log ratios), "jac", "inputs".
+    Memoised; returns a copy.
+    """
+    key = (None if mu is None or float(mu) == _mz() else float(mu), model,
+           None if tan_beta is None else float(tan_beta), float(m_susy), _freeze_seq(ckm),
+           _freeze_masses(masses), _freeze_sm(sm_inputs), bool(errors))
+    return copy.deepcopy(_mass_ratios_cached(*key))

@@ -1,0 +1,46 @@
+{
+ "summary": {
+  "S4": {
+   "n_assign": 968,
+   "n_exact_stageA": 968,
+   "n_stageA_tau_points": 5,
+   "n_stageB": 40,
+   "n_stageC": 5,
+   "best_chi2": 3167.4623275365275,
+   "best_label": "S4 Q~3p u[41+61p+81p*] d[41+41p+81*]"
+  },
+  "A4": {
+   "n_assign": 12100,
+   "n_exact_stageA": 12100,
+   "n_stageA_tau_points": 1,
+   "n_stageB": 40,
+   "n_stageC": 5,
+   "best_chi2": 2178.146314094849,
+   "best_label": "A4 Q~3 u[21pp+41p+81pp*] d[41+41pp+61*]"
+  }
+ },
+ "rep_points": [
+  [
+   -0.1795,
+   1.098
+  ],
+  [
+   -0.1915,
+   1.086
+  ],
+  [
+   -0.1675,
+   1.1095
+  ],
+  [
+   -0.1845,
+   1.091
+  ],
+  [
+   -0.17500000000000002,
+   1.1055
+  ]
+ ],
+ "n_region_6.18": 514,
+ "n_region_2.30": 190
+}

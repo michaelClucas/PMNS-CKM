@@ -14,9 +14,10 @@ worker processes) and must rerun every data-dependent choice, including discrete
 and the ordering choice, on each universe.
 
     run_null(pipeline, null="N1", ordering="NO", n_fakes=1000, ...)  -> NullResult
-    power_check(pipeline, inject_fn, n_inject=20, n_fakes=300, ...)  -> PowerResult
+    power_check(pipeline, inject_fn, n_inject=20, n_fakes=300, ok_fn=candidate_ok, ...) -> PowerResult
     make_injector(pred)                                               -> inject_fn
     is_hit(fake, ref), candidate_ok(res), max_hits_to_pass(n), decide(n_hits, n)
+    is_hit_fit_only(fake, ref), candidate_ok_fit_only(res), FIT_ONLY   (informational rule)
 
 Nulls
 -----
@@ -31,6 +32,24 @@ N2  Shifted-data null. CKM and masses are the base universe's. For each ordering
     s12sq, s13sq, s23sq uniform on the NuFIT 3 sigma range of that ordering widened x3
     about its midpoint (N2_WIDEN, clipped to (0, 1)), dcp_deg uniform on [0, 360). The
     fake is scored with the NuFIT tables translated to the fake centre (below).
+N3  Mass-side null (exp 019). CKM and PMNS are the base universe's. The seven same-scale
+    mass ratios of src.evaluate (u/c, c/t, d/s, s/b, b/tau, e/mu, mu/tau) get independent
+    log-uniform factors 10^U[-w, w]: w = N3_PRIOR["decades"] = 1 for the light-over-heavy
+    ratios, w = N3_PRIOR["heavy_decades"] = 0.2 for c_t and b_tau. Only the ratios listed
+    in N3_PRIOR["ratios"] (default u_c, d_s, s_b, e_mu, mu_tau) are moved; c_t and b_tau
+    move m_c and m_b, which are also the QCD decoupling scales of src.rg, so when either is
+    listed their factors are clipped so that m_b(m_b) stays in N3_MB_RANGE = [2.5, 50] GeV
+    and m_c(m_c) in [N3_MC_MIN = 1.0 GeV, 0.8 m_b] (the four-loop running of src.rg is not
+    trustworthy outside); truth["factors"] holds the clipped factors. The heaviest mass of each sector is the anchor
+    (t for up quarks, tau for down quarks via b_tau and for leptons); each lighter mass is
+    moved by the product of the factors on its chain (u by u_c * c_t, d by d_s * s_b *
+    b_tau, e by e_mu * mu_tau, ...), so each realised M_Z ratio moves by its own factor
+    (exactly for the light quarks and leptons, whose running is linear in the mass; up to
+    threshold effects for c and b). Each fake record keeps the real record's RELATIVE
+    error, and the PDG ratio records (m_u_over_m_d, ...) are moved consistently; top
+    records are never moved. Pipelines pass Universe.rg_masses() to src.rg as masses=, and
+    the scorer gets the records through mass_records (mr_* targets are recomputed from
+    them). truth["factors"] holds the drawn factors, truth["masses"] the fake values.
 Haar-PMNS is not implemented here: per exp 012 M5 it is informational only.
 
 Translated NuFIT tables (exp 012 M4)
@@ -56,7 +75,19 @@ The 1D pull signs and the delta wrap use the fake centre.
 Hit and decision (protocol steps 3-4)
 -------------------------------------
 A fake is a hit when its best result r has k <= N - 2 (k counts discrete bits, as
-src.evaluate does), max|pull| < 2, and p_global >= the real candidate's p_global.
+src.evaluate does), max|pull| < 2, and p_global >= the real candidate's p_global
+(is_hit). p_global is compared with a relative tolerance, p_fake >= p_ref * (1 - P_RTOL)
+with P_RTOL = 1e-5, so a relation the null does not touch still counts as a hit when the
+fake's p moves by integrator noise (exp 018: 1e-7 RG noise flipped exact comparisons).
+
+Fit-only rule (exp 019; INFORMATIONAL). For a lead with k > N - 2 the strict rule is
+vacuous: no fake can be a hit and no injection passes candidate_ok, so criterion 4 says
+nothing. is_hit_fit_only drops the compression clause (max|pull| < 2 and p_global >=
+p_ref (1 - P_RTOL)); candidate_ok_fit_only drops it from criteria 2-3. Use them together
+(FIT_ONLY = dict(hit_fn=..., ok_fn=...) for run_null / power_check). A null passed under
+the fit-only rule says the search does not find equally good fits in fake universes. It
+does NOT satisfy criterion 4, which still needs a result that passes criterion 2.
+NullResult.hit_rule and PowerResult.hit_rule record which rule was used.
 The null passes when the one-sided 95% Clopper-Pearson upper limit on the hit rate is
 below 1%: at most 4 hits in 1000 fakes, 0 in 300 (max_hits_to_pass). Fakes run in index
 order; with early_stop the run stops as soon as the hit count exceeds that bound (only a
@@ -67,10 +98,12 @@ Power check (protocol step 5)
 inject_fn(rng, base) -> Universe in which the candidate's structure is true (make_injector
 builds one from a best-fit prediction plus measurement noise). For each of n_inject
 injections the pipeline is run on the injected universe (its result is the reference);
-if that result passes criteria 2-3 the null is run with n_fakes fakes built around the
-injected universe. PowerResult.fraction is the fraction of injections where both hold;
-below 0.5 the null cannot confirm or exclude the family. With 300 fakes the null passes
-only with 0 hits.
+if that result passes ok_fn (default candidate_ok, criteria 2-3) the null is run with
+n_fakes fakes built around the injected universe. PowerResult.fraction is the fraction of
+injections where both hold; below 0.5 the null cannot confirm or exclude the family. With
+300 fakes the null passes only with 0 hits. With workers > 1 one process pool serves all
+injections (run_null(pool=...)): fakes go to it in blocks of 4 x workers and are counted
+in index order, so the results equal the serial ones.
 
 Seeds: fake i of a run uses np.random.default_rng([*seed, null code, ordering code, i]),
 so results do not depend on the worker count.
@@ -89,12 +122,22 @@ from .mixing import standard_matrix as _standard_matrix
 from .stats import fake_universe_rate
 
 PMNS_KEYS = _ev.PMNS_KEYS
-NULLS = ("N1", "N2")
+NULLS = ("N1", "N2", "N3")
 N1_PRIOR = {"lambda": (0.05, 0.5), "A": (0.3, 2.0), "rhobar": (-1.0, 1.0), "etabar": (-1.0, 1.0)}
 N2_WIDEN = 3.0
+N3_PRIOR = {"decades": 1.0, "heavy_decades": 0.2, "ratios": ("u_c", "d_s", "s_b", "e_mu", "mu_tau")}
+N3_RATIOS = ("u_c", "c_t", "d_s", "s_b", "b_tau", "e_mu", "mu_tau")
+# mass record -> the ratio factors that move it (chains anchored at t and tau)
+_N3_CHAIN = {"m_c": ("c_t",), "m_u": ("u_c", "c_t"), "m_b": ("b_tau",), "m_s": ("s_b", "b_tau"),
+             "m_d": ("d_s", "s_b", "b_tau"), "m_mu": ("mu_tau",), "m_e": ("e_mu", "mu_tau")}
+_N3_PDG_RATIOS = {"m_u_over_m_d": ("m_u", "m_d"), "m_c_over_m_s": ("m_c", "m_s"),
+                  "m_b_over_m_c": ("m_b", "m_c"), "m_b_over_m_s": ("m_b", "m_s")}
+P_RTOL = 1e-5
+N3_MC_MIN = 1.0             # GeV, lower clip of a fake m_c(m_c)
+N3_MB_RANGE = (2.5, 50.0)   # GeV, clip of a fake m_b(m_b); m_c is also kept below 0.8 m_b
 RATE_LIMIT = 0.01
 CL = 0.95
-_NULL_CODE = {"N1": 1, "N2": 2, "inject": 3}
+_NULL_CODE = {"N1": 1, "N2": 2, "inject": 3, "N3": 4}
 _ORD_CODE = {"NO": 0, "IO": 1}
 
 
@@ -139,6 +182,12 @@ class Universe:
 
     def load_masses(self) -> dict:
         return dict(self.masses) if self.masses is not None else _mass_records_real()
+
+    def rg_masses(self) -> dict | None:
+        """masses= override for src.rg ({record: value}); None for the real masses."""
+        if self.masses is None:
+            return None
+        return {k: float(r["value"]) for k, r in self.masses.items() if isinstance(r, dict) and "value" in r}
 
     def pmns_real_best(self, ordering):
         return _ev.pmns_best(ordering, self.analysis)
@@ -216,9 +265,10 @@ class Universe:
     def _all_kwargs(self):
         return {o: self.scorer_kwargs(o) for o in _data.ORDERINGS}
 
-    def scorer(self, use, ordering=None, inputs=()):
+    def scorer(self, use, ordering=None, inputs=(), **opts):
+        """src.evaluate.Scorer on this universe; opts: mass_floor, scale."""
         o = ordering or self.ordering
-        return _ev.Scorer(use, o, self.analysis, inputs, **self.scorer_kwargs(o))
+        return _ev.Scorer(use, o, self.analysis, inputs, **self.scorer_kwargs(o), **opts)
 
     def evaluate(self, pred, use, ordering=None, **kw) -> _ev.EvalResult:
         """src.evaluate.evaluate on this universe (ordering defaults to self.ordering)."""
@@ -269,7 +319,45 @@ def n2_universe(base: Universe, rng, prior: Mapping | None = None) -> Universe:
     return replace(base, kind="N2", pmns_centre=centres, truth={"pmns_centre": centres})
 
 
-_MAKERS = {"N1": n1_universe, "N2": n2_universe}
+def n3_masses(rng, base_masses: Mapping, prior: Mapping | None = None):
+    """N3 draw: (fake mass records, factors). See the module docstring."""
+    pr = dict(N3_PRIOR, **(prior or {}))
+    bad = set(pr["ratios"]) - set(N3_RATIOS)
+    if bad:
+        raise ValueError(f"unknown N3 ratios {sorted(bad)}; known {N3_RATIOS}")
+    fac = {}
+    for r in N3_RATIOS:  # all seven are drawn, so the stream does not depend on the subset
+        w = pr["heavy_decades"] if r in ("c_t", "b_tau") else pr["decades"]
+        x = float(10 ** rng.uniform(-w, w))
+        fac[r] = x if r in pr["ratios"] else 1.0
+    base = {k: dict(v) for k, v in base_masses.items() if isinstance(v, dict) and "value" in v}
+    mb0, mc0 = base["m_b"]["value"], base["m_c"]["value"]
+    if fac["b_tau"] != 1.0:  # keep the QCD thresholds of src.rg sensible (module docstring)
+        fac["b_tau"] = float(np.clip(fac["b_tau"], N3_MB_RANGE[0] / mb0, N3_MB_RANGE[1] / mb0))
+    if fac["c_t"] != 1.0:
+        fac["c_t"] = float(np.clip(fac["c_t"], N3_MC_MIN / mc0, 0.8 * mb0 * fac["b_tau"] / mc0))
+    val = {k: base[k]["value"] for k in base}
+    for m, chain in _N3_CHAIN.items():
+        val[m] = base[m]["value"] * float(np.prod([fac[c] for c in chain]))
+    for k, (a, b) in _N3_PDG_RATIOS.items():
+        if k in base:
+            val[k] = base[k]["value"] * (val[a] / base[a]["value"]) / (val[b] / base[b]["value"])
+    out = {}
+    for k, r in base.items():
+        f = val[k] / r["value"]
+        out[k] = r if f == 1.0 else dict(r, value=val[k], err_plus=r["err_plus"] * f,
+                                          err_minus=r["err_minus"] * f)
+    return out, fac
+
+
+def n3_universe(base: Universe, rng, prior: Mapping | None = None) -> Universe:
+    """N3: base CKM and PMNS, mass ratios from the log-uniform prior (module docstring)."""
+    masses, fac = n3_masses(rng, base.load_masses(), prior)
+    return replace(base, kind="N3", masses=masses,
+                   truth={"factors": fac, "masses": {k: v["value"] for k, v in masses.items()}})
+
+
+_MAKERS = {"N1": n1_universe, "N2": n2_universe, "N3": n3_universe}
 
 
 def make_fake(null: str, base: Universe, rng, prior: Mapping | None = None) -> Universe:
@@ -383,15 +471,27 @@ def _get(r, name):
     return r[name] if isinstance(r, Mapping) else getattr(r, name)
 
 
-def is_hit(fake, ref) -> bool:
-    """Protocol step 3: k <= N - 2, max|pull| < 2, p_global >= the reference's p_global."""
-    if fake is None:
-        return False
+def _p_at_least(fake, ref, rtol):
     pf, pr = float(_get(fake, "p_global")), float(_get(ref, "p_global"))
     if not np.isfinite(pf):
         return False
+    return bool(pf >= pr * (1.0 - rtol) or not np.isfinite(pr))
+
+
+def is_hit(fake, ref, rtol: float = P_RTOL) -> bool:
+    """Protocol step 3: k <= N - 2, max|pull| < 2, p_global >= the reference's * (1 - rtol)."""
+    if fake is None:
+        return False
     return bool(_get(fake, "k") <= _get(fake, "N") - 2 and _get(fake, "max_abs_pull") < 2
-                and (pf >= pr or not np.isfinite(pr)))
+                and _p_at_least(fake, ref, rtol))
+
+
+def is_hit_fit_only(fake, ref, rtol: float = P_RTOL) -> bool:
+    """INFORMATIONAL fit-only hit (module docstring): max|pull| < 2 and p_global >= ref * (1 - rtol).
+    No compression clause, so usable when k > N - 2. It does not establish criterion 4."""
+    if fake is None:
+        return False
+    return bool(_get(fake, "max_abs_pull") < 2 and _p_at_least(fake, ref, rtol))
 
 
 def candidate_ok(res, p_min=0.05) -> bool:
@@ -401,6 +501,25 @@ def candidate_ok(res, p_min=0.05) -> bool:
     p = float(_get(res, "p_global"))
     return bool(_get(res, "k") <= _get(res, "N") - 2 and _get(res, "max_abs_pull") < 2
                 and np.isfinite(p) and p > p_min)
+
+
+def candidate_ok_fit_only(res, p_min=0.05) -> bool:
+    """INFORMATIONAL: criterion 3 only (max|pull| < 2, p_global > p_min), no compression clause."""
+    if res is None:
+        return False
+    p = float(_get(res, "p_global"))
+    return bool(_get(res, "max_abs_pull") < 2 and np.isfinite(p) and p > p_min)
+
+
+FIT_ONLY = {"hit_fn": is_hit_fit_only, "ok_fn": candidate_ok_fit_only}
+
+
+def hit_rule_name(hit_fn) -> str:
+    if hit_fn is is_hit:
+        return "strict"
+    if hit_fn is is_hit_fit_only:
+        return "fit_only (informational; criterion 4 needs a compressed result)"
+    return "custom:" + getattr(hit_fn, "__name__", repr(hit_fn))
 
 
 def max_hits_to_pass(n, limit=RATE_LIMIT, cl=CL) -> int:
@@ -433,6 +552,7 @@ class NullResult:
     max_hits: int
     ref: dict | None
     fakes: list           # per fake: {"index", "hit", "result": summary or None}
+    hit_rule: str = "strict"
 
     def row(self):
         return {k: getattr(self, k) for k in ("null", "ordering", "n_fakes", "n_run", "n_hits", "rate",
@@ -449,7 +569,8 @@ class PowerResult:
     adequate: bool        # fraction >= pass_fraction
     nulls: list           # NullResult per injection (None where the candidate itself failed)
     refs: list            # summary of the pipeline result on each injected universe
-    n_candidate_ok: int = 0  # injections where the pipeline's result passed criteria 2-3
+    n_candidate_ok: int = 0  # injections where the pipeline's result passed ok_fn
+    hit_rule: str = "strict"
 
 
 def _seed_list(seed):
@@ -468,14 +589,16 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
              ref=None, base: Universe | None = None, analysis: str = _data.DEFAULT_ANALYSIS,
              seed=0, workers: int = 1, early_stop: bool = True, hit_fn: Callable = is_hit,
              prior: Mapping | None = None, limit: float = RATE_LIMIT, cl: float = CL,
-             keep_fakes: bool = True) -> NullResult:
+             keep_fakes: bool = True, pool=None) -> NullResult:
     """Run `pipeline` on n_fakes fake universes of one null and ordering; count hits.
 
     base: the universe the fakes are built from (default: real data in `ordering`).
     ref: the candidate's result on base (default: pipeline(base)).
-    workers: processes (1 = in-process). prior: N1 overrides {"lambda": (lo, hi), ...} or
-    N2 {"widen": x}. hit_fn(fake_summary, ref_summary) -> bool; summaries are dicts with
-    N, k, max_abs_pull, p_global, ... (or the pipeline's own mapping).
+    workers: processes (1 = in-process). prior: N1 overrides {"lambda": (lo, hi), ...},
+    N2 {"widen": x} or N3 {"decades", "heavy_decades", "ratios"}. hit_fn(fake_summary,
+    ref_summary) -> bool; summaries are dicts with N, k, max_abs_pull, p_global, ... (or the
+    pipeline's own mapping). pool: an existing multiprocessing pool (not closed here);
+    fakes then go in blocks of 4 x workers so an early stop wastes little work.
     """
     if null not in NULLS:
         raise ValueError(f"null must be one of {NULLS}")
@@ -497,7 +620,14 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
                 stopped = len(fakes) < n_fakes
                 return
 
-    if workers <= 1:
+    if pool is not None:
+        block = 4 * max(int(workers), 1)
+        tasks = list(tasks)
+        for a in range(0, len(tasks), block):
+            consume(pool.imap(_fake_task, tasks[a:a + block], chunksize=1))
+            if early_stop and hits > max_hits:
+                break
+    elif workers <= 1:
         consume(map(_fake_task, tasks))
     else:
         ctx = mp.get_context("spawn")
@@ -509,39 +639,48 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
     passed = bool(d["passed"]) and n_run == n_fakes and hits <= max_hits
     return NullResult(null=null, ordering=ordering, n_fakes=n_fakes, n_run=n_run, n_hits=hits,
                       rate=hits / max(n_run, 1), upper=d["upper"], passed=passed, stopped_early=stopped,
-                      max_hits=max_hits, ref=ref_s, fakes=fakes)
+                      max_hits=max_hits, ref=ref_s, fakes=fakes, hit_rule=hit_rule_name(hit_fn))
 
 
 def power_check(pipeline: Callable, inject_fn: Callable, n_inject: int = 20, n_fakes: int = 300,
                 null: str = "N1", ordering: str = "NO", analysis: str = _data.DEFAULT_ANALYSIS,
                 seed=0, workers: int = 1, pass_fraction: float = 0.5, base: Universe | None = None,
-                **null_kwargs) -> PowerResult:
+                ok_fn: Callable = candidate_ok, **null_kwargs) -> PowerResult:
     """Protocol step 5: fraction of injected-truth universes on which the candidate would pass.
 
     inject_fn(rng, base) -> Universe with the candidate's structure true (make_injector).
-    An injection passes when the pipeline's result on it passes criteria 2-3
-    (candidate_ok: k <= N - 2, max|pull| < 2, p_global > 0.05) AND the null passes with
+    An injection passes when the pipeline's result on it passes ok_fn (default
+    candidate_ok: k <= N - 2, max|pull| < 2, p_global > 0.05) AND the null passes with
     n_fakes fakes built around the injected universe. Requiring criteria 2-3 matters: a
     result that fails them is never a hit, so a null over a family the CKM does not
     affect would otherwise "pass" whenever measurement noise spoils the injected fit.
     Each injection j uses rng = default_rng([*seed, 3, ordering code, j]) and fake seeds
-    [*seed, 1000 + j]. Early stop applies inside each null run.
+    [*seed, 1000 + j]. Early stop applies inside each null run. ok_fn(summary) -> bool:
+    pass candidate_ok_fit_only together with hit_fn=is_hit_fit_only (FIT_ONLY) for the
+    informational fit-only rule. With workers > 1 one pool serves every injection.
     """
     base = Universe.real(ordering, analysis) if base is None else replace(base, ordering=ordering)
     results, refs, n_pass, n_ok = [], [], 0, 0
-    for j in range(n_inject):
-        rng = np.random.default_rng(_seed_list(seed) + [_NULL_CODE["inject"], _ORD_CODE[ordering], j])
-        u = inject_fn(rng, base)
-        ref = summarize(pipeline(u))
-        refs.append(ref)
-        if not candidate_ok(ref):
-            results.append(None)
-            continue
-        n_ok += 1
-        nr = run_null(pipeline, null, ordering, n_fakes, ref=ref, base=u, analysis=analysis,
-                      seed=_seed_list(seed) + [1000 + j], workers=workers, **null_kwargs)
-        results.append(nr)
-        n_pass += nr.passed
+    pool = mp.get_context("spawn").Pool(int(workers)) if workers > 1 else None
+    try:
+        for j in range(n_inject):
+            rng = np.random.default_rng(_seed_list(seed) + [_NULL_CODE["inject"], _ORD_CODE[ordering], j])
+            u = inject_fn(rng, base)
+            ref = summarize(pipeline(u))
+            refs.append(ref)
+            if not ok_fn(ref):
+                results.append(None)
+                continue
+            n_ok += 1
+            nr = run_null(pipeline, null, ordering, n_fakes, ref=ref, base=u, analysis=analysis,
+                          seed=_seed_list(seed) + [1000 + j], workers=workers, pool=pool, **null_kwargs)
+            results.append(nr)
+            n_pass += nr.passed
+    finally:
+        if pool is not None:
+            pool.terminate()
+            pool.join()
     frac = n_pass / n_inject if n_inject else float("nan")
     return PowerResult(null=null, ordering=ordering, n_inject=n_inject, n_pass=n_pass, fraction=frac,
-                       adequate=bool(frac >= pass_fraction), nulls=results, refs=refs, n_candidate_ok=n_ok)
+                       adequate=bool(frac >= pass_fraction), nulls=results, refs=refs, n_candidate_ok=n_ok,
+                       hit_rule=hit_rule_name(null_kwargs.get("hit_fn", is_hit)))

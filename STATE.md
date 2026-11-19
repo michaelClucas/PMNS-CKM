@@ -1,6 +1,6 @@
 # State
 
-Iteration: 5 (2026-11-19)
+Iteration: 6 (2026-11-19)
 
 ## Status
 Infrastructure built, verified, and tested (458 tests pass: `.venv/Scripts/python -m pytest -q`; `pytest.ini` limits collection to `tests/`). Exp 012 skeptic findings H2, H3, M1-M4, M6, M7, L1 fixed in exp 013 (see below).
@@ -26,11 +26,9 @@ Infrastructure built, verified, and tested (458 tests pass: `.venv/Scripts/pytho
 - `pmns_delta_chi2` uses the 2D (s23sq, δ) table when both are given, otherwise sums 1D profiles; ignores θ13-θ23, θ13-δ, Δm²3ℓ-θ23 correlations. Default returns 0 at each ordering's own best fit; `relative_to="global"` adds the IO penalty (1.49 default analysis, 5.91 with SK-atm). Fixed in iteration 2: `stats.Objective` now takes `pmns_ordering_offset` (added once) and refuses a `relative_to="global"` partial in sum1d mode; δ pull sign now wraps.
 
 ## Known infrastructure gaps (open)
-- `src/nulls.py` (exp 018): criterion 4 is vacuous for any lead with k > N-2 (`is_hit`/`candidate_ok` require compression, so strict power is 0 by construction); `power_check` hardcodes `candidate_ok` (should take `ok_fn`) and needs a documented fit-only hit rule; `is_hit` compares p_global exactly (needs tolerance); no mass-side null (N3 redrawing mass ratios); `power_check` spawns a pool per injection (slow).
-- `src.evaluate` cannot score same-scale mass ratios (flavour-atom alias rule blocks them), Δm² or Δm² ratio, has no theory floor on masses, and cannot score GUT-scale predictions. Exps 014-017 all scored these outside the official scorer.
-- `src.rg.ckm_at` builds κ from PMNS data: 1e-12 crosstalk flagged by the leak probe. `rg.pmns_at` assumes m_lightest = 0. `derived_yukawas_mz` gives no uncertainties.
-- Exp 012 L2-L4: `Objective` defaults to sum1d; Δm² not scorable via `evaluate` (also blocks the Δm²21/Δm²3ℓ ratio); undefined δ scored as 0.
-- `src.evaluate` cannot score GUT-scale relations directly; `src.rg` lacks tanβ-enhanced SUSY threshold corrections and 2-loop MSSM Yukawa running.
+- Closed in exp 019 (488 tests pass): `src/nulls.py` takes `ok_fn`, has a documented fit-only hit rule (`is_hit_fit_only`, informational only: it does not satisfy criterion 4 for k > N-2), p tolerance `P_RTOL`, N3 mass-side null, shared pool; `src.evaluate` scores same-scale mass ratios (`mr_*`, correlated block), Δm² and Δm² ratio, `mass_floor=`, GUT-scale `scale={...}`; `ckm_at` no longer reads PMNS data; `pmns_at` takes m_lightest. No existing score moved > 1e-11. m_e/m_μ and m_μ/m_τ need a floor (ppm errors).
+- Still open: `Objective` defaults to sum1d; undefined δ scored as 0; `src.rg` lacks tanβ-enhanced SUSY thresholds and 2-loop MSSM Yukawa running; `derived_yukawas_mz` gives no uncertainties; no reusable fixed-τ-region constraint (exp 020); R double ratio and CKM-gain metric (exp 021 `bound.py`) not yet in `src`.
+- Unresolved: exp 021 recomputes the FN prior-predictive minimum χ² as 79, exp 014's file reports 216 with the same seed. No conclusion depends on it.
 - Exp 012's own test file now XPASSes (bugs fixed); the adapted tests live in `tests/test_evaluate_audit.py`.
 
 ## Criterion-4 protocol (adopted iteration 3, from exp 012)
@@ -59,19 +57,24 @@ Official baseline scores (exp 006, no RG): no known relation has k ≤ N-2 with 
 - Modular flavour, common-τ catalog (exp 017): A4/S4/A5 forms to weight 8 verified (121 tests). 4.12M assignments (22 bits + 1). k ≥ 31 vs N - 2 = 13: fails compression by count. Best joint common-τ fit A4 IO χ² 446.5 (N 15). Leptons fit easily with their own τ; quark sector never fits (best A4 quarks χ² 255; search-limited, 30 of 12,100 A4 quark assignments fit exactly). Emulator useful as a coarse filter only (Spearman 0.15-0.77).
 - T1 and F2-LO under the protocol (exp 018): both "no evidence". T1: power 0/20, N1 rate 0.49 (T1 contains no CKM), N2 0.29-0.32. F2-LO: power 0-0.05, all nulls fail within 7-8 fakes, N2 rate 0.63. Dropped from CANDIDATES. Ran with a fit-only hit rule because the strict rule is vacuous for k > N-2.
 
+- Fixed-τ quark test (exp 020): the S4 τ-only lepton lead fixes τ to ±0.01 (Δχ² ≤ 6.18: Re τ ∈ [-0.192, -0.168], Im τ ∈ [1.086, 1.110]; single basin; gCP image Δχ² 10.1). At that τ, all 968 S4 and all 12,100 A4 quark assignments fitted exactly with couplings only (N 8: CKM 4 + 4 quark mass ratios, 2% light floor): best S4 χ² 3167.5 (δ_q -46σ, s23 -28σ), best A4 2178.1; k 14-20 vs N-2 = 6. Random-τ comparison: 98/100 random τ do as well or better (CP95 [0.93, 0.998]); the lepton τ ranks 99th of 101. 2O island with its own quark sector at fixed τ: χ² 71.5 (N 8, p 3e-16). First test where leptons predict quarks: negative, the lepton-selected τ is not special for quarks. Side result: a random τ (0.314 + 1.806i) gives S4 quarks χ² 196, so exp 017's free-τ quark optimum (2163) was search-limited.
+- CKM information bound (exp 021): within F1, F2, T1 and the exp 010 grammar the CKM carries ≲ 1-2 bits of the ~19 bits of PMNS information beyond a random hierarchical CKM (≲ 10%, consistent with 0). SO(10) and shared-τ models have negative predictive gain.
+- New filter (exp 021): Clebsch double ratio R = (m_e/m_μ)/(m_d/m_s) = 0.0938 ± 0.0027 (2% floor), RG-invariant in the SM and SUSY-threshold-invariant for the first two generations. GUT Clebsch pairs can be screened on R before any fit.
+
 ## Leads (not candidates)
-- S4 τ-only neutrino sector (exp 017, from exp 016 lead): type-I seesaw, RH neutrinos in a triplet, constant M_D, one weight-2 form in M_N; L ~ 3', NO, τ = -0.180 + 1.098i, χ² 5.84 for 7 lepton observables (k_cont 5, p 0.054), pulls s23² +1.52, δ +1.26 (238°). Lepton-only, not compressive; likely the known NPPT S4 gCP family. Sharp test available: fix τ from leptons, ask whether any quark assignment fits at the same τ.
+- S4 τ-only neutrino sector (exp 017, from exp 016 lead): type-I seesaw, RH neutrinos in a triplet, constant M_D, one weight-2 form in M_N; L ~ 3', NO, τ = -0.180 + 1.098i, χ² 5.84 for 7 lepton observables (k_cont 5, p 0.054), pulls s23² +1.52, δ +1.26 (238°). Lepton-only, not compressive; likely the known NPPT S4 gCP family. Fixed-τ quark test done (exp 020): negative. Remains a lepton-only model.
 - T1 (exp 010, GUT scale): θ12 = sin(3 (m_u/m_c)^{1/4}), θ13 = sin(3 (m_u/m_t)^{1/4}). Joint χ² 0.058 NO; null rate ~1% for that cell, ~8% after the 8-cell selection; fails at M_Z (s13² +2.2σ); the same f gives θ23 at -6.8σ. N=2, k ≈ 20 bits.
 - F2 LO: θ12e ≈ 0.96 θ_C. Revives only if a theory fixes it in advance (Clebsch on sinθ, thresholds) or ties it to mass ratios.
+- Theory-scout ranking (exp 021): P1 SU(5) sparse Clebsch textures + CSD3 seesaw (arXiv:1503.03306; N 13, k ≈ 10 if Clebsch/n/η fixed by the published model): R +1.9σ (2% floor) for Clebsch (4/9, 9/2); pure CSD3 χ² 12.0 for 5 obs; needs θ23e. P3 S4×SO(10) (arXiv:1705.01555) next. Neither tested yet.
 
 ## Open questions
 - MSSM needs 2-loop Yukawa RGEs for < 2% accuracy on θ23^q, θ13^q.
 - Can any family reach k ≤ N-2? Every family tried (F1, F2, symbolic, SO(10) MN/FN, BSV) either has free phases/θν/Yukawa entries that absorb the CKM, or fails fit quality. Need families where quark and lepton sectors share a small number of continuous parameters by construction. Best-known class in the literature: modular flavour symmetry with a common modulus τ for quarks and leptons (few couplings, many observables).
 
-## Assessment after 5 iterations
-Seven families searched, all negative: shared rotation (F1), Clebsch corrections (F2), symbolic formulas, minimal and real SO(10), BSV type-II, modular flavour (literature + common-τ catalog). The recurring pattern: lepton mixing is always fitted by sector-specific freedom (phases, θν, Yukawa entries, couplings); whenever the quark and lepton sectors are forced to share parameters (BSV, common τ), the quark sector fails at PDG precision. The CKM is never used to predict PMNS. Light-quark mass precision (PDG 2026, ~2%) is the binding constraint that published "good fits" evade with 12-53% errors.
+## Assessment after 6 iterations
+Seven families searched, all negative: shared rotation (F1), Clebsch corrections (F2), symbolic formulas, minimal and real SO(10), BSV type-II, modular flavour (literature + common-τ catalog). The recurring pattern: lepton mixing is always fitted by sector-specific freedom (phases, θν, Yukawa entries, couplings); whenever the quark and lepton sectors are forced to share parameters (BSV, common τ), the quark sector fails at PDG precision. The CKM is never used to predict PMNS. Exp 020 ran the reverse direction (leptons fix τ, predict quarks) and it fails too; exp 021 bounds CKM-specific PMNS information at ≲ 1-2 bits in the families tried. Light-quark mass precision (PDG 2026, ~2%) is the binding constraint that published "good fits" evade with 12-53% errors.
 
-## Next planned tasks (iteration 6)
-1. Infra: fix the `src/nulls.py` and `src/evaluate.py` gaps above (ok_fn + fit-only hit rule, p tolerance, N3 mass-side null, shared pool; same-scale mass ratios, Δm² ratio, theory floor, GUT-scale scoring; κ crosstalk).
-2. Sharp modular test: take τ from the S4 τ-only lepton lead (and the 2O lepton island) and run an exhaustive quark-assignment fit at that fixed τ (all 968 S4 quark assignments, exact fits, 2% floor). Couplings only, no τ freedom: this is the first test where leptons predict something on the quark side.
-3. Theory scout: given the assessment, propose families where quarks and leptons share parameters by construction and the shared count makes k ≤ N-2 achievable (e.g. modular + GUT Clebsch with one τ and a fixed assignment; Pati-Salam with SU(4) relations; quark-lepton complementarity derived from a symmetry), with explicit counts, and say which look viable at 2% light-quark precision. Also quantify what the negative results so far imply: an upper bound on how much CKM information PMNS could carry within the families tried.
+## Next planned tasks (iteration 7)
+1. P1 pre-registered test: SU(5) sparse Clebsch textures + CSD3 seesaw (arXiv:1503.03306). Freeze structure before fitting (Clebsch 4/9 and 9/2, b-τ = 1, η = 2π/3, n = 3), MSSM running via `src.rg`, 2% floor, N = 13, official scorer with `mr_*` keys. Report χ², R pull, θ12e/θ23e. If fit and compression pass: N1 + N3 under the strict protocol with power check first.
+2. P3: reproduce S4×SO(10) (arXiv:1705.01555) χ² 3.4 with their inputs, refit with PDG + 2% floor, extract its Clebsches and R; then the variant with phases fixed to Z_n roots and honest bit count.
+3. Small infra: add R and the CKM-gain metric from exp 021 `bound.py` to `src` as standard outputs; reusable fixed-τ-region constraint; resolve the FN prior χ² discrepancy (79 vs 216).

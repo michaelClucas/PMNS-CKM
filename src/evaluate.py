@@ -29,9 +29,12 @@ are the same measurement, or correlated measurements without a published covaria
   CKM direct      each direct_<V> is its own atom (independent measurements).
   masses          one atom per flavour: m_c_over_m_s = {c, s}; m_t_direct, m_t_pole_xsec,
                   m_t_msbar_xsec = {t}. So m_c with m_c_over_m_s, or two top masses, collide.
-  PMNS            one atom per parameter.
+                  mr_x_y = {x, y} (same-scale ratios, below).
+  PMNS            one atom per parameter; dm21sq_eV2 {dm21}, dm3l_sq_eV2 {dm3l},
+                  dm_ratio {dm21, dm3l}.
 Rules (ValueError on violation):
-  1. no two keys of `use` share an atom (no N inflation by aliases);
+  1. no two keys of `use` share an atom (no N inflation by aliases), except two mr_* keys
+     (scored together with their covariance);
   2. no key of `use` shares an atom with a key of `inputs` (an input cannot be scored
      back as a "prediction" under another name);
   3. CKM global-fit keys and CKM direct keys never appear together in use + inputs (the
@@ -86,8 +89,64 @@ Before exp 013, p and p_global used dof = N - k (discrete choices subtracted). T
 statistical meaning and is gone.
 
 p-values use stats.p_value (asymptotic chi^2; see its caveat on PMNS non-Gaussianity).
-No RG running is applied anywhere in this module: predictions are compared to low-scale
+Without `scale` no RG running is applied to predictions: they are compared to low-scale
 data as given.
+
+Same-scale mass ratios (exp 019)
+--------------------------------
+  mr_u_c, mr_c_t, mr_d_s, mr_s_b, mr_e_mu, mr_mu_tau, mr_b_tau   m_u/m_c, m_c/m_t, ...
+Running-mass ratios at mu = M_Z (SM, MSbar; src.rg.mass_ratios: quarks four-loop QCD to
+M_Z, charged leptons one-loop QED pole -> MSbar at M_Z, top via y_t(M_Z)). The seven are
+independent in log space. They are scored as ONE correlated Gaussian block,
+chi^2 = r^T C^-1 r, where C is the linear propagation of the PDG errors of the nine masses
+and alpha_s(M_Z) (src.rg.propagate; the shared m_c, m_s, m_mu, m_b and alpha_s correlate
+the ratios). Pulls are marginal, r_i / sqrt(C_ii). Alias atoms: mr_x_y = {mass:x, mass:y},
+so a ratio key never combines with a raw mass key or a PDG ratio record of the same
+flavour (m_u, m_c_over_m_s, ...), nor with such an input. Ratio keys may share flavours
+with each other (the covariance accounts for it).
+Under mass_records overrides (src.nulls universes) the central values are recomputed from
+the overridden masses and the covariance keeps the real data's relative (log) covariance.
+
+Neutrino mass splittings (exp 019)
+----------------------------------
+  dm21sq_eV2    Delta m^2_21 (eV^2), NuFIT 1D profile (DMS table)
+  dm3l_sq_eV2   Delta m^2_31 (NO, > 0) or Delta m^2_32 (IO, < 0) (eV^2), DMA profile
+  dm_ratio      Delta m^2_21 / |Delta m^2_3l|, profile chi^2(r) = min_x [DMS(r |x|) + DMA(x)]
+Each is a 1D profile added to the PMNS term. Correlation approximation: the splittings'
+profiles are treated as independent of each other and of the angles (Delta m^2_21 comes
+from solar + KamLAND, Delta m^2_3l from atmospheric + long-baseline; the neglected
+correlations, e.g. Delta m^2_3l-s23sq, are the same kind as those src.data already
+ignores). dm_ratio aliases both splittings. The splittings are never translated in
+src.nulls fake universes. Predicting a splitting makes chi2_global carry the ordering offset.
+
+Theory floor (exp 019)
+----------------------
+mass_floor (Scorer / evaluate / fit_and_evaluate kwarg, default 0): a relative theory error
+added in quadrature to every mass observable (load_masses records and mr_* keys):
+sigma -> sqrt(sigma^2 + (f |value|)^2). A float applies to all; a mapping gives per-key
+values with "default" for the rest. Reported in EvalResult.mass_floor.
+
+Scoring predictions made at a high scale (exp 019)
+--------------------------------------------------
+scale = {"mu": 2e16, "model": "SM" | "MSSM", "tan_beta": .., "m_susy": 3000.0,
+         "m_lightest": 0.0, "majorana": (0, 0), "sys_frac": 0.05}
+declares that pred holds values at mu. Each prediction is moved to the data's scale by the
+data's own running, computed with src.rg from this universe's central values:
+  additive  (s12sq, s13sq, s23sq, dcp_deg, ckm_s12, ckm_s13, ckm_s23, ckm_delta_rad):
+            x_low = x_mu - [X(mu) - X(M_Z)]
+  multiplicative (ckm_J, mr_*, dm21sq_eV2, dm3l_sq_eV2, dm_ratio):
+            x_low = x_mu * X(M_Z) / X(mu)
+and is then scored at low scale exactly as above (errors, tables, correlations unchanged).
+This equals running the prediction down to first order in (prediction - data); the error
+is second order and small when the prediction is within a few sigma. Other keys raise.
+Running systematic (EvalResult.scale_systematic; reported, not added to chi^2):
+sys_frac * |shift| for additive keys and sys_frac * |ln factor| (relative) for multi-
+plicative ones, for the missing two-loop Yukawa / kappa running (default 5% of the running
+itself), plus for MSSM half the change of the shift when m_susy is varied by x2 and /2
+(proxy for the missing threshold corrections), in quadrature. NOT covered: tan-beta-
+enhanced SUSY threshold corrections to y_d, y_s, y_b (10-50% at large tan beta), seesaw
+thresholds, and the PMNS running dependence on m_lightest / Majorana phases beyond the
+values in `scale`. EvalResult.scale_shift holds the shift or factor per key.
 
 Universes. Scorer accepts optional data overrides (ckm_records, mass_records, pmns_fn,
 pmns_centre) so src.nulls can score fake universes with exactly the same code path.
@@ -102,11 +161,19 @@ import numpy as np
 from scipy.optimize import minimize
 
 from . import data as _data
+from . import rg as _rg
 from .mixing import jarlskog as _jarlskog, standard_matrix as _standard_matrix
 from .mixing import wolfenstein_to_standard as _w2s
 from .stats import Objective, _as_int, p_value
 
 PMNS_KEYS = ("s12sq", "s13sq", "s23sq", "dcp_deg")
+DM_KEYS = ("dm21sq_eV2", "dm3l_sq_eV2", "dm_ratio")
+MASS_RATIO_KEYS = tuple(_rg.MASS_RATIO_KEYS)
+_MR_FLAVOURS = {k: frozenset(k[3:].split("_")) for k in MASS_RATIO_KEYS}
+SCALE_ADDITIVE = PMNS_KEYS + ("ckm_s12", "ckm_s13", "ckm_s23", "ckm_delta_rad")
+SCALE_MULTIPLICATIVE = ("ckm_J",) + MASS_RATIO_KEYS + DM_KEYS
+SCALE_DEFAULTS = {"mu": None, "model": "SM", "tan_beta": None, "m_susy": 3000.0, "m_lightest": 0.0,
+                  "majorana": (0.0, 0.0), "sys_frac": 0.05}
 CHI2_CAP = 1e4  # floor added to a Gaussian fallback when a point is outside the NuFIT tables (minimizer only)
 ORDERING_CHOICES = _data.ORDERINGS + ("best",)
 
@@ -148,15 +215,15 @@ def _gauss_records():
 
 def observable_keys():
     """All observable names evaluate() understands."""
-    return PMNS_KEYS + tuple(_gauss_records())
+    return PMNS_KEYS + DM_KEYS + MASS_RATIO_KEYS + tuple(_gauss_records())
 
 
 def _check_names(names, what):
     known = set(observable_keys())
     bad = [n for n in names if n not in known]
     if bad:
-        raise KeyError(f"unknown {what}: {bad}. Known: PMNS {PMNS_KEYS}, ckm_<load_ckm name>, "
-                       f"<load_masses name>")
+        raise KeyError(f"unknown {what}: {bad}. Known: PMNS {PMNS_KEYS}, {DM_KEYS}, {MASS_RATIO_KEYS}, "
+                       f"ckm_<load_ckm name>, <load_masses name>")
 
 
 def pmns_best(ordering, analysis=_data.DEFAULT_ANALYSIS):
@@ -205,6 +272,14 @@ def alias_atoms(key) -> frozenset:
     """Measurement atoms a key depends on. Keys sharing an atom are aliases (module docstring)."""
     if key in PMNS_KEYS:
         return frozenset({"pmns:" + key})
+    if key == "dm21sq_eV2":
+        return frozenset({"pmns:dm21"})
+    if key == "dm3l_sq_eV2":
+        return frozenset({"pmns:dm3l"})
+    if key == "dm_ratio":
+        return frozenset({"pmns:dm21", "pmns:dm3l"})
+    if key in _MR_FLAVOURS:
+        return frozenset("mass:" + f for f in _MR_FLAVOURS[key])
     sec = ckm_sector(key)
     if sec == "global":
         return frozenset({_CKM_GLOBAL_ATOM[key[4:]]})
@@ -255,6 +330,8 @@ def _numrank(names):
 def _check_observables_cached(use, inputs):
     for a in range(len(use)):
         for b in range(a + 1, len(use)):
+            if use[a] in _MR_FLAVOURS and use[b] in _MR_FLAVOURS:
+                continue  # one correlated block with a full covariance
             common = alias_atoms(use[a]) & alias_atoms(use[b])
             if common:
                 raise AliasError(
@@ -311,6 +388,10 @@ class EvalResult:
     pred: dict = field(default_factory=dict)
     k_continuous: int = 0
     ordering_selected: bool = False
+    mass_floor: object = 0.0          # float or {key: frac, "default": frac}
+    scale: dict | None = None         # the high-scale spec the prediction was made at, or None
+    scale_shift: dict = field(default_factory=dict)        # key -> additive shift or factor
+    scale_systematic: dict = field(default_factory=dict)   # key -> running systematic (module docstring)
 
     @property
     def p_crit3(self):
@@ -329,7 +410,11 @@ class EvalResult:
 
     def row(self):
         """Flat dict for CSV output."""
-        d = {k: v for k, v in asdict(self).items() if k not in ("pulls", "terms", "pred", "use", "inputs")}
+        d = {k: v for k, v in asdict(self).items()
+             if k not in ("pulls", "terms", "pred", "use", "inputs", "scale_shift", "scale_systematic")}
+        if isinstance(d["mass_floor"], Mapping):
+            d["mass_floor"] = repr(dict(d["mass_floor"]))
+        d["scale"] = "" if self.scale is None else repr(self.scale)
         d["use"] = " ".join(self.use)
         d["inputs"] = " ".join(self.inputs)
         for name, v in self.pulls.items():
@@ -353,6 +438,167 @@ class FitResult:
         return sum(abs(c - best) < tol for c in self.start_chi2)
 
 
+# ---------------------------------------------------------------- helpers for the exp 019 observables
+
+
+def _floor_of(mass_floor, key):
+    if isinstance(mass_floor, Mapping):
+        f = mass_floor.get(key, mass_floor.get("default", 0.0))
+    else:
+        f = mass_floor
+    f = float(f or 0.0)
+    if not np.isfinite(f) or f < 0:
+        raise ValueError(f"mass_floor must be >= 0, got {f!r} for {key}")
+    return f
+
+
+def _floored(rec, f):
+    if not f:
+        return rec
+    t = f * abs(rec["value"])
+    return dict(rec, err_plus=float(np.hypot(rec["err_plus"], t)), err_minus=float(np.hypot(rec["err_minus"], t)))
+
+
+def _mass_override(mass_records):
+    """mass_records -> {name: value} for src.rg (None = real data)."""
+    if mass_records is None:
+        return None
+    return {k: float(r["value"]) for k, r in mass_records.items() if isinstance(r, Mapping) and "value" in r}
+
+
+@functools.lru_cache(maxsize=1)
+def _mr_real():
+    """Real-data mass-ratio values, names and log covariance (src.rg.mass_ratios at M_Z)."""
+    r = _rg.mass_ratios(errors=True)
+    return r["value"], tuple(r["names"]), r["cov_log"]
+
+
+def mass_ratio_targets(mass_records=None) -> tuple:
+    """(values {mr key: value}, names, cov_log) of the mr_* data, real or under overrides."""
+    vals, names, cov_log = _mr_real()
+    ov = _mass_override(mass_records)
+    if ov is not None:
+        vals = _rg.mass_ratios(masses=ov, errors=False)["value"]
+    return dict(vals), names, cov_log
+
+
+@functools.lru_cache(maxsize=None)
+def _dm_ratio_grid(ordering, analysis):
+    x, y = _data.pmns_profile_1d(ordering, "dm3l_sq_eV2", analysis=analysis)  # x in 1e-3 eV^2
+    return x, y, np.linspace(x[0], x[-1], 4001)
+
+
+def dm_ratio_delta_chi2(ordering, r, analysis=_data.DEFAULT_ANALYSIS) -> float:
+    """Profile Delta chi^2 of Delta m^2_21 / |Delta m^2_3l| from the two NuFIT 1D profiles
+    (treated as independent): min over Delta m^2_3l of DMS(r |dm3l|) + DMA(dm3l).
+    The minimum is found on a 4001-point grid over the DMA table, then on a 2001-point grid
+    across the best two coarse cells (resolution ~1e-3 of the DMA 1 sigma)."""
+    r = float(r)
+    if not np.isfinite(r) or r <= 0:
+        return np.inf
+    x, y, g = _dm_ratio_grid(ordering, analysis)
+
+    def c(xs):
+        return _data.pmns_profile_1d(ordering, "dm21sq_eV2", r * np.abs(xs) * 1e-3, analysis=analysis) \
+            + np.interp(xs, x, y)
+
+    cg = c(g)
+    i = int(np.argmin(cg))
+    if not np.isfinite(cg[i]):
+        return np.inf
+    fine = np.linspace(g[max(i - 1, 0)], g[min(i + 1, len(g) - 1)], 2001)
+    return float(min(cg[i], np.min(c(fine))))
+
+
+def _dm_best(ordering, analysis):
+    p = _data.load_pmns(ordering, analysis)
+    d21 = p["dm21sq_1e-5eV2"]["value"] * 1e-5
+    d3l = p["dm3l_sq_1e-3eV2"]["value"] * 1e-3
+    return {"dm21sq_eV2": d21, "dm3l_sq_eV2": d3l, "dm_ratio": d21 / abs(d3l)}
+
+
+def _dm_sigma(ordering, analysis):
+    """Symmetrised 1 sigma of the splitting keys (for the minimizer fallback only)."""
+    p = _data.load_pmns(ordering, analysis)
+    s21 = 0.5 * (p["dm21sq_1e-5eV2"]["err_plus"] + p["dm21sq_1e-5eV2"]["err_minus"]) * 1e-5
+    s3l = 0.5 * (p["dm3l_sq_1e-3eV2"]["err_plus"] + p["dm3l_sq_1e-3eV2"]["err_minus"]) * 1e-3
+    b = _dm_best(ordering, analysis)
+    rr = b["dm_ratio"] * np.hypot(s21 / b["dm21sq_eV2"], s3l / abs(b["dm3l_sq_eV2"]))
+    return {"dm21sq_eV2": s21, "dm3l_sq_eV2": s3l, "dm_ratio": rr}
+
+
+def _freeze_spec(scale):
+    spec = dict(SCALE_DEFAULTS)
+    bad = set(scale) - set(spec)
+    if bad:
+        raise ValueError(f"unknown scale keys {sorted(bad)}; known {sorted(spec)}")
+    spec.update(scale)
+    if spec["mu"] is None or not float(spec["mu"]) > 0:
+        raise ValueError("scale needs mu > 0 (GeV)")
+    if spec["model"] not in ("SM", "MSSM"):
+        raise ValueError("scale model must be 'SM' or 'MSSM'")
+    if spec["model"] == "MSSM" and spec["tan_beta"] is None:
+        raise ValueError("MSSM scale needs tan_beta")
+    return (float(spec["mu"]), spec["model"], None if spec["tan_beta"] is None else float(spec["tan_beta"]),
+            float(spec["m_susy"]), float(spec["m_lightest"]), tuple(float(x) for x in spec["majorana"]),
+            float(spec["sys_frac"]))
+
+
+def _spec_dict(fs):
+    return dict(zip(("mu", "model", "tan_beta", "m_susy", "m_lightest", "majorana", "sys_frac"), fs))
+
+
+def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre):
+    """Data's running between M_Z and mu: {key: shift (additive) or factor (multiplicative)}."""
+    mz = _rg.load_sm_inputs()["pdg2026"]["M_Z"]["value"]
+    masses = dict(fmass) or None
+    lo = _rg.ckm_at(mz, ckm=fckm, masses=masses)
+    hi = _rg.ckm_at(mu, model, tb, msusy, ckm=fckm, masses=masses)
+    c = dict(fcentre)
+    pm = (float(np.arcsin(np.sqrt(c["s12sq"]))), float(np.arcsin(np.sqrt(c["s13sq"]))),
+          float(np.arcsin(np.sqrt(c["s23sq"]))), float(np.radians(c["dcp_deg"])))
+    kw = dict(ordering=ordering, m_lightest=ml, majorana=maj, analysis=analysis, pmns=pm, ckm=fckm, masses=masses)
+    plo = _rg.pmns_at(mz, **kw)
+    phi = _rg.pmns_at(mu, model=model, tan_beta=tb, m_susy=msusy, **kw)
+    out = {}
+    for i, k in ((12, "s12"), (13, "s13"), (23, "s23")):
+        out["ckm_" + k] = float(np.sin(hi[f"theta{i}"]) - np.sin(lo[f"theta{i}"]))
+        out[k + "sq"] = float(np.sin(phi[f"theta{i}"]) ** 2 - np.sin(plo[f"theta{i}"]) ** 2)
+    out["ckm_delta_rad"] = float(_wrap_rad(hi["delta"] - lo["delta"]))
+    out["dcp_deg"] = float(_wrap_deg(np.degrees(phi["delta"] - plo["delta"])))
+    out["ckm_J"] = float(lo["J"] / hi["J"])
+    out["dm21sq_eV2"] = float(plo["dm21sq_eV2"] / phi["dm21sq_eV2"])
+    out["dm3l_sq_eV2"] = float(plo["dm3l_sq_eV2"] / phi["dm3l_sq_eV2"])
+    out["dm_ratio"] = float(plo["dm21_over_dm3l"] / phi["dm21_over_dm3l"])
+    rlo = _rg.mass_ratios(None, masses=masses, errors=False)["value"]
+    rhi = _rg.mass_ratios(mu, model, tb, msusy, ckm=fckm, masses=masses, errors=False)["value"]
+    for k in MASS_RATIO_KEYS:
+        out[k] = float(rlo[k] / rhi[k])
+    return out
+
+
+@functools.lru_cache(maxsize=256)
+def _scale_table(ordering, analysis, fs, fckm, fmass, fcentre):
+    """({key: shift or factor}, {key: systematic}) for a frozen scale spec (module docstring)."""
+    mu, model, tb, msusy, ml, maj, sys_frac = fs
+    base = _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre)
+    if model == "MSSM":
+        up = _running(ordering, analysis, mu, model, tb, 2 * msusy, ml, maj, fckm, fmass, fcentre)
+        dn = _running(ordering, analysis, mu, model, tb, msusy / 2, ml, maj, fckm, fmass, fcentre)
+    sys = {}
+    for k, v in base.items():
+        if k in SCALE_ADDITIVE:
+            s = sys_frac * abs(v)
+            if model == "MSSM":
+                s = float(np.hypot(s, 0.5 * abs(up[k] - dn[k])))
+        else:
+            s = sys_frac * abs(np.log(v))
+            if model == "MSSM":
+                s = float(np.hypot(s, 0.5 * abs(np.log(up[k] / dn[k]))))
+        sys[k] = float(s)
+    return base, sys
+
+
 # ---------------------------------------------------------------- scorer
 
 
@@ -362,16 +608,20 @@ class Scorer:
     inputs: declared inputs; the alias rules are checked against them here.
     Data overrides (keyword-only, used by src.nulls for fake universes):
       ckm_records   name -> record for CKM keys (load_ckm names, no ckm_ prefix)
-      mass_records  name -> record for mass keys
+      mass_records  name -> record for mass keys (also sets the mr_* central values)
       pmns_fn       callable(ordering, **params) -> within-ordering Delta chi^2
       pmns_centre   {s12sq, s13sq, s23sq, dcp_deg}: the data centre (pull signs, delta wrap)
       offset        ordering offset added to chi2_global (default: the real NuFIT one)
+    Scoring options (keyword-only, exp 019; module docstring):
+      mass_floor    relative theory floor on mass observables (float or mapping), default 0
+      scale         high-scale spec: pred is given at scale["mu"] and translated down
     """
 
     def __init__(self, use: Sequence[str], ordering: str, analysis: str = _data.DEFAULT_ANALYSIS,
                  inputs: Sequence[str] = (), *, ckm_records: Mapping | None = None,
                  mass_records: Mapping | None = None, pmns_fn: Callable | None = None,
-                 pmns_centre: Mapping | None = None, offset: float | None = None):
+                 pmns_centre: Mapping | None = None, offset: float | None = None,
+                 mass_floor=0.0, scale: Mapping | None = None):
         if ordering not in _data.ORDERINGS:
             raise ValueError(f"ordering must be one of {_data.ORDERINGS} (evaluate and fit_and_evaluate "
                              "also take 'best')")
@@ -386,6 +636,7 @@ class Scorer:
         _check_names(inputs, "inputs")
         check_observables(use, inputs)
         self.use, self.ordering, self.analysis, self.inputs = use, ordering, analysis, inputs
+        self.mass_floor = dict(mass_floor) if isinstance(mass_floor, Mapping) else float(mass_floor or 0.0)
         g = _gauss_records()
 
         def rec(n):
@@ -397,21 +648,54 @@ class Scorer:
             return r
 
         ckm = {n: rec(n) for n in use if n in g and g[n][0] == "ckm"}
-        masses = {n: rec(n) for n in use if n in g and g[n][0] == "masses"}
+        masses = {n: _floored(rec(n), _floor_of(self.mass_floor, n)) for n in use if n in g and g[n][0] == "masses"}
         self._ckm_delta_centre = ckm["ckm_delta_rad"]["value"] if "ckm_delta_rad" in ckm else None
         self.pmns_use = tuple(p for p in PMNS_KEYS if p in use)
+        self.dm_use = tuple(p for p in DM_KEYS if p in use)
+        self.mr_use = tuple(p for p in MASS_RATIO_KEYS if p in use)
         self.best = dict(pmns_centre) if pmns_centre is not None else pmns_best(ordering, analysis)
         if pmns_fn is None:
             pmns_fn = functools.partial(_data.pmns_delta_chi2, analysis=analysis, relative_to="local")
+        self._pmns_fn = pmns_fn
         self.objective = Objective(
             ckm=ckm, masses=masses,
             pmns_delta_chi2=pmns_fn if self.pmns_use else None,
             pmns_ordering=ordering, pmns_params=self.pmns_use or PMNS_KEYS,
             pmns_mode="joint", pmns_best=self.best)
-        if not self.pmns_use:
+        if not (self.pmns_use or self.dm_use):
             self.offset = 0.0
         else:
             self.offset = _data.ordering_offset(ordering, analysis) if offset is None else float(offset)
+        if self.dm_use:
+            self._dm_best = _dm_best(ordering, analysis)
+        if self.mr_use:
+            vals, names, cov_log = mass_ratio_targets(mass_records)
+            idx = [names.index(n) for n in self.mr_use]
+            cl = cov_log[np.ix_(idx, idx)].copy()
+            cl[np.diag_indices_from(cl)] += np.array([_floor_of(self.mass_floor, n) ** 2 for n in self.mr_use])
+            v = np.array([vals[n] for n in self.mr_use])
+            self._mr_value = v
+            self._mr_cov = cl * np.outer(v, v)
+            self._mr_L = np.linalg.cholesky(self._mr_cov)
+            self._mr_sig = np.sqrt(np.diag(self._mr_cov))
+        self.scale = None
+        self.scale_shift, self.scale_systematic = {}, {}
+        if scale is not None:
+            bad = [u for u in use if u not in SCALE_ADDITIVE + SCALE_MULTIPLICATIVE]
+            if bad:
+                raise ValueError(f"scale translation is not defined for {bad}; supported: "
+                                 f"{SCALE_ADDITIVE + SCALE_MULTIPLICATIVE}")
+            fs = _freeze_spec(scale)
+            ck = ckm_records if ckm_records is not None else _data.load_ckm()
+            fckm = (float(np.arcsin(ck["s12"]["value"])), float(np.arcsin(ck["s13"]["value"])),
+                    float(np.arcsin(ck["s23"]["value"])), float(ck["delta_rad"]["value"]))
+            ov = _mass_override(mass_records)
+            fmass = tuple(sorted(ov.items())) if ov else ()
+            fcentre = tuple(sorted((k, float(self.best[k])) for k in PMNS_KEYS))
+            shift, sys = _scale_table(ordering, analysis, fs, fckm, fmass, fcentre)
+            self.scale = _spec_dict(fs)
+            self.scale_shift = {k: shift[k] for k in use}
+            self.scale_systematic = {k: sys[k] for k in use}
 
     def _prep(self, pred):
         missing = [n for n in self.use if n not in pred]
@@ -421,6 +705,8 @@ class Scorer:
         bad = [n for n, v in p.items() if not np.isfinite(v)]
         if bad:
             raise ValueError(f"non-finite predictions {bad}")
+        for n, s in self.scale_shift.items():  # high-scale prediction -> data scale
+            p[n] = p[n] - s if n in SCALE_ADDITIVE else p[n] * s
         if "dcp_deg" in p:  # put delta within 180 deg of the data centre so the pull sign is right
             p["dcp_deg"] = self.best["dcp_deg"] + _wrap_deg(p["dcp_deg"] - self.best["dcp_deg"])
         if self._ckm_delta_centre is not None:  # the CKM phase is periodic too (exp 012 L1)
@@ -428,8 +714,29 @@ class Scorer:
             p["ckm_delta_rad"] = c + _wrap_rad(p["ckm_delta_rad"] - c)
         return p
 
+    def _dm_term(self, n, v):
+        if n == "dm_ratio":
+            return dm_ratio_delta_chi2(self.ordering, v, self.analysis)
+        return max(float(self._pmns_fn(self.ordering, **{n: v})), 0.0)
+
+    def _score(self, p):
+        """(chi2, terms, pulls) of a prepared prediction."""
+        r = self.objective(p)
+        terms, pulls = dict(r.terms), dict(r.pulls)
+        for n in self.dm_use:
+            d1 = self._dm_term(n, p[n])
+            terms[n] = d1
+            pulls[n] = float(np.sign(p[n] - self._dm_best[n]) * np.sqrt(d1))
+        if self.mr_use:
+            res = np.array([p[n] for n in self.mr_use]) - self._mr_value
+            y = np.linalg.solve(self._mr_L, res)
+            terms["mass_ratio_cov"] = float(y @ y)
+            for n, ri, si in zip(self.mr_use, res, self._mr_sig):
+                pulls[n] = float(ri / si)
+        return float(sum(terms.values())), terms, pulls
+
     def chi2(self, pred) -> float:
-        return self.objective(self._prep(pred)).chi2
+        return self._score(self._prep(pred))[0]
 
     def chi2_soft(self, pred) -> float:
         """chi2, or (outside the NuFIT tables, where chi2 = inf) CHI2_CAP + a Gaussian
@@ -437,7 +744,7 @@ class Scorer:
         minimizer's landscape sloped back toward the tables instead of flat. Never used
         for reported numbers."""
         p = self._prep(pred)
-        c = self.objective(p).chi2
+        c = self._score(p)[0]
         if np.isfinite(c):
             return c
         recs = _data.load_pmns(self.ordering, self.analysis)
@@ -446,6 +753,10 @@ class Scorer:
             r = recs[n]
             d = p[n] - self.best[n]
             g += (d / (r["err_plus"] if d > 0 else r["err_minus"])) ** 2
+        if self.dm_use:
+            sig = _dm_sigma(self.ordering, self.analysis)
+            for n in self.dm_use:
+                g += ((p[n] - self._dm_best[n]) / sig[n]) ** 2
         return CHI2_CAP + g
 
     def __call__(self, pred, k=0, inputs=None, k_discrete=0, ordering_selected=False) -> EvalResult:
@@ -454,7 +765,7 @@ class Scorer:
             _check_names(inputs, "inputs")
             check_observables(self.use, inputs)
         p = self._prep(pred)
-        r = self.objective(p)
+        chi2, terms, pulls = self._score(p)
         N = len(self.use)
         k, k_discrete = _as_int(k, "k"), _as_int(k_discrete, "k_discrete")
         if not 0 <= k_discrete <= k:
@@ -469,16 +780,22 @@ class Scorer:
                 return float("nan")
             return p_value(c2, N, k_cont) if np.isfinite(c2) else 0.0
 
-        chi2 = float(r.chi2)
         chi2_g = chi2 + self.offset
         pw = pv(chi2)
         return EvalResult(
             chi2=chi2, chi2_global=chi2_g, ordering_offset=self.offset,
             N=N, k=k, k_discrete=k_discrete, dof=dof,
             p=pw, p_global=pv(chi2_g), p_fit=pw,
-            max_abs_pull=float(r.max_abs_pull()), pulls=dict(r.pulls), terms=dict(r.terms),
+            max_abs_pull=float(max((abs(v) for v in pulls.values()), default=0.0)), pulls=pulls, terms=terms,
             ordering=self.ordering, analysis=self.analysis, use=self.use, inputs=inputs,
-            pred=p, k_continuous=k_cont, ordering_selected=bool(ordering_selected))
+            pred=p, k_continuous=k_cont, ordering_selected=bool(ordering_selected),
+            mass_floor=self.mass_floor, scale=None if self.scale is None else dict(self.scale),
+            scale_shift=dict(self.scale_shift), scale_systematic=dict(self.scale_systematic))
+
+
+def _ordering_dependent(use):
+    """True if the ordering matters for this set of observables (PMNS angles or splittings)."""
+    return any(u in PMNS_KEYS or u in DM_KEYS for u in use)
 
 
 def _check_ordering_arg(ordering):
@@ -497,17 +814,23 @@ def _require_use(use):
     return tuple(use)
 
 
-def _scorer_kw(scorer_kwargs, ordering):
-    """scorer_kwargs is either one override dict or {"NO": {...}, "IO": {...}}."""
+def _scorer_kw(scorer_kwargs, ordering, mass_floor=0.0, scale=None):
+    """scorer_kwargs is either one override dict or {"NO": {...}, "IO": {...}}; the exp 019
+    scoring options are added when not at their defaults."""
     kw = dict(scorer_kwargs or {})
     if set(kw) <= set(_data.ORDERINGS) and kw:
-        return dict(kw.get(ordering) or {})
+        kw = dict(kw.get(ordering) or {})
+    if isinstance(mass_floor, Mapping) or mass_floor:
+        kw["mass_floor"] = mass_floor
+    if scale is not None:
+        kw["scale"] = scale
     return kw
 
 
 def evaluate(pred: Mapping, ordering: str, analysis: str = _data.DEFAULT_ANALYSIS, k: int = 0,
              use: Sequence[str] | None = None, inputs: Sequence[str] = (), k_discrete: int = 0,
-             ordering_selected: bool = False, scorer_kwargs: Mapping | None = None) -> EvalResult:
+             ordering_selected: bool = False, scorer_kwargs: Mapping | None = None, *,
+             mass_floor=0.0, scale: Mapping | None = None) -> EvalResult:
     """Score one prediction dict against data. See the module docstring for conventions.
 
     pred: observable name -> predicted value (keys not in `use` are ignored).
@@ -520,20 +843,22 @@ def evaluate(pred: Mapping, ordering: str, analysis: str = _data.DEFAULT_ANALYSI
         irrelevant and "best" returns the NO result with no extra bit.
     ordering_selected: True if the caller picked this ordering after seeing both (adds 1 bit).
     scorer_kwargs: Scorer data overrides, either one dict or per ordering {"NO": .., "IO": ..}.
+    mass_floor: relative theory floor on mass observables (module docstring), default 0.
+    scale: high-scale spec, pred given at scale["mu"] (module docstring), default None.
     """
     use = _require_use(use)
     _check_ordering_arg(ordering)
     inputs = tuple(inputs)
     if ordering == "best":
-        if not any(u in PMNS_KEYS for u in use):
+        if not _ordering_dependent(use):
             return evaluate(pred, "NO", analysis, k, use, inputs, k_discrete, ordering_selected,
-                            _scorer_kw(scorer_kwargs, "NO"))
-        res = {o: Scorer(use, o, analysis, inputs, **_scorer_kw(scorer_kwargs, o))
+                            _scorer_kw(scorer_kwargs, "NO", mass_floor, scale))
+        res = {o: Scorer(use, o, analysis, inputs, **_scorer_kw(scorer_kwargs, o, mass_floor, scale))
                for o in _data.ORDERINGS}
         scored = [res[o](pred, k=k, k_discrete=k_discrete) for o in _data.ORDERINGS]
         best = min(scored, key=lambda r: r.chi2_global)
         return res[best.ordering](pred, k=k, k_discrete=k_discrete, ordering_selected=True)
-    sc = Scorer(use, ordering, analysis, inputs, **_scorer_kw(scorer_kwargs, ordering))
+    sc = Scorer(use, ordering, analysis, inputs, **_scorer_kw(scorer_kwargs, ordering, mass_floor, scale))
     return sc(pred, k=k, k_discrete=k_discrete, ordering_selected=ordering_selected)
 
 
@@ -551,13 +876,13 @@ def check_leaks(model_fn: Callable[[], Mapping], inputs: Sequence[str] = (), **p
 def evaluate_model(model_fn: Callable[[], Mapping], ordering: str, use: Sequence[str] | None = None,
                    analysis: str = _data.DEFAULT_ANALYSIS, k: int = 0, inputs: Sequence[str] = (),
                    k_discrete: int = 0, ordering_selected: bool = False, leak_check: bool = True,
-                   **probe_kwargs) -> EvalResult:
+                   mass_floor=0.0, scale: Mapping | None = None, **probe_kwargs) -> EvalResult:
     """evaluate(model_fn(), ...) after a leak probe of model_fn (exp 012 H3). model_fn() -> pred."""
     use = _require_use(use)
     if leak_check:
         check_leaks(model_fn, inputs, **probe_kwargs)
     return evaluate(model_fn(), ordering, analysis, k=k, use=use, inputs=inputs, k_discrete=k_discrete,
-                    ordering_selected=ordering_selected)
+                    ordering_selected=ordering_selected, mass_floor=mass_floor, scale=scale)
 
 
 # ---------------------------------------------------------------- fitting
@@ -568,7 +893,8 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
                      inputs: Sequence[str] = (), k_discrete: int = 0, periodic: Sequence[str] = (),
                      n_starts: int = 32, seed: int = 0, extra_starts: Sequence[Mapping] = (),
                      tol: float = 1e-9, ordering_selected: bool = False, leak_check: bool = False,
-                     scorer_kwargs: Mapping | None = None) -> FitResult:
+                     scorer_kwargs: Mapping | None = None, *, mass_floor=0.0,
+                     scale: Mapping | None = None) -> FitResult:
     """Minimize the within-ordering chi^2 over continuous parameters, then evaluate.
 
     model_fn(theta: dict) -> pred dict. param_bounds: name -> (lo, hi).
@@ -579,6 +905,7 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
     ordering="best": fit both orderings, keep the lower chi2_global, add the ordering bit.
     leak_check: run the leak probe on model_fn at the best-fit parameters (LeakError).
     scorer_kwargs: Scorer data overrides (one dict, or per ordering).
+    mass_floor, scale: as in evaluate (module docstring).
     Multi-start: n_starts points from a scrambled Sobol sequence over the box (seeded),
     plus extra_starts, each run with Nelder-Mead then polished with a second Nelder-Mead
     from the best point.
@@ -589,17 +916,17 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
     _check_ordering_arg(ordering)
     inputs = tuple(inputs)
     if ordering == "best":
-        if not any(u in PMNS_KEYS for u in use):
+        if not _ordering_dependent(use):
             return fit_and_evaluate(model_fn, param_bounds, "NO", use, analysis, inputs, k_discrete,
                                     periodic, n_starts, seed, extra_starts, tol, ordering_selected,
-                                    leak_check, _scorer_kw(scorer_kwargs, "NO"))
+                                    leak_check, _scorer_kw(scorer_kwargs, "NO", mass_floor, scale))
         fits = [fit_and_evaluate(model_fn, param_bounds, o, use, analysis, inputs, k_discrete, periodic,
                                  n_starts, seed, extra_starts, tol, False, False,
-                                 _scorer_kw(scorer_kwargs, o))
+                                 _scorer_kw(scorer_kwargs, o, mass_floor, scale))
                 for o in _data.ORDERINGS]
         fr = min(fits, key=lambda f: f.result.chi2_global)
         o = fr.result.ordering
-        sc = Scorer(use, o, analysis, inputs, **_scorer_kw(scorer_kwargs, o))
+        sc = Scorer(use, o, analysis, inputs, **_scorer_kw(scorer_kwargs, o, mass_floor, scale))
         if leak_check:
             check_leaks(lambda: model_fn(fr.params), inputs)
         res = sc(model_fn(fr.params), k=fr.result.k, k_discrete=fr.result.k_discrete, ordering_selected=True)
@@ -609,7 +936,7 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
     lo = np.array([param_bounds[n][0] for n in names], dtype=float)
     hi = np.array([param_bounds[n][1] for n in names], dtype=float)
     per = np.array([n in periodic for n in names])
-    scorer = Scorer(use, ordering, analysis, inputs, **_scorer_kw(scorer_kwargs, ordering))
+    scorer = Scorer(use, ordering, analysis, inputs, **_scorer_kw(scorer_kwargs, ordering, mass_floor, scale))
     k_discrete = _as_int(k_discrete, "k_discrete")
     nfev = 0
 
