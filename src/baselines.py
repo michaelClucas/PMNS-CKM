@@ -26,7 +26,10 @@ Parameter-counting convention for the registry (see also src/evaluate.py):
              non-negligible error as input (e.g. th13 for TM1, m_d/m_s for GST), that
              quantity is fitted as a parameter AND scored as an observable, so it adds
              1 to N and 1 to k (net zero dof) and its error propagates correctly.
-  k_discrete data-selected discrete choices (pattern, sign, factor order, parametrization).
+  k_discrete data-selected discrete choices (pattern, sign, factor order, parametrization),
+             in bits: k_discrete = stats.discrete_bits(n_options) = ceil(log2 n_options),
+             where n_options is the number of alternatives the choice was made from
+             (exp 012 M3; exp 013 changed A4 from 2 to 4, B and B1 from 1 to 3).
 """
 from __future__ import annotations
 
@@ -39,6 +42,7 @@ from . import data as _data
 from .mixing import extract_angles
 from .mixing import jarlskog as _jarlskog_matrix
 from .mixing import standard_matrix as _standard_matrix
+from .stats import discrete_bits
 
 PHI = (1.0 + np.sqrt(5.0)) / 2.0  # golden ratio
 PI = np.pi
@@ -383,6 +387,7 @@ class Baseline:
     periodic: tuple = ()                             # params with period (hi - lo)
     catalog: str = ""                                # exp 003 baselines.md entry
     note: str = ""
+    n_options: int = 0                               # alternatives behind k_discrete (0 = not stated)
 
     @property
     def N(self):
@@ -477,20 +482,20 @@ def _build():
     H = PI / 2
     out = [
         Baseline("A1s", "QLC solar", "th12 + theta_C = pi/4", ("s12sq",), ("ckm_s12",), 0,
-                 _qlc_solar, catalog="A1"),
+                 _qlc_solar, catalog="A1", n_options=1),
         Baseline("A1-", "QLC, th23 = pi/4 - theta_cb", "th12 + theta_C = pi/4, th23 + theta_cb = pi/4",
-                 ("s12sq", "s23sq"), ("ckm_s12", "ckm_s23"), 1, _qlc_full(-1), catalog="A1",
+                 ("s12sq", "s23sq"), ("ckm_s12", "ckm_s23"), 1, _qlc_full(-1), catalog="A1", n_options=2,
                  note="k_d = sign of the atmospheric relation"),
         Baseline("A1+", "QLC, th23 = pi/4 + theta_cb", "th12 + theta_C = pi/4, th23 - theta_cb = pi/4",
-                 ("s12sq", "s23sq"), ("ckm_s12", "ckm_s23"), 1, _qlc_full(+1), catalog="A1",
+                 ("s12sq", "s23sq"), ("ckm_s12", "ckm_s23"), 1, _qlc_full(+1), catalog="A1", n_options=2,
                  note="k_d = sign of the atmospheric relation"),
         Baseline("A2", "Self-complementarity", "th12 + th13 = pi/4", ("s12sq", "s13sq"), (), 1, _sc,
-                 params={"s13sq": (0.0, 0.07)}, nuisance=("s13sq",), catalog="A2",
+                 params={"s13sq": (0.0, 0.07)}, nuisance=("s13sq",), catalog="A2", n_options=2,
                  note="th13 fitted as nuisance (N and k both +1)"),
         Baseline("A3", "TBC (King)", "s13 = s_C/sqrt2, s12^2 = 1/3, s23^2 = 1/2",
-                 ("s12sq", "s13sq", "s23sq"), ("ckm_s12",), 1, _tbc, catalog="A3"),
+                 ("s12sq", "s13sq", "s23sq"), ("ckm_s12",), 1, _tbc, catalog="A3", n_options=2),
         Baseline("A3k", "KMS th13 only", "s13 = s_C/sqrt2", ("s13sq",), ("ckm_s12",), 1, _kms,
-                 catalog="A3"),
+                 catalog="A3", n_options=2),
     ]
     for order, tag, form in (("Vdag_X", "A4a", "U = V_CKM^dag Phi X"),
                              ("Vconj_X", "A4c", "U = V_CKM^* Phi X"),
@@ -498,33 +503,36 @@ def _build():
         for X in LO_TH12:
             out.append(Baseline(
                 f"{tag}-{X}", f"{form}, X = {X}", f"{form}, Phi = diag(1, e^ia, e^ib), X = {X}",
-                PMNS4, CKM_INPUTS, 2, _ckm_x(X, order),
+                PMNS4, CKM_INPUTS, discrete_bits(len(LO_TH12) * 3), _ckm_x(X, order),
                 params={"alpha": (0.0, TWO_PI), "beta": (0.0, TWO_PI)}, periodic=("alpha", "beta"),
-                catalog="A4", note="k_d = choice of X + factor order" + ("; lead L1" if tag == "A4b" and X == "BM" else "")))
+                catalog="A4", n_options=len(LO_TH12) * 3,
+                note="k_d = ceil(log2(5 X x 3 factor orders))" + ("; lead L1" if tag == "A4b" and X == "BM" else "")))
     for X in LO_TH12:
         out.append(Baseline(f"B-{X}", f"LO {X}", f"{X}: th13 = 0, th23 = pi/4, fixed th12",
-                            ("s12sq", "s13sq", "s23sq"), (), 1, _lo(X), catalog="B"))
+                            ("s12sq", "s13sq", "s23sq"), (), discrete_bits(len(LO_TH12)), _lo(X), catalog="B",
+                            n_options=len(LO_TH12), note="k_d = ceil(log2 5 patterns)"))
     for X in LO_TH12:
         out.append(Baseline(
             f"B1-{X}", f"solar sum rule, {X}", f"U = R12(th12e, phi)^dag R23(th23nu) R12(th12nu = {X})",
-            PMNS4, (), 1, _solar(X),
+            PMNS4, (), discrete_bits(len(LO_TH12)), _solar(X),
             params={"th12e": (0.0, 0.6), "phi": (0.0, TWO_PI), "th23nu": (0.3, 1.3)}, periodic=("phi",),
-            catalog="B1", note="full model fit; equivalent to the exact solar sum rule"))
+            catalog="B1", n_options=len(LO_TH12),
+            note="full model fit; equivalent to the exact solar sum rule; k_d = ceil(log2 5 patterns)"))
     out += [
         Baseline("B2-TM1", "TM1", "U = U_TBM R23(theta, phi)", PMNS4, (), 1, _tm(1),
-                 params={"theta": (0.0, 0.6), "phi": (0.0, TWO_PI)}, periodic=("phi",), catalog="B2"),
+                 params={"theta": (0.0, 0.6), "phi": (0.0, TWO_PI)}, periodic=("phi",), catalog="B2", n_options=2),
         Baseline("B2-TM2", "TM2", "U = U_TBM R13(theta, phi)", PMNS4, (), 1, _tm(2),
-                 params={"theta": (0.0, 0.6), "phi": (0.0, TWO_PI)}, periodic=("phi",), catalog="B2"),
+                 params={"theta": (0.0, 0.6), "phi": (0.0, TWO_PI)}, periodic=("phi",), catalog="B2", n_options=2),
         Baseline("C1", "GST", "|V_us| = sqrt(m_d/m_s)", ("ckm_Vus", "m_d", "m_s"), (), 0, _gst,
-                 params={"m_d": (0.003, 0.007), "m_s": (0.07, 0.12)}, nuisance=("m_d", "m_s"), catalog="C1",
+                 params={"m_d": (0.003, 0.007), "m_s": (0.07, 0.12)}, nuisance=("m_d", "m_s"), catalog="C1", n_options=1,
                  note="m_d, m_s fitted as nuisance; input errors dominate"),
         Baseline("C2", "leptonic GST (TBM)", "th12e = asin sqrt(m_e/m_mu) on TBM, th13 only",
-                 ("s13sq",), ("m_e", "m_mu"), 1, _lgst, catalog="C2"),
+                 ("s13sq",), ("m_e", "m_mu"), 1, _lgst, catalog="C2", n_options=2),
         Baseline("C3", "Koide m_tau", "Q(m_e, m_mu, m_tau) = 2/3", ("m_tau",), ("m_e", "m_mu"), 1, _koide,
-                 catalog="C3", note="strict k_d = 1 (2/3 chosen after data)"),
+                 catalog="C3", n_options=2, note="strict k_d = 1 (2/3 chosen after data)"),
         Baseline("E1", "KM-phase sum rule", "delta_KM^l = -delta_KM^q (KM parametrization)",
                  PMNS4, CKM_INPUTS, 1, _km,
-                 params={"t1": (0.0, H), "t2": (0.0, H), "t3": (0.0, H)}, catalog="E1",
+                 params={"t1": (0.0, H), "t2": (0.0, H), "t3": (0.0, H)}, catalog="E1", n_options=2,
                  note="PMNS in KM form with fixed phase; 3 angles fitted"),
     ]
     return {b.id: b for b in out}

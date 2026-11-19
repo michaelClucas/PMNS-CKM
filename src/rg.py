@@ -56,6 +56,7 @@ PMNS: NuFIT from data/pmns.json, masses from m_lightest + splittings, Majorana p
 """
 from __future__ import annotations
 
+import copy
 import functools
 import json
 import pathlib
@@ -67,7 +68,7 @@ from src import data as _data
 from src.mixing import extract_angles, jarlskog, standard_matrix
 
 __all__ = [
-    "load_sm_inputs", "qcd_alpha_s", "quark_masses_mz", "build_mz_state",
+    "load_sm_inputs", "qcd_alpha_s", "quark_masses_mz", "derived_yukawas_mz", "build_mz_state",
     "run", "run_sm", "run_mssm", "observables", "ckm_at", "pmns_at", "neutrino_masses",
 ]
 
@@ -151,11 +152,73 @@ def qcd_alpha_s(mu, nf_target=None):
     return np.pi * _qcd_run(a, 1.0, mc, mu, 3)[0]
 
 
-@functools.lru_cache(maxsize=None)
-def quark_masses_mz() -> dict:
-    """MSbar m_q(M_Z) in GeV for u, d, s, c, b (nf = 5, QCD only, four loops), and m_t(m_t) from the pole mass."""
-    sm = load_sm_inputs()["pdg2026"]
+# ------------------------------------------------------------------ input overrides
+
+def _freeze_masses(masses):
+    """masses override -> hashable ((name, value), ...). Accepts floats or records with 'value'."""
+    if not masses:
+        return ()
+    base = _data.load_masses()
+    out = []
+    for k, v in dict(masses).items():
+        if isinstance(v, dict) and "value" not in v:
+            continue  # e.g. 'meta', 'neutrino_splittings' in a full load_masses() copy
+        if k not in base or not isinstance(base[k], dict) or "value" not in base[k]:
+            raise KeyError(f"unknown mass record {k!r}")
+        out.append((k, float(v["value"] if isinstance(v, dict) else v)))
+    return tuple(sorted(out))
+
+
+def _freeze_sm(sm_inputs):
+    """sm_inputs override {block: {name: value or record}} -> hashable ((block, name, value), ...)."""
+    if not sm_inputs:
+        return ()
+    base = load_sm_inputs()
+    out = []
+    for blk, entries in dict(sm_inputs).items():
+        if blk not in base or not isinstance(entries, dict):
+            raise KeyError(f"unknown sm_inputs block {blk!r}")
+        for k, v in entries.items():
+            if isinstance(v, dict) and "value" not in v:
+                continue
+            if k not in base[blk]:
+                raise KeyError(f"unknown sm_inputs entry {blk}/{k}")
+            out.append((blk, k, float(v["value"] if isinstance(v, dict) else v)))
+    return tuple(sorted(out))
+
+
+def _thaw_sm(fs):
+    if not fs:
+        return None
+    out = {}
+    for blk, k, v in fs:
+        out.setdefault(blk, {})[k] = v
+    return out
+
+
+def _merged_masses(frozen=()):
     ms = _data.load_masses()
+    if not frozen:
+        return ms
+    ms = dict(ms)
+    for k, v in frozen:
+        ms[k] = dict(ms[k], value=v)
+    return ms
+
+
+def _merged_sm(frozen=()):
+    sm = load_sm_inputs()
+    if not frozen:
+        return sm
+    sm = {blk: dict(e) if isinstance(e, dict) else e for blk, e in sm.items()}
+    for blk, k, v in frozen:
+        old = sm[blk][k]
+        sm[blk][k] = dict(old, value=v) if isinstance(old, dict) else v
+    return sm
+
+
+def _quark_masses_impl(ms, sm_all):
+    sm = sm_all["pdg2026"]
     mz, aZ = sm["M_Z"]["value"], sm["alpha_s_MZ"]["value"] / np.pi
     mb, mc = ms["m_b"]["value"], ms["m_c"]["value"]
     # alpha_s at m_b (nf=5), then nf=4 below
@@ -186,8 +249,31 @@ def quark_masses_mz() -> dict:
             "m_t_mt": mt, "M_t": Mt, "alpha_s_2GeV": np.pi * a_2}
 
 
-def _lepton_msbar(M, mu):
-    a0 = 1.0 / load_sm_inputs()["pdg2026"]["alpha_0_inv"]["value"]
+@functools.lru_cache(maxsize=256)
+def _quark_masses_cached(fm, fs):
+    return _quark_masses_impl(_merged_masses(fm), _merged_sm(fs))
+
+
+def quark_masses_mz(masses=None, sm_inputs=None) -> dict:
+    """MSbar m_q(M_Z) in GeV for u, d, s, c, b (nf = 5, QCD only, four loops), and m_t(m_t) from the pole mass.
+
+    masses: optional overrides {record name: value or record} on top of data/masses.json
+        (e.g. {"m_s": 0.095}); sm_inputs: optional {block: {name: value}} on top of
+        data/sm_inputs.json (e.g. {"pdg2026": {"alpha_s_MZ": 0.1185}}). Results are cached
+        per override set; a fresh dict is returned on every call.
+    """
+    return dict(_quark_masses_cached(_freeze_masses(masses), _freeze_sm(sm_inputs)))
+
+
+# Backward compatibility: quark_masses_mz used to be an lru_cache'd function, and exp 010
+# calls quark_masses_mz.__wrapped__() after monkeypatching the loaders.
+quark_masses_mz.__wrapped__ = lambda: _quark_masses_impl(_data.load_masses(), load_sm_inputs())
+quark_masses_mz.cache_clear = _quark_masses_cached.cache_clear
+quark_masses_mz.cache_info = _quark_masses_cached.cache_info
+
+
+def _lepton_msbar(M, mu, sm=None):
+    a0 = 1.0 / (sm or load_sm_inputs())["pdg2026"]["alpha_0_inv"]["value"]
     return M * (1 - a0 / np.pi * (1 + 1.5 * np.log(mu / M)))
 
 
@@ -349,20 +435,22 @@ def _ckm_input():
 
 
 def build_mz_state(ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), analysis=_data.DEFAULT_ANALYSIS,
-                   yukawas=None, ckm=None, pmns=None):
+                   yukawas=None, ckm=None, pmns=None, masses=None, sm_inputs=None):
     """SM state at M_Z.
 
     yukawas: optional dict y_u..y_tau overriding the values derived from data/ (used for
     validation against arXiv:2510.01312 Eq. (4)). ckm, pmns: optional (t12, t13, t23, delta).
+    masses, sm_inputs: input overrides as in quark_masses_mz. masses only matters when
+    yukawas is None (derived Yukawas); sm_inputs also sets g, lambda and v.
     """
-    sm = load_sm_inputs()
+    sm = _merged_sm(_freeze_sm(sm_inputs)) if sm_inputs else load_sm_inputs()
     ahs = sm["ahs2025_msbar_MZ"]
     mz = sm["pdg2026"]["M_Z"]["value"]
     v = ahs["v_MZ"]["value"]
     g = np.array([ahs["g1"]["value"], ahs["g2"]["value"], ahs["g3"]["value"]])
     lam = ahs["lambda_reap"]["value"] / 4
     if yukawas is None:
-        yukawas = derived_yukawas_mz()
+        yukawas = derived_yukawas_mz(masses=masses, sm_inputs=sm_inputs)
     V = standard_matrix(*(ckm if ckm is not None else _ckm_input()))
     U = standard_matrix(*(pmns if pmns is not None else _pmns_input(ordering, analysis)))
     Yu = np.diag([yukawas["y_u"], yukawas["y_c"], yukawas["y_t"]]).astype(complex)
@@ -376,27 +464,23 @@ def build_mz_state(ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), analysis=
             "mu": mz, "normalisation": "SM", "ordering": ordering}
 
 
-@functools.lru_cache(maxsize=None)
-def _derived_yukawas_tuple():
-    sm = load_sm_inputs()
+def _derived_yukawas_impl(q, sm, lep, sm_override=None):
     ahs = sm["ahs2025_msbar_MZ"]
     mz = sm["pdg2026"]["M_Z"]["value"]
     v, vt = ahs["v_MZ"]["value"], ahs["v_Mt"]["value"]
-    q = quark_masses_mz()
-    lep = _data.load_masses()
     r2 = np.sqrt(2)
     y = {"y_u": r2 * q["m_u"] / v, "y_d": r2 * q["m_d"] / v, "y_s": r2 * q["m_s"] / v,
          "y_c": r2 * q["m_c"] / v, "y_b": r2 * q["m_b"] / v,
-         "y_e": r2 * _lepton_msbar(lep["m_e"]["value"], mz) / v,
-         "y_mu": r2 * _lepton_msbar(lep["m_mu"]["value"], mz) / v,
-         "y_tau": r2 * _lepton_msbar(lep["m_tau"]["value"], mz) / v}
+         "y_e": r2 * _lepton_msbar(lep["m_e"]["value"], mz, sm) / v,
+         "y_mu": r2 * _lepton_msbar(lep["m_mu"]["value"], mz, sm) / v,
+         "y_tau": r2 * _lepton_msbar(lep["m_tau"]["value"], mz, sm) / v}
     # solve y_t(M_Z) such that SM running gives y_t(M_t) = sqrt2 m_t(m_t) / v(M_t)
     target = r2 * q["m_t_mt"] / vt
     Mt = q["M_t"]
 
     def yt_at_mt(yt):
         yy = dict(y, y_t=yt)
-        s = build_mz_state(yukawas=yy)
+        s = build_mz_state(yukawas=yy, sm_inputs=sm_override)
         s = run_sm(mz, Mt, s, rtol=1e-9)
         return np.linalg.svd(s["Yu"], compute_uv=False)[0]
 
@@ -412,9 +496,28 @@ def _derived_yukawas_tuple():
     return tuple(sorted(y.items()))
 
 
-def derived_yukawas_mz() -> dict:
-    """SM MSbar Yukawas at M_Z derived from data/masses.json (see module docstring)."""
-    return dict(_derived_yukawas_tuple())
+@functools.lru_cache(maxsize=None)
+def _derived_yukawas_tuple():
+    # no-argument form kept: exp 010 calls _derived_yukawas_tuple.__wrapped__() after
+    # monkeypatching rg.quark_masses_mz and rg.load_sm_inputs
+    return _derived_yukawas_impl(quark_masses_mz(), load_sm_inputs(), _data.load_masses())
+
+
+@functools.lru_cache(maxsize=64)
+def _derived_yukawas_override(fm, fs):
+    return _derived_yukawas_impl(dict(_quark_masses_cached(fm, fs)), _merged_sm(fs), _merged_masses(fm),
+                                 sm_override=_thaw_sm(fs))
+
+
+def derived_yukawas_mz(masses=None, sm_inputs=None) -> dict:
+    """SM MSbar Yukawas at M_Z derived from data/masses.json (see module docstring).
+
+    masses, sm_inputs: optional input overrides, as in quark_masses_mz. Cached per override set.
+    """
+    fm, fs = _freeze_masses(masses), _freeze_sm(sm_inputs)
+    if not fm and not fs:
+        return dict(_derived_yukawas_tuple())
+    return dict(_derived_yukawas_override(fm, fs))
 
 
 def ahs2025_yukawas_mz() -> dict:
@@ -470,9 +573,18 @@ def _run_to(mu, state, model, tan_beta, m_susy):
     return run_mssm(mz, mu, state, tan_beta, m_susy)
 
 
-def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None) -> dict:
-    """CKM angles/delta/J and quark mass ratios at scale mu (GeV), running from M_Z."""
-    s = build_mz_state(yukawas=yukawas, ckm=ckm)
+def _freeze_seq(x):
+    return None if x is None else tuple(float(v) for v in np.asarray(x, dtype=float).ravel())
+
+
+def _freeze_dict(d):
+    return None if d is None else tuple(sorted((k, float(v)) for k, v in dict(d).items()))
+
+
+@functools.lru_cache(maxsize=1024)
+def _ckm_at_cached(mu, model, tan_beta, m_susy, fy, fc, fm, fs):
+    s = build_mz_state(yukawas=None if fy is None else dict(fy), ckm=fc,
+                       masses=dict(fm) or None, sm_inputs=_thaw_sm(fs))
     o = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)
     y = o["y"]
     r = {"mu_over_mc": y["y_u"] / y["y_c"], "mc_over_mt": y["y_c"] / y["y_t"],
@@ -480,6 +592,26 @@ def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None)
          "me_over_mmu": y["y_e"] / y["y_mu"], "mmu_over_mtau": y["y_mu"] / y["y_tau"],
          "mb_over_mtau": y["y_b"] / y["y_tau"]}
     return {**o["ckm"], "yukawas": y, "ratios": r, "g": o["g"]}
+
+
+def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None,
+           masses=None, sm_inputs=None, cache=True) -> dict:
+    """CKM angles/delta/J and quark mass ratios at scale mu (GeV), running from M_Z.
+
+    yukawas, ckm: as in build_mz_state. masses, sm_inputs: input overrides as in
+    quark_masses_mz (masses is ignored when yukawas is given; sm_inputs still sets g,
+    lambda, v). Results are memoised per argument set (cache=False bypasses the memo); the
+    returned dict is a fresh deep copy. ckm_at.cache_clear() drops the memo, which is
+    needed only if you monkeypatch the loaders in-process.
+    """
+    key = (float(mu), model, None if tan_beta is None else float(tan_beta), float(m_susy),
+           _freeze_dict(yukawas), _freeze_seq(ckm), _freeze_masses(masses), _freeze_sm(sm_inputs))
+    r = _ckm_at_cached(*key) if cache else _ckm_at_cached.__wrapped__(*key)
+    return copy.deepcopy(r)
+
+
+ckm_at.cache_clear = _ckm_at_cached.cache_clear
+ckm_at.cache_info = _ckm_at_cached.cache_info
 
 
 def pmns_at(mu, ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), model="SM", tan_beta=None,

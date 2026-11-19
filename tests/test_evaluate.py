@@ -10,10 +10,16 @@ from src.stats import p_value
 ANALYSES = ("IC23_woSKatm", "IC24_wSKatm")
 
 
+def _ev(pred, *args, **kw):
+    """evaluate() scoring every key of pred (use must be explicit since exp 013)."""
+    kw.setdefault("use", tuple(pred))
+    return evaluate(pred, *args, **kw)
+
+
 @pytest.mark.parametrize("analysis", ANALYSES)
 @pytest.mark.parametrize("ordering", ("NO", "IO"))
 def test_chi2_near_zero_at_nufit_best_fit(ordering, analysis):
-    r = evaluate(pmns_best(ordering, analysis), ordering, analysis)
+    r = _ev(pmns_best(ordering, analysis), ordering, analysis)
     # published best-fit values are rounded and the tables are gridded: ~0.01, not 0
     assert r.chi2 < 0.1
     assert r.N == 4 and r.k == 0 and r.dof == 4
@@ -28,24 +34,24 @@ def test_io_offset_counted_once(analysis):
         r = evaluate(pmns_best("IO", analysis), "IO", analysis, use=use)
         assert r.ordering_offset == pytest.approx(off)
         assert r.chi2_global - r.chi2 == pytest.approx(off)
-    rno = evaluate(pmns_best("NO", analysis), "NO", analysis)
+    rno = _ev(pmns_best("NO", analysis), "NO", analysis)
     assert rno.chi2_global == pytest.approx(rno.chi2)
     # no PMNS observable -> ordering irrelevant, no offset
-    rm = evaluate({"m_tau": load_masses()["m_tau"]["value"]}, "IO", analysis)
+    rm = _ev({"m_tau": load_masses()["m_tau"]["value"]}, "IO", analysis)
     assert rm.ordering_offset == 0.0 and rm.chi2_global == rm.chi2
 
 
 def test_joint_pmns_matches_single_loader_call():
     pred = {"s12sq": 0.32, "s13sq": 0.0225, "s23sq": 0.55, "dcp_deg": 100.0}
     for o in ("NO", "IO"):
-        r = evaluate(pred, o)
+        r = _ev(pred, o)
         assert r.chi2 == pytest.approx(pmns_delta_chi2(o, **pred))
         assert r.chi2_global == pytest.approx(pmns_delta_chi2(o, **pred, relative_to="global"))
 
 
 def test_2d_table_used_for_s23_and_delta():
     pred = {"s23sq": 0.56, "dcp_deg": 90.0}
-    joint = evaluate(pred, "NO").chi2
+    joint = _ev(pred, "NO").chi2
     sum1d = pmns_delta_chi2("NO", s23sq=0.56) + pmns_delta_chi2("NO", dcp_deg=90.0)
     assert joint == pytest.approx(pmns_delta_chi2("NO", **pred))
     assert joint != pytest.approx(sum1d, abs=1e-6)
@@ -54,63 +60,64 @@ def test_2d_table_used_for_s23_and_delta():
 def test_gaussian_terms_and_pvalue():
     c = load_ckm()
     v, ep = c["Vus"]["value"], c["Vus"]["err_plus"]
-    r = evaluate({"ckm_Vus": v + 2 * ep}, "NO")
+    r = _ev({"ckm_Vus": v + 2 * ep}, "NO")
     assert r.chi2 == pytest.approx(4.0)
     assert r.pulls["ckm_Vus"] == pytest.approx(2.0)
     assert r.p == pytest.approx(p_value(4.0, 1, 0))
     m = load_masses()["m_tau"]
-    r = evaluate({"m_tau": m["value"] - m["err_minus"]}, "NO")
+    r = _ev({"m_tau": m["value"] - m["err_minus"]}, "NO")
     assert r.chi2 == pytest.approx(1.0) and r.pulls["m_tau"] == pytest.approx(-1.0)
 
 
 def test_pmns_1d_pull_sign_and_size():
     best = pmns_best("NO")
     rec = load_pmns("NO")["s12sq"]
-    r = evaluate({"s12sq": best["s12sq"] + 2 * rec["err_plus"]}, "NO")
+    r = _ev({"s12sq": best["s12sq"] + 2 * rec["err_plus"]}, "NO")
     assert 1.6 < r.pulls["s12sq"] < 2.4
-    r = evaluate({"s12sq": best["s12sq"] - 2 * rec["err_minus"]}, "NO")
+    r = _ev({"s12sq": best["s12sq"] - 2 * rec["err_minus"]}, "NO")
     assert -2.4 < r.pulls["s12sq"] < -1.6
 
 
 def test_delta_periodic_and_pull_sign():
     best = pmns_best("NO")["dcp_deg"]
-    a = evaluate({"dcp_deg": best - 60}, "NO")
-    b = evaluate({"dcp_deg": best - 60 + 720}, "NO")
+    a = _ev({"dcp_deg": best - 60}, "NO")
+    b = _ev({"dcp_deg": best - 60 + 720}, "NO")
     assert a.chi2 == pytest.approx(b.chi2) and a.pulls["dcp_deg"] < 0 and b.pulls["dcp_deg"] < 0
-    c = evaluate({"dcp_deg": best + 30 - 360}, "NO")
+    c = _ev({"dcp_deg": best + 30 - 360}, "NO")
     assert c.pulls["dcp_deg"] > 0
 
 
 def test_dof_k_and_p_fit():
     best = pmns_best("NO")
-    r = evaluate(best, "NO", k=3, k_discrete=1)
-    assert r.dof == 1 and np.isfinite(r.p) and r.p_fit == pytest.approx(p_value(r.chi2, 4, 2))
-    r = evaluate(best, "NO", k=4, k_discrete=2)
-    assert np.isnan(r.p) and np.isfinite(r.p_fit)
+    # exp 013 (M3): dof = N - k_continuous; discrete bits count in k, not in the chi^2 dof
+    r = _ev(best, "NO", k=3, k_discrete=1)
+    assert r.dof == 2 and r.k_continuous == 2 and r.p == r.p_fit == pytest.approx(p_value(r.chi2, 4, 2))
+    r = _ev(best, "NO", k=4, k_discrete=0)
+    assert r.dof == 0 and np.isnan(r.p) and np.isnan(r.p_global)
     with pytest.raises(ValueError):
-        evaluate(best, "NO", k=1, k_discrete=2)
+        _ev(best, "NO", k=1, k_discrete=2)
 
 
 def test_inputs_cannot_be_predictions():
     with pytest.raises(ValueError):
         evaluate({"ckm_s12": 0.225, "s12sq": 0.3}, "NO", use=["ckm_s12", "s12sq"], inputs=["ckm_s12"])
-    r = evaluate({"s12sq": 0.3}, "NO", inputs=["ckm_s12"])
+    r = _ev({"s12sq": 0.3}, "NO", inputs=["ckm_s12"])
     assert r.N == 1 and r.inputs == ("ckm_s12",)
     with pytest.raises(KeyError):
-        evaluate({"s12sq": 0.3}, "NO", inputs=["not_an_observable"])
+        _ev({"s12sq": 0.3}, "NO", inputs=["not_an_observable"])
 
 
 def test_missing_and_nan_predictions_raise():
     with pytest.raises(KeyError):
         evaluate({"s12sq": 0.3}, "NO", use=["s12sq", "s13sq"])
     with pytest.raises(ValueError):
-        evaluate({"s12sq": np.nan}, "NO")
+        _ev({"s12sq": np.nan}, "NO")
     with pytest.raises(KeyError):
         evaluate({"s12sq": 0.3}, "NO", use=["bogus"])
 
 
 def test_outside_table_gives_inf_and_zero_p():
-    r = evaluate({"s13sq": 0.2}, "NO")
+    r = _ev({"s13sq": 0.2}, "NO")
     assert np.isinf(r.chi2) and r.p == 0.0
 
 

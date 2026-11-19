@@ -1,0 +1,1172 @@
+=== 2026-11-18T16:50:21-07:00 global_fit MN DR 3000 starts
+[MN_DR] stage A: 3000 starts, 139s, chi2 min/1%/10%/50% = [  1.32  48.44 140.96 930.22]
+[MN_DR] hop 0: best 1.288, 10 best [1.29 1.32 1.54 1.73 2.04 2.11 2.39 2.91 5.71 5.91], 197s
+[MN_DR] hop 1: best 1.136, 10 best [1.14 1.26 1.29 1.32 1.54 1.73 1.89 2.04 2.11 2.36], 253s
+[MN_DR] hop 2: best 1.127, 10 best [1.13 1.13 1.13 1.14 1.15 1.15 1.16 1.16 1.16 1.16], 302s
+[MN_DR] hop 3: best 1.115, 10 best [1.11 1.12 1.12 1.12 1.12 1.12 1.12 1.12 1.12 1.12], 329s
+[MN_DR] best chi2 1.0972 (N=18, k=19) IO=False  pulls: md=-0.94 ms=+0.31 mb=+0.08 mu=+0.01 mc=+0.21 mt=-0.08 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=+0.07 dm21=+0.02 dm31=-0.02 s12sq=+0.03 s23sq=-0.12 s13sq=-0.16 me=-0.00 mmu=-0.08 mtau=-0.00
+=== 2026-11-18T16:58:59-07:00 dr_point
+== MN_noRGE
+  conj=0,T=0: chi2_18 1.111 chi2_excl_lep 1.111 IO False md=-0.95 ms=+0.32 mb=+0.08 mu=+0.01 mc=+0.22 mt=-0.07 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=+0.07 dm21=+0.07 dm31=+0.03 s12sq=+0.03 s23sq=-0.12 s13sq=-0.17 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=0,T=1: chi2_18 1.111 chi2_excl_lep 1.111 IO False md=-0.95 ms=+0.32 mb=+0.08 mu=+0.01 mc=+0.22 mt=-0.07 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=+0.07 dm21=+0.07 dm31=+0.03 s12sq=+0.03 s23sq=-0.12 s13sq=-0.17 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=1,T=0: chi2_18 1787.661 chi2_excl_lep 1787.661 IO False md=-0.95 ms=+0.32 mb=+0.08 mu=+0.01 mc=+0.22 mt=-0.07 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=-42.27 dm21=+0.07 dm31=+0.03 s12sq=+0.03 s23sq=-0.12 s13sq=-0.17 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=1,T=1: chi2_18 1787.661 chi2_excl_lep 1787.661 IO False md=-0.95 ms=+0.32 mb=+0.08 mu=+0.01 mc=+0.22 mt=-0.07 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=-42.27 dm21=+0.07 dm31=+0.03 s12sq=+0.03 s23sq=-0.12 s13sq=-0.17 me=+0.01 mmu=+0.01 mtau=+0.01
+== FN_noRGE_NH
+  conj=0,T=0: chi2_18 0.005 chi2_excl_lep 0.005 IO False md=-0.00 ms=+0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=-0.00 s13q=+0.00 dCKM=+0.00 dm21=+0.05 dm31=+0.04 s12sq=-0.00 s23sq=-0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=0,T=1: chi2_18 1780.709 chi2_excl_lep 1780.709 IO False md=-0.00 ms=+0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=-0.00 s13q=+0.00 dCKM=-42.20 dm21=+0.05 dm31=+0.04 s12sq=-0.00 s23sq=-0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=1,T=0: chi2_18 1780.709 chi2_excl_lep 1780.709 IO False md=-0.00 ms=+0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=-0.00 s13q=+0.00 dCKM=-42.20 dm21=+0.05 dm31=+0.04 s12sq=-0.00 s23sq=-0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.01
+  conj=1,T=1: chi2_18 0.005 chi2_excl_lep 0.005 IO False md=-0.00 ms=+0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=-0.00 s13q=+0.00 dCKM=+0.00 dm21=+0.05 dm31=+0.04 s12sq=-0.00 s23sq=-0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.01
+== FN_noRGE_IH
+  conj=0,T=0: chi2_18 36044691.440 chi2_excl_lep 36044691.440 IO True md=-0.00 ms=-0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=+0.00 s13q=+0.00 dCKM=-0.00 dm21=+4017.20 dm31=-4461.70 s12sq=+0.00 s23sq=+0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.00
+  conj=0,T=1: chi2_18 36046472.043 chi2_excl_lep 36046472.042 IO True md=-0.00 ms=-0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=+0.00 s13q=+0.00 dCKM=-42.20 dm21=+4017.20 dm31=-4461.70 s12sq=+0.00 s23sq=+0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.00
+  conj=1,T=0: chi2_18 36046472.043 chi2_excl_lep 36046472.042 IO True md=-0.00 ms=-0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=+0.00 s13q=+0.00 dCKM=-42.20 dm21=+4017.20 dm31=-4461.70 s12sq=+0.00 s23sq=+0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.00
+  conj=1,T=1: chi2_18 36044691.440 chi2_excl_lep 36044691.440 IO True md=-0.00 ms=-0.01 mb=+0.01 mu=+0.00 mc=+0.00 mt=+0.01 s12q=-0.00 s23q=+0.00 s13q=+0.00 dCKM=-0.00 dm21=+4017.20 dm31=-4461.70 s12sq=+0.00 s23sq=+0.00 s13sq=-0.00 me=+0.01 mmu=+0.01 mtau=+0.00
+MN published pred vs ours (conj=0,T=0):
+  md     pub 0.00067  ours 0.00067203  ours(conj) 0.00067203
+  ms     pub 0.02406  ours 0.024069  ours(conj) 0.024069
+  mb     pub 1.0031  ours 1.0034  ours(conj) 1.0034
+  mu     pub 0.00048  ours 0.00048155  ours(conj) 0.00048155
+  mc     pub 0.24243  ours 0.2425  ours(conj) 0.2425
+  mt     pub 73.693  ours 73.715  ours(conj) 73.715
+  s12q   pub 0.22462  ours 0.22462  ours(conj) 0.22462
+  s23q   pub 0.04204  ours 0.04204  ours(conj) 0.04204
+  s13q   pub 0.0035  ours 0.0035027  ours(conj) 0.0035027
+  dCKM   pub 1.2193  ours 1.2193  ours(conj) 5.0639
+  dm21   pub 7.5e-05  ours 7.5138e-05  ours(conj) 7.5138e-05
+  dm31   pub 0.00247  ours 0.0024724  ours(conj) 0.0024724
+  s12sq  pub 0.30039  ours 0.30041  ours(conj) 0.30041
+  s23sq  pub 0.40631  ours 0.4063  ours(conj) 0.4063
+  s13sq  pub 0.02262  ours 0.02262  ours(conj) 0.02262
+  me     pub 0.0004697  ours 0.00046979  ours(conj) 0.00046979
+  mmu    pub 0.09914  ours 0.099176  ours(conj) 0.099176
+  mtau   pub 1.686  ours 1.6861  ours(conj) 1.6861
+=== 2026-11-18T16:59:00-07:00 check_reparam
+quark-anchored chi2 at the published MN point: 1.1108 (DR-form eval 1.111); takagi err 2.9e-14
+md=-0.95 ms=+0.32 mb=+0.08 mu=+0.01 mc=+0.22 mt=-0.07 s12q=+0.02 s23q=+0.03 s13q=+0.01 dCKM=+0.07 dm21=+0.07 dm31=+0.03 s12sq=+0.03 s23sq=-0.12 s13sq=-0.17 me=+0.01 mmu=+0.01 mtau=+0.01
+{'lg_u1_u2': -2.7020740828430636, 'lg_u2_u3': -2.482842315243423, 'lg_u3_d3': 1.8660879682396143, 'lg_d1_d2': -1.554062939293828, 'lg_d2_d3': -1.6200154017723254, 's12q': 0.22462324903409459, 'lg_s13q': -2.455592501295621, 'lg_s23q': -1.376342118076983, 'dq': 1.2193173638273744, 'a2': 6.012163396584694, 'a3': 1.3957692299738016, 'phi1': 4.578546054282375, 'phi2': 0.04700721383278248, 'phi3': 2.6320032275395193, 'lg_r': 1.8386123672107892, 'lg_abs_s': -0.4247563870646317, 'arg_s': 0.16844411009484475, 'lg_yscale': 0.0014675321798950265, 'lg_nuscale': -0.6016152371373139}
+=== 2026-11-18T16:59:01-07:00 global_fit MN DR
+=== 2026-11-18T16:59:01-07:00 global_fit MN ours
+[MN_ours] stage A: 3000 starts, 158s, chi2 min/1%/10%/50% = [ 131.29  176.61  758.4  2456.49]
+[MN_ours] hop 0: best 129.938, 10 best [129.94 130.08 131.29 132.77 135.37 136.39 137.04 139.15 140.32 143.47], 192s
+[MN_ours] hop 1: best 129.909, 10 best [129.91 129.94 130.08 130.08 131.29 132.77 134.11 134.48 134.94 135.37], 226s
+[MN_ours] hop 2: best 129.909, 10 best [129.91 129.94 129.96 130.08 130.08 130.41 130.82 130.9  131.29 131.3 ], 262s
+[MN_ours] hop 3: best 129.877, 10 best [129.88 129.88 129.89 129.89 129.9  129.9  129.91 129.91 129.92 129.92], 296s
+[MN_ours] best chi2 129.8738 (N=17, k=17) IO=False  pulls: lg_mu_mc=+0.05 lg_mc_mt=+3.19 lg_md_ms=-4.43 lg_ms_mb=-1.76 lg_mb_mt=+0.15 lg_me_mmu=+0.38 lg_mmu_mtau=-0.95 lg_mtau_mb=-0.25 s12q=+3.10 lg_s13q=-0.19 lg_s23q=+1.46 dq=+3.62 s12sq_l=+0.25 s13sq_l=-0.81 s23sq_l=-5.15 dl=+6.53 lg_dm21_dm3l=+1.00
+=== 2026-11-18T17:04:12-07:00 global_fit MN ours drrel
+[MN_ours_drrel] stage A: 3000 starts, 188s, chi2 min/1%/10%/50% = [  1.93   8.08  79.68 218.04]
+[MN_ours_drrel] hop 0: best 1.933, 10 best [1.93 2.02 2.04 2.52 2.65 2.74 2.81 2.91 3.01 3.13], 224s
+[MN_ours_drrel] hop 1: best 1.647, 10 best [1.65 1.81 1.82 1.91 1.93 2.02 2.04 2.26 2.42 2.48], 262s
+[MN_ours_drrel] hop 2: best 1.541, 10 best [1.54 1.55 1.65 1.79 1.79 1.79 1.79 1.8  1.8  1.8 ], 300s
+[MN_ours_drrel] hop 3: best 1.529, 10 best [1.53 1.53 1.53 1.53 1.54 1.54 1.54 1.54 1.54 1.54], 337s
+[MN_ours_drrel] best chi2 1.5277 (N=17, k=17) IO=False  pulls: lg_mu_mc=+0.02 lg_mc_mt=+0.25 lg_md_ms=-1.13 lg_ms_mb=-0.42 lg_mb_mt=+0.00 lg_me_mmu=+0.04 lg_mmu_mtau=-0.09 lg_mtau_mb=-0.03 s12q=+0.01 lg_s13q=+0.05 lg_s23q=+0.03 dq=+0.02 s12sq_l=+0.00 s13sq_l=-0.03 s23sq_l=+0.00 dl=-0.01 lg_dm21_dm3l=+0.00
+=== 2026-11-18T17:10:13-07:00 PT MN ql (5 independent ladders)
+  [MN_ql_2] it 5000/100000 cold chi2 med 7.01 min 3.55 | acc cold 0.048 hot 0.503 | swap acc min 0.20 | t=155s
+  [MN_ql_3] it 5000/100000 cold chi2 med 6.49 min 2.86 | acc cold 0.058 hot 0.503 | swap acc min 0.26 | t=159s
+  [MN_ql_1] it 5000/100000 cold chi2 med 7.92 min 3.57 | acc cold 0.057 hot 0.504 | swap acc min 0.20 | t=159s
+  [MN_ql_5] it 5000/100000 cold chi2 med 7.67 min 2.19 | acc cold 0.054 hot 0.502 | swap acc min 0.28 | t=160s
+  [MN_ql_4] it 5000/100000 cold chi2 med 7.14 min 1.32 | acc cold 0.060 hot 0.502 | swap acc min 0.27 | t=161s
+=== 2026-11-18T17:14:05-07:00 global_fit FN DR
+[FN_DR] stage A: 3000 starts, 149s, chi2 min/1%/10%/50% = [2.0000e-02 1.6390e+01 1.9316e+02 9.5819e+02]
+[FN_DR] hop 0: best 0.005, 10 best [0.01 0.02 0.02 0.02 0.03 0.03 0.06 0.1  0.1  0.11], 179s
+[FN_DR] hop 1: best 0.000, 10 best [0.   0.   0.   0.   0.01 0.01 0.01 0.01 0.01 0.01], 206s
+[FN_DR] hop 2: best 0.000, 10 best [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.], 231s
+[FN_DR] hop 3: best 0.000, 10 best [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.], 248s
+[FN_DR] best chi2 0.0000 (N=18, k=18) IO=False  pulls: md=+0.00 ms=-0.00 mb=-0.00 mu=-0.00 mc=-0.00 mt=-0.00 s12q=+0.00 s23q=+0.00 s13q=-0.00 dCKM=+0.00 dm21=+0.00 dm31=+0.00 s12sq=+0.00 s23sq=-0.00 s13sq=+0.00 me=-0.00 mmu=+0.00 mtau=-0.00
+=== 2026-11-18T17:18:17-07:00 PT MN ql (5 independent ladders, 25k it)
+  [MN_ql_1] it 1250/25000 cold chi2 med 139.06 min 92.21 | acc cold 0.054 hot 0.511 | swap acc min 0.05 | t=28s
+  [MN_ql_3] it 1250/25000 cold chi2 med 92.15 min 71.25 | acc cold 0.060 hot 0.512 | swap acc min 0.04 | t=27s
+  [MN_ql_5] it 1250/25000 cold chi2 med 34.28 min 26.84 | acc cold 0.053 hot 0.513 | swap acc min 0.03 | t=27s
+  [MN_ql_2] it 1250/25000 cold chi2 med 75.77 min 47.19 | acc cold 0.042 hot 0.510 | swap acc min 0.03 | t=28s
+  [MN_ql_4] it 1250/25000 cold chi2 med 78.35 min 63.22 | acc cold 0.063 hot 0.512 | swap acc min 0.03 | t=27s
+  [MN_ql_1] it 2500/25000 cold chi2 med 15.83 min 10.93 | acc cold 0.060 hot 0.507 | swap acc min 0.04 | t=54s
+  [MN_ql_2] it 2500/25000 cold chi2 med 19.38 min 14.95 | acc cold 0.050 hot 0.504 | swap acc min 0.06 | t=54s
+  [MN_ql_4] it 2500/25000 cold chi2 med 8.12 min 2.99 | acc cold 0.068 hot 0.504 | swap acc min 0.04 | t=55s
+  [MN_ql_5] it 2500/25000 cold chi2 med 11.29 min 6.54 | acc cold 0.060 hot 0.506 | swap acc min 0.07 | t=55s
+  [MN_ql_3] it 2500/25000 cold chi2 med 13.93 min 4.74 | acc cold 0.066 hot 0.508 | swap acc min 0.04 | t=55s
+  [MN_ql_1] it 3750/25000 cold chi2 med 8.79 min 4.95 | acc cold 0.062 hot 0.504 | swap acc min 0.09 | t=78s
+  [MN_ql_2] it 3750/25000 cold chi2 med 10.72 min 2.72 | acc cold 0.050 hot 0.502 | swap acc min 0.09 | t=78s
+  [MN_ql_4] it 3750/25000 cold chi2 med 5.32 min 2.25 | acc cold 0.064 hot 0.503 | swap acc min 0.16 | t=78s
+  [MN_ql_5] it 3750/25000 cold chi2 med 7.98 min 3.01 | acc cold 0.056 hot 0.503 | swap acc min 0.17 | t=79s
+  [MN_ql_3] it 3750/25000 cold chi2 med 8.89 min 3.26 | acc cold 0.062 hot 0.505 | swap acc min 0.15 | t=79s
+  [MN_ql_1] it 5000/25000 cold chi2 med 7.92 min 3.57 | acc cold 0.057 hot 0.504 | swap acc min 0.20 | t=102s
+  [MN_ql_2] it 5000/25000 cold chi2 med 7.01 min 3.55 | acc cold 0.048 hot 0.503 | swap acc min 0.20 | t=102s
+  [MN_ql_4] it 5000/25000 cold chi2 med 7.14 min 1.32 | acc cold 0.060 hot 0.502 | swap acc min 0.27 | t=102s
+  [MN_ql_3] it 5000/25000 cold chi2 med 6.49 min 2.86 | acc cold 0.058 hot 0.503 | swap acc min 0.26 | t=102s
+  [MN_ql_5] it 5000/25000 cold chi2 med 7.67 min 2.19 | acc cold 0.054 hot 0.502 | swap acc min 0.28 | t=102s
+  [MN_ql_1] it 6250/25000 cold chi2 med 6.48 min 3.06 | acc cold 0.054 hot 0.503 | swap acc min 0.29 | t=125s
+  [MN_ql_3] it 6250/25000 cold chi2 med 7.48 min 1.40 | acc cold 0.054 hot 0.504 | swap acc min 0.35 | t=125s
+  [MN_ql_2] it 6250/25000 cold chi2 med 7.48 min 2.19 | acc cold 0.049 hot 0.502 | swap acc min 0.29 | t=125s
+  [MN_ql_4] it 6250/25000 cold chi2 med 6.98 min 1.44 | acc cold 0.056 hot 0.500 | swap acc min 0.35 | t=125s
+  [MN_ql_5] it 6250/25000 cold chi2 med 6.89 min 2.18 | acc cold 0.052 hot 0.500 | swap acc min 0.36 | t=126s
+  [MN_ql_1] it 7500/25000 cold chi2 med 6.27 min 1.80 | acc cold 0.053 hot 0.502 | swap acc min 0.35 | t=147s
+  [MN_ql_3] it 7500/25000 cold chi2 med 5.12 min 1.87 | acc cold 0.050 hot 0.504 | swap acc min 0.41 | t=147s
+  [MN_ql_2] it 7500/25000 cold chi2 med 7.05 min 2.87 | acc cold 0.049 hot 0.501 | swap acc min 0.35 | t=148s
+  [MN_ql_4] it 7500/25000 cold chi2 med 6.22 min 1.90 | acc cold 0.053 hot 0.500 | swap acc min 0.41 | t=148s
+  [MN_ql_5] it 7500/25000 cold chi2 med 5.92 min 1.71 | acc cold 0.050 hot 0.500 | swap acc min 0.42 | t=148s
+  [MN_ql_1] it 8750/25000 cold chi2 med 6.43 min 0.64 | acc cold 0.051 hot 0.503 | swap acc min 0.39 | t=170s
+  [MN_ql_3] it 8750/25000 cold chi2 med 6.06 min 2.40 | acc cold 0.047 hot 0.504 | swap acc min 0.45 | t=170s
+  [MN_ql_2] it 8750/25000 cold chi2 med 8.18 min 1.88 | acc cold 0.048 hot 0.500 | swap acc min 0.40 | t=170s
+  [MN_ql_4] it 8750/25000 cold chi2 med 7.60 min 4.29 | acc cold 0.051 hot 0.500 | swap acc min 0.45 | t=170s
+  [MN_ql_5] it 8750/25000 cold chi2 med 6.81 min 2.11 | acc cold 0.049 hot 0.501 | swap acc min 0.45 | t=171s
+  [MN_ql_1] it 10000/25000 cold chi2 med 7.62 min 3.57 | acc cold 0.050 hot 0.502 | swap acc min 0.43 | t=191s
+  [MN_ql_4] it 10000/25000 cold chi2 med 5.84 min 0.92 | acc cold 0.049 hot 0.501 | swap acc min 0.47 | t=191s
+  [MN_ql_3] it 10000/25000 cold chi2 med 5.60 min 2.55 | acc cold 0.045 hot 0.504 | swap acc min 0.48 | t=191s
+  [MN_ql_2] it 10000/25000 cold chi2 med 6.09 min 1.53 | acc cold 0.048 hot 0.501 | swap acc min 0.43 | t=191s
+  [MN_ql_5] it 10000/25000 cold chi2 med 7.94 min 3.87 | acc cold 0.047 hot 0.501 | swap acc min 0.48 | t=192s
+  [MN_ql_1] it 11250/25000 cold chi2 med 6.12 min 2.88 | acc cold 0.049 hot 0.502 | swap acc min 0.46 | t=211s
+  [MN_ql_4] it 11250/25000 cold chi2 med 7.00 min 2.78 | acc cold 0.047 hot 0.501 | swap acc min 0.50 | t=212s
+  [MN_ql_3] it 11250/25000 cold chi2 med 5.15 min 2.11 | acc cold 0.043 hot 0.504 | swap acc min 0.50 | t=212s
+  [MN_ql_2] it 11250/25000 cold chi2 med 6.35 min 2.25 | acc cold 0.048 hot 0.500 | swap acc min 0.46 | t=212s
+  [MN_ql_5] it 11250/25000 cold chi2 med 7.61 min 2.39 | acc cold 0.046 hot 0.501 | swap acc min 0.50 | t=214s
+  [MN_ql_1] it 12500/25000 cold chi2 med 6.83 min 2.84 | acc cold 0.048 hot 0.503 | swap acc min 0.48 | t=233s
+  [MN_ql_4] it 12500/25000 cold chi2 med 5.81 min 1.37 | acc cold 0.046 hot 0.502 | swap acc min 0.50 | t=233s
+  [MN_ql_3] it 12500/25000 cold chi2 med 6.61 min 2.16 | acc cold 0.042 hot 0.503 | swap acc min 0.50 | t=233s
+  [MN_ql_2] it 12500/25000 cold chi2 med 7.68 min 3.21 | acc cold 0.047 hot 0.501 | swap acc min 0.48 | t=234s
+  [MN_ql_5] it 12500/25000 cold chi2 med 6.91 min 2.22 | acc cold 0.045 hot 0.501 | swap acc min 0.50 | t=235s
+  [MN_ql_1] it 13750/25000 cold chi2 med 7.86 min 2.40 | acc cold 0.047 hot 0.503 | swap acc min 0.50 | t=258s
+  [MN_ql_4] it 13750/25000 cold chi2 med 6.24 min 2.39 | acc cold 0.045 hot 0.501 | swap acc min 0.50 | t=258s
+  [MN_ql_2] it 13750/25000 cold chi2 med 4.96 min 1.53 | acc cold 0.047 hot 0.500 | swap acc min 0.50 | t=259s
+  [MN_ql_3] it 13750/25000 cold chi2 med 5.25 min 1.23 | acc cold 0.041 hot 0.502 | swap acc min 0.50 | t=259s
+  [MN_ql_5] it 13750/25000 cold chi2 med 6.15 min 0.82 | acc cold 0.045 hot 0.501 | swap acc min 0.50 | t=261s
+  [MN_ql_4] it 15000/25000 cold chi2 med 6.46 min 1.93 | acc cold 0.044 hot 0.501 | swap acc min 0.50 | t=283s
+  [MN_ql_1] it 15000/25000 cold chi2 med 7.38 min 4.15 | acc cold 0.046 hot 0.502 | swap acc min 0.50 | t=284s
+  [MN_ql_2] it 15000/25000 cold chi2 med 7.83 min 3.17 | acc cold 0.046 hot 0.501 | swap acc min 0.50 | t=286s
+  [MN_ql_3] it 15000/25000 cold chi2 med 5.49 min 1.76 | acc cold 0.039 hot 0.503 | swap acc min 0.50 | t=286s
+  [MN_ql_5] it 15000/25000 cold chi2 med 6.09 min 2.56 | acc cold 0.044 hot 0.501 | swap acc min 0.50 | t=289s
+  [MN_ql_4] it 16250/25000 cold chi2 med 5.22 min 1.75 | acc cold 0.044 hot 0.501 | swap acc min 0.50 | t=313s
+  [MN_ql_1] it 16250/25000 cold chi2 med 7.44 min 3.23 | acc cold 0.045 hot 0.502 | swap acc min 0.50 | t=314s
+  [MN_ql_2] it 16250/25000 cold chi2 med 5.22 min 2.01 | acc cold 0.046 hot 0.500 | swap acc min 0.50 | t=314s
+  [MN_ql_3] it 16250/25000 cold chi2 med 6.20 min 1.65 | acc cold 0.038 hot 0.503 | swap acc min 0.50 | t=316s
+  [MN_ql_5] it 16250/25000 cold chi2 med 5.66 min 1.95 | acc cold 0.044 hot 0.500 | swap acc min 0.50 | t=318s
+  [MN_ql_4] it 17500/25000 cold chi2 med 4.74 min 1.64 | acc cold 0.044 hot 0.500 | swap acc min 0.50 | t=342s
+  [MN_ql_1] it 17500/25000 cold chi2 med 7.58 min 2.00 | acc cold 0.044 hot 0.502 | swap acc min 0.50 | t=342s
+  [MN_ql_2] it 17500/25000 cold chi2 med 6.66 min 2.59 | acc cold 0.045 hot 0.500 | swap acc min 0.50 | t=343s
+  [MN_ql_3] it 17500/25000 cold chi2 med 5.50 min 2.05 | acc cold 0.038 hot 0.503 | swap acc min 0.50 | t=345s
+  [MN_ql_5] it 17500/25000 cold chi2 med 6.10 min 2.30 | acc cold 0.044 hot 0.501 | swap acc min 0.50 | t=347s
+  [MN_ql_4] it 18750/25000 cold chi2 med 6.56 min 1.33 | acc cold 0.044 hot 0.500 | swap acc min 0.50 | t=369s
+  [MN_ql_1] it 18750/25000 cold chi2 med 6.60 min 2.52 | acc cold 0.044 hot 0.502 | swap acc min 0.50 | t=370s
+  [MN_ql_2] it 18750/25000 cold chi2 med 6.37 min 3.43 | acc cold 0.045 hot 0.501 | swap acc min 0.50 | t=371s
+  [MN_ql_3] it 18750/25000 cold chi2 med 5.34 min 1.75 | acc cold 0.037 hot 0.502 | swap acc min 0.50 | t=373s
+  [MN_ql_5] it 18750/25000 cold chi2 med 7.23 min 1.79 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=375s
+  [MN_ql_4] it 20000/25000 cold chi2 med 8.28 min 3.47 | acc cold 0.044 hot 0.500 | swap acc min 0.50 | t=393s
+  [MN_ql_1] it 20000/25000 cold chi2 med 6.52 min 2.14 | acc cold 0.043 hot 0.502 | swap acc min 0.50 | t=393s
+  [MN_ql_2] it 20000/25000 cold chi2 med 6.56 min 2.47 | acc cold 0.045 hot 0.501 | swap acc min 0.50 | t=394s
+  [MN_ql_3] it 20000/25000 cold chi2 med 5.36 min 1.93 | acc cold 0.037 hot 0.502 | swap acc min 0.50 | t=395s
+  [MN_ql_5] it 20000/25000 cold chi2 med 6.18 min 3.28 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=397s
+  [MN_ql_4] it 21250/25000 cold chi2 med 7.02 min 2.16 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=413s
+  [MN_ql_1] it 21250/25000 cold chi2 med 6.83 min 2.54 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=413s
+  [MN_ql_2] it 21250/25000 cold chi2 med 6.41 min 2.44 | acc cold 0.044 hot 0.501 | swap acc min 0.50 | t=414s
+  [MN_ql_3] it 21250/25000 cold chi2 med 7.89 min 3.93 | acc cold 0.037 hot 0.502 | swap acc min 0.50 | t=416s
+  [MN_ql_5] it 21250/25000 cold chi2 med 5.54 min 2.57 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=417s
+  [MN_ql_4] it 22500/25000 cold chi2 med 6.91 min 1.90 | acc cold 0.043 hot 0.500 | swap acc min 0.50 | t=434s
+  [MN_ql_1] it 22500/25000 cold chi2 med 5.61 min 1.47 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=434s
+  [MN_ql_2] it 22500/25000 cold chi2 med 5.28 min 2.38 | acc cold 0.044 hot 0.500 | swap acc min 0.50 | t=435s
+  [MN_ql_3] it 22500/25000 cold chi2 med 5.87 min 1.47 | acc cold 0.037 hot 0.503 | swap acc min 0.49 | t=437s
+  [MN_ql_5] it 22500/25000 cold chi2 med 8.01 min 3.62 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=438s
+  [MN_ql_4] it 23750/25000 cold chi2 med 7.04 min 2.91 | acc cold 0.043 hot 0.500 | swap acc min 0.50 | t=453s
+  [MN_ql_1] it 23750/25000 cold chi2 med 6.52 min 1.30 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=453s
+  [MN_ql_2] it 23750/25000 cold chi2 med 6.12 min 2.07 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=454s
+  [MN_ql_3] it 23750/25000 cold chi2 med 5.80 min 1.51 | acc cold 0.037 hot 0.503 | swap acc min 0.49 | t=456s
+  [MN_ql_5] it 23750/25000 cold chi2 med 8.01 min 2.83 | acc cold 0.042 hot 0.501 | swap acc min 0.50 | t=457s
+  [MN_ql_4] it 25000/25000 cold chi2 med 7.16 min 2.40 | acc cold 0.042 hot 0.501 | swap acc min 0.50 | t=475s
+  [MN_ql_1] it 25000/25000 cold chi2 med 6.60 min 1.39 | acc cold 0.042 hot 0.501 | swap acc min 0.50 | t=476s
+[MN_ql_4] saved 15000 cold samples; swap acceptance per pair [0.63 0.6  0.6  0.61 0.61 0.62 0.63 0.64 0.64 0.62 0.58 0.55 0.55 0.57
+ 0.59 0.58 0.5  0.52 0.66 0.74 0.79 0.82 0.84 0.87 0.89 0.91 0.93 0.94
+ 0.95 0.96 0.97]
+[MN_ql_1] saved 15000 cold samples; swap acceptance per pair [0.6  0.58 0.59 0.61 0.62 0.63 0.64 0.65 0.64 0.62 0.58 0.54 0.55 0.57
+ 0.59 0.57 0.5  0.52 0.66 0.74 0.79 0.82 0.85 0.87 0.89 0.91 0.93 0.94
+ 0.95 0.96 0.97]
+  [MN_ql_2] it 25000/25000 cold chi2 med 7.50 min 2.79 | acc cold 0.043 hot 0.501 | swap acc min 0.50 | t=477s
+[MN_ql_2] saved 15000 cold samples; swap acceptance per pair [0.61 0.58 0.59 0.6  0.62 0.63 0.63 0.63 0.64 0.62 0.58 0.55 0.55 0.57
+ 0.59 0.57 0.5  0.52 0.66 0.74 0.79 0.82 0.85 0.87 0.89 0.91 0.93 0.94
+ 0.95 0.96 0.97]
+  [MN_ql_3] it 25000/25000 cold chi2 med 6.81 min 2.63 | acc cold 0.036 hot 0.502 | swap acc min 0.49 | t=479s
+[MN_ql_3] saved 15000 cold samples; swap acceptance per pair [0.61 0.61 0.61 0.62 0.64 0.65 0.66 0.66 0.67 0.66 0.64 0.61 0.57 0.54
+ 0.56 0.56 0.49 0.52 0.66 0.74 0.79 0.82 0.85 0.87 0.89 0.91 0.93 0.94
+ 0.95 0.96 0.97]
+  [MN_ql_5] it 25000/25000 cold chi2 med 6.39 min 2.59 | acc cold 0.042 hot 0.501 | swap acc min 0.50 | t=480s
+[MN_ql_5] saved 15000 cold samples; swap acceptance per pair [0.62 0.61 0.6  0.61 0.62 0.63 0.64 0.64 0.63 0.61 0.58 0.54 0.55 0.57
+ 0.59 0.57 0.5  0.52 0.66 0.74 0.79 0.82 0.84 0.87 0.89 0.91 0.93 0.94
+ 0.95 0.96 0.97]
+=== 2026-11-18T17:26:18-07:00 global_fit FN ours
+[FN_ours] stage A: 3000 starts, 99s, chi2 min/1%/10%/50% = [4.39000e+00 3.61420e+02 1.13153e+03 4.97221e+03]
+[FN_ours] hop 0: best 2.807, 10 best [2.81 3.65 3.68 4.09 4.39 4.39 4.39 4.39 6.32 6.58], 115s
+[FN_ours] hop 1: best 0.296, 10 best [0.3  0.3  0.3  0.3  0.54 0.54 1.64 2.81 3.1  3.37], 130s
+[FN_ours] hop 2: best 0.296, 10 best [0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3], 137s
+[FN_ours] hop 3: best 0.296, 10 best [0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3 0.3], 140s
+[FN_ours] best chi2 0.2956 (N=17, k=16) IO=False  pulls: lg_mu_mc=+0.00 lg_mc_mt=+0.01 lg_md_ms=-0.03 lg_ms_mb=+0.00 lg_mb_mt=+0.00 lg_me_mmu=+0.00 lg_mmu_mtau=+0.03 lg_mtau_mb=+0.01 s12q=+0.01 lg_s13q=+0.00 lg_s23q=-0.03 dq=+0.01 s12sq_l=+0.03 s13sq_l=-0.01 s23sq_l=-0.04 dl=-0.54 lg_dm21_dm3l=+0.03
+=== 2026-11-18T17:28:38-07:00 PT FN ql (5 independent ladders, 25k it)
+  [FN_ql_4] it 1250/25000 cold chi2 med 1356.41 min 729.56 | acc cold 0.040 hot 0.267 | swap acc min 0.03 | t=20s
+  [FN_ql_1] it 1250/25000 cold chi2 med 752.06 min 272.88 | acc cold 0.045 hot 0.271 | swap acc min 0.02 | t=20s
+  [FN_ql_2] it 1250/25000 cold chi2 med 1326.55 min 626.23 | acc cold 0.040 hot 0.271 | swap acc min 0.03 | t=20s
+  [FN_ql_5] it 1250/25000 cold chi2 med 1108.11 min 500.31 | acc cold 0.044 hot 0.265 | swap acc min 0.03 | t=21s
+  [FN_ql_3] it 1250/25000 cold chi2 med 987.88 min 732.07 | acc cold 0.043 hot 0.272 | swap acc min 0.03 | t=21s
+  [FN_ql_1] it 2500/25000 cold chi2 med 61.52 min 55.88 | acc cold 0.130 hot 0.272 | swap acc min 0.01 | t=39s
+  [FN_ql_4] it 2500/25000 cold chi2 med 64.34 min 58.78 | acc cold 0.059 hot 0.272 | swap acc min 0.01 | t=39s
+  [FN_ql_2] it 2500/25000 cold chi2 med 431.45 min 409.57 | acc cold 0.048 hot 0.276 | swap acc min 0.01 | t=40s
+  [FN_ql_3] it 2500/25000 cold chi2 med 133.48 min 116.95 | acc cold 0.066 hot 0.271 | swap acc min 0.01 | t=41s
+  [FN_ql_5] it 2500/25000 cold chi2 med 51.13 min 47.01 | acc cold 0.096 hot 0.272 | swap acc min 0.01 | t=41s
+  [FN_ql_1] it 3750/25000 cold chi2 med 51.00 min 44.48 | acc cold 0.184 hot 0.275 | swap acc min 0.01 | t=60s
+  [FN_ql_4] it 3750/25000 cold chi2 med 52.92 min 49.45 | acc cold 0.115 hot 0.275 | swap acc min 0.01 | t=60s
+  [FN_ql_2] it 3750/25000 cold chi2 med 28.71 min 24.32 | acc cold 0.077 hot 0.279 | swap acc min 0.02 | t=60s
+  [FN_ql_3] it 3750/25000 cold chi2 med 37.47 min 33.00 | acc cold 0.117 hot 0.274 | swap acc min 0.01 | t=61s
+  [FN_ql_5] it 3750/25000 cold chi2 med 31.40 min 23.16 | acc cold 0.159 hot 0.275 | swap acc min 0.01 | t=61s
+  [FN_ql_1] it 5000/25000 cold chi2 med 40.86 min 36.91 | acc cold 0.199 hot 0.277 | swap acc min 0.02 | t=80s
+  [FN_ql_4] it 5000/25000 cold chi2 med 50.77 min 43.86 | acc cold 0.124 hot 0.278 | swap acc min 0.02 | t=80s
+  [FN_ql_2] it 5000/25000 cold chi2 med 11.96 min 8.08 | acc cold 0.140 hot 0.280 | swap acc min 0.02 | t=80s
+  [FN_ql_3] it 5000/25000 cold chi2 med 34.81 min 27.60 | acc cold 0.174 hot 0.277 | swap acc min 0.01 | t=81s
+  [FN_ql_5] it 5000/25000 cold chi2 med 14.35 min 10.85 | acc cold 0.191 hot 0.275 | swap acc min 0.01 | t=81s
+  [FN_ql_1] it 6250/25000 cold chi2 med 39.08 min 31.26 | acc cold 0.217 hot 0.277 | swap acc min 0.03 | t=97s
+  [FN_ql_4] it 6250/25000 cold chi2 med 28.02 min 21.05 | acc cold 0.138 hot 0.280 | swap acc min 0.03 | t=97s
+  [FN_ql_2] it 6250/25000 cold chi2 med 12.68 min 8.25 | acc cold 0.174 hot 0.281 | swap acc min 0.03 | t=98s
+  [FN_ql_3] it 6250/25000 cold chi2 med 24.83 min 14.44 | acc cold 0.184 hot 0.279 | swap acc min 0.04 | t=98s
+  [FN_ql_5] it 6250/25000 cold chi2 med 12.91 min 6.38 | acc cold 0.196 hot 0.275 | swap acc min 0.02 | t=99s
+  [FN_ql_1] it 7500/25000 cold chi2 med 10.52 min 4.12 | acc cold 0.210 hot 0.279 | swap acc min 0.04 | t=114s
+  [FN_ql_4] it 7500/25000 cold chi2 med 21.57 min 12.93 | acc cold 0.161 hot 0.280 | swap acc min 0.05 | t=114s
+  [FN_ql_2] it 7500/25000 cold chi2 med 13.19 min 10.00 | acc cold 0.190 hot 0.281 | swap acc min 0.04 | t=115s
+  [FN_ql_3] it 7500/25000 cold chi2 med 11.78 min 8.97 | acc cold 0.204 hot 0.279 | swap acc min 0.06 | t=115s
+  [FN_ql_5] it 7500/25000 cold chi2 med 9.32 min 5.30 | acc cold 0.196 hot 0.277 | swap acc min 0.06 | t=117s
+  [FN_ql_4] it 8750/25000 cold chi2 med 15.36 min 8.66 | acc cold 0.172 hot 0.280 | swap acc min 0.05 | t=132s
+  [FN_ql_1] it 8750/25000 cold chi2 med 4.83 min 1.21 | acc cold 0.218 hot 0.279 | swap acc min 0.06 | t=132s
+  [FN_ql_2] it 8750/25000 cold chi2 med 12.66 min 8.19 | acc cold 0.206 hot 0.281 | swap acc min 0.06 | t=133s
+  [FN_ql_3] it 8750/25000 cold chi2 med 9.95 min 6.73 | acc cold 0.220 hot 0.280 | swap acc min 0.09 | t=133s
+  [FN_ql_5] it 8750/25000 cold chi2 med 10.88 min 6.24 | acc cold 0.195 hot 0.278 | swap acc min 0.05 | t=135s
+  [FN_ql_4] it 10000/25000 cold chi2 med 15.18 min 11.66 | acc cold 0.184 hot 0.281 | swap acc min 0.09 | t=153s
+  [FN_ql_1] it 10000/25000 cold chi2 med 6.31 min 4.17 | acc cold 0.220 hot 0.280 | swap acc min 0.10 | t=153s
+  [FN_ql_2] it 10000/25000 cold chi2 med 12.74 min 7.89 | acc cold 0.215 hot 0.281 | swap acc min 0.08 | t=155s
+  [FN_ql_3] it 10000/25000 cold chi2 med 13.04 min 7.38 | acc cold 0.230 hot 0.281 | swap acc min 0.14 | t=156s
+  [FN_ql_5] it 10000/25000 cold chi2 med 10.61 min 5.30 | acc cold 0.188 hot 0.279 | swap acc min 0.05 | t=159s
+  [FN_ql_4] it 11250/25000 cold chi2 med 17.31 min 11.81 | acc cold 0.195 hot 0.281 | swap acc min 0.14 | t=181s
+  [FN_ql_1] it 11250/25000 cold chi2 med 9.37 min 2.99 | acc cold 0.216 hot 0.281 | swap acc min 0.13 | t=181s
+  [FN_ql_2] it 11250/25000 cold chi2 med 13.03 min 8.51 | acc cold 0.221 hot 0.282 | swap acc min 0.13 | t=183s
+  [FN_ql_3] it 11250/25000 cold chi2 med 10.25 min 6.80 | acc cold 0.232 hot 0.281 | swap acc min 0.19 | t=184s
+  [FN_ql_5] it 11250/25000 cold chi2 med 6.86 min 2.85 | acc cold 0.183 hot 0.280 | swap acc min 0.08 | t=189s
+  [FN_ql_1] it 12500/25000 cold chi2 med 10.51 min 3.16 | acc cold 0.211 hot 0.282 | swap acc min 0.17 | t=211s
+  [FN_ql_4] it 12500/25000 cold chi2 med 15.72 min 9.09 | acc cold 0.202 hot 0.282 | swap acc min 0.19 | t=212s
+  [FN_ql_3] it 12500/25000 cold chi2 med 12.80 min 7.78 | acc cold 0.236 hot 0.281 | swap acc min 0.23 | t=213s
+  [FN_ql_2] it 12500/25000 cold chi2 med 15.39 min 7.46 | acc cold 0.225 hot 0.282 | swap acc min 0.18 | t=214s
+  [FN_ql_5] it 12500/25000 cold chi2 med 5.92 min 2.40 | acc cold 0.183 hot 0.281 | swap acc min 0.13 | t=218s
+  [FN_ql_1] it 13750/25000 cold chi2 med 7.68 min 2.64 | acc cold 0.212 hot 0.281 | swap acc min 0.21 | t=244s
+  [FN_ql_4] it 13750/25000 cold chi2 med 18.18 min 10.96 | acc cold 0.208 hot 0.282 | swap acc min 0.24 | t=245s
+  [FN_ql_2] it 13750/25000 cold chi2 med 10.47 min 6.38 | acc cold 0.224 hot 0.282 | swap acc min 0.22 | t=247s
+  [FN_ql_3] it 13750/25000 cold chi2 med 11.60 min 7.68 | acc cold 0.241 hot 0.282 | swap acc min 0.27 | t=247s
+  [FN_ql_5] it 13750/25000 cold chi2 med 8.07 min 2.76 | acc cold 0.185 hot 0.281 | swap acc min 0.18 | t=252s
+  [FN_ql_1] it 15000/25000 cold chi2 med 8.77 min 4.84 | acc cold 0.213 hot 0.281 | swap acc min 0.25 | t=272s
+  [FN_ql_4] it 15000/25000 cold chi2 med 17.24 min 12.74 | acc cold 0.215 hot 0.283 | swap acc min 0.27 | t=274s
+  [FN_ql_3] it 15000/25000 cold chi2 med 10.79 min 6.06 | acc cold 0.239 hot 0.282 | swap acc min 0.30 | t=275s
+  [FN_ql_2] it 15000/25000 cold chi2 med 11.78 min 6.28 | acc cold 0.228 hot 0.282 | swap acc min 0.26 | t=275s
+  [FN_ql_5] it 15000/25000 cold chi2 med 8.57 min 2.57 | acc cold 0.189 hot 0.281 | swap acc min 0.22 | t=279s
+  [FN_ql_1] it 16250/25000 cold chi2 med 9.88 min 1.16 | acc cold 0.212 hot 0.281 | swap acc min 0.28 | t=299s
+  [FN_ql_3] it 16250/25000 cold chi2 med 10.30 min 4.40 | acc cold 0.238 hot 0.282 | swap acc min 0.32 | t=301s
+  [FN_ql_4] it 16250/25000 cold chi2 med 17.93 min 10.14 | acc cold 0.220 hot 0.283 | swap acc min 0.30 | t=301s
+  [FN_ql_2] it 16250/25000 cold chi2 med 10.90 min 4.67 | acc cold 0.234 hot 0.282 | swap acc min 0.29 | t=301s
+  [FN_ql_5] it 16250/25000 cold chi2 med 7.85 min 2.00 | acc cold 0.191 hot 0.282 | swap acc min 0.26 | t=304s
+  [FN_ql_1] it 17500/25000 cold chi2 med 8.27 min 1.24 | acc cold 0.213 hot 0.282 | swap acc min 0.31 | t=322s
+  [FN_ql_3] it 17500/25000 cold chi2 med 10.81 min 6.40 | acc cold 0.235 hot 0.282 | swap acc min 0.34 | t=324s
+  [FN_ql_2] it 17500/25000 cold chi2 med 11.74 min 5.07 | acc cold 0.241 hot 0.282 | swap acc min 0.31 | t=325s
+  [FN_ql_4] it 17500/25000 cold chi2 med 17.08 min 13.20 | acc cold 0.224 hot 0.283 | swap acc min 0.32 | t=325s
+  [FN_ql_5] it 17500/25000 cold chi2 med 7.62 min 1.03 | acc cold 0.194 hot 0.282 | swap acc min 0.29 | t=328s
+  [FN_ql_1] it 18750/25000 cold chi2 med 7.42 min 2.33 | acc cold 0.214 hot 0.282 | swap acc min 0.33 | t=347s
+  [FN_ql_3] it 18750/25000 cold chi2 med 11.61 min 3.64 | acc cold 0.232 hot 0.282 | swap acc min 0.36 | t=350s
+  [FN_ql_2] it 18750/25000 cold chi2 med 9.95 min 5.52 | acc cold 0.247 hot 0.282 | swap acc min 0.33 | t=353s
+  [FN_ql_4] it 18750/25000 cold chi2 med 15.23 min 10.83 | acc cold 0.227 hot 0.283 | swap acc min 0.34 | t=354s
+  [FN_ql_5] it 18750/25000 cold chi2 med 7.92 min 2.21 | acc cold 0.197 hot 0.282 | swap acc min 0.31 | t=356s
+  [FN_ql_1] it 20000/25000 cold chi2 med 7.38 min 1.94 | acc cold 0.215 hot 0.282 | swap acc min 0.35 | t=374s
+  [FN_ql_3] it 20000/25000 cold chi2 med 9.44 min 3.18 | acc cold 0.230 hot 0.283 | swap acc min 0.38 | t=377s
+  [FN_ql_2] it 20000/25000 cold chi2 med 12.46 min 5.72 | acc cold 0.250 hot 0.282 | swap acc min 0.35 | t=380s
+  [FN_ql_4] it 20000/25000 cold chi2 med 14.53 min 8.29 | acc cold 0.228 hot 0.284 | swap acc min 0.36 | t=381s
+  [FN_ql_5] it 20000/25000 cold chi2 med 6.38 min 2.75 | acc cold 0.199 hot 0.282 | swap acc min 0.33 | t=382s
+  [FN_ql_1] it 21250/25000 cold chi2 med 10.72 min 5.68 | acc cold 0.217 hot 0.282 | swap acc min 0.37 | t=399s
+  [FN_ql_3] it 21250/25000 cold chi2 med 11.99 min 4.35 | acc cold 0.227 hot 0.283 | swap acc min 0.39 | t=401s
+  [FN_ql_2] it 21250/25000 cold chi2 med 9.65 min 5.45 | acc cold 0.254 hot 0.282 | swap acc min 0.37 | t=404s
+  [FN_ql_4] it 21250/25000 cold chi2 med 13.79 min 3.42 | acc cold 0.224 hot 0.284 | swap acc min 0.38 | t=405s
+  [FN_ql_5] it 21250/25000 cold chi2 med 7.72 min 1.52 | acc cold 0.201 hot 0.282 | swap acc min 0.35 | t=405s
+  [FN_ql_1] it 22500/25000 cold chi2 med 7.63 min 2.44 | acc cold 0.219 hot 0.282 | swap acc min 0.38 | t=426s
+  [FN_ql_3] it 22500/25000 cold chi2 med 6.63 min 1.78 | acc cold 0.227 hot 0.283 | swap acc min 0.40 | t=430s
+  [FN_ql_2] it 22500/25000 cold chi2 med 11.15 min 5.49 | acc cold 0.257 hot 0.283 | swap acc min 0.38 | t=434s
+  [FN_ql_5] it 22500/25000 cold chi2 med 8.16 min 3.84 | acc cold 0.203 hot 0.283 | swap acc min 0.37 | t=436s
+  [FN_ql_4] it 22500/25000 cold chi2 med 13.28 min 8.01 | acc cold 0.221 hot 0.284 | swap acc min 0.39 | t=438s
+  [FN_ql_1] it 23750/25000 cold chi2 med 7.93 min 2.55 | acc cold 0.221 hot 0.282 | swap acc min 0.40 | t=463s
+  [FN_ql_3] it 23750/25000 cold chi2 med 6.88 min 3.01 | acc cold 0.228 hot 0.282 | swap acc min 0.41 | t=467s
+  [FN_ql_5] it 23750/25000 cold chi2 med 9.41 min 2.01 | acc cold 0.204 hot 0.283 | swap acc min 0.38 | t=468s
+  [FN_ql_2] it 23750/25000 cold chi2 med 12.35 min 5.97 | acc cold 0.260 hot 0.282 | swap acc min 0.39 | t=468s
+  [FN_ql_4] it 23750/25000 cold chi2 med 9.60 min 3.85 | acc cold 0.223 hot 0.283 | swap acc min 0.41 | t=476s
+  [FN_ql_2] it 25000/25000 cold chi2 med 11.05 min 5.54 | acc cold 0.263 hot 0.282 | swap acc min 0.40 | t=507s
+[FN_ql_2] saved 15000 cold samples; swap acceptance per pair [0.5  0.51 0.48 0.44 0.4  0.41 0.41 0.44 0.49 0.53 0.54 0.55 0.56 0.57
+ 0.59 0.61 0.63 0.65 0.64 0.64 0.63 0.64 0.65 0.66 0.68 0.68 0.69 0.72
+ 0.75 0.79 0.83]
+  [FN_ql_5] it 25000/25000 cold chi2 med 6.82 min 2.83 | acc cold 0.206 hot 0.283 | swap acc min 0.39 | t=510s
+[FN_ql_5] saved 15000 cold samples; swap acceptance per pair [0.51 0.48 0.39 0.44 0.41 0.42 0.46 0.49 0.51 0.54 0.54 0.54 0.55 0.57
+ 0.59 0.61 0.63 0.64 0.64 0.64 0.63 0.63 0.64 0.66 0.67 0.68 0.69 0.71
+ 0.75 0.79 0.83]
+  [FN_ql_1] it 25000/25000 cold chi2 med 9.72 min 3.50 | acc cold 0.225 hot 0.282 | swap acc min 0.41 | t=512s
+[FN_ql_1] saved 15000 cold samples; swap acceptance per pair [0.5  0.45 0.41 0.42 0.45 0.44 0.46 0.48 0.5  0.52 0.54 0.55 0.55 0.55
+ 0.57 0.6  0.63 0.64 0.64 0.64 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.72
+ 0.76 0.79 0.83]
+  [FN_ql_3] it 25000/25000 cold chi2 med 8.02 min 2.44 | acc cold 0.230 hot 0.282 | swap acc min 0.42 | t=516s
+[FN_ql_3] saved 15000 cold samples; swap acceptance per pair [0.49 0.47 0.46 0.44 0.43 0.42 0.43 0.46 0.49 0.52 0.53 0.54 0.55 0.57
+ 0.59 0.61 0.63 0.64 0.65 0.64 0.64 0.63 0.65 0.66 0.67 0.68 0.69 0.72
+ 0.75 0.79 0.83]
+  [FN_ql_4] it 25000/25000 cold chi2 med 10.99 min 4.13 | acc cold 0.224 hot 0.283 | swap acc min 0.42 | t=526s
+[FN_ql_4] saved 15000 cold samples; swap acceptance per pair [0.49 0.46 0.46 0.45 0.42 0.44 0.45 0.45 0.49 0.53 0.54 0.54 0.55 0.56
+ 0.59 0.61 0.63 0.64 0.64 0.64 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.72
+ 0.75 0.79 0.82]
+=== 2026-11-18T17:37:26-07:00 global_fit MN ours nodl
+[MN_ours_nodl] stage A: 3000 starts, 214s, chi2 min/1%/10%/50% = [  89.37  284.25  833.99 2537.32]
+[MN_ours_nodl] hop 0: best 89.372, 10 best [ 89.37 104.75 108.48 111.19 117.39 119.97 122.45 124.19 144.28 144.73], 246s
+[MN_ours_nodl] hop 1: best 89.372, 10 best [ 89.37 104.75 107.72 108.48 111.19 117.39 119.97 122.45 124.19 127.6 ], 270s
+[MN_ours_nodl] hop 2: best 85.697, 10 best [ 85.7   86.66  87.75  89.37  95.55  95.83  98.64 101.26 103.19 104.38], 293s
+[MN_ours_nodl] hop 3: best 81.377, 10 best [81.38 81.49 81.94 82.42 83.27 84.42 84.54 85.03 85.25 85.7 ], 315s
+[MN_ours_nodl] best chi2 79.9135 (N=16, k=17) IO=False  pulls: lg_mu_mc=+0.04 lg_mc_mt=+2.98 lg_md_ms=-4.31 lg_ms_mb=-1.63 lg_mb_mt=+0.15 lg_me_mmu=+0.35 lg_mmu_mtau=-0.79 lg_mtau_mb=-0.27 s12q=+2.95 lg_s13q=-0.21 lg_s23q=+1.37 dq=+3.44 s12sq_l=-0.10 s13sq_l=-0.42 s23sq_l=-5.07 dl=+7.59 lg_dm21_dm3l=+0.83
+=== 2026-11-18T17:42:58-07:00 PT MN ql drrel (5 independent ladders, 25k it)
+  [MN_qldr_1] it 1250/25000 cold chi2 med 10.41 min 4.15 | acc cold 0.066 hot 0.516 | swap acc min 0.42 | t=21s
+  [MN_qldr_4] it 1250/25000 cold chi2 med 10.18 min 6.09 | acc cold 0.076 hot 0.516 | swap acc min 0.43 | t=22s
+  [MN_qldr_5] it 1250/25000 cold chi2 med 11.21 min 5.58 | acc cold 0.074 hot 0.515 | swap acc min 0.48 | t=22s
+  [MN_qldr_3] it 1250/25000 cold chi2 med 9.96 min 5.16 | acc cold 0.077 hot 0.518 | swap acc min 0.45 | t=22s
+  [MN_qldr_2] it 1250/25000 cold chi2 med 11.48 min 6.49 | acc cold 0.070 hot 0.517 | swap acc min 0.42 | t=22s
+  [MN_qldr_1] it 2500/25000 cold chi2 med 10.81 min 3.99 | acc cold 0.070 hot 0.514 | swap acc min 0.52 | t=41s
+  [MN_qldr_4] it 2500/25000 cold chi2 med 11.82 min 5.66 | acc cold 0.078 hot 0.508 | swap acc min 0.54 | t=41s
+  [MN_qldr_5] it 2500/25000 cold chi2 med 12.09 min 4.47 | acc cold 0.079 hot 0.511 | swap acc min 0.54 | t=41s
+  [MN_qldr_3] it 2500/25000 cold chi2 med 10.45 min 6.53 | acc cold 0.077 hot 0.513 | swap acc min 0.54 | t=41s
+  [MN_qldr_2] it 2500/25000 cold chi2 med 10.62 min 5.40 | acc cold 0.075 hot 0.513 | swap acc min 0.53 | t=41s
+  [MN_qldr_1] it 3750/25000 cold chi2 med 9.98 min 1.97 | acc cold 0.073 hot 0.514 | swap acc min 0.53 | t=61s
+  [MN_qldr_4] it 3750/25000 cold chi2 med 9.99 min 4.68 | acc cold 0.079 hot 0.508 | swap acc min 0.54 | t=61s
+  [MN_qldr_5] it 3750/25000 cold chi2 med 12.07 min 4.49 | acc cold 0.085 hot 0.510 | swap acc min 0.53 | t=61s
+  [MN_qldr_3] it 3750/25000 cold chi2 med 8.47 min 5.63 | acc cold 0.077 hot 0.512 | swap acc min 0.54 | t=61s
+  [MN_qldr_2] it 3750/25000 cold chi2 med 9.54 min 4.28 | acc cold 0.077 hot 0.510 | swap acc min 0.53 | t=61s
+  [MN_qldr_1] it 5000/25000 cold chi2 med 8.81 min 2.37 | acc cold 0.078 hot 0.515 | swap acc min 0.53 | t=82s
+  [MN_qldr_5] it 5000/25000 cold chi2 med 10.06 min 5.18 | acc cold 0.086 hot 0.509 | swap acc min 0.52 | t=82s
+  [MN_qldr_4] it 5000/25000 cold chi2 med 10.05 min 6.27 | acc cold 0.082 hot 0.509 | swap acc min 0.53 | t=82s
+  [MN_qldr_3] it 5000/25000 cold chi2 med 8.72 min 4.90 | acc cold 0.079 hot 0.511 | swap acc min 0.53 | t=82s
+  [MN_qldr_2] it 5000/25000 cold chi2 med 11.73 min 4.88 | acc cold 0.082 hot 0.510 | swap acc min 0.52 | t=82s
+  [MN_qldr_5] it 6250/25000 cold chi2 med 11.28 min 3.95 | acc cold 0.088 hot 0.508 | swap acc min 0.52 | t=103s
+  [MN_qldr_1] it 6250/25000 cold chi2 med 6.13 min 2.18 | acc cold 0.082 hot 0.513 | swap acc min 0.52 | t=103s
+  [MN_qldr_4] it 6250/25000 cold chi2 med 10.49 min 5.00 | acc cold 0.085 hot 0.509 | swap acc min 0.53 | t=103s
+  [MN_qldr_3] it 6250/25000 cold chi2 med 9.91 min 4.34 | acc cold 0.081 hot 0.512 | swap acc min 0.52 | t=103s
+  [MN_qldr_2] it 6250/25000 cold chi2 med 10.09 min 6.00 | acc cold 0.083 hot 0.510 | swap acc min 0.52 | t=104s
+  [MN_qldr_5] it 7500/25000 cold chi2 med 9.17 min 4.50 | acc cold 0.088 hot 0.507 | swap acc min 0.52 | t=123s
+  [MN_qldr_4] it 7500/25000 cold chi2 med 10.75 min 4.70 | acc cold 0.087 hot 0.509 | swap acc min 0.53 | t=123s
+  [MN_qldr_1] it 7500/25000 cold chi2 med 6.80 min 3.34 | acc cold 0.083 hot 0.513 | swap acc min 0.52 | t=123s
+  [MN_qldr_3] it 7500/25000 cold chi2 med 9.39 min 4.44 | acc cold 0.082 hot 0.511 | swap acc min 0.52 | t=124s
+  [MN_qldr_2] it 7500/25000 cold chi2 med 10.49 min 5.80 | acc cold 0.083 hot 0.509 | swap acc min 0.52 | t=124s
+  [MN_qldr_5] it 8750/25000 cold chi2 med 9.78 min 5.36 | acc cold 0.088 hot 0.508 | swap acc min 0.52 | t=144s
+  [MN_qldr_4] it 8750/25000 cold chi2 med 10.52 min 3.50 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=146s
+  [MN_qldr_2] it 8750/25000 cold chi2 med 11.35 min 4.75 | acc cold 0.083 hot 0.508 | swap acc min 0.52 | t=146s
+  [MN_qldr_1] it 8750/25000 cold chi2 med 7.47 min 2.39 | acc cold 0.084 hot 0.512 | swap acc min 0.52 | t=146s
+  [MN_qldr_3] it 8750/25000 cold chi2 med 9.53 min 5.89 | acc cold 0.083 hot 0.512 | swap acc min 0.52 | t=147s
+  [MN_qldr_5] it 10000/25000 cold chi2 med 9.40 min 4.85 | acc cold 0.088 hot 0.508 | swap acc min 0.53 | t=177s
+  [MN_qldr_4] it 10000/25000 cold chi2 med 11.03 min 6.01 | acc cold 0.085 hot 0.507 | swap acc min 0.52 | t=178s
+  [MN_qldr_1] it 10000/25000 cold chi2 med 8.55 min 3.23 | acc cold 0.085 hot 0.512 | swap acc min 0.52 | t=179s
+  [MN_qldr_2] it 10000/25000 cold chi2 med 12.63 min 3.70 | acc cold 0.083 hot 0.509 | swap acc min 0.52 | t=180s
+  [MN_qldr_3] it 10000/25000 cold chi2 med 10.57 min 6.07 | acc cold 0.083 hot 0.511 | swap acc min 0.52 | t=180s
+  [MN_qldr_5] it 11250/25000 cold chi2 med 10.37 min 4.93 | acc cold 0.088 hot 0.509 | swap acc min 0.53 | t=210s
+  [MN_qldr_4] it 11250/25000 cold chi2 med 9.40 min 5.82 | acc cold 0.084 hot 0.507 | swap acc min 0.52 | t=212s
+  [MN_qldr_1] it 11250/25000 cold chi2 med 9.05 min 4.80 | acc cold 0.087 hot 0.511 | swap acc min 0.52 | t=213s
+  [MN_qldr_2] it 11250/25000 cold chi2 med 10.16 min 3.38 | acc cold 0.084 hot 0.509 | swap acc min 0.52 | t=214s
+  [MN_qldr_3] it 11250/25000 cold chi2 med 10.36 min 6.07 | acc cold 0.083 hot 0.511 | swap acc min 0.52 | t=215s
+  [MN_qldr_5] it 12500/25000 cold chi2 med 9.34 min 5.89 | acc cold 0.087 hot 0.508 | swap acc min 0.53 | t=242s
+  [MN_qldr_4] it 12500/25000 cold chi2 med 10.03 min 3.94 | acc cold 0.084 hot 0.507 | swap acc min 0.52 | t=243s
+  [MN_qldr_1] it 12500/25000 cold chi2 med 11.76 min 5.01 | acc cold 0.088 hot 0.510 | swap acc min 0.52 | t=243s
+  [MN_qldr_2] it 12500/25000 cold chi2 med 12.12 min 6.14 | acc cold 0.083 hot 0.509 | swap acc min 0.52 | t=247s
+  [MN_qldr_3] it 12500/25000 cold chi2 med 8.98 min 5.32 | acc cold 0.083 hot 0.510 | swap acc min 0.52 | t=248s
+  [MN_qldr_5] it 13750/25000 cold chi2 med 10.95 min 4.81 | acc cold 0.087 hot 0.508 | swap acc min 0.53 | t=274s
+  [MN_qldr_4] it 13750/25000 cold chi2 med 10.37 min 6.01 | acc cold 0.083 hot 0.507 | swap acc min 0.52 | t=275s
+  [MN_qldr_1] it 13750/25000 cold chi2 med 10.41 min 3.29 | acc cold 0.089 hot 0.510 | swap acc min 0.52 | t=275s
+  [MN_qldr_2] it 13750/25000 cold chi2 med 11.19 min 3.72 | acc cold 0.083 hot 0.509 | swap acc min 0.52 | t=278s
+  [MN_qldr_3] it 13750/25000 cold chi2 med 10.93 min 6.19 | acc cold 0.082 hot 0.510 | swap acc min 0.52 | t=279s
+  [MN_qldr_5] it 15000/25000 cold chi2 med 9.65 min 5.51 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=305s
+  [MN_qldr_4] it 15000/25000 cold chi2 med 8.99 min 4.03 | acc cold 0.083 hot 0.507 | swap acc min 0.52 | t=307s
+  [MN_qldr_1] it 15000/25000 cold chi2 med 9.32 min 3.56 | acc cold 0.089 hot 0.510 | swap acc min 0.52 | t=307s
+  [MN_qldr_2] it 15000/25000 cold chi2 med 10.91 min 5.01 | acc cold 0.084 hot 0.509 | swap acc min 0.52 | t=309s
+  [MN_qldr_3] it 15000/25000 cold chi2 med 11.74 min 5.25 | acc cold 0.083 hot 0.511 | swap acc min 0.52 | t=312s
+  [MN_qldr_5] it 16250/25000 cold chi2 med 12.25 min 7.19 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=337s
+  [MN_qldr_1] it 16250/25000 cold chi2 med 10.78 min 4.43 | acc cold 0.089 hot 0.510 | swap acc min 0.52 | t=339s
+  [MN_qldr_4] it 16250/25000 cold chi2 med 9.35 min 5.17 | acc cold 0.083 hot 0.508 | swap acc min 0.52 | t=339s
+  [MN_qldr_2] it 16250/25000 cold chi2 med 11.51 min 5.37 | acc cold 0.084 hot 0.509 | swap acc min 0.52 | t=341s
+  [MN_qldr_3] it 16250/25000 cold chi2 med 11.19 min 5.54 | acc cold 0.084 hot 0.510 | swap acc min 0.52 | t=346s
+  [MN_qldr_5] it 17500/25000 cold chi2 med 10.93 min 4.14 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=369s
+  [MN_qldr_1] it 17500/25000 cold chi2 med 10.65 min 4.07 | acc cold 0.089 hot 0.509 | swap acc min 0.52 | t=370s
+  [MN_qldr_4] it 17500/25000 cold chi2 med 10.81 min 4.84 | acc cold 0.083 hot 0.508 | swap acc min 0.52 | t=372s
+  [MN_qldr_2] it 17500/25000 cold chi2 med 10.54 min 5.24 | acc cold 0.085 hot 0.509 | swap acc min 0.52 | t=374s
+  [MN_qldr_3] it 17500/25000 cold chi2 med 11.04 min 5.35 | acc cold 0.085 hot 0.510 | swap acc min 0.52 | t=379s
+  [MN_qldr_1] it 18750/25000 cold chi2 med 8.80 min 5.07 | acc cold 0.090 hot 0.509 | swap acc min 0.52 | t=401s
+  [MN_qldr_5] it 18750/25000 cold chi2 med 11.13 min 7.29 | acc cold 0.087 hot 0.507 | swap acc min 0.52 | t=402s
+  [MN_qldr_4] it 18750/25000 cold chi2 med 11.69 min 5.85 | acc cold 0.083 hot 0.508 | swap acc min 0.52 | t=405s
+  [MN_qldr_2] it 18750/25000 cold chi2 med 10.17 min 3.97 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=407s
+  [MN_qldr_3] it 18750/25000 cold chi2 med 10.02 min 4.95 | acc cold 0.085 hot 0.510 | swap acc min 0.52 | t=411s
+  [MN_qldr_1] it 20000/25000 cold chi2 med 9.58 min 6.53 | acc cold 0.090 hot 0.509 | swap acc min 0.51 | t=428s
+  [MN_qldr_5] it 20000/25000 cold chi2 med 10.12 min 4.34 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=429s
+  [MN_qldr_4] it 20000/25000 cold chi2 med 11.48 min 5.44 | acc cold 0.083 hot 0.508 | swap acc min 0.52 | t=430s
+  [MN_qldr_2] it 20000/25000 cold chi2 med 9.89 min 5.30 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=433s
+  [MN_qldr_3] it 20000/25000 cold chi2 med 11.21 min 4.55 | acc cold 0.086 hot 0.510 | swap acc min 0.52 | t=435s
+  [MN_qldr_1] it 21250/25000 cold chi2 med 10.45 min 5.42 | acc cold 0.089 hot 0.509 | swap acc min 0.51 | t=449s
+  [MN_qldr_5] it 21250/25000 cold chi2 med 9.42 min 4.66 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=450s
+  [MN_qldr_4] it 21250/25000 cold chi2 med 10.11 min 4.55 | acc cold 0.084 hot 0.508 | swap acc min 0.52 | t=452s
+  [MN_qldr_2] it 21250/25000 cold chi2 med 10.43 min 5.97 | acc cold 0.086 hot 0.508 | swap acc min 0.52 | t=454s
+  [MN_qldr_3] it 21250/25000 cold chi2 med 11.61 min 6.89 | acc cold 0.086 hot 0.510 | swap acc min 0.52 | t=457s
+  [MN_qldr_1] it 22500/25000 cold chi2 med 9.58 min 4.26 | acc cold 0.089 hot 0.509 | swap acc min 0.52 | t=471s
+  [MN_qldr_5] it 22500/25000 cold chi2 med 11.26 min 5.70 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=472s
+  [MN_qldr_4] it 22500/25000 cold chi2 med 11.16 min 4.40 | acc cold 0.084 hot 0.508 | swap acc min 0.52 | t=473s
+  [MN_qldr_2] it 22500/25000 cold chi2 med 10.01 min 5.46 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=476s
+  [MN_qldr_3] it 22500/25000 cold chi2 med 10.02 min 5.64 | acc cold 0.086 hot 0.510 | swap acc min 0.52 | t=478s
+  [MN_qldr_1] it 23750/25000 cold chi2 med 11.35 min 6.33 | acc cold 0.090 hot 0.509 | swap acc min 0.52 | t=491s
+  [MN_qldr_5] it 23750/25000 cold chi2 med 11.93 min 6.34 | acc cold 0.088 hot 0.507 | swap acc min 0.52 | t=493s
+  [MN_qldr_4] it 23750/25000 cold chi2 med 10.82 min 5.64 | acc cold 0.084 hot 0.508 | swap acc min 0.52 | t=493s
+  [MN_qldr_2] it 23750/25000 cold chi2 med 8.80 min 3.74 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=496s
+  [MN_qldr_3] it 23750/25000 cold chi2 med 8.69 min 5.92 | acc cold 0.086 hot 0.510 | swap acc min 0.52 | t=498s
+  [MN_qldr_1] it 25000/25000 cold chi2 med 10.41 min 6.79 | acc cold 0.089 hot 0.509 | swap acc min 0.52 | t=510s
+[MN_qldr_1] saved 15000 cold samples; swap acceptance per pair [0.62 0.63 0.64 0.64 0.64 0.64 0.65 0.65 0.64 0.59 0.52 0.57 0.65 0.69
+ 0.72 0.74 0.75 0.77 0.8  0.83 0.85 0.88 0.91 0.93 0.95 0.96 0.97 0.98
+ 0.98 0.99 0.99]
+  [MN_qldr_5] it 25000/25000 cold chi2 med 8.69 min 3.89 | acc cold 0.088 hot 0.508 | swap acc min 0.53 | t=512s
+[MN_qldr_5] saved 15000 cold samples; swap acceptance per pair [0.64 0.64 0.64 0.64 0.64 0.65 0.65 0.65 0.64 0.59 0.53 0.57 0.65 0.69
+ 0.72 0.73 0.75 0.77 0.8  0.82 0.85 0.88 0.91 0.93 0.95 0.96 0.97 0.98
+ 0.98 0.99 0.99]
+  [MN_qldr_4] it 25000/25000 cold chi2 med 10.55 min 5.43 | acc cold 0.085 hot 0.508 | swap acc min 0.52 | t=513s
+[MN_qldr_4] saved 15000 cold samples; swap acceptance per pair [0.64 0.64 0.64 0.64 0.64 0.64 0.65 0.65 0.64 0.58 0.52 0.57 0.65 0.69
+ 0.72 0.74 0.75 0.77 0.8  0.82 0.85 0.88 0.91 0.93 0.95 0.96 0.97 0.98
+ 0.98 0.99 0.99]
+  [MN_qldr_2] it 25000/25000 cold chi2 med 10.84 min 3.80 | acc cold 0.087 hot 0.508 | swap acc min 0.52 | t=515s
+[MN_qldr_2] saved 15000 cold samples; swap acceptance per pair [0.63 0.64 0.64 0.64 0.65 0.65 0.65 0.65 0.64 0.59 0.52 0.57 0.65 0.69
+ 0.72 0.74 0.75 0.77 0.8  0.83 0.85 0.88 0.91 0.93 0.94 0.96 0.97 0.98
+ 0.98 0.99 0.99]
+  [MN_qldr_3] it 25000/25000 cold chi2 med 10.48 min 4.96 | acc cold 0.086 hot 0.510 | swap acc min 0.52 | t=517s
+[MN_qldr_3] saved 15000 cold samples; swap acceptance per pair [0.63 0.64 0.64 0.64 0.64 0.65 0.65 0.65 0.64 0.59 0.52 0.57 0.65 0.69
+ 0.72 0.74 0.75 0.77 0.8  0.82 0.85 0.88 0.91 0.93 0.94 0.96 0.97 0.98
+ 0.98 0.99 0.99]
+=== 2026-11-18T17:51:36-07:00 analyze
+Traceback (most recent call last):
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 140, in <module>
+    main()
+    ~~~~^^
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 110, in main
+    res["regression_R2_prior"] = r2_table(features(zp), targets(zp), None, rng)
+                                 ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 44, in r2_table
+    Xf, Y, groups = Xf[sel], Y[sel], groups[sel]
+                                     ~~~~~~^^^^^
+TypeError: 'NoneType' object is not subscriptable
+<repo>\.venv\Lib\site-packages\numpy\_core\_methods.py:188: RuntimeWarning: invalid value encountered in subtract
+  x = um.subtract(arr, arrmean, out=...)
+Traceback (most recent call last):
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 140, in <module>
+    if __name__ == "__main__":
+        ^^^^^^
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 109, in main
+    # step 4: PMNS on CKM + masses
+  File "<repo>\experiments\20261118-014-so10-fits\analyze_heldout.py", line 57, in r2_table
+    continue
+       ^^^^^
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "<repo>\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 1247, in cross_val_predict
+    predictions = parallel(
+        delayed(_fit_and_predict)(
+    ...<8 lines>...
+        for train, test in splits
+    )
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\joblib\parallel.py", line 2012, in __call__
+    return output if self.return_generator else list(output)
+                                                ~~~~^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\joblib\parallel.py", line 1940, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 1335, in _fit_and_predict
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "<repo>\.venv\Lib\site-packages\sklearn\pipeline.py", line 645, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\sklearn\base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "<repo>\.venv\Lib\site-packages\sklearn\linear_model\_base.py", line 681, in fit
+    X, y = validate_data(
+           ~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<5 lines>...
+        force_writeable=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 3058, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1347, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1357, in _check_y
+    y = check_array(
+        y,
+    ...<5 lines>...
+        estimator=estimator,
+    )
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 1090, in check_array
+    _assert_all_finite(
+    ~~~~~~~~~~~~~~~~~~^
+        array,
+        ^^^^^^
+    ...<2 lines>...
+        allow_nan=ensure_all_finite == "allow-nan",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 137, in _assert_all_finite
+    _assert_all_finite_element_wise(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        X,
+        ^^
+    ...<4 lines>...
+        input_name=input_name,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "<repo>\.venv\Lib\site-packages\sklearn\utils\validation.py", line 186, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input y contains infinity or a value too large for dtype('float64').
+{
+ "model": "MN",
+ "tags": [
+  "MN_qldr_1",
+  "MN_qldr_2",
+  "MN_qldr_3",
+  "MN_qldr_4",
+  "MN_qldr_5"
+ ],
+ "n_post": 75000,
+ "n_prior": 200000,
+ "ql_chi2_post_quantiles": {
+  "q05": 5.4498268284255,
+  "q50": 10.373084358674395,
+  "q95": 18.515614828127912
+ },
+ "IO_frac_post": 2.6666666666666667e-05,
+ "IO_frac_prior": 0.000125,
+ "per_ladder": {
+  "MN_qldr_1": {
+   "s12sq_l": [
+    0.00012586189303407486,
+    0.008748165172910334,
+    0.08759072792538215
+   ],
+   "s13sq_l": [
+    4.192978759112874e-05,
+    0.00015014553688047445,
+    0.0005028670813527855
+   ],
+   "s23sq_l": [
+    0.000985157141698228,
+    0.005940754109500338,
+    0.017041656972823224
+   ],
+   "lg_dm21_dm3l": [
+    -8.803697713945038,
+    -6.325478125713787,
+    -2.126596204238012
+   ],
+   "ql_chi2_median": 9.668549627896873
+  },
+  "MN_qldr_2": {
+   "s12sq_l": [
+    0.0002161984931724912,
+    0.015730889076436043,
+    0.09851709039596719
+   ],
+   "s13sq_l": [
+    6.946691017161164e-05,
+    0.00015136142444923393,
+    0.0006635199257574575
+   ],
+   "s23sq_l": [
+    0.002906542011273442,
+    0.006205458462915291,
+    0.019688081846178564
+   ],
+   "lg_dm21_dm3l": [
+    -8.815032864956956,
+    -6.564894014055416,
+    -2.4518907893455006
+   ],
+   "ql_chi2_median": 10.444211492414297
+  },
+  "MN_qldr_3": {
+   "s12sq_l": [
+    0.00016903606289666898,
+    0.014889928959029249,
+    0.09284998014574823
+   ],
+   "s13sq_l": [
+    6.449851933308811e-05,
+    0.00015760893989813762,
+    0.0005621746446649882
+   ],
+   "s23sq_l": [
+    0.0026598940361156342,
+    0.006088610570918137,
+    0.01818998029256775
+   ],
+   "lg_dm21_dm3l": [
+    -8.742127116777068,
+    -6.441988503964717,
+    -2.6289760446293693
+   ],
+   "ql_chi2_median": 10.556377317930137
+  },
+  "MN_qldr_4": {
+   "s12sq_l": [
+    0.00016505368712418014,
+    0.013281936429683444,
+    0.10498025990246533
+   ],
+   "s13sq_l": [
+    6.197028881491643e-05,
+    0.00015792019731509035,
+    0.0012441333269590153
+   ],
+   "s23sq_l": [
+    0.0023032048967722256,
+    0.006093915632438765,
+    0.03403877468423364
+   ],
+   "lg_dm21_dm3l": [
+    -8.740345795084119,
+    -6.392949373289147,
+    -2.2417367186371844
+   ],
+   "ql_chi2_median": 10.63598901082607
+  },
+  "MN_qldr_5": {
+   "s12sq_l": [
+    0.00023764602779978788,
+    0.013507375411623414,
+    0.09364312009511977
+   ],
+   "s13sq_l": [
+    6.356701151673873e-05,
+    0.00014993404429444637,
+    0.0005967369250444944
+   ],
+   "s23sq_l": [
+    0.0027878513262015814,
+    0.006059586141070207,
+    0.018380681036199296
+   ],
+   "lg_dm21_dm3l": [
+    -8.803980101711304,
+    -6.481731331448893,
+    -2.5980686932172197
+   ],
+   "ql_chi2_median": 10.48676137476693
+  }
+ },
+ "pmns_chi2_5": {
+  "post_min": 1485.093755286941,
+  "prior_min": 189.96379992870072,
+  "post_frac_lt_11p07": 0.0,
+  "prior_frac_lt_11p07": 0.0,
+  "post_frac_lt_50": 0.0,
+  "prior_frac_lt_50": 0.0,
+  "post_q": [
+   5531.4867248019455,
+   10701.643789348385,
+   147132.67780180095
+  ],
+  "prior_q": [
+   5434.356641155619,
+   9852.558243627
+s12sq_l        meas 0.3088 post 95% [0.0002, 0.0954] prior 95% [0.0000, 0.1730] PIT post 0.998 prior 0.992 width ratio 1.37
+s13sq_l        meas 0.0225 post 95% [0.0001, 0.0007] prior 95% [0.0000, 0.0013] PIT post 1.000 prior 0.999 width ratio 1.67
+s23sq_l        meas 0.4698 post 95% [0.0021, 0.0199] prior 95% [0.0000, 0.0215] PIT post 1.000 prior 0.999 width ratio 2.96
+dl             meas 3.6128 post 95% [0.1392, 6.1706] prior 95% [0.0753, 6.2047] PIT post 0.270 prior 0.557 width ratio 0.92
+lg_dm21_dm3l   meas -1.5244 post 95% [-8.7822, -2.2438] prior 95% [-6.3293, -2.3279] PIT post 0.996 prior 0.995 width ratio 1.43
+=== 2026-11-18T17:58:45-07:00 done rest
+exit_rest 0
+=== 2026-11-18T17:58:54-07:00 global_fit FN ours nodl (delta_PMNS held out)
+[FN_ours_nodl] stage A: 3000 starts, 87s, chi2 min/1%/10%/50% = [2.27000e+00 3.00960e+02 1.08494e+03 4.78234e+03]
+[FN_ours_nodl] hop 0: best 0.000, 10 best [0.   0.   0.   0.   0.   0.   0.01 0.07 0.07 0.07], 103s
+[FN_ours_nodl] hop 1: best 0.000, 10 best [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.], 117s
+[FN_ours_nodl] hop 2: best 0.000, 10 best [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.], 127s
+[FN_ours_nodl] hop 3: best 0.000, 10 best [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.], 134s
+[FN_ours_nodl] best chi2 0.0000 (N=16, k=16) IO=False  pulls: lg_mu_mc=+0.00 lg_mc_mt=+0.00 lg_md_ms=-0.00 lg_ms_mb=-0.00 lg_mb_mt=-0.00 lg_me_mmu=-0.00 lg_mmu_mtau=+0.00 lg_mtau_mb=+0.00 s12q=+0.00 lg_s13q=+0.00 lg_s23q=+0.00 dq=-0.00 s12sq_l=+0.00 s13sq_l=-0.00 s23sq_l=+0.00 dl=-7.27 lg_dm21_dm3l=-0.00
+=== 2026-11-18T18:01:09-07:00 done fn nodl
+=== 2026-11-18T18:01:09-07:00 analyze (rerun after fixes)
+{
+ "model": "FN",
+ "tags": [
+  "FN_ql_1",
+  "FN_ql_2",
+  "FN_ql_3",
+  "FN_ql_4",
+  "FN_ql_5"
+ ],
+ "n_post": 74998,
+ "n_post_nonfinite_dropped": 2,
+ "n_prior": 197619,
+ "ql_chi2_post_quantiles": {
+  "q05": 4.062276460394402,
+  "q50": 10.091860774869563,
+  "q95": 20.204163643538212
+ },
+ "IO_frac_post": 0.0019200512013653698,
+ "IO_frac_prior": 0.20932197814987424,
+ "per_ladder": {
+  "FN_ql_1": {
+   "s12sq_l": [
+    0.0005782640271924267,
+    0.008799263194361256,
+    0.8803138192222446
+   ],
+   "s13sq_l": [
+    8.260706166626795e-05,
+    0.00011935904404836373,
+    0.00020377760767730147
+   ],
+   "s23sq_l": [
+    0.005545774088354723,
+    0.006531624164147024,
+    0.713737271210765
+   ],
+   "lg_dm21_dm3l": [
+    -13.820790881012163,
+    -10.222152781281826,
+    -3.4047075051926026
+   ],
+   "ql_chi2_median": 8.862528764701779
+  },
+  "FN_ql_2": {
+   "s12sq_l": [
+    7.609363447112846e-05,
+    0.00027979571024313536,
+    0.3065124076601746
+   ],
+   "s13sq_l": [
+    4.333813284261275e-05,
+    5.307124699424332e-05,
+    0.0005887194519568215
+   ],
+   "s23sq_l": [
+    0.008631923719419957,
+    0.01017388645452046,
+    0.9654079863735918
+   ],
+   "lg_dm21_dm3l": [
+    -6.564124248326177,
+    -5.711267421146058,
+    -0.605145243078192
+   ],
+   "ql_chi2_median": 10.734218479496448
+  },
+  "FN_ql_3": {
+   "s12sq_l": [
+    6.839628115407988e-05,
+    0.00024599041788641576,
+    0.47610408389586717
+   ],
+   "s13sq_l": [
+    3.516340429782522e-05,
+    4.663920697377749e-05,
+    0.00048549420499265815
+   ],
+   "s23sq_l": [
+    0.006177962356934154,
+    0.007962099937667645,
+    0.9815193553620104
+   ],
+   "lg_dm21_dm3l": [
+    -10.588490953395677,
+    -7.659581493014645,
+    -0.6389323573372816
+   ],
+   "ql_chi2_median": 9.755183672803142
+  },
+  "FN_ql_4": {
+   "s12sq_l": [
+    6.061087503712757e-09,
+    0.00010105126521212432,
+    0.014703854473184489
+   ],
+   "s13sq_l": [
+    4.755408487202989e-12,
+    3.257046367247615e-07,
+    0.0005641141260293984
+   ],
+   "s23sq_l": [
+    2.792054724942687e-10,
+    5.567639090752142e-05,
+    0.7813594367180039
+   ],
+   "lg_dm21_dm3l": [
+    -8.7300017293543,
+    -6.68455088496375,
+    -0.5990079463730781
+   ],
+   "ql_chi2_median": 15.200464514177376
+  },
+  "FN_ql_5": {
+   "s12sq_l": [
+    0.0006921900113590707,
+    0.004191474825321532,
+    0.033245777957370055
+   ],
+   "s13sq_l": [
+    8.657231104919365e-07,
+    3.254686758319821e-06,
+    0.00345389228464482
+   ],
+   "s23sq_l": [
+    0.0003625244414983416,
+    0.002329116991529821,
+    0.7803751886629602
+   ],
+   "lg_dm21_dm3l": [
+    -3.5958064007284225,
+    -3.2952450690803534,
+    -0.9269294419481704
+   ],
+   "ql_chi2_median": 7.44153675678827
+  }
+ },
+ "pmns_chi2_5": {
+  "post_min": 3004.559128163302,
+  "prior_min": 216.4808052924807,
+  "post_frac_lt_11p07": 0.0,
+  "prior_frac_lt_11p07": 0.0,
+  "post_frac_lt_50": 0.0,
+  "prior_frac_lt_50": 0.0,
+  "post_q": [
+   3741.833480071148,
+   4564.425019971456,
+   109514.1553647981
+  ],
+  "prior_q": [
+   3618.530088539548,
+   5122.
+s12sq_l        meas 0.3088 post 95% [0.0000, 0.3903] prior 95% [0.0000, 1.0000] PIT post 0.966 prior 0.498 width ratio 0.01
+s13sq_l        meas 0.0225 post 95% [0.0000, 0.0024] prior 95% [0.0000, 1.0000] PIT post 0.998 prior 0.591 width ratio 0.00
+s23sq_l        meas 0.4698 post 95% [0.0000, 0.9453] prior 95% [0.0000, 1.0000] PIT post 0.858 prior 0.453 width ratio 0.35
+dl             meas 3.6128 post 95% [0.1209, 6.1601] prior 95% [0.0000, 6.2832] PIT post 0.597 prior 0.647 width ratio 0.50
+lg_dm21_dm3l   meas -1.5244 post 95% [-12.9333, -0.7650] prior 95% [-17.0768, -0.3696] PIT post 0.898 prior 0.731 width ratio 0.67
+{
+ "model": "MN",
+ "tags": [
+  "MN_qldr_1",
+  "MN_qldr_2",
+  "MN_qldr_3",
+  "MN_qldr_4",
+  "MN_qldr_5"
+ ],
+ "n_post": 75000,
+ "n_post_nonfinite_dropped": 0,
+ "n_prior": 200000,
+ "ql_chi2_post_quantiles": {
+  "q05": 5.4498268284255,
+  "q50": 10.373084358674395,
+  "q95": 18.515614828127912
+ },
+ "IO_frac_post": 2.6666666666666667e-05,
+ "IO_frac_prior": 0.000125,
+ "per_ladder": {
+  "MN_qldr_1": {
+   "s12sq_l": [
+    0.00012586189303407486,
+    0.008748165172910334,
+    0.08759072792538215
+   ],
+   "s13sq_l": [
+    4.192978759112874e-05,
+    0.00015014553688047445,
+    0.0005028670813527855
+   ],
+   "s23sq_l": [
+    0.000985157141698228,
+    0.005940754109500338,
+    0.017041656972823224
+   ],
+   "lg_dm21_dm3l": [
+    -8.803697713945038,
+    -6.325478125713787,
+    -2.126596204238012
+   ],
+   "ql_chi2_median": 9.668549627896873
+  },
+  "MN_qldr_2": {
+   "s12sq_l": [
+    0.0002161984931724912,
+    0.015730889076436043,
+    0.09851709039596719
+   ],
+   "s13sq_l": [
+    6.946691017161164e-05,
+    0.00015136142444923393,
+    0.0006635199257574575
+   ],
+   "s23sq_l": [
+    0.002906542011273442,
+    0.006205458462915291,
+    0.019688081846178564
+   ],
+   "lg_dm21_dm3l": [
+    -8.815032864956956,
+    -6.564894014055416,
+    -2.4518907893455006
+   ],
+   "ql_chi2_median": 10.444211492414297
+  },
+  "MN_qldr_3": {
+   "s12sq_l": [
+    0.00016903606289666898,
+    0.014889928959029249,
+    0.09284998014574823
+   ],
+   "s13sq_l": [
+    6.449851933308811e-05,
+    0.00015760893989813762,
+    0.0005621746446649882
+   ],
+   "s23sq_l": [
+    0.0026598940361156342,
+    0.006088610570918137,
+    0.01818998029256775
+   ],
+   "lg_dm21_dm3l": [
+    -8.742127116777068,
+    -6.441988503964717,
+    -2.6289760446293693
+   ],
+   "ql_chi2_median": 10.556377317930137
+  },
+  "MN_qldr_4": {
+   "s12sq_l": [
+    0.00016505368712418014,
+    0.013281936429683444,
+    0.10498025990246533
+   ],
+   "s13sq_l": [
+    6.197028881491643e-05,
+    0.00015792019731509035,
+    0.0012441333269590153
+   ],
+   "s23sq_l": [
+    0.0023032048967722256,
+    0.006093915632438765,
+    0.03403877468423364
+   ],
+   "lg_dm21_dm3l": [
+    -8.740345795084119,
+    -6.392949373289147,
+    -2.2417367186371844
+   ],
+   "ql_chi2_median": 10.63598901082607
+  },
+  "MN_qldr_5": {
+   "s12sq_l": [
+    0.00023764602779978788,
+    0.013507375411623414,
+    0.09364312009511977
+   ],
+   "s13sq_l": [
+    6.356701151673873e-05,
+    0.00014993404429444637,
+    0.0005967369250444944
+   ],
+   "s23sq_l": [
+    0.0027878513262015814,
+    0.006059586141070207,
+    0.018380681036199296
+   ],
+   "lg_dm21_dm3l": [
+    -8.803980101711304,
+    -6.481731331448893,
+    -2.5980686932172197
+   ],
+   "ql_chi2_median": 10.48676137476693
+  }
+ },
+ "pmns_chi2_5": {
+  "post_min": 1485.093755286941,
+  "prior_min": 189.96379992870072,
+  "post_frac_lt_11p07": 0.0,
+  "prior_frac_lt_11p07": 0.0,
+  "post_frac_lt_50": 0.0,
+  "prior_frac_lt_50": 0.0,
+  "post_q": [
+   5531.4867248019455,
+   10701.643789348385,
+   147132.67780180095
+  ],
+  "prior_q": [
+   5434
+s12sq_l        meas 0.3088 post 95% [0.0002, 0.0954] prior 95% [0.0000, 0.1730] PIT post 0.998 prior 0.992 width ratio 1.37
+s13sq_l        meas 0.0225 post 95% [0.0001, 0.0007] prior 95% [0.0000, 0.0013] PIT post 1.000 prior 0.999 width ratio 1.67
+s23sq_l        meas 0.4698 post 95% [0.0021, 0.0199] prior 95% [0.0000, 0.0215] PIT post 1.000 prior 0.999 width ratio 2.96
+dl             meas 3.6128 post 95% [0.1392, 6.1706] prior 95% [0.0753, 6.2047] PIT post 0.270 prior 0.557 width ratio 0.92
+lg_dm21_dm3l   meas -1.5244 post 95% [-8.7822, -2.2438] prior 95% [-6.3293, -2.3279] PIT post 0.996 prior 0.995 width ratio 1.43
+{
+ "model": "MN",
+ "tags": [
+  "MN_ql_1",
+  "MN_ql_2",
+  "MN_ql_3",
+  "MN_ql_4",
+  "MN_ql_5"
+ ],
+ "n_post": 75000,
+ "n_post_nonfinite_dropped": 0,
+ "n_prior": 200000,
+ "ql_chi2_post_quantiles": {
+  "q05": 2.515272106220215,
+  "q50": 6.476326660621756,
+  "q95": 13.908965726154886
+ },
+ "IO_frac_post": 0.0016666666666666668,
+ "IO_frac_prior": 0.000125,
+ "per_ladder": {
+  "MN_ql_1": {
+   "s12sq_l": [
+    0.0010496922001167525,
+    0.004463228385987576,
+    0.1611716969574098
+   ],
+   "s13sq_l": [
+    0.00011467396013225443,
+    0.0005911454346533342,
+    0.014199112980714832
+   ],
+   "s23sq_l": [
+    0.0008370941939090476,
+    0.004416783569106197,
+    0.163261909073658
+   ],
+   "lg_dm21_dm3l": [
+    -2.657758642407184,
+    -2.3495571838393543,
+    -1.1432151991576447
+   ],
+   "ql_chi2_median": 6.509362867355472
+  },
+  "MN_ql_2": {
+   "s12sq_l": [
+    0.002122523661379976,
+    0.014492931204023587,
+    0.2545096948065667
+   ],
+   "s13sq_l": [
+    0.00023175811389392127,
+    0.0013292261036750852,
+    0.016662526493065887
+   ],
+   "s23sq_l": [
+    0.001865987009057456,
+    0.012197882911746354,
+    0.18693834267389628
+   ],
+   "lg_dm21_dm3l": [
+    -2.7750630660497833,
+    -2.392816494178235,
+    -1.0353111205440908
+   ],
+   "ql_chi2_median": 6.736366710028493
+  },
+  "MN_ql_3": {
+   "s12sq_l": [
+    0.0007816904586697055,
+    0.003221285107168035,
+    0.006710643042655758
+   ],
+   "s13sq_l": [
+    5.0406941611399805e-05,
+    0.0002109852932795143,
+    0.00043026992745494796
+   ],
+   "s23sq_l": [
+    0.00022507370153008205,
+    0.0010507748352072228,
+    0.0021558635056487126
+   ],
+   "lg_dm21_dm3l": [
+    -2.5094353637274507,
+    -2.4406132137235375,
+    -2.346432795293656
+   ],
+   "ql_chi2_median": 6.252944486519514
+  },
+  "MN_ql_4": {
+   "s12sq_l": [
+    0.0005372047930529563,
+    0.003100431812415392,
+    0.0893727654499339
+   ],
+   "s13sq_l": [
+    9.21432419453537e-05,
+    0.0004987681687610693,
+    0.011005212862857248
+   ],
+   "s23sq_l": [
+    0.000898325934747605,
+    0.0056339824768388115,
+    0.1411045507065136
+   ],
+   "lg_dm21_dm3l": [
+    -2.758307394139301,
+    -2.328923182227971,
+    -1.1709259501329896
+   ],
+   "ql_chi2_median": 6.329125446523113
+  },
+  "MN_ql_5": {
+   "s12sq_l": [
+    0.00030004567759140137,
+    0.002237192533061345,
+    0.05493481967415751
+   ],
+   "s13sq_l": [
+    4.581766128659403e-05,
+    0.00030467007435798195,
+    0.011557465974659044
+   ],
+   "s23sq_l": [
+    0.0004165986696550972,
+    0.003182160498428985,
+    0.15559425243229022
+   ],
+   "lg_dm21_dm3l": [
+    -2.736158306005381,
+    -2.491159385181228,
+    -1.2094679771262566
+   ],
+   "ql_chi2_median": 6.524793240743178
+  }
+ },
+ "pmns_chi2_5": {
+  "post_min": 322.83787035199424,
+  "prior_min": 189.96379992870072,
+  "post_frac_lt_11p07": 0.0,
+  "prior_frac_lt_11p07": 0.0,
+  "post_frac_lt_50": 0.0,
+  "prior_frac_lt_50": 0.0,
+  "post_q": [
+   2114.1851480078976,
+   3865.3955671197486,
+   9286.834785949923
+  ],
+  "prior_q": [
+   5434.356641155619,
+   9852.5582436
+s12sq_l        meas 0.3088 post 95% [0.0005, 0.1407] prior 95% [0.0000, 0.1730] PIT post 0.994 prior 0.992 width ratio 0.56
+s13sq_l        meas 0.0225 post 95% [0.0001, 0.0121] prior 95% [0.0000, 0.0013] PIT post 0.993 prior 0.999 width ratio 21.68
+s23sq_l        meas 0.4698 post 95% [0.0003, 0.1403] prior 95% [0.0000, 0.0215] PIT post 0.998 prior 0.999 width ratio 12.60
+dl             meas 3.6128 post 95% [0.0826, 6.2066] prior 95% [0.0753, 6.2047] PIT post 0.363 prior 0.557 width ratio 1.03
+lg_dm21_dm3l   meas -1.5244 post 95% [-2.7243, -1.2203] prior 95% [-6.3293, -2.3279] PIT post 0.950 prior 0.995 width ratio 0.26
+MN_DR,MN,DR,all,own,18,19,1.0972,False
+FN_DR,FN,DR,all,own,18,18,0.0000,False
+MN_ours,MN,ours,all,own,17,17,129.8738,False
+MN_ours_nodl,MN,ours,nodl,own,16,17,79.9135,False
+MN_ours_drrel,MN,ours,all,drrel,17,17,1.5277,False
+FN_ours,FN,ours,all,own,17,16,0.2956,False
+=== 2026-11-18T18:08:29-07:00 analyze done

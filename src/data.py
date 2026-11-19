@@ -118,17 +118,58 @@ def _grid_2d(analysis, ordering, tag):
     return x, y, z
 
 
+@functools.lru_cache(maxsize=None)
+def _shifted_profile_1d(analysis, ordering, tag):
+    """(x, y - y.min()) for a 1D table; cached so pmns_delta_chi2 does not redo the shift."""
+    x, y = _profile_1d(analysis, ordering, tag)
+    return x, y - y.min()
+
+
+@functools.lru_cache(maxsize=None)
+def _shifted_grid_2d(analysis, ordering, tag):
+    x, y, z = _grid_2d(analysis, ordering, tag)
+    return x, y, z - z.min()
+
+
+@functools.lru_cache(maxsize=None)
+def _grid_2d_uniform(analysis, ordering, tag):
+    """(x0, dx, y0, dy) if both axes are uniform to 1e-9 relative, else None."""
+    x, y, _ = _grid_2d(analysis, ordering, tag)
+    out = []
+    for a in (x, y):
+        d = np.diff(a)
+        if len(a) < 2 or np.ptp(d) > 1e-9 * abs(d.mean()):
+            return None
+        out += [float(a[0]), float(d.mean())]
+    return tuple(out)
+
+
 def _interp_1d(x, y, v):
     if v < x[0] or v > x[-1]:
         return np.inf
     return float(np.interp(v, x, y))
 
 
-def _interp_2d(x, y, z, u, v):
+def _cell(a, u, a0, da):
+    """Index i with a[i] < u <= a[i+1] clipped to [0, len-2]: the same cell np.searchsorted(a, u) - 1
+    picks, found by direct uniform-grid arithmetic plus at most a step or two of correction."""
+    n = len(a)
+    i = min(max(int((u - a0) / da), 0), n - 2)
+    while i > 0 and a[i] >= u:
+        i -= 1
+    while i < n - 2 and a[i + 1] < u:
+        i += 1
+    return i
+
+
+def _interp_2d(x, y, z, u, v, uniform=None):
     if u < x[0] or u > x[-1] or v < y[0] or v > y[-1]:
         return np.inf
-    i = min(max(np.searchsorted(x, u) - 1, 0), len(x) - 2)
-    j = min(max(np.searchsorted(y, v) - 1, 0), len(y) - 2)
+    if uniform is not None:
+        i, j = _cell(x, u, uniform[0], uniform[1]), _cell(y, v, uniform[2], uniform[3])
+    else:
+        i = min(max(np.searchsorted(x, u) - 1, 0), len(x) - 2)
+        j = min(max(np.searchsorted(y, v) - 1, 0), len(y) - 2)
     tx = (u - x[i]) / (x[i + 1] - x[i])
     ty = (v - y[j]) / (y[j + 1] - y[j])
     return float((1 - tx) * (1 - ty) * z[i, j] + tx * (1 - ty) * z[i + 1, j]
@@ -188,16 +229,58 @@ def pmns_delta_chi2(ordering, s12sq=None, s13sq=None, s23sq=None, dcp_deg=None,
              "DMA": None if dm3l_sq_eV2 is None else dm3l_sq_eV2 * 1e3}
     total = 0.0
     if method == "auto" and s23sq is not None and dcp_deg is not None:
-        x, y, z = _grid_2d(analysis, ordering, "T23-DCP")
-        total += _interp_2d(x, y, z - z.min(), s23sq, one_d["DCP"])
+        x, y, z = _shifted_grid_2d(analysis, ordering, "T23-DCP")
+        total += _interp_2d(x, y, z, s23sq, one_d["DCP"], _grid_2d_uniform(analysis, ordering, "T23-DCP"))
         one_d["T23"] = one_d["DCP"] = None
     for tag, v in one_d.items():
         if v is None:
             continue
         if not np.isfinite(v):
             return np.inf
-        x, y = _profile_1d(analysis, ordering, tag)
-        total += _interp_1d(x, y - y.min(), v)
+        x, y = _shifted_profile_1d(analysis, ordering, tag)
+        total += _interp_1d(x, y, v)
     if relative_to == "global":
         total += ordering_offset(ordering, analysis)
     return total
+
+
+PROFILE_TAGS = {"s12sq": "T12", "s13sq": "T13", "s23sq": "T23", "dcp_deg": "DCP",
+                "dm21sq_eV2": "DMS", "dm3l_sq_eV2": "DMA"}
+
+
+def pmns_profile_1d(ordering, param, values=None, analysis=DEFAULT_ANALYSIS, relative_to="local"):
+    """Vectorized 1D NuFIT Delta chi^2 profile of one parameter.
+
+    param: s12sq, s13sq, s23sq, dcp_deg, dm21sq_eV2, dm3l_sq_eV2 (pmns_delta_chi2 names) or
+        a table tag (T12, T13, T23, DCP, DMS, DMA).
+    values: array-like of parameter values. Returns an array of the same shape, equal to
+        pmns_delta_chi2(ordering, **{param: v}) element by element (same np.interp on the
+        same shifted table, so identical to the scalar path). Out-of-table values give inf;
+        dcp_deg is wrapped; dm21sq_eV2 <= 0 gives inf.
+    values=None: returns the table itself, (x, Delta chi^2) with the minimum shifted to 0,
+        on the table's own axis (DMS axis is log10(dm21sq / eV^2), DMA is dm3l_sq in 1e-3 eV^2).
+    relative_to="global" adds ordering_offset once.
+    """
+    _check_ordering(ordering)
+    if analysis not in ANALYSES:
+        raise ValueError(f"analysis must be one of {tuple(ANALYSES)}")
+    if relative_to not in ("local", "global"):
+        raise ValueError("relative_to must be 'local' or 'global'")
+    tag = PROFILE_TAGS.get(param, param)
+    if tag not in PROFILE_TAGS.values():
+        raise ValueError(f"unknown parameter {param!r}; use one of {tuple(PROFILE_TAGS)}")
+    x, y = _shifted_profile_1d(analysis, ordering, tag)
+    off = ordering_offset(ordering, analysis) if relative_to == "global" else 0.0
+    if values is None:
+        return x.copy(), y + off
+    v = np.asarray(values, dtype=float)
+    if tag == "DCP":
+        v = _wrap_dcp(v)
+    elif tag == "DMS":
+        with np.errstate(divide="ignore", invalid="ignore"):
+            v = np.where(v > 0, np.log10(np.where(v > 0, v, 1.0)), -np.inf)
+    elif tag == "DMA":
+        v = v * 1e3
+    out = np.interp(v, x, y)
+    out = np.where((v < x[0]) | (v > x[-1]) | ~np.isfinite(v), np.inf, out)
+    return out + off if off else out

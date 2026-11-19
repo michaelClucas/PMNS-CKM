@@ -1,0 +1,237 @@
+SM                           mb/mtau=0.6292 th23q=0.04750 th13q=0.004266 (0s)
+MSSM_tb5_ms3TeV              mb/mtau=0.7857 th23q=0.03937 th13q=0.003536 (0s)
+MSSM_tb10_ms3TeV             mb/mtau=0.7824 th23q=0.03949 th13q=0.003547 (0s)
+MSSM_tb20_ms3TeV             mb/mtau=0.7825 th23q=0.03933 th13q=0.003532 (1s)
+MSSM_tb30_ms3TeV             mb/mtau=0.7839 th23q=0.03896 th13q=0.003499 (1s)
+MSSM_tb40_ms3TeV             mb/mtau=0.7859 th23q=0.03836 th13q=0.003445 (1s)
+MSSM_tb50_ms3TeV             mb/mtau=0.7878 th23q=0.03739 th13q=0.003358 (1s)
+MSSM_tb55_ms3TeV             mb/mtau=0.7880 th23q=0.03666 th13q=0.003292 (1s)
+MSSM_tb5_ms10TeV             mb/mtau=0.7807 th23q=0.03999 th13q=0.003591 (1s)
+MSSM_tb10_ms10TeV            mb/mtau=0.7778 th23q=0.04009 th13q=0.003601 (1s)
+MSSM_tb20_ms10TeV            mb/mtau=0.7771 th23q=0.03994 th13q=0.003587 (2s)
+MSSM_tb30_ms10TeV            mb/mtau=0.7769 th23q=0.03961 th13q=0.003557 (2s)
+MSSM_tb40_ms10TeV            mb/mtau=0.7763 th23q=0.03907 th13q=0.003509 (2s)
+MSSM_tb50_ms10TeV            mb/mtau=0.7739 th23q=0.03822 th13q=0.003433 (2s)
+MSSM_tb55_ms10TeV            mb/mtau=0.7709 th23q=0.03761 th13q=0.003377 (2s)
+MSSM_tb5_ms1TeV              mb/mtau=0.7889 th23q=0.03876 th13q=0.003481 (2s)
+MSSM_tb10_ms1TeV             mb/mtau=0.7853 th23q=0.03890 th13q=0.003493 (2s)
+MSSM_tb20_ms1TeV             mb/mtau=0.7862 th23q=0.03872 th13q=0.003477 (2s)
+MSSM_tb30_ms1TeV             mb/mtau=0.7894 th23q=0.03831 th13q=0.003441 (2s)
+MSSM_tb40_ms1TeV             mb/mtau=0.7945 th23q=0.03765 th13q=0.003381 (3s)
+MSSM_tb50_ms1TeV             mb/mtau=0.8020 th23q=0.03654 th13q=0.003281 (3s)
+MSSM_tb55_ms1TeV             mb/mtau=0.8066 th23q=0.03567 th13q=0.003203 (3s)
+SM                       mb/mtau=0.6292 eps=-0.5892 -> s23sq(BSV24)=0.0063; needs eps=-0.0012 (mb/mtau=0.9988)
+MSSM_tb5_ms3TeV          mb/mtau=0.7857 eps=-0.2728 -> s23sq(BSV24)=0.0192; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb10_ms3TeV         mb/mtau=0.7824 eps=-0.2781 -> s23sq(BSV24)=0.0186; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb20_ms3TeV         mb/mtau=0.7825 eps=-0.2780 -> s23sq(BSV24)=0.0185; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb30_ms3TeV         mb/mtau=0.7839 eps=-0.2757 -> s23sq(BSV24)=0.0184; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb40_ms3TeV         mb/mtau=0.7859 eps=-0.2725 -> s23sq(BSV24)=0.0183; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb50_ms3TeV         mb/mtau=0.7878 eps=-0.2693 -> s23sq(BSV24)=0.0178; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb55_ms3TeV         mb/mtau=0.7880 eps=-0.2691 -> s23sq(BSV24)=0.0172; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb5_ms10TeV         mb/mtau=0.7807 eps=-0.2808 -> s23sq(BSV24)=0.0187; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb10_ms10TeV        mb/mtau=0.7778 eps=-0.2857 -> s23sq(BSV24)=0.0182; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb20_ms10TeV        mb/mtau=0.7771 eps=-0.2868 -> s23sq(BSV24)=0.0179; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb30_ms10TeV        mb/mtau=0.7769 eps=-0.2871 -> s23sq(BSV24)=0.0176; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb40_ms10TeV        mb/mtau=0.7763 eps=-0.2882 -> s23sq(BSV24)=0.0170; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb50_ms10TeV        mb/mtau=0.7739 eps=-0.2921 -> s23sq(BSV24)=0.0160; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb55_ms10TeV        mb/mtau=0.7709 eps=-0.2973 -> s23sq(BSV24)=0.0150; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb5_ms1TeV          mb/mtau=0.7889 eps=-0.2676 -> s23sq(BSV24)=0.0193; needs eps=-0.0017 (mb/mtau=0.9984)
+MSSM_tb10_ms1TeV         mb/mtau=0.7853 eps=-0.2734 -> s23sq(BSV24)=0.0187; needs eps=-0.0016 (mb/mtau=0.9984)
+MSSM_tb20_ms1TeV         mb/mtau=0.7862 eps=-0.2719 -> s23sq(BSV24)=0.0187; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb30_ms1TeV         mb/mtau=0.7894 eps=-0.2668 -> s23sq(BSV24)=0.0190; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb40_ms1TeV         mb/mtau=0.7945 eps=-0.2586 -> s23sq(BSV24)=0.0195; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb50_ms1TeV         mb/mtau=0.8020 eps=-0.2468 -> s23sq(BSV24)=0.0201; needs eps=-0.0017 (mb/mtau=0.9983)
+MSSM_tb55_ms1TeV         mb/mtau=0.8066 eps=-0.2397 -> s23sq(BSV24)=0.0203; needs eps=-0.0017 (mb/mtau=0.9983)
+== fit.py R0eta (no stage 0)
+SM                       R0eta  NO sign=[0.0, 0.0] chi2_gut=4126.35 stage1=10151.5 conv1=1/5 (17s)
+SM                       R0eta  NO sign=[3.14, 0.0] chi2_gut=4528.55 stage1=9415.5 conv1=1/5 (18s)
+SM                       R0eta  NO sign=[0.0, 3.14] chi2_gut=3689.05 stage1=8052.0 conv1=4/5 (19s)
+SM                       R0eta  NO sign=[3.14, 3.14] chi2_gut=4905.72 stage1=8481.2 conv1=1/5 (20s)
+SM                       R0eta  IO sign=[0.0, 0.0] chi2_gut=4270368.74 stage1=4270368.8 conv1=1/5 (23s)
+SM                       R0eta  IO sign=[3.14, 0.0] chi2_gut=526159.35 stage1=526260.7 conv1=1/5 (52s)
+SM                       R0eta  IO sign=[0.0, 3.14] chi2_gut=4209636.75 stage1=4209966.2 conv1=1/5 (52s)
+SM                       R0eta  IO sign=[3.14, 3.14] chi2_gut=37497.06 stage1=2854863.1 conv1=1/5 (54s)
+MSSM_tb5_ms3TeV          R0eta  NO sign=[0.0, 0.0] chi2_gut=3858.56 stage1=8879.6 conv1=1/5 (80s)
+MSSM_tb5_ms3TeV          R0eta  NO sign=[3.14, 0.0] chi2_gut=4566.77 stage1=9441.1 conv1=1/5 (82s)
+MSSM_tb5_ms3TeV          R0eta  NO sign=[0.0, 3.14] chi2_gut=6673.16 stage1=8823.5 conv1=1/5 (83s)
+MSSM_tb5_ms3TeV          R0eta  NO sign=[3.14, 3.14] chi2_gut=5210.06 stage1=8436.7 conv1=1/5 (84s)
+MSSM_tb5_ms3TeV          R0eta  IO sign=[0.0, 0.0] chi2_gut=379447.14 stage1=379448.0 conv1=1/5 (110s)
+MSSM_tb5_ms3TeV          R0eta  IO sign=[3.14, 0.0] chi2_gut=4241582.32 stage1=4241809.2 conv1=1/5 (111s)
+MSSM_tb5_ms3TeV          R0eta  IO sign=[0.0, 3.14] chi2_gut=515418.23 stage1=2851483.7 conv1=1/5 (113s)
+MSSM_tb5_ms3TeV          R0eta  IO sign=[3.14, 3.14] chi2_gut=468050.61 stage1=468050.6 conv1=1/5 (113s)
+MSSM_tb10_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=3908.72 stage1=9951.7 conv1=1/5 (147s)
+MSSM_tb10_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=5403.67 stage1=11730.6 conv1=1/5 (148s)
+MSSM_tb10_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=3542.91 stage1=6765.7 conv1=1/5 (148s)
+MSSM_tb10_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=7407.26 stage1=11464.5 conv1=1/5 (151s)
+MSSM_tb10_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=4604309.98 stage1=4604310.0 conv1=1/5 (153s)
+MSSM_tb10_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4385593.59 stage1=4385593.6 conv1=1/5 (153s)
+MSSM_tb10_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=680121.53 stage1=2851413.4 conv1=1/5 (154s)
+MSSM_tb10_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=4563363.07 stage1=4563363.1 conv1=1/5 (154s)
+MSSM_tb20_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=3379.55 stage1=10209.3 conv1=1/5 (156s)
+MSSM_tb20_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=8139.00 stage1=9983.1 conv1=1/5 (157s)
+MSSM_tb20_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=3526.50 stage1=6757.4 conv1=1/5 (159s)
+MSSM_tb20_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=7071.66 stage1=11458.8 conv1=2/5 (162s)
+MSSM_tb20_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=4152799.04 stage1=4152815.7 conv1=1/5 (165s)
+MSSM_tb20_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4233999.97 stage1=4264751.9 conv1=1/5 (165s)
+MSSM_tb20_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=239918.35 stage1=538338.5 conv1=1/5 (185s)
+MSSM_tb20_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=233733.44 stage1=467007.5 conv1=1/5 (191s)
+MSSM_tb30_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=7171.55 stage1=10162.4 conv1=1/5 (193s)
+MSSM_tb30_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=4626.24 stage1=7986.8 conv1=1/5 (194s)
+MSSM_tb30_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=3619.70 stage1=7797.0 conv1=2/5 (196s)
+MSSM_tb30_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=5213.13 stage1=8465.2 conv1=1/5 (197s)
+MSSM_tb30_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=376809.75 stage1=376810.1 conv1=1/5 (204s)
+MSSM_tb30_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4272799.38 stage1=4272799.6 conv1=1/5 (204s)
+MSSM_tb30_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=4120939.94 stage1=4120939.9 conv1=1/5 (205s)
+MSSM_tb30_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=4341259.56 stage1=4341259.6 conv1=1/5 (206s)
+MSSM_tb40_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=2838.67 stage1=8841.5 conv1=1/5 (219s)
+MSSM_tb40_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=8099.45 stage1=10779.8 conv1=1/5 (219s)
+MSSM_tb40_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=6572.72 stage1=8646.7 conv1=1/5 (220s)
+MSSM_tb40_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=5239.99 stage1=8497.6 conv1=1/5 (221s)
+MSSM_tb40_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=29671.40 stage1=387984.3 conv1=1/5 (221s)
+MSSM_tb40_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4221403.33 stage1=4221403.3 conv1=1/5 (222s)
+MSSM_tb40_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=487333.25 stage1=582641.3 conv1=1/5 (239s)
+MSSM_tb40_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=825757.86 stage1=2849369.7 conv1=1/5 (243s)
+MSSM_tb50_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=9305.47 stage1=12836.8 conv1=1/5 (245s)
+MSSM_tb50_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=5538.65 stage1=8075.6 conv1=1/5 (246s)
+MSSM_tb50_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=3637.75 stage1=7833.5 conv1=3/5 (247s)
+MSSM_tb50_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=5589.86 stage1=11224.0 conv1=1/5 (264s)
+MSSM_tb50_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=4130606.20 stage1=4130606.2 conv1=1/5 (267s)
+MSSM_tb50_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4215960.86 stage1=4215960.9 conv1=1/5 (270s)
+MSSM_tb50_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=513220.98 stage1=513221.5 conv1=1/5 (271s)
+MSSM_tb50_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=458996.92 stage1=459002.6 conv1=1/5 (307s)
+MSSM_tb55_ms3TeV         R0eta  NO sign=[0.0, 0.0] chi2_gut=3252.30 stage1=7228.0 conv1=1/5 (309s)
+MSSM_tb55_ms3TeV         R0eta  NO sign=[3.14, 0.0] chi2_gut=5543.47 stage1=9044.4 conv1=1/5 (310s)
+MSSM_tb55_ms3TeV         R0eta  NO sign=[0.0, 3.14] chi2_gut=3341.28 stage1=6710.0 conv1=1/5 (311s)
+MSSM_tb55_ms3TeV         R0eta  NO sign=[3.14, 3.14] chi2_gut=8556.39 stage1=11199.7 conv1=1/5 (312s)
+MSSM_tb55_ms3TeV         R0eta  IO sign=[0.0, 0.0] chi2_gut=4199804.59 stage1=4241418.0 conv1=1/5 (315s)
+MSSM_tb55_ms3TeV         R0eta  IO sign=[3.14, 0.0] chi2_gut=4121930.29 stage1=4122742.6 conv1=1/5 (346s)
+MSSM_tb55_ms3TeV         R0eta  IO sign=[0.0, 3.14] chi2_gut=519806.07 stage1=519806.1 conv1=1/5 (355s)
+MSSM_tb55_ms3TeV         R0eta  IO sign=[3.14, 3.14] chi2_gut=725072.51 stage1=2843360.9 conv1=1/5 (381s)
+MSSM_tb10_ms10TeV        R0eta  NO sign=[0.0, 0.0] chi2_gut=3515.35 stage1=8856.6 conv1=1/5 (384s)
+MSSM_tb10_ms10TeV        R0eta  NO sign=[3.14, 0.0] chi2_gut=10970.11 stage1=14219.3 conv1=1/5 (385s)
+MSSM_tb10_ms10TeV        R0eta  NO sign=[0.0, 3.14] chi2_gut=3540.87 stage1=6750.6 conv1=1/5 (386s)
+MSSM_tb10_ms10TeV        R0eta  NO sign=[3.14, 3.14] chi2_gut=5879.24 stage1=9564.2 conv1=1/5 (387s)
+MSSM_tb10_ms10TeV        R0eta  IO sign=[0.0, 0.0] chi2_gut=4611906.15 stage1=4611906.1 conv1=1/5 (390s)
+MSSM_tb10_ms10TeV        R0eta  IO sign=[3.14, 0.0] chi2_gut=611371.86 stage1=4188415.3 conv1=1/5 (397s)
+MSSM_tb10_ms10TeV        R0eta  IO sign=[0.0, 3.14] chi2_gut=515355.68 stage1=4114395.9 conv1=1/5 (398s)
+MSSM_tb10_ms10TeV        R0eta  IO sign=[3.14, 3.14] chi2_gut=53988.43 stage1=2853733.5 conv1=1/5 (399s)
+MSSM_tb50_ms10TeV        R0eta  NO sign=[0.0, 0.0] chi2_gut=3854.54 stage1=9660.7 conv1=2/5 (422s)
+MSSM_tb50_ms10TeV        R0eta  NO sign=[3.14, 0.0] chi2_gut=4740.03 stage1=9761.5 conv1=1/5 (423s)
+MSSM_tb50_ms10TeV        R0eta  NO sign=[0.0, 3.14] chi2_gut=6706.99 stage1=10621.2 conv1=1/5 (424s)
+MSSM_tb50_ms10TeV        R0eta  NO sign=[3.14, 3.14] chi2_gut=5526.59 stage1=11405.4 conv1=1/5 (442s)
+MSSM_tb50_ms10TeV        R0eta  IO sign=[0.0, 0.0] chi2_gut=26943.32 stage1=522997.0 conv1=1/5 (460s)
+MSSM_tb50_ms10TeV        R0eta  IO sign=[3.14, 0.0] chi2_gut=528579.83 stage1=528820.9 conv1=1/5 (488s)
+MSSM_tb50_ms10TeV        R0eta  IO sign=[0.0, 3.14] chi2_gut=1218938.40 stage1=2844995.3 conv1=1/5 (515s)
+MSSM_tb50_ms10TeV        R0eta  IO sign=[3.14, 3.14] chi2_gut=4187677.89 stage1=4187678.2 conv1=1/5 (518s)
+== fit.py R0
+SM                       R0     NO sign=[0.0, 0.0] chi2_gut=4607.45 stage1=8599.0 conv1=1/5 (1s)
+SM                       R0     NO sign=[3.14, 0.0] chi2_gut=5204.95 stage1=9499.9 conv1=1/5 (2s)
+SM                       R0     NO sign=[0.0, 3.14] chi2_gut=6892.01 stage1=11000.6 conv1=1/5 (3s)
+SM                       R0     NO sign=[3.14, 3.14] chi2_gut=8859.66 stage1=11749.8 conv1=3/5 (4s)
+SM                       R0     IO sign=[0.0, 0.0] chi2_gut=4406737.75 stage1=4406757.9 conv1=1/5 (7s)
+SM                       R0     IO sign=[3.14, 0.0] chi2_gut=4199872.56 stage1=4199917.4 conv1=1/5 (7s)
+SM                       R0     IO sign=[0.0, 3.14] chi2_gut=40764.11 stage1=2853626.9 conv1=1/5 (10s)
+SM                       R0     IO sign=[3.14, 3.14] chi2_gut=528768.61 stage1=536635.5 conv1=1/5 (32s)
+MSSM_tb5_ms3TeV          R0     NO sign=[0.0, 0.0] chi2_gut=3550.98 stage1=8900.4 conv1=2/5 (42s)
+MSSM_tb5_ms3TeV          R0     NO sign=[3.14, 0.0] chi2_gut=11692.98 stage1=12566.7 conv1=1/5 (43s)
+MSSM_tb5_ms3TeV          R0     NO sign=[0.0, 3.14] chi2_gut=3753.68 stage1=7454.5 conv1=1/5 (44s)
+MSSM_tb5_ms3TeV          R0     NO sign=[3.14, 3.14] chi2_gut=8680.96 stage1=11415.3 conv1=3/5 (45s)
+MSSM_tb5_ms3TeV          R0     IO sign=[0.0, 0.0] chi2_gut=4402492.47 stage1=4402509.1 conv1=1/5 (46s)
+MSSM_tb5_ms3TeV          R0     IO sign=[3.14, 0.0] chi2_gut=616071.96 stage1=4360214.5 conv1=1/5 (48s)
+MSSM_tb5_ms3TeV          R0     IO sign=[0.0, 3.14] chi2_gut=4149988.86 stage1=4149992.4 conv1=1/5 (49s)
+MSSM_tb5_ms3TeV          R0     IO sign=[3.14, 3.14] chi2_gut=331921.71 stage1=2854209.8 conv1=1/5 (53s)
+MSSM_tb10_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=5223.10 stage1=12641.0 conv1=1/5 (54s)
+MSSM_tb10_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=11662.34 stage1=12536.2 conv1=1/5 (56s)
+MSSM_tb10_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3752.58 stage1=7442.0 conv1=1/5 (57s)
+MSSM_tb10_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=5549.66 stage1=8673.5 conv1=1/5 (58s)
+MSSM_tb10_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=4399680.53 stage1=4400200.6 conv1=1/5 (64s)
+MSSM_tb10_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4580933.49 stage1=4580937.2 conv1=1/5 (66s)
+MSSM_tb10_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=4373190.06 stage1=4373305.4 conv1=1/5 (96s)
+MSSM_tb10_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=539723.51 stage1=539761.2 conv1=1/5 (109s)
+MSSM_tb20_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=3565.03 stage1=8926.9 conv1=1/5 (114s)
+MSSM_tb20_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=13158.34 stage1=14254.0 conv1=1/5 (114s)
+MSSM_tb20_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3756.89 stage1=7797.1 conv1=2/5 (115s)
+MSSM_tb20_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=5832.84 stage1=9691.5 conv1=1/5 (117s)
+MSSM_tb20_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=4399639.38 stage1=4401177.8 conv1=1/5 (118s)
+MSSM_tb20_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4542245.08 stage1=4542245.1 conv1=1/5 (141s)
+MSSM_tb20_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=534235.08 stage1=4147214.7 conv1=1/5 (169s)
+MSSM_tb20_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=532264.05 stage1=540432.6 conv1=1/5 (201s)
+MSSM_tb30_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=3528.91 stage1=8956.4 conv1=2/5 (203s)
+MSSM_tb30_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=11643.46 stage1=12622.8 conv1=1/5 (204s)
+MSSM_tb30_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3704.60 stage1=7434.9 conv1=1/5 (206s)
+MSSM_tb30_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=8983.82 stage1=12457.2 conv1=1/5 (207s)
+MSSM_tb30_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=4402356.87 stage1=4402356.9 conv1=1/5 (215s)
+MSSM_tb30_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4439609.62 stage1=4439611.2 conv1=1/5 (219s)
+MSSM_tb30_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=4135048.69 stage1=4135131.5 conv1=1/5 (222s)
+MSSM_tb30_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=4380246.49 stage1=4380246.5 conv1=1/5 (230s)
+MSSM_tb40_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=7155.98 stage1=10263.5 conv1=2/5 (232s)
+MSSM_tb40_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=13133.29 stage1=14198.5 conv1=1/5 (233s)
+MSSM_tb40_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3656.41 stage1=7431.0 conv1=1/5 (235s)
+MSSM_tb40_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=8691.86 stage1=11389.0 conv1=1/5 (242s)
+MSSM_tb40_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=384457.34 stage1=384457.3 conv1=1/5 (248s)
+MSSM_tb40_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4480486.84 stage1=4480486.9 conv1=1/5 (249s)
+MSSM_tb40_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=4132055.84 stage1=4133070.5 conv1=1/5 (249s)
+MSSM_tb40_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=4451891.21 stage1=4611062.5 conv1=1/5 (313s)
+MSSM_tb50_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=2713.95 stage1=8667.3 conv1=1/5 (333s)
+MSSM_tb50_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=11590.38 stage1=12392.5 conv1=1/5 (334s)
+MSSM_tb50_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3781.61 stage1=7848.0 conv1=2/5 (335s)
+MSSM_tb50_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=5583.47 stage1=8778.7 conv1=1/5 (337s)
+MSSM_tb50_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=380139.06 stage1=380139.1 conv1=1/5 (344s)
+MSSM_tb50_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4419722.07 stage1=4420311.5 conv1=1/5 (345s)
+MSSM_tb50_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=4128005.89 stage1=4128005.9 conv1=1/5 (346s)
+MSSM_tb50_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=538410.68 stage1=546717.7 conv1=2/5 (396s)
+MSSM_tb55_ms3TeV         R0     NO sign=[0.0, 0.0] chi2_gut=11913.53 stage1=13826.5 conv1=1/5 (422s)
+MSSM_tb55_ms3TeV         R0     NO sign=[3.14, 0.0] chi2_gut=13070.13 stage1=14085.2 conv1=1/5 (424s)
+MSSM_tb55_ms3TeV         R0     NO sign=[0.0, 3.14] chi2_gut=3511.63 stage1=7420.8 conv1=1/5 (425s)
+MSSM_tb55_ms3TeV         R0     NO sign=[3.14, 3.14] chi2_gut=14099.19 stage1=15659.5 conv1=1/5 (426s)
+MSSM_tb55_ms3TeV         R0     IO sign=[0.0, 0.0] chi2_gut=377032.39 stage1=377032.4 conv1=2/5 (430s)
+MSSM_tb55_ms3TeV         R0     IO sign=[3.14, 0.0] chi2_gut=4592640.98 stage1=4592641.0 conv1=1/5 (433s)
+MSSM_tb55_ms3TeV         R0     IO sign=[0.0, 3.14] chi2_gut=4135969.49 stage1=4136084.4 conv1=1/5 (433s)
+MSSM_tb55_ms3TeV         R0     IO sign=[3.14, 3.14] chi2_gut=4190692.06 stage1=4190700.3 conv1=1/5 (440s)
+== fit.py C (aborted after 1 record, see README)
+SM                       C      NO sign=[0.0, 0.0] chi2_gut=10564.06 stage1=11682.2 conv1=1/12 (207s)
+== finalize R0eta
+SM                       R0eta  NO ckm_sys=1.0 chi2_tot=3688.97 (off 3416.50 lep 247.21 ratio 25.26) k=15 dof=5 p=0 maxpull=46.9 s23sq=0.466 s13sq=0.0120 s12sq=0.209 d=5 r=0.0276 eta=0.523
+SM                       R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 15734.57 ratio 0.00) k=15 dof=5 p=0 maxpull=inf s23sq=1.000 s13sq=0.0485 s12sq=0.439 d=76 r=0.0302 eta=-10.234
+MSSM_tb5_ms3TeV          R0eta  NO ckm_sys=1.0 chi2_tot=inf (off inf lep 312.47 ratio 0.90) k=15 dof=5 p=0 maxpull=inf s23sq=0.151 s13sq=0.0265 s12sq=0.049 d=360 r=0.0295 eta=-2.871
+MSSM_tb5_ms3TeV          R0eta  NO ckm_sys=0.98 chi2_tot=inf (off inf lep 286.39 ratio 0.51) k=15 dof=5 p=0 maxpull=inf s23sq=0.151 s13sq=0.0263 s12sq=0.048 d=360 r=0.0296 eta=-2.867
+MSSM_tb5_ms3TeV          R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 45247.06 ratio 570.48) k=15 dof=5 p=0 maxpull=inf s23sq=0.991 s13sq=0.3457 s12sq=0.613 d=232 r=0.0416 eta=0.937
+MSSM_tb10_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=3540.80 (off 2994.96 lep 540.95 ratio 4.89) k=15 dof=5 p=0 maxpull=38.2 s23sq=0.464 s13sq=0.0080 s12sq=0.260 d=1 r=0.0289 eta=0.376
+MSSM_tb10_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=3540.58 (off 2980.26 lep 555.40 ratio 4.93) k=15 dof=5 p=0 maxpull=38.3 s23sq=0.464 s13sq=0.0080 s12sq=0.261 d=1 r=0.0289 eta=0.380
+MSSM_tb10_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 8235.08 ratio 126252.43) k=15 dof=5 p=0 maxpull=inf s23sq=0.920 s13sq=0.2981 s12sq=0.419 d=222 r=0.2009 eta=0.694
+MSSM_tb20_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=3380.60 (off 2552.80 lep 823.04 ratio 4.75) k=15 dof=5 p=0 maxpull=38.5 s23sq=0.508 s13sq=0.0140 s12sq=0.262 d=17 r=0.0289 eta=0.675
+MSSM_tb20_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=3350.45 (off 2546.79 lep 798.94 ratio 4.72) k=15 dof=5 p=0 maxpull=38.6 s23sq=0.509 s13sq=0.0140 s12sq=0.261 d=17 r=0.0289 eta=0.673
+MSSM_tb20_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 7685.49 ratio 14998.44) k=15 dof=5 p=0 maxpull=inf s23sq=0.963 s13sq=0.0485 s12sq=0.504 d=280 r=0.0890 eta=0.925
+MSSM_tb30_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=3615.57 (off 3335.36 lep 260.02 ratio 20.19) k=15 dof=5 p=0 maxpull=45.2 s23sq=0.466 s13sq=0.0118 s12sq=0.210 d=5 r=0.0278 eta=0.240
+MSSM_tb30_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=3606.09 (off 3326.36 lep 254.57 ratio 25.16) k=15 dof=5 p=0 maxpull=45.3 s23sq=0.468 s13sq=0.0116 s12sq=0.209 d=5 r=0.0276 eta=0.238
+MSSM_tb30_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 45011.08 ratio 2900.17) k=15 dof=5 p=0 maxpull=inf s23sq=0.991 s13sq=0.3452 s12sq=0.625 d=220 r=0.0560 eta=0.883
+MSSM_tb40_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=inf (off inf lep 390.35 ratio 1.71) k=15 dof=5 p=0 maxpull=inf s23sq=0.173 s13sq=0.0165 s12sq=0.265 d=2 r=0.0305 eta=0.117
+MSSM_tb40_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=inf (off inf lep 308.86 ratio 0.81) k=15 dof=5 p=0 maxpull=inf s23sq=0.182 s13sq=0.0160 s12sq=0.265 d=2 r=0.0303 eta=0.094
+MSSM_tb40_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 7583.17 ratio 67003.00) k=15 dof=5 p=0 maxpull=inf s23sq=0.763 s13sq=0.2051 s12sq=0.364 d=165 r=0.1545 eta=0.426
+MSSM_tb50_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=3618.65 (off 3343.86 lep 257.34 ratio 17.46) k=15 dof=5 p=0 maxpull=45.1 s23sq=0.464 s13sq=0.0119 s12sq=0.210 d=5 r=0.0280 eta=0.234
+MSSM_tb50_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=3609.58 (off 3336.34 lep 254.80 ratio 18.44) k=15 dof=5 p=0 maxpull=45.3 s23sq=0.467 s13sq=0.0118 s12sq=0.212 d=5 r=0.0279 eta=0.232
+MSSM_tb50_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 44593.94 ratio 49319.49) k=15 dof=5 p=0 maxpull=inf s23sq=0.992 s13sq=0.3832 s12sq=0.651 d=147 r=0.1369 eta=1.165
+MSSM_tb55_ms3TeV         R0eta  NO ckm_sys=1.0 chi2_tot=3228.41 (off 2408.32 lep 816.02 ratio 4.06) k=15 dof=5 p=0 maxpull=35.4 s23sq=0.500 s13sq=0.0149 s12sq=0.264 d=18 r=0.0290 eta=0.688
+MSSM_tb55_ms3TeV         R0eta  NO ckm_sys=0.98 chi2_tot=3203.73 (off 2399.77 lep 800.65 ratio 3.32) k=15 dof=5 p=0 maxpull=35.7 s23sq=0.502 s13sq=0.0150 s12sq=0.265 d=18 r=0.0291 eta=0.679
+MSSM_tb55_ms3TeV         R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 42618.86 ratio 110505.62) k=15 dof=5 p=0 maxpull=inf s23sq=0.990 s13sq=0.4074 s12sq=0.714 d=290 r=0.1899 eta=1.649
+MSSM_tb10_ms10TeV        R0eta  NO ckm_sys=1.0 chi2_tot=3465.15 (off 3163.65 lep 295.10 ratio 6.41) k=15 dof=5 p=0 maxpull=40.7 s23sq=0.269 s13sq=0.0133 s12sq=0.260 d=3 r=0.0311 eta=0.141
+MSSM_tb10_ms10TeV        R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 8975.12 ratio 216.98) k=15 dof=5 p=0 maxpull=inf s23sq=0.962 s13sq=0.0262 s12sq=0.515 d=5 r=0.0372 eta=0.530
+MSSM_tb50_ms10TeV        R0eta  NO ckm_sys=1.0 chi2_tot=inf (off inf lep 398.84 ratio 0.19) k=15 dof=5 p=0 maxpull=inf s23sq=0.149 s13sq=0.0258 s12sq=0.049 d=360 r=0.0297 eta=0.846
+MSSM_tb50_ms10TeV        R0eta  IO ckm_sys=1.0 chi2_tot=inf (off inf lep 7771.08 ratio 3125071.31) k=15 dof=5 p=0 maxpull=inf s23sq=0.010 s13sq=0.4788 s12sq=0.005 d=186 r=0.8795 eta=0.432
+== finalize R0
+SM                       R0     NO ckm_sys=1.0 chi2_tot=4604.56 (off 3351.12 lep 1252.65 ratio 0.79) k=14 dof=6 p=0 maxpull=38.4 s23sq=0.613 s13sq=0.0112 s12sq=0.296 d=23 r=0.0295 eta=0.000
+SM                       R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 12944.42 ratio 22.53) k=14 dof=6 p=0 maxpull=inf s23sq=0.960 s13sq=0.0233 s12sq=0.499 d=262 r=0.0324 eta=0.000
+MSSM_tb5_ms3TeV          R0     NO ckm_sys=1.0 chi2_tot=inf (off inf lep 655.33 ratio 1.09) k=14 dof=6 p=0 maxpull=inf s23sq=0.179 s13sq=0.0160 s12sq=0.269 d=2 r=0.0304 eta=0.000
+MSSM_tb5_ms3TeV          R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 11111.41 ratio 21336.84) k=14 dof=6 p=0 maxpull=inf s23sq=0.912 s13sq=0.1608 s12sq=0.407 d=173 r=0.1003 eta=0.000
+MSSM_tb10_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=3752.54 (off 3229.53 lep 518.36 ratio 4.65) k=14 dof=6 p=0 maxpull=39.2 s23sq=0.470 s13sq=0.0082 s12sq=0.270 d=3 r=0.0289 eta=0.000
+MSSM_tb10_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 43524.33 ratio 131.47) k=14 dof=6 p=0 maxpull=inf s23sq=0.993 s13sq=0.4134 s12sq=0.290 d=163 r=0.0357 eta=0.000
+MSSM_tb20_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=inf (off inf lep 519.71 ratio 0.00) k=14 dof=6 p=0 maxpull=inf s23sq=0.250 s13sq=0.0139 s12sq=0.278 d=4 r=0.0299 eta=0.000
+MSSM_tb20_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 43559.58 ratio 119.35) k=14 dof=6 p=0 maxpull=inf s23sq=0.993 s13sq=0.4135 s12sq=0.291 d=163 r=0.0354 eta=0.000
+MSSM_tb30_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=3487.87 (off 3066.61 lep 412.58 ratio 8.68) k=14 dof=6 p=0 maxpull=37.7 s23sq=0.259 s13sq=0.0137 s12sq=0.264 d=3 r=0.0313 eta=0.000
+MSSM_tb30_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 31798.22 ratio 4074482.08) k=14 dof=6 p=0 maxpull=inf s23sq=1.000 s13sq=0.1126 s12sq=0.000 d=205 r=1.0000 eta=0.000
+MSSM_tb40_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=3663.47 (off 3195.31 lep 465.26 ratio 2.90) k=14 dof=6 p=0 maxpull=38.2 s23sq=0.469 s13sq=0.0086 s12sq=0.275 d=4 r=0.0291 eta=0.000
+MSSM_tb40_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 54915.48 ratio 1381.69) k=14 dof=6 p=0 maxpull=inf s23sq=0.992 s13sq=0.3439 s12sq=0.617 d=224 r=0.0480 eta=0.000
+MSSM_tb50_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=inf (off inf lep 302.74 ratio 1.15) k=14 dof=6 p=0 maxpull=inf s23sq=0.174 s13sq=0.0170 s12sq=0.280 d=2 r=0.0304 eta=0.000
+MSSM_tb50_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 54043.61 ratio 3934.97) k=14 dof=6 p=0 maxpull=inf s23sq=0.992 s13sq=0.3425 s12sq=0.619 d=216 r=0.0603 eta=0.000
+MSSM_tb55_ms3TeV         R0     NO ckm_sys=1.0 chi2_tot=3533.99 (off 3120.66 lep 411.72 ratio 1.61) k=14 dof=6 p=0 maxpull=36.8 s23sq=0.468 s13sq=0.0092 s12sq=0.282 d=4 r=0.0293 eta=0.000
+MSSM_tb55_ms3TeV         R0     IO ckm_sys=1.0 chi2_tot=inf (off inf lep 53373.30 ratio 7319.20) k=14 dof=6 p=0 maxpull=inf s23sq=0.992 s13sq=0.3414 s12sq=0.617 d=212 r=0.0713 eta=0.000

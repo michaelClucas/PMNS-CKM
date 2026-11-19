@@ -1,0 +1,5 @@
+pmns_delta_chi2 joint (2D + two 1D): old 96.3 us, new 50.5 us, x1.91
+1D profile on 1e5 points: scalar loop 1.354 s, pmns_profile_1d 12.80 ms, x106
+ckm_at(2e16): first call in process 0.735 s (includes the y_t solve), uncached repeat 289.0 ms, memoised 38.8 us
+evaluate (4 PMNS keys, Scorer built per call): 882 us
+run_null toy pipeline (2 relations), 1000 N1 fakes, 1 process: 2.1 s, 0 hits, passed=True

@@ -20,6 +20,7 @@ __all__ = [
     "ObjectiveResult",
     "PMNS_PARAMS",
     "p_value",
+    "discrete_bits",
     "pvalue_to_sigma",
     "sigma_to_pvalue",
     "trials_factor_pvalue",
@@ -205,11 +206,39 @@ class Objective:
 # ---------------------------------------------------------------- p-values
 
 
+def _as_int(x, name):
+    """x as an int; raises ValueError for non-integral values instead of truncating."""
+    xf = float(x)
+    if not np.isfinite(xf) or xf != np.floor(xf):
+        raise ValueError(f"{name} = {x!r} is not an integer. Parameter counts are integers: "
+                         "a discrete choice among n options costs discrete_bits(n) = ceil(log2 n).")
+    return int(xf)
+
+
+def discrete_bits(n_options):
+    """Parameter cost of one data-selected choice among n_options: ceil(log2 n_options).
+
+    The program's single convention for discrete choices (exp 012 M3). 1 option costs 0,
+    2 options 1, 15 options 4. Several independent choices: pass the product of their
+    option counts (log2 of a product is the sum, then ceil once).
+    """
+    n = _as_int(n_options, "n_options")
+    if n < 1:
+        raise ValueError("n_options must be >= 1")
+    return int(np.ceil(np.log2(n) - 1e-12)) if n > 1 else 0
+
+
 def p_value(chi2, N, k):
     """Upper-tail chi^2 p-value with dof = N - k.
 
-    N: number of measured observables in the fit, k: fitted free parameters (count
-    data-selected discrete choices too). Raises ValueError if dof <= 0.
+    N: number of measured observables in the fit. k: the parameters that reduce the
+    chi^2 degrees of freedom, i.e. the CONTINUOUS fitted parameters. Data-selected discrete
+    choices are not a chi^2 dof: they count toward compression (criterion 2) as
+    discrete_bits(n_options) and are paid for in the fake-universe null (criterion 4),
+    which reruns the same choice (exp 012 M3). src.evaluate passes k = k_continuous.
+
+    N and k must be integers (integral floats such as 2.0 are accepted). A non-integer
+    k raises ValueError; it is never truncated. Raises ValueError if dof <= 0.
 
     Caveat: the PMNS contribution is a profiled Delta chi^2 from NuFIT tables. Those are
     not exactly chi^2-distributed (physical boundaries, theta23 octant degeneracy,
@@ -217,7 +246,7 @@ def p_value(chi2, N, k):
     Monte Carlo studies show the deviation matters most for delta_CP and the ordering.
     Where it matters, calibrate with pseudo-experiments.
     """
-    dof = int(N) - int(k)
+    dof = _as_int(N, "N") - _as_int(k, "k")
     if dof <= 0:
         raise ValueError(f"dof = N - k = {dof} <= 0; p-value undefined")
     return float(_st.chi2.sf(chi2, dof))

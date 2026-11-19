@@ -1,0 +1,14 @@
+148 exp-006 rows compared, 580 changed cells
+N             changed for  0 baselines: 
+k_c           changed for  0 baselines: 
+k_d           changed for 25 baselines: A4a-BM A4a-GR1 A4a-GR2 A4a-HEX A4a-TBM A4b-BM A4b-GR1 A4b-GR2 A4b-HEX A4b-TBM A4c-BM A4c-GR1 A4c-GR2 A4c-HEX A4c-TBM B-BM B-GR1 B-GR2 B-HEX B-TBM B1-BM B1-GR1 B1-GR2 B1-HEX B1-TBM
+k             changed for 25 baselines: A4a-BM A4a-GR1 A4a-GR2 A4a-HEX A4a-TBM A4b-BM A4b-GR1 A4b-GR2 A4b-HEX A4b-TBM A4c-BM A4c-GR1 A4c-GR2 A4c-HEX A4c-TBM B-BM B-GR1 B-GR2 B-HEX B-TBM B1-BM B1-GR1 B1-GR2 B1-HEX B1-TBM
+dof           changed for 35 baselines: A1+ A1- A2 A3 A3k A4a-BM A4a-GR1 A4a-GR2 A4a-HEX A4a-TBM A4b-BM A4b-GR1 A4b-GR2 A4b-HEX A4b-TBM A4c-BM A4c-GR1 A4c-GR2 A4c-HEX A4c-TBM B-BM B-GR1 B-GR2 B-HEX B-TBM B1-BM B1-GR1 B1-GR2 B1-HEX B1-TBM B2-TM1 B2-TM2 C2 C3 E1
+chi2          changed for  0 baselines: 
+p             changed for 30 baselines: A1+ A1- A2 A3 A3k A4a-BM A4a-GR1 A4a-GR2 A4a-HEX A4a-TBM A4b-BM A4b-GR1 A4b-GR2 A4b-HEX A4b-TBM A4c-BM A4c-GR1 A4c-GR2 A4c-HEX A4c-TBM B1-BM B1-GR1 B1-GR2 B1-HEX B1-TBM B2-TM1 B2-TM2 C2 C3 E1
+p_fit         changed for  0 baselines: 
+chi2_global   changed for  0 baselines: 
+p_global      changed for 30 baselines: A1+ A1- A2 A3 A3k A4a-BM A4a-GR1 A4a-GR2 A4a-HEX A4a-TBM A4b-BM A4b-GR1 A4b-GR2 A4b-HEX A4b-TBM A4c-BM A4c-GR1 A4c-GR2 A4c-HEX A4c-TBM B1-BM B1-GR1 B1-GR2 B1-HEX B1-TBM B2-TM1 B2-TM2 C2 C3 E1
+max_abs_pull  changed for  0 baselines: 
+input_dchi2   changed for  0 baselines: 
+params        changed for  0 baselines: 

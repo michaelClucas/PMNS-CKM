@@ -1,0 +1,7 @@
+tag,model,target,subset,errs,N,k,chi2_min,IO
+MN_DR,MN,DR,all,own,18,19,1.0972,False
+FN_DR,FN,DR,all,own,18,18,0.0000,False
+MN_ours,MN,ours,all,own,17,17,129.8738,False
+MN_ours_nodl,MN,ours,nodl,own,16,17,79.9135,False
+MN_ours_drrel,MN,ours,all,drrel,17,17,1.5277,False
+FN_ours,FN,ours,all,own,17,16,0.2956,False
