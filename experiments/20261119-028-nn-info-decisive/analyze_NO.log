@@ -1,0 +1,11 @@
+[NO] analysis start: 3 seeds, families ['F1', 'F2', 'MN', 'FN', 'MOD', 'SU5', 'S4SO', 'GEN', 'CTRL'], p_train [0.1109, 0.1109, 0.1108, 0.1111, 0.1111, 0.1113, 0.1111, 0.1119, 0.1109]
+[NO] held-out I_cond (bits): F1 0.46, F2 0.68, MN 3.75, FN 0.93, MOD 0.04, SU5 -1.25, S4SO -0.03, GEN 0.33, CTRL -0.05, ALL 0.55
+[NO] held-out I_mix (bits): F1 1.03, F2 1.35, MN 3.95, FN 1.45, MOD 1.47, SU5 -1.24, S4SO 1.26, GEN 0.58, CTRL 0.22, ALL 1.14
+[NO] calibration done
+[NO] evals seed 0 done (287 s)
+[NO] evals seed 1 done (220 s)
+[NO] evals seed 2 done (222 s)
+[NO] equal weights: T_conv -0.992 bits, T_point 0.606; N1lam conv rank 0.5215 (upper 0.5401, passed False); N1 conv rank 0.3770 (upper 0.3952, passed False)
+[NO] per-seed T_conv: seed0 -0.42, seed1 -1.78, seed2 -1.07
+[NO] Dirichlet: N1lam pass fraction 0.000, N1 pass fraction 0.000, T_conv q05/50/95 [-3.09, -1.03, 1.07], N1lam rank q05/50/95 [0.439, 0.542, 0.918]
+[NO] decision: {'primary_null_passed_equal_weights': False, 'dirichlet_pass_fraction_ge_0p9': False, 'verdict': 'no evidence'}

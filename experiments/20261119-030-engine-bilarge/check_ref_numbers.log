@@ -1,0 +1,96 @@
+{
+ "mr_MZ": {
+  "mr_u_c": {
+   "value": 0.0019751332373257563,
+   "rel_err": 0.033274237336258
+  },
+  "mr_c_t": {
+   "value": 0.0037220509829454917,
+   "rel_err": 0.015305431439566218
+  },
+  "mr_d_s": {
+   "value": 0.0505920344456405,
+   "rel_err": 0.016691382723545093
+  },
+  "mr_s_b": {
+   "value": 0.018721040453339992,
+   "rel_err": 0.008797211834927038
+  },
+  "mr_e_mu": {
+   "value": 0.004744102841750908,
+   "rel_err": 2.1848390204451896e-08
+  },
+  "mr_mu_tau": {
+   "value": 0.05886683411947228,
+   "rel_err": 4.870921637649868e-05
+  },
+  "mr_b_tau": {
+   "value": 1.6404082838655287,
+   "rel_err": 0.005273697444390426
+  }
+ },
+ "dm_NO": {
+  "best": {
+   "dm21sq_eV2": 7.537e-05,
+   "dm3l_sq_eV2": 0.002521,
+   "dm_ratio": 0.02989686632288775
+  },
+  "dm_ratio_chi2_at_record": 0.0005304591867354836,
+  "dm_ratio_chi2_at_+-3pct": [
+   3.2828911877190876,
+   4.095935520004448
+  ]
+ },
+ "dm_IO": {
+  "best": {
+   "dm21sq_eV2": 7.537e-05,
+   "dm3l_sq_eV2": -0.0025,
+   "dm_ratio": 0.030148
+  },
+  "dm_ratio_chi2_at_record": 0.0041578907665779305,
+  "dm_ratio_chi2_at_+-3pct": [
+   3.542807367008736,
+   3.544580198664435
+  ]
+ }
+}
+running_SM_2e16 {'ckm_s12': 4e-05, 'ckm_s13': 0.0005, 'ckm_s23': 0.00559, 'ckm_delta_rad': -5e-05, 's12sq': 1e-05, 's13sq': 0.0, 's23sq': 2e-05, 'dcp_deg': 0.00024, 'dm_ratio': 0.99997, 'mr_u_c': 1.0, 'mr_c_t': 1.13367, 'mr_d_s': 0.99977, 'mr_s_b': 0.88253, 'mr_e_mu': 1.0, 'mr_mu_tau': 1.00003, 'mr_b_tau': 2.60701}
+  sys {'ckm_s12': 1.8e-06, 'ckm_s13': 2.5e-05, 'ckm_s23': 0.00028, 'ckm_delta_rad': 2.3e-06, 's12sq': 4.8e-07, 's13sq': 3.7e-10, 's23sq': 1e-06, 'dcp_deg': 1.2e-05, 'dm_ratio': 1.6e-06, 'mr_u_c': 7.4e-08, 'mr_c_t': 0.0063, 'mr_d_s': 1.2e-05, 'mr_s_b': 0.0062, 'mr_e_mu': 5.5e-09, 'mr_mu_tau': 1.6e-06, 'mr_b_tau': 0.048}
+running_MSSM_tb10_2e16 {'ckm_s12': -1e-05, 'ckm_s13': -0.00022, 'ckm_s23': -0.00241, 'ckm_delta_rad': 2e-05, 's12sq': -0.00043, 's13sq': -0.0, 's23sq': -0.0009, 'dcp_deg': -0.01065, 'dm_ratio': 1.00145, 'mr_u_c': 1.00001, 'mr_c_t': 1.323, 'mr_d_s': 1.00009, 'mr_s_b': 1.064, 'mr_e_mu': 1.00001, 'mr_mu_tau': 1.00433, 'mr_b_tau': 2.09661}
+  sys {'ckm_s12': 2.2e-06, 'ckm_s13': 3.4e-05, 'ckm_s23': 0.00038, 'ckm_delta_rad': 2.7e-06, 's12sq': 2.2e-05, 's13sq': 2e-08, 's23sq': 4.6e-05, 'dcp_deg': 0.00054, 'dm_ratio': 7.4e-05, 'mr_u_c': 3.6e-07, 'mr_c_t': 0.017, 'mr_d_s': 1.4e-05, 'mr_s_b': 0.0098, 'mr_e_mu': 7.6e-07, 'mr_mu_tau': 0.00022, 'mr_b_tau': 0.037}
+{
+ "n_numbers": 148,
+ "sections": {
+  "mr_MZ": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "mr_MZ_corr": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "yukawa_MZ_rel_err": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "dm_NO": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "dm_IO": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "running_SM_2e16": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "running_MSSM_tb10_2e16": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  }
+ },
+ "max_abs_all": 0.0,
+ "max_rel_all": 0.0,
+ "pass_1e-9": true
+}

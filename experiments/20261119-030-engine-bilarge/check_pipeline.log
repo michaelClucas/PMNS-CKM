@@ -1,0 +1,16 @@
+vector_chi2 vs Universe.pmns_delta_chi2 max |diff|: 2.842170943040401e-14
+exp 027 quickfit points rescored (027: CDSV-I 8.208, CDSV-II 7.973, RMSV 4.790/20.012/4.790/5.133): {'CDSV-I': 8.208, 'CDSV-II': 7.973, 'RMSV1': 4.79, 'RMSV2': 20.012, 'RMSV3': 4.79, 'RMSV4': 5.133}
+leak probe passed (inputs ckm_lambda, ckm_A)
+pipeline time 4.57 s
+  CDSV-I s12=2l s13=1l s23=1-1l d_nu=pi                   IO chi2   4.710 chi2_g   6.195 p_g 0.1025 maxpull 1.68 theta {'phi': 2.3870260839247055}
+  RMSV type 3                                             NO chi2   4.790 chi2_g   4.790 p_g 0.0912 maxpull 1.79 theta {'psi': 2.9248490894545425, 'phi': 2.3967050049856953}
+  RMSV type 1                                             NO chi2   4.790 chi2_g   4.790 p_g 0.0912 maxpull 1.79 theta {'psi': 2.9248490897225543, 'phi': 0.7448876485327983}
+  RMSV type 4                                             NO chi2   5.133 chi2_g   5.133 p_g 0.0768 maxpull 1.78 theta {'psi': 2.903234778555193, 'phi': 3.890293111928897}
+  CDSV-II s12=2l s13=1l s23=3l d_nu=pi                    NO chi2   7.973 chi2_g   7.973 p_g 0.0466 maxpull 1.64 theta {'phi': 5.531270115052298}
+  CDSV-I s12=2l s13=1l s23=1-1l d_nu=pi                   NO chi2   8.208 chi2_g   8.208 p_g 0.0419 maxpull 2.70 theta {'phi': 3.894128554399392}
+  CDSV-II s12=2l s13=1l s23=3l d_nu=pi                    IO chi2   9.375 chi2_g  10.861 p_g 0.0125 maxpull 1.90 theta {'phi': 5.529021355213805}
+  RMSV type 4                                             IO chi2   8.775 chi2_g  10.261 p_g 0.0059 maxpull 1.76 theta {'psi': 2.9165870650026866, 'phi': 3.890813189968007}
+  CDSV-I s12=2l s13=1l s23=3l d_nu=pi                     NO chi2  14.601 chi2_g  14.601 p_g 0.0022 maxpull 3.08 theta {'phi': 2.392371560246661}
+  RMSV type 3                                             IO chi2  12.162 chi2_g  13.647 p_g 0.0011 maxpull 1.93 theta {'psi': 2.937235475852141, 'phi': 2.3939244406059563}
+  RMSV type 1                                             IO chi2  12.162 chi2_g  13.647 p_g 0.0011 maxpull 1.93 theta {'psi': 2.93723547607562, 'phi': 0.7476682132175516}
+  CDSV-II s12=3l s13=1l s23=3l d_nu=0                     IO chi2  21.729 chi2_g  23.215 p_g 0.0000 maxpull 3.71 theta {'phi': 3.88445803309469}

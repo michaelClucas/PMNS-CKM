@@ -1,0 +1,16 @@
+[13:51:24] power N1 IO: injecting IO best (chi2 4.710, p_global 0.1025) pred {'s12sq': 0.30615587667816346, 's13sq': 0.022600001435073715, 's23sq': 0.5716971430472698, 'dcp_deg': 234.9733285694939, 'ckm_lambda': 0.22517, 'ckm_A': 0.826}
+[13:56:27] power N1 IO: 0/20 pass (fraction 0.00), 20 injections fit-ok; 304 s
+[13:56:31] power N1 NO: injecting NO best (chi2 4.790, p_global 0.0912) pred {'s12sq': 0.311999999975405, 's13sq': 0.022400000001658045, 's23sq': 0.4501317840145449, 'dcp_deg': 323.0463792509996, 'ckm_lambda': 0.22517, 'ckm_A': 0.826}
+[14:10:22] power N1 NO: 1/20 pass (fraction 0.05), 20 injections fit-ok; 835 s
+[14:10:26] power N2 IO: injecting IO best (chi2 4.710, p_global 0.1025) pred {'s12sq': 0.30615587667816346, 's13sq': 0.022600001435073715, 's23sq': 0.5716971430472698, 'dcp_deg': 234.9733285694939, 'ckm_lambda': 0.22517, 'ckm_A': 0.826}
+[14:16:09] power N2 IO: 0/20 pass (fraction 0.00), 20 injections fit-ok; 347 s
+[14:16:14] power N2 NO: injecting NO best (chi2 4.790, p_global 0.0912) pred {'s12sq': 0.311999999975405, 's13sq': 0.022400000001658045, 's23sq': 0.4501317840145449, 'dcp_deg': 323.0463792509996, 'ckm_lambda': 0.22517, 'ckm_A': 0.826}
+[14:29:47] power N2 NO: 0/20 pass (fraction 0.00), 20 injections fit-ok; 819 s
+[14:30:18] null N1 NO: hits 5/26 (planned 1000), rate 0.192, CP95 two-sided [0.066, 0.394], one-sided upper 0.363, passed False, early True; ref p_global 0.1025; B_ckm -0.23 bits; 31 s
+[14:30:38] null N1 IO: hits 5/11 (planned 1000), rate 0.455, CP95 two-sided [0.167, 0.766], one-sided upper 0.729, passed False, early True; ref p_global 0.1025; B_ckm -1.10 bits; 20 s
+[14:30:55] null N2 NO: hits 5/6 (planned 1000), rate 0.833, CP95 two-sided [0.359, 0.996], one-sided upper 0.991, passed False, early True; ref p_global 0.1025; B_ckm -2.41 bits; 17 s
+[14:31:13] null N2 IO: hits 5/6 (planned 1000), rate 0.833, CP95 two-sided [0.359, 0.996], one-sided upper 0.991, passed False, early True; ref p_global 0.1025; B_ckm -2.12 bits; 17 s
+[14:34:28] rate N1 NO: hits 74/200 (planned 200), rate 0.370, CP95 two-sided [0.303, 0.441], one-sided upper 0.430, passed False, early False; ref p_global 0.1025; B_ckm -0.82 bits; 195 s
+[14:37:45] rate N1 IO: hits 73/200 (planned 200), rate 0.365, CP95 two-sided [0.298, 0.436], one-sided upper 0.425, passed False, early False; ref p_global 0.1025; B_ckm -1.14 bits; 197 s
+[14:44:05] rate N2 NO: hits 163/200 (planned 200), rate 0.815, CP95 two-sided [0.754, 0.866], one-sided upper 0.859, passed False, early False; ref p_global 0.1025; B_ckm -2.51 bits; 380 s
+[14:49:25] rate N2 IO: hits 156/200 (planned 200), rate 0.780, CP95 two-sided [0.716, 0.835], one-sided upper 0.827, passed False, early False; ref p_global 0.1025; B_ckm -2.20 bits; 321 s

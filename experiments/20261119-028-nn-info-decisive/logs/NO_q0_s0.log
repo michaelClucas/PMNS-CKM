@@ -1,0 +1,15 @@
+[NO q0 s0] ep 0 train 4.3451 val 3.5566 lr 1.0e-03 116s
+[NO q0 s0] ep 1 train 3.3934 val 3.2769 lr 1.0e-03 263s
+[NO q0 s0] ep 2 train 3.1506 val 3.0701 lr 1.0e-03 356s
+[NO q0 s0] ep 3 train 2.9469 val 3.0204 lr 1.0e-03 439s
+[NO q0 s0] ep 4 train 2.7912 val 2.6915 lr 1.0e-03 547s
+[NO q0 s0] ep 5 train 2.5825 val 2.5670 lr 1.0e-03 638s
+[NO q0 s0] ep 6 train 2.6239 val 2.3468 lr 1.0e-03 708s
+[NO q0 s0] ep 7 train 2.4223 val 2.1593 lr 1.0e-03 753s
+[NO q0 s0] ep 8 train 2.3333 val 2.5883 lr 1.0e-03 799s
+[NO q0 s0] ep 9 train 2.4100 val 2.6576 lr 1.0e-03 866s
+[NO q0 s0] ep 10 train 2.2611 val 1.9732 lr 1.0e-03 966s
+[NO q0 s0] ep 11 train 2.2532 val 2.3569 lr 1.0e-03 1037s
+[NO q0 s0] ep 12 train 2.1120 val 2.0252 lr 1.0e-03 1191s
+[NO q0 s0] ep 13 train 2.1105 val 2.0999 lr 5.0e-04 1371s
+[NO q0 s0] done best val 1.9732 (wall_cap, 14 epochs)

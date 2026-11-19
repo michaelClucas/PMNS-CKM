@@ -1,0 +1,60 @@
+2026-11-19T20:51:07Z pre-registration README.md sha256 prefix ec31fbd8bd00cc76 (written before any real-data evaluation)
+20:51:52Z start NO training queue (2 slots x 2 threads) and IO generation (2 workers)
+F1    IO kept   6000 / raw     16000 (5 s)
+F2    IO kept   6000 / raw     16000 (7 s)
+GEN   IO kept   2897 / raw  11800000 (902 s)
+CTRL  IO kept   2760 / raw   9300000 (902 s)
+MN    IO kept   6000 / raw  13250000 (412 s)
+saved 23657 ['F1', 'F2', 'GEN', 'CTRL', 'MN']
+21:14:14Z IO generation done; adding a third training slot
+finished NO q1 s0 rc 0
+21:17:54Z DEVIATION 3: switch to 3 seeds (0-2) with 40 min per flow (seed 0 resumed for +20 min) instead of 5 seeds x 20 min; at ~90 s/epoch the 20-min flows stopped at 13 epochs with val NLL still falling
+finished NO q1 s0 resume rc 0
+finished NO q1 s2 new rc 0
+finished NO q1 s1 new rc 0
+finished NO q0 s0 resume rc 0
+finished NO c1 s0 new rc 0
+finished NO c1 s1 new rc 0
+finished NO c1 s2 new rc 0
+finished NO c0 s0 new rc 0
+finished NO c0 s1 new rc 0
+finished NO c0 s2 new rc 0
+finished IO q1 s0 new rc 0
+finished IO q1 s1 new rc 0
+finished IO q1 s2 new rc 0
+finished IO q0 s0 new rc 0
+finished IO q0 s1 new rc 0
+finished NO q0 s1 new rc 0
+finished NO q0 s2 new rc 0
+22:39:45Z NO training complete; start NO analysis (2 threads)
+15:40:03 [NO] analysis start: 3 seeds, families ['F1', 'F2', 'MN', 'FN', 'MOD', 'SU5', 'S4SO', 'GEN', 'CTRL'], p_train [0.1109, 0.1109, 0.1108, 0.1111, 0.1111, 0.1113, 0.1111, 0.1119, 0.1109]
+finished IO c1 s0 new rc 0
+finished IO q0 s2 new rc 0
+finished IO c1 s1 new rc 0
+finished IO c1 s2 new rc 0
+15:41:09 [NO] held-out I_cond (bits): F1 0.46, F2 0.68, MN 3.75, FN 0.93, MOD 0.04, SU5 -1.25, S4SO -0.03, GEN 0.33, CTRL -0.05, ALL 0.55
+15:41:09 [NO] held-out I_mix (bits): F1 1.03, F2 1.35, MN 3.95, FN 1.45, MOD 1.47, SU5 -1.24, S4SO 1.26, GEN 0.58, CTRL 0.22, ALL 1.14
+finished IO c0 s0 new rc 0
+finished IO c0 s1 new rc 0
+finished IO c0 s2 new rc 0
+22:42:28Z IO training complete; start IO analysis (3 threads)
+15:42:35 [IO] analysis start: 3 seeds, families ['F1', 'F2', 'GEN', 'CTRL', 'MN'], p_train [0.2523, 0.256, 0.1234, 0.1166, 0.2517]
+15:42:39 [IO] held-out I_cond (bits): F1 0.16, F2 0.30, GEN 0.19, CTRL -0.23, MN 2.58, ALL 0.80
+15:42:39 [IO] held-out I_mix (bits): F1 0.53, F2 0.50, GEN 0.34, CTRL -0.10, MN 2.70, ALL 1.01
+15:47:19 [IO] calibration done
+15:48:02 [NO] calibration done
+15:49:14 [IO] evals seed 0 done (109 s)
+15:51:18 [IO] evals seed 1 done (125 s)
+15:52:55 [NO] evals seed 0 done (287 s)
+15:53:24 [IO] evals seed 2 done (126 s)
+15:53:25 [IO] equal weights: T_conv 0.690 bits, T_point 0.922; N1lam conv rank 0.5980 (upper 0.6162, passed False); N1 conv rank 0.3160 (upper 0.3335, passed False)
+15:53:26 [IO] per-seed T_conv: seed0 1.38, seed1 0.15, seed2 0.32
+15:54:16 [IO] Dirichlet: N1lam pass fraction 0.000, N1 pass fraction 0.000, T_conv q05/50/95 [-0.47, 0.67, 1.99], N1lam rank q05/50/95 [0.478, 0.627, 0.887]
+15:54:16 [IO] decision: {'primary_null_passed_equal_weights': False, 'dirichlet_pass_fraction_ge_0p9': False, 'verdict': 'no evidence'}
+15:56:35 [NO] evals seed 1 done (220 s)
+16:00:17 [NO] evals seed 2 done (222 s)
+16:00:17 [NO] equal weights: T_conv -0.992 bits, T_point 0.606; N1lam conv rank 0.5215 (upper 0.5401, passed False); N1 conv rank 0.3770 (upper 0.3952, passed False)
+16:00:18 [NO] per-seed T_conv: seed0 -0.42, seed1 -1.78, seed2 -1.07
+16:01:00 [NO] Dirichlet: N1lam pass fraction 0.000, N1 pass fraction 0.000, T_conv q05/50/95 [-3.09, -1.03, 1.07], N1lam rank q05/50/95 [0.439, 0.542, 0.918]
+16:01:00 [NO] decision: {'primary_null_passed_equal_weights': False, 'dirichlet_pass_fraction_ge_0p9': False, 'verdict': 'no evidence'}
+23:03:01Z README results written; verdict NO: no evidence (N1lam rank 0.522, Dirichlet pass 0/500)

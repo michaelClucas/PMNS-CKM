@@ -1,0 +1,32 @@
+resuming from epoch 14, best 1.9732, lr 5.0e-04
+[NO q0 s0] ep 14 train 2.0842 val 2.2057 lr 5.0e-04 1438s
+[NO q0 s0] ep 15 train 1.9757 val 1.8343 lr 5.0e-04 1509s
+[NO q0 s0] ep 16 train 1.8654 val 1.7556 lr 5.0e-04 1590s
+[NO q0 s0] ep 17 train 1.9044 val 1.8256 lr 5.0e-04 1657s
+[NO q0 s0] ep 18 train 1.8005 val 1.7861 lr 5.0e-04 1698s
+[NO q0 s0] ep 19 train 1.8325 val 1.8154 lr 2.5e-04 1743s
+[NO q0 s0] ep 20 train 1.6011 val 1.5250 lr 2.5e-04 1797s
+[NO q0 s0] ep 21 train 1.4835 val 1.3501 lr 2.5e-04 1848s
+[NO q0 s0] ep 22 train 1.4576 val 1.4766 lr 2.5e-04 1891s
+[NO q0 s0] ep 23 train 1.4864 val 1.9891 lr 2.5e-04 1947s
+[NO q0 s0] ep 24 train 1.4906 val 1.5594 lr 1.3e-04 1993s
+[NO q0 s0] ep 25 train 1.2451 val 1.3071 lr 1.3e-04 2027s
+[NO q0 s0] ep 26 train 1.2555 val 1.2268 lr 1.3e-04 2064s
+[NO q0 s0] ep 27 train 1.2282 val 1.2438 lr 1.3e-04 2096s
+[NO q0 s0] ep 28 train 1.2303 val 1.1544 lr 1.3e-04 2121s
+[NO q0 s0] ep 29 train 1.2140 val 1.1400 lr 1.3e-04 2162s
+[NO q0 s0] ep 30 train 1.1786 val 1.1762 lr 1.3e-04 2214s
+[NO q0 s0] ep 31 train 1.1793 val 1.1952 lr 1.3e-04 2236s
+[NO q0 s0] ep 32 train 1.2035 val 1.2566 lr 6.3e-05 2254s
+[NO q0 s0] ep 33 train 1.0633 val 1.0297 lr 6.3e-05 2277s
+[NO q0 s0] ep 34 train 1.0334 val 1.0454 lr 6.3e-05 2304s
+[NO q0 s0] ep 35 train 1.0169 val 1.0159 lr 6.3e-05 2330s
+[NO q0 s0] ep 36 train 1.0225 val 1.0853 lr 6.3e-05 2356s
+[NO q0 s0] ep 37 train 1.0149 val 1.1547 lr 6.3e-05 2380s
+[NO q0 s0] ep 38 train 1.0218 val 1.0339 lr 3.1e-05 2400s
+[NO q0 s0] ep 39 train 0.9588 val 0.9931 lr 3.1e-05 2426s
+[NO q0 s0] ep 40 train 0.9478 val 0.9629 lr 3.1e-05 2468s
+[NO q0 s0] ep 41 train 0.9502 val 0.9475 lr 3.1e-05 2519s
+[NO q0 s0] ep 42 train 0.9347 val 0.9803 lr 3.1e-05 2551s
+[NO q0 s0] ep 43 train 0.9365 val 0.9433 lr 3.1e-05 2571s
+[NO q0 s0] done best val 0.9433 (wall_cap, 44 epochs)

@@ -1,0 +1,36 @@
+resuming from epoch 13, best 1.5679, lr 1.0e-03
+[NO q1 s0] ep 13 train 1.9744 val 1.5495 lr 1.0e-03 1270s
+[NO q1 s0] ep 14 train 1.6937 val 1.5459 lr 1.0e-03 1326s
+[NO q1 s0] ep 15 train 1.6636 val 1.6752 lr 1.0e-03 1370s
+[NO q1 s0] ep 16 train 1.6732 val 1.7684 lr 1.0e-03 1411s
+[NO q1 s0] ep 17 train 1.6273 val 1.9310 lr 5.0e-04 1448s
+[NO q1 s0] ep 18 train 1.3015 val 1.2881 lr 5.0e-04 1487s
+[NO q1 s0] ep 19 train 1.2261 val 1.1862 lr 5.0e-04 1524s
+[NO q1 s0] ep 20 train 1.2353 val 1.3689 lr 5.0e-04 1559s
+[NO q1 s0] ep 21 train 1.3067 val 1.2669 lr 5.0e-04 1596s
+[NO q1 s0] ep 22 train 1.0619 val 1.4652 lr 2.5e-04 1646s
+[NO q1 s0] ep 23 train 0.9466 val 0.8840 lr 2.5e-04 1689s
+[NO q1 s0] ep 24 train 0.8765 val 0.9486 lr 2.5e-04 1718s
+[NO q1 s0] ep 25 train 0.8656 val 0.8200 lr 2.5e-04 1756s
+[NO q1 s0] ep 26 train 0.8325 val 0.9101 lr 2.5e-04 1786s
+[NO q1 s0] ep 27 train 0.8216 val 0.9490 lr 2.5e-04 1816s
+[NO q1 s0] ep 28 train 0.8796 val 0.7843 lr 2.5e-04 1845s
+[NO q1 s0] ep 29 train 0.8976 val 1.0416 lr 2.5e-04 1883s
+[NO q1 s0] ep 30 train 0.8944 val 0.9925 lr 2.5e-04 1913s
+[NO q1 s0] ep 31 train 0.9126 val 0.8670 lr 1.3e-04 1952s
+[NO q1 s0] ep 32 train 0.7157 val 0.7371 lr 1.3e-04 1987s
+[NO q1 s0] ep 33 train 0.6455 val 0.6711 lr 1.3e-04 2014s
+[NO q1 s0] ep 34 train 0.6787 val 0.7819 lr 1.3e-04 2043s
+[NO q1 s0] ep 35 train 0.6469 val 1.0471 lr 1.3e-04 2076s
+[NO q1 s0] ep 36 train 0.6400 val 0.6972 lr 6.3e-05 2107s
+[NO q1 s0] ep 37 train 0.5482 val 0.6410 lr 6.3e-05 2135s
+[NO q1 s0] ep 38 train 0.5357 val 0.6381 lr 6.3e-05 2167s
+[NO q1 s0] ep 39 train 0.5297 val 0.5867 lr 6.3e-05 2194s
+[NO q1 s0] ep 40 train 0.5356 val 0.6880 lr 6.3e-05 2219s
+[NO q1 s0] ep 41 train 0.5154 val 0.5759 lr 6.3e-05 2245s
+[NO q1 s0] ep 42 train 0.5310 val 0.5745 lr 6.3e-05 2277s
+[NO q1 s0] ep 43 train 0.5050 val 0.5650 lr 6.3e-05 2326s
+[NO q1 s0] ep 44 train 0.5137 val 0.5324 lr 6.3e-05 2366s
+[NO q1 s0] ep 45 train 0.4746 val 0.5872 lr 6.3e-05 2401s
+[NO q1 s0] ep 46 train 0.4741 val 0.5134 lr 6.3e-05 2440s
+[NO q1 s0] done best val 0.5134 (wall_cap, 47 epochs)

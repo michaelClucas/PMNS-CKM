@@ -1,0 +1,27 @@
+[IO c1 s2] ep 0 train 1.2632 val 1.0123 lr 1.0e-03 1s
+[IO c1 s2] ep 1 train 0.9265 val 0.9048 lr 1.0e-03 1s
+[IO c1 s2] ep 2 train 0.8383 val 0.8384 lr 1.0e-03 2s
+[IO c1 s2] ep 3 train 0.7642 val 0.7658 lr 1.0e-03 3s
+[IO c1 s2] ep 4 train 0.6929 val 0.7022 lr 1.0e-03 3s
+[IO c1 s2] ep 5 train 0.6483 val 0.6581 lr 1.0e-03 4s
+[IO c1 s2] ep 6 train 0.6219 val 0.6422 lr 1.0e-03 5s
+[IO c1 s2] ep 7 train 0.6059 val 0.6330 lr 1.0e-03 5s
+[IO c1 s2] ep 8 train 0.5960 val 0.6239 lr 1.0e-03 6s
+[IO c1 s2] ep 9 train 0.5888 val 0.6268 lr 1.0e-03 7s
+[IO c1 s2] ep 10 train 0.5813 val 0.6159 lr 1.0e-03 7s
+[IO c1 s2] ep 11 train 0.5779 val 0.6110 lr 1.0e-03 8s
+[IO c1 s2] ep 12 train 0.5715 val 0.6078 lr 1.0e-03 9s
+[IO c1 s2] ep 13 train 0.5707 val 0.6036 lr 1.0e-03 9s
+[IO c1 s2] ep 14 train 0.5692 val 0.6036 lr 1.0e-03 10s
+[IO c1 s2] ep 15 train 0.5664 val 0.6056 lr 1.0e-03 11s
+[IO c1 s2] ep 16 train 0.5674 val 0.6053 lr 5.0e-04 11s
+[IO c1 s2] ep 17 train 0.5591 val 0.5988 lr 5.0e-04 12s
+[IO c1 s2] ep 18 train 0.5581 val 0.5975 lr 5.0e-04 13s
+[IO c1 s2] ep 19 train 0.5553 val 0.5939 lr 5.0e-04 13s
+[IO c1 s2] ep 20 train 0.5541 val 0.5947 lr 5.0e-04 14s
+[IO c1 s2] ep 21 train 0.5545 val 0.5958 lr 5.0e-04 15s
+[IO c1 s2] ep 22 train 0.5543 val 0.5954 lr 2.5e-04 15s
+[IO c1 s2] ep 23 train 0.5510 val 0.5960 lr 2.5e-04 16s
+[IO c1 s2] ep 24 train 0.5501 val 0.5963 lr 2.5e-04 16s
+[IO c1 s2] ep 25 train 0.5490 val 0.5933 lr 2.5e-04 17s
+[IO c1 s2] done best val 0.5939 (early_stop, 26 epochs)

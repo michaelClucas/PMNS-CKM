@@ -4,6 +4,7 @@ All quantities are in bits (log base 2).
 
     pmns_data_bits(ordering)                  information the PMNS measurements hold vs Haar
     null_info(real_chi2, fake_chi2s)          B_ckm, S_rank and the null rate with a CP interval
+    log_ratio_rank(real_T, fake_Ts, unit)     the same for a log-likelihood-ratio statistic T (exp 030)
     predictive_gain(post, prior, x_obs, sigma, periodic=None)   G_pred
     kl_shift(post, prior, n_bins=40)          KL(posterior predictive || prior predictive)
     i_gauss(r2)                               Gaussian-channel bits of an explained variance
@@ -44,8 +45,8 @@ from . import data as _data
 
 LN2 = math.log(2)
 
-__all__ = ["pmns_data_bits", "null_info", "predictive_gain", "kl_shift", "i_gauss", "sharing_net_bits",
-           "logmeanexp", "cp_interval"]
+__all__ = ["pmns_data_bits", "null_info", "log_ratio_rank", "predictive_gain", "kl_shift", "i_gauss",
+           "sharing_net_bits", "logmeanexp", "cp_interval"]
 
 
 def logmeanexp(a) -> float:
@@ -100,6 +101,37 @@ def null_info(real_chi2: float, fake_chi2s: Iterable[float]) -> dict:
     return dict(real_chi2=float(real_chi2), n=n, hits=h, rate=h / n, rate_ci95=[lo, hi],
                 S_rank=float(-math.log2(max(h, 0.5) / n)), S_rank_max_ci=float(-math.log2(max(lo, 0.5 / n))),
                 B_ckm=float(B), fake_median=float(np.median(fakes)))
+
+
+def log_ratio_rank(real_T: float, fake_Ts: Iterable[float], unit: str = "nats") -> dict:
+    """Rank of a real log-ratio statistic among fakes, with the CP interval and B_ckm (exp 030).
+
+    T is a log likelihood ratio where larger means the real CKM explains the PMNS data better,
+    e.g. exp 025's flow statistic T = log q1(PMNS | CKM, m) - log q0(PMNS | m) evaluated with the
+    real CKM (real_T) and with each N1 fake CKM (fake_Ts). unit: "nats" or "bits" (both inputs).
+    Non-finite fakes are dropped. Returns (bits throughout):
+      n, hits = #(fake T >= real T), rate = hits / n, rate_ci95 (two-sided CP),
+      S_rank = -log2(max(hits, 0.5) / n), S_rank_max_ci = -log2(max(CP lower, 0.5 / n)),
+      B_ckm = log2[ exp(T_real) / mean exp(T_fake) ]   (T in nats inside the exponentials),
+      real_T_bits, fake_T_bits_median, fake_T_bits_q05_q95.
+    This is null_info with chi2 = -2 T (identical hits, rate, S_rank, B_ckm); it replaces the
+    chi2 = -2 T workaround of exp 025 analyze.py."""
+    if unit not in ("nats", "bits"):
+        raise ValueError("unit must be 'nats' or 'bits'")
+    f = LN2 if unit == "bits" else 1.0  # -> nats
+    fakes = np.asarray([t for t in fake_Ts if np.isfinite(t)], float) * f
+    n = len(fakes)
+    if n == 0:
+        raise ValueError("no finite fake statistics")
+    r = float(real_T) * f
+    h = int(np.sum(fakes >= r))
+    lo, hi = cp_interval(h, n)
+    B = (r - logmeanexp(fakes)) / LN2
+    fb = fakes / LN2
+    return dict(real_T_bits=r / LN2, n=n, hits=h, rate=h / n, rate_ci95=[lo, hi],
+                S_rank=float(-math.log2(max(h, 0.5) / n)), S_rank_max_ci=float(-math.log2(max(lo, 0.5 / n))),
+                B_ckm=float(B), fake_T_bits_median=float(np.median(fb)),
+                fake_T_bits_q05_q95=[float(np.quantile(fb, 0.05)), float(np.quantile(fb, 0.95))])
 
 
 def _chi2(Z, x_obs, sigma, periodic):

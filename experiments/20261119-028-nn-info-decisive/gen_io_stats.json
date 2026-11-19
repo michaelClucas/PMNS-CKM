@@ -1,0 +1,60 @@
+{
+ "n_target": 6000,
+ "n_per_family": {
+  "F1": 6000,
+  "F2": 6000,
+  "GEN": 2897,
+  "CTRL": 2760,
+  "MN": 6000
+ },
+ "families": [
+  "F1",
+  "F2",
+  "GEN",
+  "CTRL",
+  "MN"
+ ],
+ "wall_cap_s": 900.0,
+ "stats": {
+  "F1": {
+   "n_raw": 16000,
+   "n_pass_io": 7958,
+   "kept": 6000,
+   "acceptance_io": 0.497375,
+   "seconds": 4.525220632553101,
+   "included": true
+  },
+  "F2": {
+   "n_raw": 16000,
+   "n_pass_io": 7823,
+   "kept": 6000,
+   "acceptance_io": 0.4889375,
+   "seconds": 6.897303819656372,
+   "included": true
+  },
+  "GEN": {
+   "n_raw": 11800000,
+   "n_pass_io": 2897,
+   "kept": 2897,
+   "acceptance_io": 0.0002455084745762712,
+   "seconds": 901.9975564479828,
+   "included": true
+  },
+  "CTRL": {
+   "n_raw": 9300000,
+   "n_pass_io": 2760,
+   "kept": 2760,
+   "acceptance_io": 0.0002967741935483871,
+   "seconds": 901.6906821727753,
+   "included": true
+  },
+  "MN": {
+   "n_raw": 13250000,
+   "n_pass_io": 6009,
+   "kept": 6000,
+   "acceptance_io": 0.0004535094339622641,
+   "seconds": 411.7130198478699,
+   "included": true
+  }
+ }
+}
