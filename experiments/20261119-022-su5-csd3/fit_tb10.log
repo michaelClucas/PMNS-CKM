@@ -1,0 +1,19 @@
+[tb10] chi2 22.565 chi2_global 22.565 N 14 k 10 (cont 9) dof 5 p 0.0004087 p_global 0.0004087 max|pull| 2.64 fit_ok False compression_ok True
+   pull ckm_s12        -0.03   pred(GUT) 0.22513
+   pull ckm_s13        +0.00   pred(GUT) 0.00349354
+   pull ckm_s23        +0.00   pred(GUT) 0.0388903
+   pull ckm_delta_rad  -0.13   pred(GUT) 1.1509
+   pull s12sq          +1.39   pred(GUT) 0.317758
+   pull s13sq          +0.36   pred(GUT) 0.0226996
+   pull s23sq          +1.64   pred(GUT) 0.513323
+   pull dcp_deg        +1.95   pred(GUT) 273.256
+   pull dm_ratio       -0.32   pred(GUT) 0.029705
+   pull mr_u_c         -0.00   pred(GUT) 0.00197511
+   pull mr_c_t         -0.00   pred(GUT) 0.00276962
+   pull mr_d_s         -2.64   pred(GUT) 0.0471056
+   pull mr_e_mu        +1.82   pred(GUT) 0.0049169
+   pull mr_mu_tau      -0.00   pred(GUT) 0.0586097
+   R(GUT pred) 0.10438  R pull +4.34
+   theta12e 2.673e-04 rad  theta23e 0.000e+00 rad
+   params {"u11": 1.4176, "u12": 1.20785, "u13": 1.28655, "u22": 1.18688, "u23": 0.64488, "d11": 2.16453, "d12": 0.79529, "d22": 1.08376, "r": 0.10092}
+   best starts [22.565, 11905.935, 13776.68, 13776.68, 13777.14, 18934.608]  (964 s, nfev 353795)

@@ -1,0 +1,32 @@
+{
+  "_source": "arXiv:1705.01555v2 Tables 2-3 (GUT scale, MSSM tan beta = 5, M_SUSY = 1 TeV, eta_b = -0.8; neutrino data NuFIT 3.0). Published fit inputs, transcribed from the LaTeX source. Not measured values of this repo; used only to reproduce the paper.",
+  "observables": {
+    "th12l_deg": [33.57, 32.81, 34.32],
+    "th13l_deg": [8.460, 8.310, 8.610],
+    "th23l_deg": [41.75, 40.40, 43.10],
+    "ye_1e-5": [1.017, 1.011, 1.023],
+    "ymu_1e-3": [2.147, 2.134, 2.160],
+    "ytau_1e-2": [3.654, 3.635, 3.673],
+    "dm21_1e-5eV2": [7.510, 7.330, 7.690],
+    "dm31_1e-3eV2": [2.524, 2.484, 2.564],
+    "th12q_deg": [13.03, 12.99, 13.07],
+    "th13q_deg": [0.039, 0.037, 0.040],
+    "th23q_deg": [0.445, 0.438, 0.452],
+    "dq_deg": [69.22, 66.12, 72.31],
+    "yu_1e-6": [2.988, 2.062, 3.915],
+    "yc_1e-3": [1.462, 1.411, 1.512],
+    "yt": [0.549, 0.542, 0.556],
+    "yd_1e-5": [2.485, 2.212, 2.758],
+    "ys_1e-4": [4.922, 4.656, 5.188],
+    "yb": [0.141, 0.136, 0.146]
+  },
+  "published_best_fit": {
+    "th12l_deg": 33.62, "th13l_deg": 8.455, "th23l_deg": 41.96, "dl_deg": 300.9,
+    "ye_1e-5": 1.017, "ymu_1e-3": 2.147, "ytau_1e-2": 3.654,
+    "dm21_1e-5eV2": 7.515, "dm31_1e-3eV2": 2.523, "m1_meV": 0.441, "m2_meV": 8.680, "m3_meV": 50.24,
+    "alpha21_deg": 67.90, "alpha31_deg": 164.2,
+    "th12q_deg": 13.02, "th13q_deg": 0.039, "th23q_deg": 0.439, "dq_deg": 69.21,
+    "yu_1e-6": 3.012, "yc_1e-3": 1.493, "yt": 0.547, "yd_1e-5": 2.710, "ys_1e-4": 5.168, "yb": 0.137,
+    "chi2_total": 3.4, "chi2_quark": 3.38, "chi2_lepton": 0.03
+  }
+}

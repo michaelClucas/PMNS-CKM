@@ -62,7 +62,7 @@ MASSES = {"m_e/m_mu": {"value": 0.004836, "err_plus": 1e-6, "err_minus": 1e-6}}
 
 
 def test_objective_total_and_pulls():
-    obj = Objective(ckm=CKM, pmns_delta_chi2=fake_pmns, pmns_ordering="NO",
+    obj = Objective(ckm=CKM, pmns_delta_chi2=fake_pmns, pmns_ordering="NO", pmns_mode="sum1d",
                     pmns_best={"s12sq": 0.30, "dcp_deg": 200.0}, masses=MASSES)
     assert obj.n_obs == 3 + 4 + 1
     pred = {"Vus": 0.2257, "Vcb": 0.0418 - 0.0014, "Vub": 0.00369,

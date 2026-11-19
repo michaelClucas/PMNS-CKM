@@ -1,0 +1,8 @@
+2026-11-19T18:37:29Z pre-registration README.md written (sha256 3cea8ea1c80d4164); no fits run yet
+2026-11-19T18:38:40Z step 2 reproduce.py: published tb=5 benchmark reproduced (all outputs within 0.6%); convention CONJ=False NUCONJ=False is the only one matching both published phase signs; see reproduce.log
+2026-11-19T18:38:51Z step 3 fits started: primary | v1 | tb10 | alt+eta_minus (4 processes, 1 thread each, 48 Sobol starts + paper start, seed 22); logs fit_<tag>.log
+2026-11-19T18:55:39Z tb10 fit done (Nelder-Mead: only the paper start converged, others stuck at chi2 > 1e4); launched de.py primary 1 (differential evolution cross-check, optimizer only, structure unchanged)
+2026-11-19T18:59:50Z primary fit done (chi2 22.402, p_global 4.4e-4). DE cross-check stuck at 13777 plateau (landscape rugged). bound.py: structural lower bound chi2 >= 14.71 (p <= 0.012). Launched perturb.py seeds 1,2 (40 starts each) as basin check.
+2026-11-19T19:12:35Z v1 chi2 95.99; alt chi2 21.35; eta_minus chi2 31.52; tb10 chi2 22.57. Verdict written; perturb.py seeds 1,2 still running in background at handback (write perturb_s*.json/log).
+2026-11-19T19:13:08Z perturb seed 1: 40 starts, best 22.402 = primary (basin confirmed)
+2026-11-19T19:13:57Z perturb seed 2: 40 starts, best 22.402 = primary. No background jobs remain.

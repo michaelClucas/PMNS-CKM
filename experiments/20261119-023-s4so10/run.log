@@ -1,0 +1,34 @@
+ebfree chi2 4.419 N 16 k_cont 17 eta_b -0.939 max|pull| 1.36 starts [4.4, 5.7, 6.1, 7.0, 7.0, 8.7, 9.5, 9.6]
+{'ckm_s12': -0.35, 'ckm_s13': 0.07, 'ckm_s23': -0.11, 'ckm_delta_rad': -0.06, 's12sq': 0.13, 's13sq': -0.13, 's23sq': -1.33, 'dcp_deg': 1.0, 'dm_ratio': -0.0, 'mr_u_c': 0.03, 'mr_c_t': 0.21, 'mr_d_s': 1.36, 'mr_s_b': -0.17, 'mr_e_mu': 0.01, 'mr_mu_tau': 0.07, 'mr_b_tau': -0.0}
+eb0 chi2 212.077 N 16 k_cont 16 eta_b 0.0 max|pull| 12.03 starts [212.1, 213.0, 220.3, 221.2, 222.3, 225.9, 231.0, 312.8]
+{'ckm_s12': -0.5, 'ckm_s13': 3.33, 'ckm_s23': -12.03, 'ckm_delta_rad': 0.1, 's12sq': 0.1, 's13sq': 0.03, 's23sq': -0.31, 'dcp_deg': 1.94, 'dm_ratio': -0.0, 'mr_u_c': -0.31, 'mr_c_t': 1.97, 'mr_d_s': 0.83, 'mr_s_b': 6.96, 'mr_e_mu': -0.01, 'mr_mu_tau': -0.12, 'mr_b_tau': 0.57}
+eb08 chi2 9.533 N 16 k_cont 17 eta_b -0.8 max|pull| 1.93 starts [9.5, 10.2, 10.4, 12.2, 13.2, 14.5, 16.4, 16.8]
+{'ckm_s12': -0.34, 'ckm_s13': 0.32, 'ckm_s23': -1.56, 'ckm_delta_rad': 0.15, 's12sq': 0.12, 's13sq': 0.0, 's23sq': -0.49, 'dcp_deg': 1.93, 'dm_ratio': -0.02, 'mr_u_c': -0.07, 'mr_c_t': 0.87, 'mr_d_s': 1.26, 'mr_s_b': 0.85, 'mr_e_mu': -0.0, 'mr_mu_tau': -0.0, 'mr_b_tau': 0.14}
+real_ebfree chi2 167.878 N 16 k_cont 11 eta_b -0.895 max|pull| 7.67 starts [167.9, 210.4, 241.3, 241.9, 585.2, 650.2, 699.1, 699.2]
+{'ckm_s12': -0.67, 'ckm_s13': 2.01, 'ckm_s23': 0.04, 'ckm_delta_rad': -1.33, 's12sq': 7.67, 's13sq': -5.86, 's23sq': -6.76, 'dcp_deg': 1.96, 'dm_ratio': 3.49, 'mr_u_c': 0.12, 'mr_c_t': 0.07, 'mr_d_s': 1.84, 'mr_s_b': -2.38, 'mr_e_mu': -0.91, 'mr_mu_tau': -0.84, 'mr_b_tau': -0.16}
+real_eb0 chi2 520.123 N 16 k_cont 10 eta_b 0.0 max|pull| 16.83 starts [520.1, 531.7, 687.9, 771.3, 771.3, 771.3, 806.3, 879.9]
+{'ckm_s12': -1.3, 'ckm_s13': 7.42, 'ckm_s23': -16.83, 'ckm_delta_rad': -0.29, 's12sq': 8.72, 's13sq': -5.19, 's23sq': -5.34, 'dcp_deg': 1.96, 'dm_ratio': 3.22, 'mr_u_c': -0.3, 'mr_c_t': 1.96, 'mr_d_s': 2.38, 'mr_s_b': 5.04, 'mr_e_mu': -0.95, 'mr_mu_tau': -0.85, 'mr_b_tau': 0.61}
+published_point        |C12| 1.314 (+1.00pi) |C22| 3.221 (-0.35pi) |C33| 0.242 R_MZ 0.0899 pull -1.43 (src -1.57)
+refit_paper_inputs     |C12| 1.325 (+1.00pi) |C22| 3.306 (-0.36pi) |C33| 0.244 R_MZ 0.0903 pull -1.29 (src -1.42)
+fit_eb0                |C12| 1.132 (+0.00pi) |C22| 2.393 (+0.54pi) |C33| 1.199 R_MZ 0.0918 pull -0.75 (src -0.81)
+fit_eb08               |C12| 1.328 (+1.00pi) |C22| 3.132 (-0.37pi) |C33| 0.233 R_MZ 0.0908 pull -1.12 (src -1.23)
+fit_ebfree             |C12| 1.305 (+1.00pi) |C22| 10.787 (+0.41pi) |C33| 0.080 R_MZ 0.0906 pull -1.19 (src -1.31)
+fit_real_eb0           |C12| 1.174 (+0.00pi) |C22| 2.173 (-1.00pi) |C33| 1.152 R_MZ 0.0866 pull -2.66 (src -2.93)
+fit_real_ebfree        |C12| 1.414 (+1.00pi) |C22| 28.252 (-1.00pi) |C33| 0.122 R_MZ 0.0879 pull -2.20 (src -2.42)
+Z3 eb08 best (1, 0, 0, 1, 1, 0) chi2 36.955 N 16 k_cont 11 bits 10 p 6.115633597956624e-07 max|pull| 4.19
+{'ckm_s12': -0.49, 'ckm_s13': 1.79, 'ckm_s23': -4.19, 'ckm_delta_rad': -0.02, 's12sq': -0.0, 's13sq': 1.74, 's23sq': -0.51, 'dcp_deg': 1.78, 'dm_ratio': -1.32, 'mr_u_c': -0.21, 'mr_c_t': 2.15, 'mr_d_s': 1.48, 'mr_s_b': 1.15, 'mr_e_mu': -0.08, 'mr_mu_tau': 0.08, 'mr_b_tau': 0.23}
+{"acceptance": [0.215375, 0.065825, 0.274, 0.085325], "n_samples": 5332, "chi2_ql_quantiles": [6.891253501926913, 15.369699063918526, 24.934132300559813], "frac_inside_nufit_3sigma_1d": {"s12sq": 0.20292573143285822, "s13sq": 0.018754688672168042, "s23sq": 0.20573893473368343}, "frac_all_three_angles_3sigma": 0.0007501875468867217}
+s12sq {'q025': 0.0018, 'q16': 0.0317, 'median': 0.2988, 'q84': 0.3928, 'q975': 0.5116}
+s13sq {'q025': 0.0, 'q16': 0.0022, 'median': 0.027, 'q84': 0.0849, 'q975': 0.0986}
+s23sq {'q025': 0.0027, 'q16': 0.0401, 'median': 0.1122, 'q84': 0.4788, 'q975': 0.5692}
+dcp_deg {'q025': 2.4179, 'q16': 46.1657, 'median': 227.045, 'q84': 333.0918, 'q975': 355.8468}
+dm_ratio {'q025': 0.0, 'q16': 0.0, 'median': 0.0021, 'q84': 0.0357, 'q975': 0.1813}
+<venv>/site-packages\numpy\lib\_function_base_impl.py:4609: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+{"acceptance": [0.06765, 0.0, 0.0557, 0.061525], "n_samples": 5332, "chi2_ql_quantiles": [7.177318501419835, 18.696015991755004, NaN], "frac_inside_nufit_3sigma_1d": {"s12sq": 0.0, "s13sq": 0.010502625656414103, "s23sq": 0.1389722430607652}, "frac_all_three_angles_3sigma": 0.0}
+s12sq {'q025': 0.0011, 'q16': 0.0113, 'median': 0.0374, 'q84': 0.2869, 'q975': 0.2869}
+s13sq {'q025': 0.0002, 'q16': 0.0014, 'median': 0.0057, 'q84': 0.0788, 'q975': 0.0788}
+s23sq {'q025': 0.0264, 'q16': 0.0425, 'median': 0.0688, 'q84': 0.5627, 'q975': 0.6213}
+dcp_deg {'q025': 8.7111, 'q16': 68.0368, 'median': 193.6072, 'q84': 324.5125, 'q975': 352.3715}
+dm_ratio {'q025': 0.0, 'q16': 0.0, 'median': 0.0297, 'q84': 0.0302, 'q975': 0.0307}
+ALLDONE

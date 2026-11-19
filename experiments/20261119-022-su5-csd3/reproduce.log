@@ -1,0 +1,24 @@
+conj=False nuconj=False: dq=69.18 dl=-86.71 signs_match=True
+conj=False nuconj=True: dq=69.18 dl=86.69 signs_match=False
+conj=True nuconj=False: dq=-69.18 dl=86.71 signs_match=False
+conj=True nuconj=True: dq=-69.18 dl=-86.69 signs_match=False
+
+quantity      ours(tb5)      published   rel.diff
+th12q               13.03       13.027   +0.021%
+th13q             0.18021       0.1802   +0.003%
+th23q              2.0542        2.054   +0.009%
+dq                  69.18        69.18   +0.000%
+th12l               34.31         34.3   +0.030%
+th13l              8.6734         8.67   +0.039%
+th23l              45.771         45.8   -0.062%
+dl                -86.713        -86.7   -0.015%
+dm21           7.3803e-05     7.38e-05   +0.005%
+dm31            0.0024807      0.00248   +0.028%
+yu/yc           0.0020431     0.002042   +0.056%
+yc/yt           0.0026803    0.0026779   +0.090%
+yd/ys            0.045256     0.045216   +0.090%
+ys/yb            0.013429     0.013489   -0.446%
+ye/ymu          0.0047385    0.0047356   +0.062%
+ymu/ytau         0.058693     0.059007   -0.532%
+theta12e = 2.649e-04 rad, theta23e = 0.000e+00 rad
+tb10: {'th12q': 13.03345, 'th13q': 0.18017, 'th23q': 2.05406, 'dq': 69.17895}

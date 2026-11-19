@@ -1,0 +1,3 @@
+[DE primary seed 1] DE chi2 13777.149 -> polished inf p_global 0 max|pull| inf (152 s, DE nfev 70610)
+   params {"u11": -0.5788, "u12": 2.641, "u13": -5.2519, "u22": -3.19, "u23": -1.7338, "d11": 8.2433, "d12": 1.5487, "d22": -0.0251, "r": 0.0232}
+   pulls {"ckm_s12": 1137.2, "ckm_s13": 100.06, "ckm_s23": 78.33, "ckm_delta_rad": -74.65, "s12sq": -5.05, "s13sq": -0.63, "s23sq": 0.08, "dcp_deg": 1.46, "dm_ratio": -Infinity, "mr_u_c": 136.96, "mr_c_t": 278.75, "mr_d_s": -25.68, "mr_e_mu": 330.17, "mr_mu_tau": -44.53}

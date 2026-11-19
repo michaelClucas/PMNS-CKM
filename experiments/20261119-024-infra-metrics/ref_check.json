@@ -1,0 +1,36 @@
+{
+ "n_numbers": 148,
+ "sections": {
+  "mr_MZ": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "mr_MZ_corr": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "yukawa_MZ_rel_err": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "dm_NO": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "dm_IO": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "running_SM_2e16": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  },
+  "running_MSSM_tb10_2e16": {
+   "max_abs": 0.0,
+   "max_rel": 0.0
+  }
+ },
+ "max_abs_all": 0.0,
+ "max_rel_all": 0.0,
+ "pass_1e-9": true
+}

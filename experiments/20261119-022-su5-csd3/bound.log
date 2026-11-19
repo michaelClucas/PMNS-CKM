@@ -1,0 +1,4 @@
+IC23_woSKatm 5 {"lepton_chi2_min": 12.0919, "r": 0.1009, "R_min_pull": 1.6179, "chi2_lower_bound": 14.7093, "p_upper_bound_dof5": 0.0117}
+IC23_woSKatm 10 {"lepton_chi2_min": 12.2517, "r": 0.1009, "R_min_pull": 1.6184, "chi2_lower_bound": 14.8709, "p_upper_bound_dof5": 0.0109}
+IC24_wSKatm 5 {"lepton_chi2_min": 11.0368, "r": 0.101, "R_min_pull": 1.6179, "chi2_lower_bound": 13.6542, "p_upper_bound_dof5": 0.018}
+IC24_wSKatm 10 {"lepton_chi2_min": 11.1725, "r": 0.1009, "R_min_pull": 1.6184, "chi2_lower_bound": 13.7918, "p_upper_bound_dof5": 0.017}

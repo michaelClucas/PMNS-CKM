@@ -107,6 +107,23 @@ with each other (the covariance accounts for it).
 Under mass_records overrides (src.nulls universes) the central values are recomputed from
 the overridden masses and the covariance keeps the real data's relative (log) covariance.
 
+Clebsch double ratio (exp 024)
+------------------------------
+  R_clebsch     R = (m_e/m_mu) / (m_d/m_s) at M_Z = mr_e_mu / mr_d_s (exp 021). RG-invariant
+                at one loop in the SM and threshold-invariant for the first two generations,
+                so GUT Clebsch pairs can be screened on it before any fit.
+A "derived" key of the mass-ratio block: log R = log mr_e_mu - log mr_d_s
+(DERIVED_RATIO_KEYS gives the log coefficients). It joins the same correlated Gaussian block,
+its log variance and covariances follow by linear propagation of cov_log, and mass_floor
+applies to the R key itself (f^2 added to its log variance, like any mr_* key). Alias atoms:
+{mass:e, mass:mu, mass:d, mass:s}. It may be scored with other mr_* keys, but the block's log
+coefficient rows must be linearly independent: R with both mr_e_mu and mr_d_s raises
+AliasError (that would score the same information twice). Exp 021 quoted R = 0.0938 +- 0.0027
+with a 2% floor on each of m_d and m_s (sqrt(2) * 2% on R, PDG errors replaced); this module
+adds the floor in quadrature to the PDG-propagated error instead (mass_floor=0.02 gives
++-0.0024; mass_floor={"R_clebsch": 0.02 * sqrt(2)} gives +-0.0031).
+Scale translation: multiplicative, factor = factor(mr_e_mu) / factor(mr_d_s).
+
 Neutrino mass splittings (exp 019)
 ----------------------------------
   dm21sq_eV2    Delta m^2_21 (eV^2), NuFIT 1D profile (DMS table)
@@ -169,9 +186,13 @@ from .stats import Objective, _as_int, p_value
 PMNS_KEYS = ("s12sq", "s13sq", "s23sq", "dcp_deg")
 DM_KEYS = ("dm21sq_eV2", "dm3l_sq_eV2", "dm_ratio")
 MASS_RATIO_KEYS = tuple(_rg.MASS_RATIO_KEYS)
+# log-linear combinations of the mr_* ratios scored in the same correlated block (exp 024)
+DERIVED_RATIO_KEYS = {"R_clebsch": {"mr_e_mu": 1.0, "mr_d_s": -1.0}}
 _MR_FLAVOURS = {k: frozenset(k[3:].split("_")) for k in MASS_RATIO_KEYS}
+_MR_FLAVOURS.update({k: frozenset().union(*(_MR_FLAVOURS[b] for b in c)) for k, c in DERIVED_RATIO_KEYS.items()})
+MR_BLOCK_KEYS = MASS_RATIO_KEYS + tuple(DERIVED_RATIO_KEYS)
 SCALE_ADDITIVE = PMNS_KEYS + ("ckm_s12", "ckm_s13", "ckm_s23", "ckm_delta_rad")
-SCALE_MULTIPLICATIVE = ("ckm_J",) + MASS_RATIO_KEYS + DM_KEYS
+SCALE_MULTIPLICATIVE = ("ckm_J",) + MR_BLOCK_KEYS + DM_KEYS
 SCALE_DEFAULTS = {"mu": None, "model": "SM", "tan_beta": None, "m_susy": 3000.0, "m_lightest": 0.0,
                   "majorana": (0.0, 0.0), "sys_frac": 0.05}
 CHI2_CAP = 1e4  # floor added to a Gaussian fallback when a point is outside the NuFIT tables (minimizer only)
@@ -215,14 +236,14 @@ def _gauss_records():
 
 def observable_keys():
     """All observable names evaluate() understands."""
-    return PMNS_KEYS + DM_KEYS + MASS_RATIO_KEYS + tuple(_gauss_records())
+    return PMNS_KEYS + DM_KEYS + MR_BLOCK_KEYS + tuple(_gauss_records())
 
 
 def _check_names(names, what):
     known = set(observable_keys())
     bad = [n for n in names if n not in known]
     if bad:
-        raise KeyError(f"unknown {what}: {bad}. Known: PMNS {PMNS_KEYS}, {DM_KEYS}, {MASS_RATIO_KEYS}, "
+        raise KeyError(f"unknown {what}: {bad}. Known: PMNS {PMNS_KEYS}, {DM_KEYS}, {MR_BLOCK_KEYS}, "
                        f"ckm_<load_ckm name>, <load_masses name>")
 
 
@@ -355,7 +376,23 @@ def _check_observables_cached(use, inputs):
     if g_use and _numrank(g_use + g_in) != _numrank(g_in) + len(g_use):
         raise AliasError(f"CKM global-fit keys {g_use} (with inputs {g_in}) are not independent "
                          "functions of (lambda, A, rhobar, etabar)")
+    _check_mr_rank(use)
     return True
+
+
+def mr_coefficients(key) -> np.ndarray:
+    """Log coefficients of a mass-ratio block key over MASS_RATIO_KEYS (unit row for mr_*)."""
+    c = DERIVED_RATIO_KEYS.get(key, {key: 1.0})
+    return np.array([c.get(m, 0.0) for m in MASS_RATIO_KEYS])
+
+
+def _check_mr_rank(use):
+    blk = [u for u in use if u in MR_BLOCK_KEYS]
+    if any(u in DERIVED_RATIO_KEYS for u in blk):
+        C = np.array([mr_coefficients(u) for u in blk])
+        if np.linalg.matrix_rank(C) < len(blk):
+            raise AliasError(f"mass-ratio keys {blk} are not independent in log space (e.g. R_clebsch with "
+                             "both mr_e_mu and mr_d_s); score at most two of the three")
 
 
 def check_observables(use: Sequence[str], inputs: Sequence[str] = ()):
@@ -482,6 +519,14 @@ def mass_ratio_targets(mass_records=None) -> tuple:
     return dict(vals), names, cov_log
 
 
+def mr_block_values(vals) -> dict:
+    """{mr_* and derived key: value} from {mr_*: value} (DERIVED_RATIO_KEYS)."""
+    out = dict(vals)
+    for k, c in DERIVED_RATIO_KEYS.items():
+        out[k] = float(np.exp(sum(w * np.log(vals[b]) for b, w in c.items())))
+    return out
+
+
 @functools.lru_cache(maxsize=None)
 def _dm_ratio_grid(ordering, analysis):
     x, y = _data.pmns_profile_1d(ordering, "dm3l_sq_eV2", analysis=analysis)  # x in 1e-3 eV^2
@@ -574,6 +619,8 @@ def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fce
     rhi = _rg.mass_ratios(mu, model, tb, msusy, ckm=fckm, masses=masses, errors=False)["value"]
     for k in MASS_RATIO_KEYS:
         out[k] = float(rlo[k] / rhi[k])
+    for k, c in DERIVED_RATIO_KEYS.items():
+        out[k] = float(np.prod([out[b] ** w for b, w in c.items()]))
     return out
 
 
@@ -652,7 +699,7 @@ class Scorer:
         self._ckm_delta_centre = ckm["ckm_delta_rad"]["value"] if "ckm_delta_rad" in ckm else None
         self.pmns_use = tuple(p for p in PMNS_KEYS if p in use)
         self.dm_use = tuple(p for p in DM_KEYS if p in use)
-        self.mr_use = tuple(p for p in MASS_RATIO_KEYS if p in use)
+        self.mr_use = tuple(p for p in MR_BLOCK_KEYS if p in use)
         self.best = dict(pmns_centre) if pmns_centre is not None else pmns_best(ordering, analysis)
         if pmns_fn is None:
             pmns_fn = functools.partial(_data.pmns_delta_chi2, analysis=analysis, relative_to="local")
@@ -670,8 +717,13 @@ class Scorer:
             self._dm_best = _dm_best(ordering, analysis)
         if self.mr_use:
             vals, names, cov_log = mass_ratio_targets(mass_records)
-            idx = [names.index(n) for n in self.mr_use]
-            cl = cov_log[np.ix_(idx, idx)].copy()
+            if any(n in DERIVED_RATIO_KEYS for n in self.mr_use):
+                vals = mr_block_values(vals)
+                C = np.array([[DERIVED_RATIO_KEYS.get(n, {n: 1.0}).get(m, 0.0) for m in names] for n in self.mr_use])
+                cl = C @ cov_log @ C.T
+            else:  # unchanged pre-exp-024 path (bit-identical scores)
+                idx = [names.index(n) for n in self.mr_use]
+                cl = cov_log[np.ix_(idx, idx)].copy()
             cl[np.diag_indices_from(cl)] += np.array([_floor_of(self.mass_floor, n) ** 2 for n in self.mr_use])
             v = np.array([vals[n] for n in self.mr_use])
             self._mr_value = v

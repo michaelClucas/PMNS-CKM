@@ -1,0 +1,38 @@
+[alt] chi2 21.347 chi2_global 21.347 N 14 k 10 (cont 9) dof 5 p 0.0006964 p_global 0.0006964 max|pull| 2.64 fit_ok False compression_ok True
+   pull ckm_s12        -0.03   pred(GUT) 0.225129
+   pull ckm_s13        +0.00   pred(GUT) 0.00348057
+   pull ckm_s23        -0.00   pred(GUT) 0.0387459
+   pull ckm_delta_rad  -0.13   pred(GUT) 1.15083
+   pull s12sq          +1.34   pred(GUT) 0.317731
+   pull s13sq          +0.48   pred(GUT) 0.0227378
+   pull s23sq          +1.61   pred(GUT) 0.51345
+   pull dcp_deg        +1.68   pred(GUT) 273.284
+   pull dm_ratio       -0.44   pred(GUT) 0.0297467
+   pull mr_u_c         +0.00   pred(GUT) 0.00197514
+   pull mr_c_t         -0.00   pred(GUT) 0.00273245
+   pull mr_d_s         -2.64   pred(GUT) 0.0471057
+   pull mr_e_mu        +1.82   pred(GUT) 0.00491689
+   pull mr_mu_tau      +0.00   pred(GUT) 0.0588011
+   R(GUT pred) 0.10438  R pull +4.34
+   theta12e 2.673e-04 rad  theta23e 0.000e+00 rad
+   params {"u11": 1.40784, "u12": 1.19631, "u13": 1.2816, "u22": 1.17346, "u23": 0.64251, "d11": 2.17159, "d12": 0.79786, "d22": 1.0873, "r": 0.10101}
+   best starts [21.347, 8217.79, 13930.963, 13931.201, 14977.634, 15351.367]  (1073 s, nfev 410253)
+[eta_minus] chi2 31.520 chi2_global 31.520 N 14 k 10 (cont 9) dof 5 p 7.394e-06 p_global 7.394e-06 max|pull| 3.36 fit_ok False compression_ok True
+   pull ckm_s12        -0.03   pred(GUT) 0.22513
+   pull ckm_s13        -0.00   pred(GUT) 0.00348053
+   pull ckm_s23        -0.00   pred(GUT) 0.0387451
+   pull ckm_delta_rad  -0.13   pred(GUT) 1.15082
+   pull s12sq          +1.34   pred(GUT) 0.317757
+   pull s13sq          +0.36   pred(GUT) 0.0226999
+   pull s23sq          +1.64   pred(GUT) 0.513688
+   pull dcp_deg        -3.36   pred(GUT) 86.654
+   pull dm_ratio       -0.21   pred(GUT) 0.0298093
+   pull mr_u_c         -0.00   pred(GUT) 0.00197509
+   pull mr_c_t         +0.00   pred(GUT) 0.00273246
+   pull mr_d_s         -2.64   pred(GUT) 0.0471072
+   pull mr_e_mu        +1.82   pred(GUT) 0.00491704
+   pull mr_mu_tau      +0.00   pred(GUT) 0.0588018
+   R(GUT pred) 0.10438  R pull +4.34
+   theta12e 2.673e-04 rad  theta23e 0.000e+00 rad
+   params {"u11": 1.40764, "u12": 1.19619, "u13": 1.28153, "u22": 1.17344, "u23": 0.64249, "d11": 2.17168, "d12": 0.79787, "d22": 1.08732, "r": 0.10114}
+   best starts [31.52, 4694.588, 13964.691, 13964.728, 15021.314, 15188.259]  (894 s, nfev 325616)
