@@ -1,0 +1,65 @@
+== FM (BM + th12e = th_C), phi=0.00  params={'phi': 0.0}
+   obs: {'s12sq': np.float64(0.34083), 's13sq': np.float64(0.02535), 's23sq': np.float64(0.48699), 'dcp_deg': np.float64(180.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.04', 's13sq': '+0.273', 's23sq': '-0.00403', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 7.71, 's13sq': 41.33, 's23sq': 0.6, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+   = F2(BM, c12=1, phi): True
+== FM (BM + th12e = th_C), phi=3.14  params={'phi': 3.141592653589793}
+   obs: {'s12sq': np.float64(0.65917), 's13sq': np.float64(0.02535), 's23sq': np.float64(0.48699), 'dcp_deg': np.float64(0.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(0.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.04', 's13sq': '+0.273', 's23sq': '-0.00403', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 7.71, 's13sq': 41.33, 's23sq': 0.6, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+   = F2(BM, c12=1, phi): True
+== AKM (BM + th12e = 1.5 th_C), phi=0.00  params={'phi': 0.0}
+   obs: {'s12sq': np.float64(0.25538), 's13sq': np.float64(0.05098), 's23sq': np.float64(0.41981), 'dcp_deg': np.float64(180.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0631', 's13sq': '+0.49', 's23sq': '-0.0244', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 11.79, 's13sq': 78.9, 's23sq': 3.66, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+   vs F2(BM, c12=3/2, c23=0, phi): max|d|U_ij||^2 = 0.05061104456698906
+== AKM (BM + th12e = 1.5 th_C), phi=3.14  params={'phi': 3.141592653589793}
+   obs: {'s12sq': np.float64(0.74462), 's13sq': np.float64(0.05098), 's23sq': np.float64(0.41981), 'dcp_deg': np.float64(0.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(0.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.0631', 's13sq': '+0.49', 's23sq': '-0.0244', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 11.79, 's13sq': 78.9, 's23sq': 3.66, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+   vs F2(BM, c12=3/2, c23=0, phi): max|d|U_ij||^2 = 0.05061104456698906
+== TBC (TBM + th12e = th_C), phi=pi/2  params={'phi': 1.5707963267948966}
+   obs: {'s12sq': np.float64(0.342), 's13sq': np.float64(0.02535), 's23sq': np.float64(0.48699), 'dcp_deg': np.float64(83.57856)}
+   CKM->1 limit: {'s12sq': np.float64(0.33333), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(89.99997)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.00448', 's13sq': '+0.273', 's23sq': '-0.00403', 'dcp_deg': '-0.00064'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 0.66, 's13sq': 41.33, 's23sq': 0.6, 'dcp_deg': 0.12, 'frac_invalid': 0.0}
+   = F2(TBM, c12=1, phi=pi/2): True
+== Patel SO(10)xS4 (paper sign s23=-1)  params={'s23': -1.0}
+   obs: {'s12sq': np.float64(0.35277), 's13sq': np.float64(0.0293), 's23sq': np.float64(0.61307), 'dcp_deg': np.float64(180.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0311', 's13sq': '+0.359', 's23sq': '+0.0339', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0.0199', 's13sq': '+0.139', 's23sq': '+0.12', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '-0.00664', 's13sq': '-0.0393', 's23sq': '+0.000486', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '-0.0115', 's13sq': '-0.0678', 's23sq': '+0.000838', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 6.09, 's13sq': 49.64, 's23sq': 5.48, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+== Patel SO(10)xS4 (paper sign s23=+1)  params={'s23': 1.0}
+   obs: {'s12sq': np.float64(0.31703), 's13sq': np.float64(0.01672), 's23sq': np.float64(0.36511), 'dcp_deg': np.float64(180.0)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0558', 's13sq': '+0.0914', 's23sq': '-0.039', 'dcp_deg': '+0'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.0343', 's13sq': '-0.285', 's23sq': '-0.115', 'dcp_deg': '+0'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '-0.00496', 's13sq': '-0.0383', 's23sq': '+0.00077', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '-0.00855', 's13sq': '-0.066', 's23sq': '+0.00133', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 10.35, 's13sq': 23.42, 's23sq': 6.46, 'dcp_deg': 0.0, 'frac_invalid': 0.0}
+   Patel(s23=-1) == F2(BM,1,3,3,phi=0.00): False  max d|U|^2 = 0.24868036018785294
+   Patel(s23=+1) == F2(BM,1,3,3,phi=0.00): False  max d|U|^2 = 0.010907672355502718
+   Patel(s23=-1) == F2(BM,1,3,3,phi=3.14): False  max d|U|^2 = 0.4272185689111625
+   Patel(s23=+1) == F2(BM,1,3,3,phi=3.14): False  max d|U|^2 = 0.352275227596537

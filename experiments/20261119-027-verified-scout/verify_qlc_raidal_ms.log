@@ -1,0 +1,34 @@
+theta_C = 13.012874972257523  pi/4 - theta_C ->  s12sq = 0.2806124801471093
+== Raidal U = BM V  params={'dag': False}
+   obs: {'s12sq': np.float64(0.71902), 's13sq': np.float64(0.00095), 's23sq': np.float64(0.52854), 'dcp_deg': np.float64(4.51228)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(2e-05)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.0519', 's13sq': '+0.0209', 's23sq': '+0.00845', 'dcp_deg': '+0.000451'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.00117', 's13sq': '+0.0656', 's23sq': '+0.0276', 'dcp_deg': '-2.76e-05'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0.000144', 's13sq': '+0.00686', 's23sq': '-0.00313', 'dcp_deg': '-0.000301'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+8.57e-06', 's13sq': '+0.000409', 's23sq': '+2.64e-06', 'dcp_deg': '+0.00295'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 9.5, 's13sq': 4.45, 's23sq': 1.46, 'dcp_deg': 0.2, 'frac_invalid': 0.0}
+== Raidal U = BM V^dag  params={'dag': True}
+   obs: {'s12sq': np.float64(0.28022), 's13sq': np.float64(0.00056), 's23sq': np.float64(0.4653), 'dcp_deg': np.float64(187.08598)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.00002)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0526', 's13sq': '+0.0105', 's23sq': '-0.0112', 'dcp_deg': '+0.00105'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.00127', 's13sq': '+0.0387', 's23sq': '-0.0336', 'dcp_deg': '-1.77e-06'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '-0.000195', 's13sq': '+0.00629', 's23sq': '+0.00234', 'dcp_deg': '-0.000739'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+8.06e-06', 's13sq': '+0.000592', 's23sq': '-2.41e-06', 'dcp_deg': '+0.0046'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 9.85, 's13sq': 1.05, 's23sq': 2.13, 'dcp_deg': 0.41, 'frac_invalid': 0.0}
+== Minakata-Smirnov (27) U = V^dag BM  params={}
+   obs: {'s12sq': np.float64(0.33561), 's13sq': np.float64(0.02357), 's23sq': np.float64(0.44509), 'dcp_deg': np.float64(180.92406)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(180.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0437', 's13sq': '+0.235', 's23sq': '-0.0167', 'dcp_deg': '+0.000201'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.00827', 's13sq': '-0.0613', 's23sq': '-0.0404', 'dcp_deg': '+0.000645'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0.00458', 's13sq': '+0.0348', 's23sq': '-0.000546', 'dcp_deg': '-1.11e-05'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '-4.55e-06', 's13sq': '+0.000395', 's23sq': '+6.64e-06', 'dcp_deg': '+0.000606'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 8.7, 's13sq': 28.47, 's23sq': 2.88, 'dcp_deg': 0.07, 'frac_invalid': 0.0}
+== Minakata-Smirnov (40) U = (R12 R23)^dag V  params={}
+   obs: {'s12sq': np.float64(0.28019), 's13sq': np.float64(0.00082), 's23sq': np.float64(0.46931), 'dcp_deg': np.float64(175.13991)}
+   CKM->1 limit: {'s12sq': np.float64(0.5), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(179.99998)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0527', 's13sq': '+0.0174', 's23sq': '-0.00944', 'dcp_deg': '-0.000527'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.00136', 's13sq': '+0.0568', 's23sq': '-0.0297', 'dcp_deg': '+1.9e-05'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '-0.000134', 's13sq': '-0.00638', 's23sq': '-0.00312', 'dcp_deg': '-0.000359'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+8.84e-06', 's13sq': '+0.000421', 's23sq': '+3.33e-06', 'dcp_deg': '-0.00317'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 9.87, 's13sq': 4.62, 's23sq': 1.44, 'dcp_deg': 0.24, 'frac_invalid': 0.0}
+MS(40) equals X Phi V with X=(R12 R23)^T, Phi=1: True

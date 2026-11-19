@@ -553,6 +553,7 @@ class NullResult:
     ref: dict | None
     fakes: list           # per fake: {"index", "hit", "result": summary or None}
     hit_rule: str = "strict"
+    info: dict | None = None  # src.infogain.null_info of the best chi2 (exp 026; see null_info_of)
 
     def row(self):
         return {k: getattr(self, k) for k in ("null", "ordering", "n_fakes", "n_run", "n_hits", "rate",
@@ -585,6 +586,33 @@ def _fake_task(args):
     return i, summarize(pipeline(fake))
 
 
+def _summary_chi2(summ):
+    """chi2_global (else chi2) of a pipeline summary, or nan."""
+    if summ is None:
+        return float("nan")
+    for k in ("chi2_global", "chi2"):
+        try:
+            return float(_get(summ, k))
+        except (KeyError, AttributeError, TypeError, ValueError):
+            continue
+    return float("nan")
+
+
+def null_info_of(ref_summary, fake_chi2s):
+    """src.infogain.null_info(ref chi2, fake chi2s) using chi2_global (else chi2), or None.
+
+    The B_ckm / S_rank metric of exp 021 (src.infogain docstring): how much better the real
+    data's best chi2 is than the fakes'. Informational; it is not the criterion-4 hit rule.
+    None when the reference or every fake lacks a finite chi2."""
+    from .infogain import null_info
+
+    real = _summary_chi2(ref_summary)
+    fk = [float(c) for c in fake_chi2s if np.isfinite(c)]
+    if not np.isfinite(real) or not fk:
+        return None
+    return null_info(real, fk)
+
+
 def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes: int = 1000,
              ref=None, base: Universe | None = None, analysis: str = _data.DEFAULT_ANALYSIS,
              seed=0, workers: int = 1, early_stop: bool = True, hit_fn: Callable = is_hit,
@@ -594,6 +622,8 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
 
     base: the universe the fakes are built from (default: real data in `ordering`).
     ref: the candidate's result on base (default: pipeline(base)).
+    The result's .info is src.infogain.null_info (B_ckm, S_rank, chi2 rate) of the reference's
+    chi2_global (else chi2) against the fakes run (exp 026; None if no finite chi2).
     workers: processes (1 = in-process). prior: N1 overrides {"lambda": (lo, hi), ...},
     N2 {"widen": x} or N3 {"decades", "heavy_decades", "ratios"}. hit_fn(fake_summary,
     ref_summary) -> bool; summaries are dicts with N, k, max_abs_pull, p_global, ... (or the
@@ -609,12 +639,14 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
     max_hits = max_hits_to_pass(n_fakes, limit, cl)
     tasks = ((pipeline, null, base, seed, i, prior) for i in range(n_fakes))
     fakes, hits, stopped = [], 0, False
+    chi2s = []
 
     def consume(it):
         nonlocal hits, stopped
         for i, s in it:
             h = bool(hit_fn(s, ref_s))
             hits += h
+            chi2s.append(_summary_chi2(s))
             fakes.append({"index": i, "hit": h, "result": s if keep_fakes else None})
             if early_stop and hits > max_hits:
                 stopped = len(fakes) < n_fakes
@@ -639,7 +671,8 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
     passed = bool(d["passed"]) and n_run == n_fakes and hits <= max_hits
     return NullResult(null=null, ordering=ordering, n_fakes=n_fakes, n_run=n_run, n_hits=hits,
                       rate=hits / max(n_run, 1), upper=d["upper"], passed=passed, stopped_early=stopped,
-                      max_hits=max_hits, ref=ref_s, fakes=fakes, hit_rule=hit_rule_name(hit_fn))
+                      max_hits=max_hits, ref=ref_s, fakes=fakes, hit_rule=hit_rule_name(hit_fn),
+                      info=null_info_of(ref_s, chi2s))
 
 
 def power_check(pipeline: Callable, inject_fn: Callable, n_inject: int = 20, n_fakes: int = 300,

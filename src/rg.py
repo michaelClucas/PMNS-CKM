@@ -33,11 +33,34 @@ hep-ph/0108005 and hep-ph/0305273):
        up-then-down runs exactly invertible).
 Gauge: 16 pi^2 dg_i/dt = b_i g_i^3 + g_i^3/(16 pi^2) [sum_j b_ij g_j^2 - sum_f c_if Tr H_f].
 
-Matching at M_SUSY (tree level, no tan-beta-enhanced threshold corrections):
+Matching at M_SUSY (tree level by default):
   Y_u^MSSM = Y_u^SM / sin(beta), Y_{d,e}^MSSM = Y_{d,e}^SM / cos(beta),
   kappa^MSSM = kappa^SM / sin(beta)^2, gauge couplings continuous.
 Observables are always reported in SM normalisation (y_u sin(beta), y_d cos(beta), ...),
 as in arXiv:2510.01312 Tables 5-8.
+
+tan-beta-enhanced SUSY threshold corrections (exp 026, optional, default off)
+---------------------------------------------------------------------------
+thresholds={"eta_b": .., "eta_q": .., "eta_l": ..} (run, ckm_at, pmns_at, mass_ratios)
+applies the one-loop tan-beta-enhanced matching of Antusch-Maurer arXiv:1306.6879,
+Eqs. (8)-(10) and (14)-(16) (after Blazek-Raby-Pokorski hep-ph/9504364 and Antusch-Spinrath
+arXiv:0804.0717), at M_SUSY:
+  Y_d^MSSM = U_u diag(1/(1+eta_q), 1/(1+eta_q), 1/(1+eta_b)) U_u^dag Y_d^SM / cos(beta_bar)
+  Y_e^MSSM = U_e diag(1/(1+eta_l), 1/(1+eta_l), 1)           U_e^dag Y_e^SM / cos(beta_bar)
+  Y_u, kappa: unchanged (tree level).
+U_u (U_e) is the left rotation of Y_u (Y_e) at M_SUSY, eigenvalues ascending, so the diagonal
+acts on the doublet index in the basis where Y_u (Y_e) is diagonal, as in the paper. The
+argument names are the paper's barred parameters (eta_b means eta_bar_b, Eqs. (5)-(7)), and
+tan_beta is read as tan(beta_bar) (Eq. (4): the tau threshold eta'_l is absorbed into beta).
+Leading-order consequences (paper Eqs. (17)-(24)):
+  y_{d,s}^SM = (1+eta_q) y^MSSM cos(beta), y_b^SM = (1+eta_b) y_b^MSSM cos(beta),
+  y_{e,mu}^SM = (1+eta_l) y^MSSM cos(beta), y_tau unchanged,
+  theta_i3^SM = (1+eta_q)/(1+eta_b) theta_i3^MSSM, theta_12 and delta unchanged.
+Above M_SUSY, observables() reports the MSSM eigenvalues times sin/cos(beta) with NO eta
+factor undone: these are the quantities a GUT-scale model predicts. Running back down applies
+the inverse matching, so up-then-down is the identity. With all eta = 0 (the default) the
+code path is skipped and results are bit-identical to before. The eta are model parameters:
+a fit that fits or picks them counts each one in k.
 
 Boundary values at M_Z (build_mz_state)
 --------------------------------------
@@ -75,6 +98,7 @@ import copy
 import functools
 import json
 import pathlib
+from collections.abc import Mapping
 
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -86,6 +110,7 @@ __all__ = [
     "load_sm_inputs", "qcd_alpha_s", "quark_masses_mz", "derived_yukawas_mz", "build_mz_state",
     "run", "run_sm", "run_mssm", "observables", "ckm_at", "pmns_at", "neutrino_masses",
     "derived_yukawas_mz_unc", "mass_ratios", "propagate", "MASS_RATIO_KEYS", "UNC_MASS_INPUTS",
+    "THRESHOLD_KEYS",
 ]
 
 DATA = pathlib.Path(__file__).resolve().parents[1] / "data"
@@ -367,26 +392,66 @@ def _integrate(state, t0, t1, model, rtol):
     return out
 
 
-def _match(state, tan_beta, to_mssm):
+THRESHOLD_KEYS = ("eta_b", "eta_q", "eta_l")
+
+
+def _freeze_thresholds(thresholds):
+    """thresholds mapping (or an (eta_b, eta_q, eta_l) tuple) -> tuple of floats, None if all zero."""
+    if thresholds is None:
+        return None
+    if isinstance(thresholds, Mapping):
+        bad = set(thresholds) - set(THRESHOLD_KEYS)
+        if bad:
+            raise ValueError(f"unknown threshold keys {sorted(bad)}; known {THRESHOLD_KEYS}")
+        t = tuple(float(thresholds.get(k, 0.0)) for k in THRESHOLD_KEYS)
+    else:
+        t = tuple(float(x) for x in thresholds)
+        if len(t) != 3:
+            raise ValueError("thresholds tuple must be (eta_b, eta_q, eta_l)")
+    if not all(np.isfinite(t)) or min(t) <= -1.0:
+        raise ValueError(f"threshold corrections need finite eta > -1, got {t}")
+    return t if any(t) else None
+
+
+def _threshold_rot(Y, diag):
+    """U diag(diag) U^dag with U the left rotation of Y (eigenvalues ascending)."""
+    _, U = np.linalg.eigh(Y @ Y.conj().T)
+    return U @ np.diag(np.asarray(diag, dtype=complex)) @ U.conj().T
+
+
+def _match(state, tan_beta, to_mssm, thresholds=None):
     sb, cb = np.sin(np.arctan(tan_beta)), np.cos(np.arctan(tan_beta))
     s = dict(state)
     if to_mssm:
         s["Yu"], s["Yd"], s["Ye"], s["kappa"] = state["Yu"] / sb, state["Yd"] / cb, state["Ye"] / cb, state["kappa"] / sb ** 2
     else:
         s["Yu"], s["Yd"], s["Ye"], s["kappa"] = state["Yu"] * sb, state["Yd"] * cb, state["Ye"] * cb, state["kappa"] * sb ** 2
+    eta = _freeze_thresholds(thresholds)
+    if eta is not None:  # Antusch-Maurer Eqs. (14)-(16), module docstring
+        eb, eq, el = eta
+        pw = -1.0 if to_mssm else 1.0
+        dq = ((1 + eq) ** pw, (1 + eq) ** pw, (1 + eb) ** pw)
+        dl = ((1 + el) ** pw, (1 + el) ** pw, 1.0)
+        # Y_u is untouched and Y_e keeps its left eigenvectors, so the rotation is the same both ways
+        s["Yd"] = _threshold_rot(s["Yu"], dq) @ s["Yd"]
+        s["Ye"] = _threshold_rot(s["Ye"], dl) @ s["Ye"]
     return s
 
 
-def run(mu_from, mu_to, state, model="SM", tan_beta=None, m_susy=3000.0, rtol=1e-10):
+def run(mu_from, mu_to, state, model="SM", tan_beta=None, m_susy=3000.0, rtol=1e-10, thresholds=None):
     """Evolve `state` from mu_from to mu_to (GeV).
 
     model="SM": SM RGEs throughout. model="MSSM": SM below m_susy, MSSM above, tree-level
     matching at m_susy with tan_beta. The state carries MSSM-normalised Yukawas/kappa when
     it sits above m_susy (state["normalisation"] says which). Returns a new state dict.
+    thresholds: optional {"eta_b", "eta_q", "eta_l"}, tan-beta-enhanced corrections in the
+    matching at m_susy (module docstring; MSSM only). Default None = tree level.
     """
     s = dict(state)
     s.setdefault("normalisation", "SM")
     if model == "SM":
+        if _freeze_thresholds(thresholds) is not None:
+            raise ValueError("SUSY threshold corrections need model='MSSM'")
         out = _integrate(s, np.log(mu_from), np.log(mu_to), "SM", rtol)
         out["normalisation"] = "SM"
         return out
@@ -402,14 +467,14 @@ def run(mu_from, mu_to, state, model="SM", tan_beta=None, m_susy=3000.0, rtol=1e
             out = _integrate(s, t0, t1, "SM", rtol); out["normalisation"] = "SM"; return out
         if not above0:
             s = _integrate(s, t0, ts, "SM", rtol)
-            s = _match(s, tan_beta, True)
+            s = _match(s, tan_beta, True, thresholds)
             t0 = ts
         out = _integrate(s, t0, t1, "MSSM", rtol); out["normalisation"] = "MSSM"; return out
     if t1 >= ts and above0:
         out = _integrate(s, t0, t1, "MSSM", rtol); out["normalisation"] = "MSSM"; return out
     if above0:
         s = _integrate(s, t0, ts, "MSSM", rtol)
-        s = _match(s, tan_beta, False)
+        s = _match(s, tan_beta, False, thresholds)
         t0 = ts
     out = _integrate(s, t0, t1, "SM", rtol); out["normalisation"] = "SM"; return out
 
@@ -419,8 +484,9 @@ def run_sm(mu_from, mu_to, inputs, rtol=1e-10):
     return run(mu_from, mu_to, inputs, model="SM", rtol=rtol)
 
 
-def run_mssm(mu_from, mu_to, inputs, tan_beta, m_susy=3000.0, rtol=1e-10):
-    return run(mu_from, mu_to, inputs, model="MSSM", tan_beta=tan_beta, m_susy=m_susy, rtol=rtol)
+def run_mssm(mu_from, mu_to, inputs, tan_beta, m_susy=3000.0, rtol=1e-10, thresholds=None):
+    return run(mu_from, mu_to, inputs, model="MSSM", tan_beta=tan_beta, m_susy=m_susy, rtol=rtol,
+               thresholds=thresholds)
 
 
 # ------------------------------------------------------------------ boundary values at M_Z
@@ -611,11 +677,13 @@ def observables(state, tan_beta=None) -> dict:
     return out
 
 
-def _run_to(mu, state, model, tan_beta, m_susy):
+def _run_to(mu, state, model, tan_beta, m_susy, eta=None):
     mz = state["mu"]
     if model == "SM":
+        if eta is not None:
+            raise ValueError("SUSY threshold corrections need model='MSSM'")
         return run_sm(mz, mu, state)
-    return run_mssm(mz, mu, state, tan_beta, m_susy)
+    return run_mssm(mz, mu, state, tan_beta, m_susy, thresholds=eta)
 
 
 def _freeze_seq(x):
@@ -627,10 +695,10 @@ def _freeze_dict(d):
 
 
 @functools.lru_cache(maxsize=1024)
-def _ckm_at_cached(mu, model, tan_beta, m_susy, fy, fc, fm, fs):
+def _ckm_at_cached(mu, model, tan_beta, m_susy, fy, fc, fm, fs, eta=None):
     s = build_mz_state(yukawas=None if fy is None else dict(fy), ckm=fc,
                        masses=dict(fm) or None, sm_inputs=_thaw_sm(fs), neutrinos=False)
-    o = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)
+    o = observables(_run_to(mu, s, model, tan_beta, m_susy, eta), tan_beta)
     y = o["y"]
     r = {"mu_over_mc": y["y_u"] / y["y_c"], "mc_over_mt": y["y_c"] / y["y_t"],
          "md_over_ms": y["y_d"] / y["y_s"], "ms_over_mb": y["y_s"] / y["y_b"],
@@ -640,7 +708,7 @@ def _ckm_at_cached(mu, model, tan_beta, m_susy, fy, fc, fm, fs):
 
 
 def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None,
-           masses=None, sm_inputs=None, cache=True) -> dict:
+           masses=None, sm_inputs=None, cache=True, thresholds=None) -> dict:
     """CKM angles/delta/J and quark mass ratios at scale mu (GeV), running from M_Z.
 
     yukawas, ckm: as in build_mz_state. masses, sm_inputs: input overrides as in
@@ -650,9 +718,13 @@ def ckm_at(mu, model="SM", tan_beta=None, m_susy=3000.0, yukawas=None, ckm=None,
     src.evaluate names. Results are memoised per argument set (cache=False bypasses the memo); the
     returned dict is a fresh deep copy. ckm_at.cache_clear() drops the memo, which is
     needed only if you monkeypatch the loaders in-process.
+    thresholds: optional SUSY threshold corrections {"eta_b", "eta_q", "eta_l"} (module docstring).
     """
     key = (float(mu), model, None if tan_beta is None else float(tan_beta), float(m_susy),
            _freeze_dict(yukawas), _freeze_seq(ckm), _freeze_masses(masses), _freeze_sm(sm_inputs))
+    eta = _freeze_thresholds(thresholds)
+    if eta is not None:
+        key = key + (eta,)
     r = _ckm_at_cached(*key) if cache else _ckm_at_cached.__wrapped__(*key)
     return copy.deepcopy(r)
 
@@ -662,10 +734,11 @@ ckm_at.cache_info = _ckm_at_cached.cache_info
 
 
 @functools.lru_cache(maxsize=256)
-def _pmns_at_cached(mu, ordering, m_lightest, majorana, model, tan_beta, m_susy, analysis, fp, fsp, fc, fm, fs):
+def _pmns_at_cached(mu, ordering, m_lightest, majorana, model, tan_beta, m_susy, analysis, fp, fsp, fc, fm, fs,
+                    eta=None):
     s = build_mz_state(ordering, m_lightest, majorana, analysis, ckm=fc, pmns=fp,
                        masses=dict(fm) or None, sm_inputs=_thaw_sm(fs), splittings=fsp)
-    p = observables(_run_to(mu, s, model, tan_beta, m_susy), tan_beta)["pmns"]
+    p = observables(_run_to(mu, s, model, tan_beta, m_susy, eta), tan_beta)["pmns"]
     m = np.asarray(p["m"], dtype=float)
     dm21 = m[1] ** 2 - m[0] ** 2
     dm3l = m[2] ** 2 - (m[0] ** 2 if ordering == "NO" else m[1] ** 2)
@@ -676,7 +749,7 @@ def _pmns_at_cached(mu, ordering, m_lightest, majorana, model, tan_beta, m_susy,
 
 def pmns_at(mu, ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), model="SM", tan_beta=None,
             m_susy=3000.0, analysis=_data.DEFAULT_ANALYSIS, pmns=None, splittings=None, ckm=None,
-            masses=None, sm_inputs=None) -> dict:
+            masses=None, sm_inputs=None, thresholds=None) -> dict:
     """PMNS angles/delta and neutrino masses (eV, m_nu = kappa v(M_Z)^2/4) at scale mu.
 
     m_lightest: m1 (NO) or m3 (IO) in eV at M_Z, any finite value >= 0 (ValueError
@@ -686,11 +759,16 @@ def pmns_at(mu, ordering="NO", m_lightest=0.0, majorana=(0.0, 0.0), model="SM", 
     Returns theta12..delta, J, m (m1, m2, m3), m21_ratio = m1/m2, dm21_over_dm3l =
     Delta m^2_21 / |Delta m^2_3l| (3l = 31 for NO, 32 for IO), dm21sq_eV2, dm3l_sq_eV2
     (signed, NuFIT convention), sum_m and m_lightest, all at mu. Memoised; returns a copy.
+    thresholds: optional SUSY threshold corrections (module docstring); they enter through Y_e
+    and the Yukawa traces.
     """
     _data._check_ordering(ordering)
     key = (float(mu), ordering, _check_m_lightest(m_lightest), tuple(float(x) for x in majorana), model,
            None if tan_beta is None else float(tan_beta), float(m_susy), analysis, _freeze_seq(pmns),
            _freeze_seq(splittings), _freeze_seq(ckm), _freeze_masses(masses), _freeze_sm(sm_inputs))
+    eta = _freeze_thresholds(thresholds)
+    if eta is not None:
+        key = key + (eta,)
     return copy.deepcopy(_pmns_at_cached(*key))
 
 
@@ -770,7 +848,7 @@ def _mz():
     return load_sm_inputs()["pdg2026"]["M_Z"]["value"]
 
 
-def _ratios_fn(mu, model, tan_beta, m_susy, ckm):
+def _ratios_fn(mu, model, tan_beta, m_susy, ckm, eta=None):
     def fn(m, s):
         if mu is None:
             y = derived_yukawas_mz(masses=m, sm_inputs=s)
@@ -779,14 +857,14 @@ def _ratios_fn(mu, model, tan_beta, m_susy, ckm):
                  "me_over_mmu": y["y_e"] / y["y_mu"], "mmu_over_mtau": y["y_mu"] / y["y_tau"],
                  "mb_over_mtau": y["y_b"] / y["y_tau"]}
         else:
-            r = ckm_at(mu, model, tan_beta, m_susy, ckm=ckm, masses=m, sm_inputs=s)["ratios"]
+            r = ckm_at(mu, model, tan_beta, m_susy, ckm=ckm, masses=m, sm_inputs=s, thresholds=eta)["ratios"]
         return {k: float(r[v]) for k, v in MASS_RATIO_KEYS.items()}
     return fn
 
 
 @functools.lru_cache(maxsize=64)
-def _mass_ratios_cached(mu, model, tan_beta, m_susy, fc, fm, fs, errors):
-    fn = _ratios_fn(mu, model, tan_beta, m_susy, fc)
+def _mass_ratios_cached(mu, model, tan_beta, m_susy, fc, fm, fs, errors, eta=None):
+    fn = _ratios_fn(mu, model, tan_beta, m_susy, fc, eta)
     if not errors:
         return {"value": fn(dict(fm) or None, _thaw_sm(fs)), "names": tuple(MASS_RATIO_KEYS)}
     out = propagate(fn, dict(fm) or None, _thaw_sm(fs))
@@ -796,7 +874,7 @@ def _mass_ratios_cached(mu, model, tan_beta, m_susy, fc, fm, fs, errors):
 
 
 def mass_ratios(mu=None, model="SM", tan_beta=None, m_susy=3000.0, ckm=None, masses=None, sm_inputs=None,
-                errors=True) -> dict:
+                errors=True, thresholds=None) -> dict:
     """Same-scale running-mass ratios MASS_RATIO_KEYS (mr_u_c = m_u/m_c, ..., mr_b_tau = m_b/m_tau).
 
     mu=None or M_Z (default): from derived_yukawas_mz (quarks MSbar nf = 5 at M_Z, charged
@@ -804,9 +882,13 @@ def mass_ratios(mu=None, model="SM", tan_beta=None, m_susy=3000.0, ckm=None, mas
     observables. Other mu: ratios of SM-normalised Yukawa eigenvalues at mu (ckm_at with
     model, tan_beta, m_susy, ckm). errors=True adds the linear propagation of `propagate`:
     "err", "cov", "cov_log" (covariance of the log ratios), "jac", "inputs".
+    thresholds: optional SUSY threshold corrections at m_susy (module docstring; no effect at M_Z).
     Memoised; returns a copy.
     """
     key = (None if mu is None or float(mu) == _mz() else float(mu), model,
            None if tan_beta is None else float(tan_beta), float(m_susy), _freeze_seq(ckm),
            _freeze_masses(masses), _freeze_sm(sm_inputs), bool(errors))
+    eta = _freeze_thresholds(thresholds)
+    if eta is not None and key[0] is not None:
+        key = key + (eta,)
     return copy.deepcopy(_mass_ratios_cached(*key))

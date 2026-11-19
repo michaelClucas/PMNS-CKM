@@ -1,0 +1,11 @@
+[drop_GEN q0] ep 0 train 4.8947 val 4.3022 28s
+[drop_GEN q0] ep 1 train 4.1078 val 3.8003 67s
+[drop_GEN q0] ep 2 train 3.8194 val 3.8484 112s
+[drop_GEN q0] ep 3 train 3.7483 val 3.6956 158s
+[drop_GEN q0] ep 4 train 3.4022 val 3.4402 194s
+[drop_GEN q0] ep 5 train 3.3455 val 3.2559 232s
+[drop_GEN q0] ep 6 train 3.2437 val 2.9302 283s
+[drop_GEN q0] ep 7 train 3.1495 val 3.1215 331s
+[drop_GEN q0] ep 8 train 3.0896 val 3.1130 387s
+[drop_GEN q0] ep 9 train 2.9994 val 3.2152 439s
+[drop_GEN q0] done test nll 3.2860

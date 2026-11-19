@@ -1,0 +1,12 @@
+[seed1 q0] ep 0 train 5.0063 val 4.3753 49s
+[seed1 q0] ep 1 train 4.3365 val 4.0087 90s
+[seed1 q0] ep 2 train 4.0441 val 3.7684 133s
+[seed1 q0] ep 3 train 3.8087 val 4.0266 168s
+[seed1 q0] ep 4 train 3.6703 val 3.4834 202s
+[seed1 q0] ep 5 train 3.5025 val 3.3969 241s
+[seed1 q0] ep 6 train 3.4874 val 3.4739 281s
+[seed1 q0] ep 7 train 3.3893 val 3.3593 326s
+[seed1 q0] ep 8 train 3.2224 val 3.1802 371s
+[seed1 q0] ep 9 train 3.1757 val 3.0108 411s
+[seed1 q0] ep 10 train 3.1581 val 3.3294 453s
+[seed1 q0] done test nll 3.0995

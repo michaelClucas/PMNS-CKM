@@ -1,0 +1,10 @@
+theta12dL = 0.2086 rad (theta_C = 0.2271); theta12eL = 0.1389 for Clebsch (3.0, 1.5, 0.5)
+d ln theta12eL / d ln theta12dL = -1.057
+== CSD2-GUT (3, 3/2, 1/2), eta=270deg, omega=90deg  params={'eps': 0.12148140783093692, 'eta': 4.71238898038469, 'omega': 1.5707963267948966}
+   obs: {'s12sq': np.float64(0.34273), 's13sq': np.float64(0.00028), 's23sq': np.float64(0.46791), 'dcp_deg': np.float64(141.54763)}
+   CKM->1 limit: {'undefined': 'f(a) and f(b) must have different signs'}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.00486', 's13sq': '-0.00849', 's23sq': '+0.000127', 'dcp_deg': '+0.0314'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-6.89e-06', 's13sq': '-1.2e-05', 's23sq': '+1.79e-07', 'dcp_deg': '+4.46e-05'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0.00282', 's13sq': '+0.00493', 's23sq': '-7.34e-05', 'dcp_deg': '-0.0182'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0.00486', 's13sq': '+0.00849', 's23sq': '-0.000126', 'dcp_deg': '-0.0314'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 0.53, 's13sq': 1.67, 's23sq': 0.02, 'dcp_deg': 1.86, 'frac_invalid': 0.0}

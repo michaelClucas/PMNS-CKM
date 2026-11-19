@@ -125,11 +125,11 @@ def _fake(ordering, **kw):
     return sum((v or 0.0) * 0 for v in kw.values())
 
 
-def test_objective_warns_on_implicit_sum1d_with_s23_and_delta():
-    with pytest.warns(UserWarning, match="sum1d"):
-        Objective(pmns_delta_chi2=_fake)
+def test_objective_default_is_joint_without_warning():
+    # exp 026 flipped the default to joint (exp 024 had a warning on the implicit sum1d default)
     with warnings.catch_warnings():
         warnings.simplefilter("error")
+        assert Objective(pmns_delta_chi2=_fake).pmns_mode == "joint"
         Objective(pmns_delta_chi2=_fake, pmns_mode="sum1d")
         Objective(pmns_delta_chi2=_fake, pmns_mode="joint")
         Objective(pmns_delta_chi2=_fake, pmns_params=("s13sq",))

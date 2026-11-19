@@ -161,9 +161,20 @@ sys_frac * |shift| for additive keys and sys_frac * |ln factor| (relative) for m
 plicative ones, for the missing two-loop Yukawa / kappa running (default 5% of the running
 itself), plus for MSSM half the change of the shift when m_susy is varied by x2 and /2
 (proxy for the missing threshold corrections), in quadrature. NOT covered: tan-beta-
-enhanced SUSY threshold corrections to y_d, y_s, y_b (10-50% at large tan beta), seesaw
+enhanced SUSY threshold corrections to y_d, y_s, y_b (10-50% at large tan beta) unless
+given as eta_* (below; they are then applied, not added as a systematic), seesaw
 thresholds, and the PMNS running dependence on m_lightest / Majorana phases beyond the
 values in `scale`. EvalResult.scale_shift holds the shift or factor per key.
+
+tan-beta-enhanced SUSY thresholds in `scale` (exp 026). For model "MSSM", scale may also hold
+"eta_b", "eta_q", "eta_l" (default 0 = off; Antusch-Maurer arXiv:1306.6879 barred parameters,
+src.rg module docstring). The data are then run up with that threshold matching at m_susy,
+so the translation factors include it (e.g. mr_s_b: x_low = x_mu * X(M_Z)/X_eta(mu) with
+X_eta(mu) carrying (1+eta_b)/(1+eta_q)). For ckm_s13 and ckm_s23, whose threshold correction
+is a rescaling by T = (1+eta_q)/(1+eta_b) (paper Eq. (22)), the translation becomes
+  x_low = T x_mu - [T X_eta(mu) - X(M_Z)]
+(EvalResult.scale_slope holds T for these keys; absent = 1). At eta = 0 this is the additive
+rule above, bit-identical. The eta are fitted or chosen model parameters and count in k.
 
 Universes. Scorer accepts optional data overrides (ckm_records, mass_records, pmns_fn,
 pmns_centre) so src.nulls can score fake universes with exactly the same code path.
@@ -194,7 +205,8 @@ MR_BLOCK_KEYS = MASS_RATIO_KEYS + tuple(DERIVED_RATIO_KEYS)
 SCALE_ADDITIVE = PMNS_KEYS + ("ckm_s12", "ckm_s13", "ckm_s23", "ckm_delta_rad")
 SCALE_MULTIPLICATIVE = ("ckm_J",) + MR_BLOCK_KEYS + DM_KEYS
 SCALE_DEFAULTS = {"mu": None, "model": "SM", "tan_beta": None, "m_susy": 3000.0, "m_lightest": 0.0,
-                  "majorana": (0.0, 0.0), "sys_frac": 0.05}
+                  "majorana": (0.0, 0.0), "sys_frac": 0.05, "eta_b": 0.0, "eta_q": 0.0, "eta_l": 0.0}
+SCALE_THRESHOLD_SLOPE_KEYS = ("ckm_s13", "ckm_s23")  # rescaled by (1+eta_q)/(1+eta_b) (exp 026)
 CHI2_CAP = 1e4  # floor added to a Gaussian fallback when a point is outside the NuFIT tables (minimizer only)
 ORDERING_CHOICES = _data.ORDERINGS + ("best",)
 
@@ -429,6 +441,7 @@ class EvalResult:
     scale: dict | None = None         # the high-scale spec the prediction was made at, or None
     scale_shift: dict = field(default_factory=dict)        # key -> additive shift or factor
     scale_systematic: dict = field(default_factory=dict)   # key -> running systematic (module docstring)
+    scale_slope: dict = field(default_factory=dict)        # key -> threshold slope T (exp 026; absent = 1)
 
     @property
     def p_crit3(self):
@@ -448,7 +461,7 @@ class EvalResult:
     def row(self):
         """Flat dict for CSV output."""
         d = {k: v for k, v in asdict(self).items()
-             if k not in ("pulls", "terms", "pred", "use", "inputs", "scale_shift", "scale_systematic")}
+             if k not in ("pulls", "terms", "pred", "use", "inputs", "scale_shift", "scale_systematic", "scale_slope")}
         if isinstance(d["mass_floor"], Mapping):
             d["mass_floor"] = repr(dict(d["mass_floor"]))
         d["scale"] = "" if self.scale is None else repr(self.scale)
@@ -584,30 +597,49 @@ def _freeze_spec(scale):
         raise ValueError("scale model must be 'SM' or 'MSSM'")
     if spec["model"] == "MSSM" and spec["tan_beta"] is None:
         raise ValueError("MSSM scale needs tan_beta")
+    eta = _rg._freeze_thresholds({k: spec[k] for k in _rg.THRESHOLD_KEYS})
+    if eta is not None and spec["model"] != "MSSM":
+        raise ValueError("SUSY threshold corrections (eta_*) need scale model 'MSSM'")
     return (float(spec["mu"]), spec["model"], None if spec["tan_beta"] is None else float(spec["tan_beta"]),
             float(spec["m_susy"]), float(spec["m_lightest"]), tuple(float(x) for x in spec["majorana"]),
-            float(spec["sys_frac"]))
+            float(spec["sys_frac"]), eta)
 
 
 def _spec_dict(fs):
-    return dict(zip(("mu", "model", "tan_beta", "m_susy", "m_lightest", "majorana", "sys_frac"), fs))
+    d = dict(zip(("mu", "model", "tan_beta", "m_susy", "m_lightest", "majorana", "sys_frac"), fs))
+    if len(fs) > 7 and fs[7] is not None:  # threshold keys only when on, so old outputs are unchanged
+        d.update(zip(_rg.THRESHOLD_KEYS, fs[7]))
+    return d
 
 
-def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre):
-    """Data's running between M_Z and mu: {key: shift (additive) or factor (multiplicative)}."""
+def _threshold_slope(eta):
+    """T = (1+eta_q)/(1+eta_b): theta_i3^SM = T theta_i3^MSSM (Antusch-Maurer Eq. (22))."""
+    return 1.0 if eta is None else (1.0 + eta[1]) / (1.0 + eta[0])
+
+
+def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre, eta=None):
+    """Data's running between M_Z and mu: {key: shift (additive) or factor (multiplicative)}.
+
+    eta: optional SUSY thresholds (eta_b, eta_q, eta_l); the s13/s23 shifts are then in
+    low-scale units, T X_eta(mu) - X(M_Z) (module docstring)."""
     mz = _rg.load_sm_inputs()["pdg2026"]["M_Z"]["value"]
     masses = dict(fmass) or None
+    th = {} if eta is None else {"thresholds": eta}
     lo = _rg.ckm_at(mz, ckm=fckm, masses=masses)
-    hi = _rg.ckm_at(mu, model, tb, msusy, ckm=fckm, masses=masses)
+    hi = _rg.ckm_at(mu, model, tb, msusy, ckm=fckm, masses=masses, **th)
     c = dict(fcentre)
     pm = (float(np.arcsin(np.sqrt(c["s12sq"]))), float(np.arcsin(np.sqrt(c["s13sq"]))),
           float(np.arcsin(np.sqrt(c["s23sq"]))), float(np.radians(c["dcp_deg"])))
     kw = dict(ordering=ordering, m_lightest=ml, majorana=maj, analysis=analysis, pmns=pm, ckm=fckm, masses=masses)
     plo = _rg.pmns_at(mz, **kw)
-    phi = _rg.pmns_at(mu, model=model, tan_beta=tb, m_susy=msusy, **kw)
+    phi = _rg.pmns_at(mu, model=model, tan_beta=tb, m_susy=msusy, **kw, **th)
     out = {}
+    T = _threshold_slope(eta)
     for i, k in ((12, "s12"), (13, "s13"), (23, "s23")):
-        out["ckm_" + k] = float(np.sin(hi[f"theta{i}"]) - np.sin(lo[f"theta{i}"]))
+        if eta is not None and "ckm_" + k in SCALE_THRESHOLD_SLOPE_KEYS:
+            out["ckm_" + k] = float(T * np.sin(hi[f"theta{i}"]) - np.sin(lo[f"theta{i}"]))
+        else:
+            out["ckm_" + k] = float(np.sin(hi[f"theta{i}"]) - np.sin(lo[f"theta{i}"]))
         out[k + "sq"] = float(np.sin(phi[f"theta{i}"]) ** 2 - np.sin(plo[f"theta{i}"]) ** 2)
     out["ckm_delta_rad"] = float(_wrap_rad(hi["delta"] - lo["delta"]))
     out["dcp_deg"] = float(_wrap_deg(np.degrees(phi["delta"] - plo["delta"])))
@@ -616,7 +648,7 @@ def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fce
     out["dm3l_sq_eV2"] = float(plo["dm3l_sq_eV2"] / phi["dm3l_sq_eV2"])
     out["dm_ratio"] = float(plo["dm21_over_dm3l"] / phi["dm21_over_dm3l"])
     rlo = _rg.mass_ratios(None, masses=masses, errors=False)["value"]
-    rhi = _rg.mass_ratios(mu, model, tb, msusy, ckm=fckm, masses=masses, errors=False)["value"]
+    rhi = _rg.mass_ratios(mu, model, tb, msusy, ckm=fckm, masses=masses, errors=False, **th)["value"]
     for k in MASS_RATIO_KEYS:
         out[k] = float(rlo[k] / rhi[k])
     for k, c in DERIVED_RATIO_KEYS.items():
@@ -627,11 +659,12 @@ def _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fce
 @functools.lru_cache(maxsize=256)
 def _scale_table(ordering, analysis, fs, fckm, fmass, fcentre):
     """({key: shift or factor}, {key: systematic}) for a frozen scale spec (module docstring)."""
-    mu, model, tb, msusy, ml, maj, sys_frac = fs
-    base = _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre)
+    mu, model, tb, msusy, ml, maj, sys_frac = fs[:7]
+    eta = fs[7] if len(fs) > 7 else None
+    base = _running(ordering, analysis, mu, model, tb, msusy, ml, maj, fckm, fmass, fcentre, eta)
     if model == "MSSM":
-        up = _running(ordering, analysis, mu, model, tb, 2 * msusy, ml, maj, fckm, fmass, fcentre)
-        dn = _running(ordering, analysis, mu, model, tb, msusy / 2, ml, maj, fckm, fmass, fcentre)
+        up = _running(ordering, analysis, mu, model, tb, 2 * msusy, ml, maj, fckm, fmass, fcentre, eta)
+        dn = _running(ordering, analysis, mu, model, tb, msusy / 2, ml, maj, fckm, fmass, fcentre, eta)
     sys = {}
     for k, v in base.items():
         if k in SCALE_ADDITIVE:
@@ -731,7 +764,7 @@ class Scorer:
             self._mr_L = np.linalg.cholesky(self._mr_cov)
             self._mr_sig = np.sqrt(np.diag(self._mr_cov))
         self.scale = None
-        self.scale_shift, self.scale_systematic = {}, {}
+        self.scale_shift, self.scale_systematic, self.scale_slope = {}, {}, {}
         if scale is not None:
             bad = [u for u in use if u not in SCALE_ADDITIVE + SCALE_MULTIPLICATIVE]
             if bad:
@@ -748,6 +781,9 @@ class Scorer:
             self.scale = _spec_dict(fs)
             self.scale_shift = {k: shift[k] for k in use}
             self.scale_systematic = {k: sys[k] for k in use}
+            if fs[7] is not None:
+                T = _threshold_slope(fs[7])
+                self.scale_slope = {k: T for k in use if k in SCALE_THRESHOLD_SLOPE_KEYS}
 
     def _prep(self, pred):
         missing = [n for n in self.use if n not in pred]
@@ -758,7 +794,10 @@ class Scorer:
         if bad:
             raise ValueError(f"non-finite predictions {bad}")
         for n, s in self.scale_shift.items():  # high-scale prediction -> data scale
-            p[n] = p[n] - s if n in SCALE_ADDITIVE else p[n] * s
+            if n in self.scale_slope:  # SUSY threshold rescaling (exp 026)
+                p[n] = self.scale_slope[n] * p[n] - s
+            else:
+                p[n] = p[n] - s if n in SCALE_ADDITIVE else p[n] * s
         if "dcp_deg" in p:  # put delta within 180 deg of the data centre so the pull sign is right
             p["dcp_deg"] = self.best["dcp_deg"] + _wrap_deg(p["dcp_deg"] - self.best["dcp_deg"])
         if self._ckm_delta_centre is not None:  # the CKM phase is periodic too (exp 012 L1)
@@ -790,13 +829,17 @@ class Scorer:
     def chi2(self, pred) -> float:
         return self._score(self._prep(pred))[0]
 
-    def chi2_soft(self, pred) -> float:
+    def chi2_soft(self, pred, include_finite: bool = False) -> float:
         """chi2, or (outside the NuFIT tables, where chi2 = inf) CHI2_CAP + a Gaussian
         estimate from the NuFIT 1 sigma errors around the data centre. Keeps the
         minimizer's landscape sloped back toward the tables instead of flat. Never used
-        for reported numbers."""
+        for reported numbers.
+        include_finite (exp 026): also add every finite term (CKM, masses, ...) outside the
+        tables. The default (False) drops them, so there a bad quark sector costs nothing and
+        a minimizer can prefer to stay outside the tables (exp 022's DE plateau at 13777);
+        fit_and_evaluate uses True for its "lbfgsb" and "de" methods."""
         p = self._prep(pred)
-        c = self._score(p)[0]
+        c, terms, _ = self._score(p)
         if np.isfinite(c):
             return c
         recs = _data.load_pmns(self.ordering, self.analysis)
@@ -809,6 +852,8 @@ class Scorer:
             sig = _dm_sigma(self.ordering, self.analysis)
             for n in self.dm_use:
                 g += ((p[n] - self._dm_best[n]) / sig[n]) ** 2
+        if include_finite:
+            g += sum(v for v in terms.values() if np.isfinite(v))
         return CHI2_CAP + g
 
     def __call__(self, pred, k=0, inputs=None, k_discrete=0, ordering_selected=False) -> EvalResult:
@@ -842,7 +887,8 @@ class Scorer:
             ordering=self.ordering, analysis=self.analysis, use=self.use, inputs=inputs,
             pred=p, k_continuous=k_cont, ordering_selected=bool(ordering_selected),
             mass_floor=self.mass_floor, scale=None if self.scale is None else dict(self.scale),
-            scale_shift=dict(self.scale_shift), scale_systematic=dict(self.scale_systematic))
+            scale_shift=dict(self.scale_shift), scale_systematic=dict(self.scale_systematic),
+            scale_slope=dict(self.scale_slope))
 
 
 def _ordering_dependent(use):
@@ -946,7 +992,8 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
                      n_starts: int = 32, seed: int = 0, extra_starts: Sequence[Mapping] = (),
                      tol: float = 1e-9, ordering_selected: bool = False, leak_check: bool = False,
                      scorer_kwargs: Mapping | None = None, *, mass_floor=0.0,
-                     scale: Mapping | None = None) -> FitResult:
+                     scale: Mapping | None = None, method: str = "nelder-mead",
+                     optimizer_options: Mapping | None = None) -> FitResult:
     """Minimize the within-ordering chi^2 over continuous parameters, then evaluate.
 
     model_fn(theta: dict) -> pred dict. param_bounds: name -> (lo, hi).
@@ -958,9 +1005,25 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
     leak_check: run the leak probe on model_fn at the best-fit parameters (LeakError).
     scorer_kwargs: Scorer data overrides (one dict, or per ordering).
     mass_floor, scale: as in evaluate (module docstring).
-    Multi-start: n_starts points from a scrambled Sobol sequence over the box (seeded),
-    plus extra_starts, each run with Nelder-Mead then polished with a second Nelder-Mead
-    from the best point.
+    method (exp 026; the default is unchanged):
+      "nelder-mead"  multi-start: n_starts points from a scrambled Sobol sequence over the box
+                     (seeded), plus extra_starts, each run with Nelder-Mead, then a second
+                     Nelder-Mead polish from the best point.
+      "lbfgsb"       the same starts, each run with L-BFGS-B (finite-difference gradient;
+                     periodic parameters unbounded), then the same Nelder-Mead polish.
+      "de"           scipy differential_evolution over the whole box (periodic parameters
+                     searched over [lo, hi]), seeded with `seed`, Sobol init, its own L-BFGS-B
+                     polish; n_starts is not used. Each extra_start gets a Nelder-Mead run as
+                     well, and the best point gets the Nelder-Mead polish.
+    optimizer_options: overrides for the chosen method. "de": popsize (15), maxiter (1000),
+      tol (1e-8), mutation ((0.5, 1.0)), recombination (0.7), polish (True), maxfev (None:
+      no cap, else DE stops once it has used that many evaluations). "lbfgsb": maxiter
+      (15000), maxfun (15000 * dim), ftol (1e-12), gtol (1e-8), eps (1e-8).
+    Outside the NuFIT tables "lbfgsb" and "de" minimize Scorer.chi2_soft(include_finite=True),
+      which keeps the quark and mass terms in the landscape (exp 026); "nelder-mead" keeps the
+      original chi2_soft, so default fits are unchanged.
+      FitResult.start_chi2 holds the final chi2 of each start (for "de": the DE optimum
+      first, then the extra starts), so n_distinct_minima still applies.
     """
     from scipy.stats import qmc
 
@@ -971,10 +1034,12 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
         if not _ordering_dependent(use):
             return fit_and_evaluate(model_fn, param_bounds, "NO", use, analysis, inputs, k_discrete,
                                     periodic, n_starts, seed, extra_starts, tol, ordering_selected,
-                                    leak_check, _scorer_kw(scorer_kwargs, "NO", mass_floor, scale))
+                                    leak_check, _scorer_kw(scorer_kwargs, "NO", mass_floor, scale),
+                                    method=method, optimizer_options=optimizer_options)
         fits = [fit_and_evaluate(model_fn, param_bounds, o, use, analysis, inputs, k_discrete, periodic,
                                  n_starts, seed, extra_starts, tol, False, False,
-                                 _scorer_kw(scorer_kwargs, o, mass_floor, scale))
+                                 _scorer_kw(scorer_kwargs, o, mass_floor, scale),
+                                 method=method, optimizer_options=optimizer_options)
                 for o in _data.ORDERINGS]
         fr = min(fits, key=lambda f: f.result.chi2_global)
         o = fr.result.ordering
@@ -984,6 +1049,9 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
         res = sc(model_fn(fr.params), k=fr.result.k, k_discrete=fr.result.k_discrete, ordering_selected=True)
         return FitResult(fr.params, res, fr.start_chi2, fr.n_starts, sum(f.nfev for f in fits))
 
+    if method not in FIT_METHODS:
+        raise ValueError(f"method must be one of {FIT_METHODS}")
+    soft_full = method != "nelder-mead"  # the default keeps the original landscape (bit-identical fits)
     names = list(param_bounds)
     lo = np.array([param_bounds[n][0] for n in names], dtype=float)
     hi = np.array([param_bounds[n][1] for n in names], dtype=float)
@@ -1001,7 +1069,7 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
         nonlocal nfev
         nfev += 1
         try:
-            c = scorer.chi2_soft(model_fn(theta_of(x)))
+            c = scorer.chi2_soft(model_fn(theta_of(x)), include_finite=soft_full)
         except (ValueError, FloatingPointError, ZeroDivisionError):
             return 10 * CHI2_CAP
         return c if np.isfinite(c) else 10 * CHI2_CAP
@@ -1013,17 +1081,36 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
         return FitResult({}, res, [res.chi2], 0, 1)
 
     bounds = [(None, None) if p else (a, b) for p, a, b in zip(per, lo, hi)]
-    m = 1 << max(int(np.ceil(np.log2(max(n_starts, 1)))), 0)
-    starts = qmc.Sobol(len(names), scramble=True, seed=seed).random(m)[:n_starts]
-    starts = [lo + s * (hi - lo) for s in starts]
-    starts += [np.array([s[n] for n in names], dtype=float) for s in extra_starts]
+    extra = [np.array([s[n] for n in names], dtype=float) for s in extra_starts]
     opts = dict(xatol=1e-10, fatol=tol, maxiter=4000 * len(names), maxfev=4000 * len(names))
+    oo = dict(optimizer_options or {})
     finals, best = [], None
-    for x0 in starts:
-        r = minimize(f, x0, method="Nelder-Mead", bounds=bounds, options=opts)
+    if method == "de":
+        r = _de_search(f, lo, hi, seed, oo)
         finals.append(float(r.fun))
-        if best is None or r.fun < best.fun:
-            best = r
+        best = r
+        starts = [r.x] + extra
+        for x0 in extra:
+            r = minimize(f, x0, method="Nelder-Mead", bounds=bounds, options=opts)
+            finals.append(float(r.fun))
+            if r.fun < best.fun:
+                best = r
+    else:
+        m = 1 << max(int(np.ceil(np.log2(max(n_starts, 1)))), 0)
+        starts = qmc.Sobol(len(names), scramble=True, seed=seed).random(m)[:n_starts]
+        starts = [lo + s * (hi - lo) for s in starts]
+        starts += extra
+        if method == "lbfgsb":
+            lopts = dict(maxiter=15000, maxfun=15000 * len(names), ftol=1e-12, gtol=1e-8, eps=1e-8)
+            lopts.update(oo)
+        for x0 in starts:
+            if method == "lbfgsb":
+                r = minimize(f, x0, method="L-BFGS-B", bounds=bounds, options=lopts)
+            else:
+                r = minimize(f, x0, method="Nelder-Mead", bounds=bounds, options=opts)
+            finals.append(float(r.fun))
+            if best is None or r.fun < best.fun:
+                best = r
     r = minimize(f, best.x, method="Nelder-Mead", bounds=bounds, options=opts)
     xbest = r.x if r.fun <= best.fun else best.x
     theta = theta_of(xbest)
@@ -1032,6 +1119,34 @@ def fit_and_evaluate(model_fn: Callable[[dict], Mapping], param_bounds: Mapping[
         check_leaks(lambda: model_fn(theta), inputs)
     res = scorer(model_fn(theta), k=k, k_discrete=k_discrete, ordering_selected=ordering_selected)
     return FitResult({n: float(v) for n, v in theta.items()}, res, finals, len(starts), nfev)
+
+
+FIT_METHODS = ("nelder-mead", "lbfgsb", "de")
+
+
+def _de_search(f, lo, hi, seed, oo):
+    """scipy differential_evolution over [lo, hi] (fit_and_evaluate method="de")."""
+    from scipy.optimize import OptimizeResult, differential_evolution
+
+    o = dict(popsize=15, maxiter=1000, tol=1e-8, mutation=(0.5, 1.0), recombination=0.7, polish=True,
+             maxfev=None)
+    bad = set(oo) - set(o)
+    if bad:
+        raise ValueError(f"unknown DE options {sorted(bad)}; known {sorted(o)}")
+    o.update(oo)
+    maxfev = o.pop("maxfev")
+    count = [0]
+
+    def g(x):
+        count[0] += 1
+        return f(x)
+
+    cb = None
+    if maxfev is not None:
+        def cb(*_a, **_k):  # stop once the evaluation budget is spent (polish still runs)
+            return count[0] >= maxfev
+    r = differential_evolution(g, list(zip(lo, hi)), seed=seed, init="sobol", callback=cb, **o)
+    return OptimizeResult(x=np.asarray(r.x, float), fun=float(r.fun), nfev=int(r.nfev))
 
 
 def evaluate_baseline(b, ordering: str, analysis: str = _data.DEFAULT_ANALYSIS, ctx=None,

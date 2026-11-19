@@ -155,3 +155,6 @@ Rerun from this folder with `../../.venv/Scripts/python <script> <args>`. Each s
 - The eb08/ebfree fits are best-of-24 starts. eb08 starts land at 9.5, 10.2 and 10.4, so the minimum is probably close.
 - The PMNS running from M_GUT uses m_lightest = 0. The model gives m1 ≈ 0.4 meV, negligible at tanβ = 5.
 - In the held-out run the coupling signs are fixed to the best-fit pattern, and the prior box is ±2 decades. The PMNS spread depends on these priors for the neutrino couplings, which no quark datum constrains.
+
+## Erratum (overseer, iteration 8)
+The η̄_b treatment above is linear. Exp 026 added the full tanβ-enhanced threshold matching to `src.rg`; at the eb08 point the full treatment gives χ² 17.91, and a refit gives 11.59 (`experiments/20261119-026-infra-thresholds/refit_023_eb08.json`). The verdict is unchanged (k_cont 17 ≥ N 16).

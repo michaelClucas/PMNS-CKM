@@ -1,0 +1,1 @@
+{"method": "de_log", "seed": 1, "budget": 150000, "chi2": 22.402165421445652, "target": 22.401884762527306, "reached": true, "nfev": 155394, "seconds": 249.78287053108215, "start_chi2_sorted": [23.744504514468705], "n_starts": 1, "max_abs_pull": 2.640456193559026}

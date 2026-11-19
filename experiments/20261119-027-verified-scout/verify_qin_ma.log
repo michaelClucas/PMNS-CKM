@@ -1,0 +1,12 @@
+V T V^dag      th12  31.77  th13  7.89  th23  44.64  delta  360.0   (paper: 31.80, 7.67, 44.66)
+V^dag T V      th12  38.99  th13  7.71  th23  43.99  delta  179.7   (paper: 31.80, 7.67, 44.66)
+V^dag T V^dag  th12  12.28  th13  9.44  th23  39.49  delta  181.7   (paper: 31.80, 7.67, 44.66)
+V T V          th12  57.20  th13 10.97  th23  48.35  delta    1.2   (paper: 31.80, 7.67, 44.66)
+== Qin-Ma U = V U_TB V^dag  params={}
+   obs: {'s12sq': np.float64(0.27721), 's13sq': np.float64(0.01885), 's23sq': np.float64(0.49379), 'dcp_deg': np.float64(359.98003)}
+   CKM->1 limit: {'s12sq': np.float64(0.33333), 's13sq': np.float64(0.0), 's23sq': np.float64(0.5), 'dcp_deg': np.float64(360.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '-0.0115', 's13sq': '+0.174', 's23sq': '-0.00212', 'dcp_deg': '+1.76e-05'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0.00541', 's13sq': '-0.209', 's23sq': '+0.00666', 'dcp_deg': '+5.42e-06'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '-0.00524', 's13sq': '-0.00469', 's23sq': '+0.00276', 'dcp_deg': '-1.33e-06'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+1.22e-05', 's13sq': '+4.14e-05', 's23sq': '-8.23e-06', 'dcp_deg': '-1.31e-05'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 1.93, 's13sq': 19.53, 's23sq': 0.41, 'dcp_deg': 0.0, 'frac_invalid': 0.0}

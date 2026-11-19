@@ -6,7 +6,6 @@ err_minus may be stored with either sign; its absolute value is used.
 
 from __future__ import annotations
 
-import warnings
 from dataclasses import dataclass, field
 from typing import Callable, Mapping
 
@@ -91,8 +90,8 @@ class Objective:
         -> float, e.g. src.data.pmns_delta_chi2. None disables the PMNS term.
     pmns_ordering : "NO" or "IO".
     pmns_params : which of PMNS_PARAMS enter the fit (and N).
-    pmns_mode : default "sum1d" (a UserWarning is raised when it is left implicit and both
-        s23sq and dcp_deg are scored, exp 024). "sum1d" sums the 1D profiled Delta chi^2 of each parameter (ignores
+    pmns_mode : default "joint" (exp 026; it was "sum1d" before, with a warning added in
+        exp 024; no committed caller relied on the old default). "sum1d" sums the 1D profiled Delta chi^2 of each parameter (ignores
         correlations between PMNS parameters; this is what NuFIT's published 1D tables
         support). "joint" makes one call with all parameters and trusts the callable
         to combine them (use it if the loader provides a joint or 2D-projection chi^2).
@@ -126,13 +125,8 @@ class Objective:
     ):
         if pmns_ordering not in ("NO", "IO"):
             raise ValueError("pmns_ordering must be 'NO' or 'IO'")
-        if pmns_mode is None:  # default kept at sum1d for backward compatibility (exp 024)
-            pmns_mode = "sum1d"
-            if pmns_delta_chi2 is not None and {"s23sq", "dcp_deg"} <= set(pmns_params):
-                warnings.warn("Objective: pmns_mode defaults to 'sum1d', which drops the s23sq-delta "
-                              "correlation that src.evaluate keeps (exp 012 L2); pass pmns_mode='joint' "
-                              "to match the official score, or 'sum1d' explicitly to silence this.",
-                              UserWarning, stacklevel=2)
+        if pmns_mode is None:  # exp 026: default is joint, the official src.evaluate convention
+            pmns_mode = "joint"
         if pmns_mode not in ("sum1d", "joint"):
             raise ValueError("pmns_mode must be 'sum1d' or 'joint'")
         bad = set(pmns_params) - set(PMNS_PARAMS)

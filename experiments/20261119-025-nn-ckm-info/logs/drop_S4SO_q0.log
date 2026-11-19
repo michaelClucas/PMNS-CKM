@@ -1,0 +1,16 @@
+[drop_S4SO q0] ep 0 train 4.8911 val 4.5356 29s
+[drop_S4SO q0] ep 1 train 4.1060 val 4.1352 56s
+[drop_S4SO q0] ep 2 train 3.7811 val 4.0415 81s
+[drop_S4SO q0] ep 3 train 3.6672 val 3.4906 107s
+[drop_S4SO q0] ep 4 train 3.3917 val 3.3534 134s
+[drop_S4SO q0] ep 5 train 3.2857 val 3.2640 161s
+[drop_S4SO q0] ep 6 train 3.2614 val 3.2285 187s
+[drop_S4SO q0] ep 7 train 3.1154 val 3.1203 221s
+[drop_S4SO q0] ep 8 train 3.1417 val 3.0145 250s
+[drop_S4SO q0] ep 9 train 2.9873 val 2.9025 280s
+[drop_S4SO q0] ep 10 train 2.9726 val 2.8272 307s
+[drop_S4SO q0] ep 11 train 2.8360 val 2.8762 336s
+[drop_S4SO q0] ep 12 train 2.8667 val 2.7398 365s
+[drop_S4SO q0] ep 13 train 2.7147 val 2.8917 395s
+[drop_S4SO q0] ep 14 train 2.7583 val 2.7299 424s
+[drop_S4SO q0] done test nll 3.1340

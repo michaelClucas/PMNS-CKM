@@ -1,0 +1,27 @@
+CDSV-I at paper point: s12sq 0.3059 s13sq 0.02154 s23sq 0.5728 delta/pi 1.3050   published (0.306, 0.0216, 0.573, 1.305)
+CDSV-II at paper point: s12sq 0.3195 s13sq 0.02149 s23sq 0.5120 delta/pi 1.2700   published (0.32, 0.0216, 0.513, 1.27)
+== CDSV-I  params={'phi': 2.4064599726497815, 'pattern': 'I'}
+   obs: {'s12sq': np.float64(0.30759), 's13sq': np.float64(0.02165), 's23sq': np.float64(0.57211), 'dcp_deg': np.float64(234.82638)}
+   CKM->1 limit: {'s12sq': np.float64(0.0), 's13sq': np.float64(0.0), 's23sq': np.float64(1.0), 'dcp_deg': np.float64(248.96708)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.16', 's13sq': '+0.22', 's23sq': '-0.0598', 'dcp_deg': '-0.00337'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0.00873', 's13sq': '-0.00055', 's23sq': '-0.0391', 'dcp_deg': '-0.00153'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 23.73, 's13sq': 34.89, 's23sq': 11.48, 'dcp_deg': 0.52, 'frac_invalid': 0.0}
+== CDSV-II  params={'phi': -0.7288494956328321, 'pattern': 'II'}
+   obs: {'s12sq': np.float64(0.32086), 's13sq': np.float64(0.02159), 's23sq': np.float64(0.51432), 'dcp_deg': np.float64(228.74388)}
+   CKM->1 limit: {'s12sq': np.float64(0.0), 's13sq': np.float64(0.0), 's23sq': np.float64(0.0), 'dcp_deg': np.float64(0.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.123', 's13sq': '+0.196', 's23sq': '+0.152', 'dcp_deg': '+0.00495'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0.0405', 'dcp_deg': '+0.000154'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 22.4, 's13sq': 22.46, 's23sq': 17.49, 'dcp_deg': 0.89, 'frac_invalid': 0.39}
+== RMSV type 2  params={'psi': 2.95, 'phi': 5.541769440932395, 'utype': 2}
+   obs: {'s12sq': np.float64(0.31514), 's13sq': np.float64(0.02248), 's23sq': np.float64(0.41721), 'dcp_deg': np.float64(34.59628)}
+   CKM->1 limit: {'s12sq': np.float64(0.0), 's13sq': np.float64(0.0), 's23sq': np.float64(0.0), 'dcp_deg': np.float64(0.0)}
+   d obs/d lambda  (sigma_obs per sigma_in): {'s12sq': '+0.189', 's13sq': '+0.196', 's23sq': '+0.122', 'dcp_deg': '+0.00817'}
+   d obs/d A       (sigma_obs per sigma_in): {'s12sq': '-0.00636', 's13sq': '+0.0114', 's23sq': '-0.0388', 'dcp_deg': '-0.00204'}
+   d obs/d rhobar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   d obs/d etabar  (sigma_obs per sigma_in): {'s12sq': '+0', 's13sq': '+0', 's23sq': '+0', 'dcp_deg': '+0'}
+   median |shift| for random hierarchical CKM (sigma_obs): {'s12sq': 24.97, 's13sq': 23.34, 's23sq': 13.05, 'dcp_deg': 1.15, 'frac_invalid': 0.39}
+RMSV type 2 at paper point: {'s12sq': 0.317, 's13sq': 0.0225, 's23sq': 0.4197, 'dcp_deg': 34.8359} published s23sq 0.4174, delta/pi 1.216

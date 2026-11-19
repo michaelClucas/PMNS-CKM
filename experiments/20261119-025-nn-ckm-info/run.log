@@ -1,0 +1,32 @@
+MN    kept  30000 / raw   294005 (acceptance 0.1056), IO frac 0.000, 9 s
+F1    kept  30000 / raw    66651 (acceptance 0.4946), IO frac 0.000, 20 s
+F2    kept  30000 / raw    67809 (acceptance 0.4865), IO frac 0.000, 27 s
+SU5   kept  30000 / raw   184227 (acceptance 0.1767), IO frac 0.000, 152 s
+GEN   kept  30000 / raw  1684841 (acceptance 0.0178), IO frac 0.000, 156 s
+CTRL  kept  30000 / raw  2700278 (acceptance 0.0111), IO frac 0.000, 317 s
+MOD   kept  30000 / raw 24120527 (acceptance 0.0012), IO frac 0.000, 693 s
+S4SO  kept  30000 / raw   757415 (acceptance 0.0405), IO frac 0.000, 749 s
+FN    kept  30000 / raw 46717106 (acceptance 0.0006), IO frac 0.000, 1238 s
+saved 270000
+finished drop_F1 q0
+finished drop_F1 q1
+finished main q1
+finished main q0
+finished drop_F2 q0
+finished drop_MN q1
+finished drop_MN q0
+finished drop_F2 q1
+finished drop_FN q1
+finished drop_MOD q1
+finished drop_FN q0
+finished drop_MOD q0
+finished drop_SU5 q1
+finished drop_SU5 q0
+finished drop_S4SO q0
+finished drop_S4SO q1
+finished drop_GEN q1
+finished drop_GEN q0
+finished drop_CTRL q1
+finished drop_CTRL q0
+finished seed1 q1
+finished seed1 q0

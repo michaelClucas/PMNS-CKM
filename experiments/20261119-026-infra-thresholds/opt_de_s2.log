@@ -1,0 +1,1 @@
+{"method": "de", "seed": 2, "budget": 150000, "chi2": 22.41834558093728, "target": 22.401884762527306, "reached": false, "nfev": 150914, "seconds": 238.17260241508484, "start_chi2_sorted": [22.418345647975574], "n_starts": 1, "max_abs_pull": 2.640810600277777}

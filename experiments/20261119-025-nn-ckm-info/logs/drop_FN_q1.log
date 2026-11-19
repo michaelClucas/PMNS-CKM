@@ -1,0 +1,15 @@
+[drop_FN q1] ep 0 train 4.9156 val 4.2357 34s
+[drop_FN q1] ep 1 train 4.1011 val 3.9042 64s
+[drop_FN q1] ep 2 train 3.8433 val 3.5880 93s
+[drop_FN q1] ep 3 train 3.5126 val 3.4399 128s
+[drop_FN q1] ep 4 train 3.2693 val 3.2989 161s
+[drop_FN q1] ep 5 train 3.4520 val 4.0406 197s
+[drop_FN q1] ep 6 train 3.0882 val 2.8183 226s
+[drop_FN q1] ep 7 train 3.1111 val 2.8795 253s
+[drop_FN q1] ep 8 train 2.8843 val 2.8071 282s
+[drop_FN q1] ep 9 train 2.8613 val 2.8185 317s
+[drop_FN q1] ep 10 train 2.7581 val 2.8588 350s
+[drop_FN q1] ep 11 train 2.7329 val 3.0795 379s
+[drop_FN q1] ep 12 train 2.3643 val 2.1972 409s
+[drop_FN q1] ep 13 train 2.2933 val 2.7838 439s
+[drop_FN q1] done test nll 3.2197
