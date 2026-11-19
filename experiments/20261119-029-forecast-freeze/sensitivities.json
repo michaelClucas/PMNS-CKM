@@ -1,0 +1,20 @@
+{
+ "note": "Projected 1-sigma uncertainties used by forecast.py. Future central values = NuFIT 6.1 best fit of each ordering (default analysis IC23_woSKatm, read through src.data). Gaussian treatment. Values marked 'interpolated' are this experiment's reading of the cited numbers, not a number printed in the source.",
+ "scenarios": {
+  "nominal": {
+   "s12sq": {"sigma": 0.0016, "source": "JUNO 6 yr: sin^2 theta12 = 0.307 +- 0.0016 (0.5%), Table 6 of JUNO Collaboration, arXiv:2204.13249, Chin. Phys. C 46 (2022) 123001"},
+   "s13sq": {"sigma": "current", "source": "No planned experiment improves sin^2 theta13 below the reactor (Daya Bay) precision already in NuFIT 6.1 (JUNO 6 yr: 12%, arXiv:2204.13249 Table 6; DUNE approaches reactor precision only after ~15 yr, arXiv:2006.16043). Current NuFIT 6.1 symmetrized 1 sigma kept."},
+   "s23sq": {"sigma": 0.010, "source": "interpolated. Hyper-K 10 yr (1 tank): sigma(sin^2 theta23) = 0.017 at 0.50 and 0.006 at 0.45 (Hyper-K Design Report arXiv:1805.04163 Table 1; Hyper-K physics potential arXiv:1502.05199). NuFIT 6.1 best fits 0.470 (NO) and 0.555 (IO) lie between; 0.010 taken for both. DUNE quotes octant sensitivity for sin^2 theta23 < 0.47 or > 0.55 (arXiv:2006.16043)."},
+   "dcp_deg": {"sigma": {"NO": 15.0, "IO": 20.0}, "source": "interpolated. DUNE: 10 deg at delta = 0 after 8 staged yr, 20 deg at delta = -90 deg after 12 yr, 5-15 deg after 15 yr depending on delta (arXiv:2006.16043, Eur. Phys. J. C 80 (2020) 978, Table 11 and Sec. 7). Hyper-K 10 yr: 7.2 deg at delta = 0, < 23 deg at +-90 deg (arXiv:1805.04163). NO best fit 207 deg (near CP-conserving) -> 15 deg; IO best fit 283 deg (near maximal) -> 20 deg."},
+   "ckm": {"sigma": "current", "source": "PDG 2026 Wolfenstein errors (data/ckm.json)."},
+   "ordering": "DUNE determines the ordering at > 5 sigma for all delta within 2-3 staged yr (arXiv:2006.16043). Forecasts are reported per ordering; only the true ordering's rows will be tested."
+  },
+  "optimistic": {
+   "s12sq": {"sigma": 0.0010, "source": "JUNO 20 yr: +-0.0010 (0.3%), arXiv:2204.13249 Table 6"},
+   "s13sq": {"sigma": "current", "source": "as nominal"},
+   "s23sq": {"sigma": 0.006, "source": "Hyper-K value at sin^2 theta23 = 0.45 (arXiv:1805.04163, 1502.05199) applied to both orderings, as a stand-in for a DUNE + Hyper-K combination"},
+   "dcp_deg": {"sigma": {"NO": 8.0, "IO": 12.0}, "source": "interpolated DUNE 15 yr (5-15 deg, arXiv:2006.16043) combined with Hyper-K (7.2-23 deg, arXiv:1805.04163)"},
+   "ckm": {"sigma": "rhobar, etabar errors x 0.25", "source": "gamma: LHCb Upgrade II ~0.35 deg with 300 fb^-1 (arXiv:1808.08865; as summarized in CKM 2018 WG V, arXiv:1901.03604); Belle II ~1-1.5 deg with 50 ab^-1 (Belle II Physics Book arXiv:1808.10567). Current CKM-phase error ~1.4 deg (delta_rad 1.154 +- 0.025 rad); the factor 0.25 on rhobar, etabar is a crude stand-in for the gamma improvement. lambda and A kept at current errors (no projection used)."}
+  }
+ }
+}

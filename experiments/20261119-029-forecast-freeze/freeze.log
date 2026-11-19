@@ -1,0 +1,49 @@
+screen A1s        max|pull| NO 4.38 IO 4.38
+screen A1-        max|pull| NO 4.38 IO 4.38
+screen A1+        max|pull| NO 4.38 IO 4.38
+screen A3         max|pull| NO 5.02 IO 4.64
+screen A3k        max|pull| NO 5.02 IO 4.64
+screen A4a-TBM    max|pull| NO 1.89 IO 1.80
+screen A4a-BM     max|pull| NO 3.84 IO 4.12
+screen A4a-GR1    max|pull| NO 1.99 IO 1.74
+screen A4a-GR2    max|pull| NO 1.83 IO 1.81
+screen A4a-HEX    max|pull| NO 1.95 IO 1.76
+screen A4c-TBM    max|pull| NO 3.55 IO 3.27
+screen A4c-BM     max|pull| NO 4.21 IO 4.42
+screen A4c-GR1    max|pull| NO 3.55 IO 3.27
+screen A4c-GR2    max|pull| NO 3.55 IO 3.27
+screen A4c-HEX    max|pull| NO 3.55 IO 3.27
+screen A4b-TBM    max|pull| NO 5.46 IO 6.11
+screen A4b-BM     max|pull| NO 1.96 IO 1.55
+screen A4b-GR1    max|pull| NO 14.27 IO 14.25
+screen A4b-GR2    max|pull| NO 4.62 IO 4.81
+screen A4b-HEX    max|pull| NO 18.07 IO 18.28
+screen E1         max|pull| NO 1.95 IO 0.56
+K-A4a-TBM      NO chi2   7.074 p_glob 0.0291 max|pull| 1.89 pred [0.308, 0.0235, 0.455, 266.32573] params {"alpha": 4.948712, "beta": 4.255762}
+K-A4a-TBM      IO chi2   6.023 p_glob 0.0234 max|pull| 1.80 pred [0.308, 0.02353, 0.45661, 266.28349] params {"alpha": 4.950798, "beta": 4.200392}
+K-A4a-GR1      NO chi2   7.411 p_glob 0.0246 max|pull| 1.99 pred [0.308, 0.0235, 0.455, 288.01366] params {"alpha": 4.593319, "beta": 3.900369}
+K-A4a-GR1      IO chi2   6.552 p_glob 0.018 max|pull| 1.74 pred [0.308, 0.02357, 0.45801, 287.95709] params {"alpha": 4.596616, "beta": 3.798755}
+K-A4a-GR2      NO chi2   6.867 p_glob 0.0323 max|pull| 1.83 pred [0.308, 0.0235, 0.455, 261.69775] params {"alpha": 5.022652, "beta": 4.329702}
+K-A4a-GR2      IO chi2   6.169 p_glob 0.0218 max|pull| 1.81 pred [0.31, 0.02353, 0.45632, 262.40082] params {"alpha": 5.011077, "beta": 4.270538}
+K-A4a-HEX      NO chi2   7.260 p_glob 0.0265 max|pull| 1.95 pred [0.308, 0.0235, 0.455, 298.72473] params {"alpha": 4.409446, "beta": 3.716496}
+K-A4a-HEX      IO chi2   7.670 p_glob 0.0103 max|pull| 1.76 pred [0.308, 0.0236, 0.45925, 298.66266] params {"alpha": 4.413538, "beta": 3.575553}
+K-A4b-BM       NO chi2   5.886 p_glob 0.0527 max|pull| 1.96 pred [0.31353, 0.0232, 0.46, 273.91185] params {"alpha": 1.428237, "beta": 0.032423}
+K-A4b-BM       IO chi2   4.166 p_glob 0.0592 max|pull| 1.55 pred [0.314, 0.02322, 0.465, 274.42382] params {"alpha": 1.423172, "beta": 0.150232}
+K-E1           NO chi2   3.816 p_glob 0.0508 max|pull| 1.95 pred [0.308, 0.0225, 0.465, 273.08576] params {"t1": 0.605085, "t2": 0.74222, "t3": 0.266854}
+K-E1           IO chi2   0.315 p_glob 0.18 max|pull| 0.56 pred [0.308, 0.0226, 0.555, 268.1708] params {"t1": 0.605159, "t2": 0.842007, "t3": 0.267432}
+F2LO-GR2       NO chi2   7.211 p_glob 0.0655 max|pull| 1.84 pred [0.308, 0.02323, 0.44526, 259.93049] params {"phi": 5.010492}
+F2LO-GR2       IO chi2   7.338 p_glob 0.0317 max|pull| 2.42 pred [0.31, 0.02323, 0.44526, 260.66607] params {"phi": 4.997213}
+F2LO-TBM       NO chi2   7.413 p_glob 0.0598 max|pull| 1.87 pred [0.308, 0.02323, 0.44526, 264.53721] params {"phi": 4.936938}
+F2LO-TBM       IO chi2   7.165 p_glob 0.0343 max|pull| 2.42 pred [0.30928, 0.02323, 0.44526, 265.0] params {"phi": 4.928491}
+BL-CDSV-I      NO chi2   8.208 p_glob 0.0419 max|pull| 2.70 pred [0.30631, 0.0225, 0.57174, 125.04096] params {"phi": 3.894129}
+BL-CDSV-I      IO chi2   4.710 p_glob 0.102 max|pull| 1.68 pred [0.30616, 0.0226, 0.5717, 234.97333] params {"phi": 2.387026}
+BL-CDSV-II     NO chi2   7.973 p_glob 0.0466 max|pull| 1.64 pred [0.31896, 0.0226, 0.51377, 229.07651] params {"phi": 5.53127}
+BL-CDSV-II     IO chi2   9.375 p_glob 0.0125 max|pull| 1.90 pred [0.31878, 0.0227, 0.51371, 229.10706] params {"phi": 5.529021}
+BL-RMSV-1      NO chi2   4.790 p_glob 0.0912 max|pull| 1.79 pred [0.312, 0.0224, 0.45013, 323.04638] params {"psi": 2.924849, "phi": 0.744888}
+BL-RMSV-1      IO chi2  12.162 p_glob 0.00109 max|pull| 1.93 pred [0.316, 0.0225, 0.45365, 322.65267] params {"psi": 2.937235, "phi": 0.747668}
+BL-RMSV-2      NO chi2  20.012 p_glob 4.51e-05 max|pull| 3.57 pred [0.324, 0.0222, 0.42635, 324.44129] params {"psi": 2.981114, "phi": 0.736292}
+BL-RMSV-2      IO chi2  30.121 p_glob 1.37e-07 max|pull| 3.76 pred [0.326, 0.0222, 0.42821, 324.2357] params {"psi": 2.987528, "phi": 0.736642}
+BL-RMSV-4      NO chi2   5.133 p_glob 0.0768 max|pull| 1.78 pred [0.306, 0.0226, 0.48553, 323.45446] params {"psi": 2.903235, "phi": 3.890293}
+BL-RMSV-4      IO chi2   8.775 p_glob 0.00591 max|pull| 1.76 pred [0.31, 0.0226, 0.48938, 323.03794] params {"psi": 2.916587, "phi": 3.890813}
+symbolic survivors per target (before cap): {'s12sq': 22, 's13sq': 6, 's23sq': 193, 'dcp_deg': 787}, total 1008
+frozen relations: 37; rows 74; surviving per ordering {'NO': 35, 'IO': 34}

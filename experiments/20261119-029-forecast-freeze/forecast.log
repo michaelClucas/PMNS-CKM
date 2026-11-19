@@ -1,0 +1,595 @@
+K-A4a-TBM NO [('current_gauss', 11.48, 2.95), ('nominal', 20.38, 4.12), ('optimistic', 60.14, 7.46), ('nominal_altoct', 59.67, 7.43), ('optimistic_altoct', 115.13, 10.49)]
+K-A4a-TBM IO [('current_gauss', 33.76, 5.46), ('nominal', 49.37, 6.71), ('optimistic', 76.02, 8.44), ('nominal_altoct', 4.72, 1.67), ('optimistic_altoct', 6.62, 2.09)]
+K-A4a-GR1 NO [('current_gauss', 18.02, 3.84), ('nominal', 33.94, 5.48), ('optimistic', 107.83, 10.14), ('nominal_altoct', 73.32, 8.28), ('optimistic_altoct', 163.28, 12.56)]
+K-A4a-GR1 IO [('current_gauss', 33.31, 5.42), ('nominal', 48.51, 6.65), ('optimistic', 73.29, 8.28), ('nominal_altoct', 4.11, 1.52), ('optimistic_altoct', 4.86, 1.7)]
+K-A4a-GR2 NO [('current_gauss', 10.35, 2.77), ('nominal', 18.03, 3.84), ('optimistic', 51.89, 6.89), ('nominal_altoct', 57.34, 7.27), ('optimistic_altoct', 106.97, 10.09)]
+K-A4a-GR2 IO [('current_gauss', 34.04, 5.49), ('nominal', 49.88, 6.75), ('optimistic', 77.54, 8.53), ('nominal_altoct', 5.16, 1.78), ('optimistic_altoct', 7.85, 2.33)]
+K-A4a-HEX NO [('current_gauss', 21.97, 4.3), ('nominal', 42.2, 6.17), ('optimistic', 136.87, 11.47), ('nominal_altoct', 81.76, 8.77), ('optimistic_altoct', 193.27, 13.7)]
+K-A4a-HEX IO [('current_gauss', 33.63, 5.45), ('nominal', 49.03, 6.69), ('optimistic', 74.65, 8.36), ('nominal_altoct', 4.67, 1.66), ('optimistic_altoct', 6.42, 2.05)]
+K-A4b-BM NO [('current_gauss', 11.9, 3.01), ('nominal', 22.15, 4.32), ('optimistic', 70.63, 8.12), ('nominal_altoct', 61.88, 7.57), ('optimistic_altoct', 172.75, 12.93)]
+K-A4b-BM IO [('current_gauss', 23.45, 4.46), ('nominal', 45.0, 6.39), ('optimistic', 110.52, 10.27), ('nominal_altoct', 2.59, 1.09), ('optimistic_altoct', 3.1, 1.25)]
+K-E1 NO [('current_gauss', 9.32, 3.05), ('nominal', 19.1, 4.37), ('optimistic', 67.46, 8.21), ('nominal_altoct', 16.66, 4.08), ('optimistic_altoct', 58.83, 7.67)]
+K-E1 IO [('current_gauss', 0.32, 0.57), ('nominal', 0.55, 0.74), ('optimistic', 1.52, 1.23), ('nominal_altoct', 0.26, 0.51), ('optimistic_altoct', 0.72, 0.85)]
+F2LO-GR2 NO [('current_gauss', 10.18, 2.38), ('nominal', 20.24, 3.79), ('optimistic', 62.41, 7.36), ('nominal_altoct', 123.04, 10.65), ('optimistic_altoct', 344.21, 18.24)]
+F2LO-GR2 IO [('current_gauss', 58.99, 7.13), ('nominal', 121.97, 10.6), ('optimistic', 332.38, 17.91), ('nominal_altoct', 8.52, 2.09), ('optimistic_altoct', 21.4, 3.92)]
+F2LO-TBM NO [('current_gauss', 11.27, 2.56), ('nominal', 22.5, 4.05), ('optimistic', 70.38, 7.87), ('nominal_altoct', 125.31, 10.76), ('optimistic_altoct', 352.18, 18.45)]
+F2LO-TBM IO [('current_gauss', 58.71, 7.12), ('nominal', 121.5, 10.58), ('optimistic', 331.07, 17.87), ('nominal_altoct', 8.05, 2.01), ('optimistic_altoct', 20.1, 3.77)]
+BL-CDSV-I NO [('current_gauss', 44.52, 6.08), ('nominal', 105.73, 9.82), ('optimistic', 284.59, 16.53), ('nominal_altoct', 8.98, 2.18), ('optimistic_altoct', 25.75, 4.4)]
+BL-CDSV-I IO [('current_gauss', 4.87, 1.34), ('nominal', 9.51, 2.27), ('optimistic', 24.67, 4.29), ('nominal_altoct', 108.07, 9.94), ('optimistic_altoct', 288.3, 16.64)]
+BL-CDSV-II NO [('current_gauss', 10.94, 2.51), ('nominal', 36.92, 5.46), ('optimistic', 71.57, 7.94), ('nominal_altoct', 32.24, 5.04), ('optimistic_altoct', 61.17, 7.28)]
+BL-CDSV-II IO [('current_gauss', 14.18, 3.0), ('nominal', 40.14, 5.73), ('optimistic', 80.92, 8.5), ('nominal_altoct', 41.19, 5.82), ('optimistic_altoct', 82.67, 8.6)]
+BL-RMSV-1 NO [('current_gauss', 30.89, 5.2), ('nominal', 64.54, 7.74), ('optimistic', 220.26, 14.64), ('nominal_altoct', 149.95, 12.02), ('optimistic_altoct', 410.88, 20.11)]
+BL-RMSV-1 IO [('current_gauss', 46.58, 6.51), ('nominal', 104.03, 9.95), ('optimistic', 236.52, 15.19), ('nominal_altoct', 8.74, 2.49), ('optimistic_altoct', 21.71, 4.27)]
+BL-RMSV-2 NO [('current_gauss', 28.65, 4.99), ('nominal', 91.84, 9.32), ('optimistic', 284.09, 16.67), ('nominal_altoct', 225.8, 14.83), ('optimistic_altoct', 585.09, 24.05)]
+BL-RMSV-2 IO [('current_gauss', 21.71, 4.27), ('nominal', 181.28, 13.25), ('optimistic', 411.95, 20.14), ('nominal_altoct', 34.28, 5.51), ('optimistic_altoct', 79.45, 8.64)]
+BL-RMSV-4 NO [('current_gauss', 30.46, 5.16), ('nominal', 62.94, 7.64), ('optimistic', 217.65, 14.55), ('nominal_altoct', 91.0, 9.28), ('optimistic_altoct', 277.1, 16.46)]
+BL-RMSV-4 IO [('current_gauss', 18.89, 3.95), ('nominal', 41.18, 6.09), ('optimistic', 92.91, 9.38), ('nominal_altoct', 6.82, 2.13), ('optimistic_altoct', 17.42, 3.77)]
+S-s12-1 NO [('current_gauss', 2.84, 1.68), ('nominal', 12.96, 3.6), ('optimistic', 14.96, 3.87), ('nominal_altoct', 12.96, 3.6), ('optimistic_altoct', 14.96, 3.87)]
+S-s12-1 IO [('current_gauss', 2.84, 1.68), ('nominal', 12.96, 3.6), ('optimistic', 14.96, 3.87), ('nominal_altoct', 12.96, 3.6), ('optimistic_altoct', 14.96, 3.87)]
+S-s12-2 NO [('current_gauss', 0.18, 0.43), ('nominal', 2.61, 1.62), ('optimistic', 5.15, 2.27), ('nominal_altoct', 2.61, 1.62), ('optimistic_altoct', 5.15, 2.27)]
+S-s12-2 IO [('current_gauss', 0.18, 0.43), ('nominal', 2.61, 1.62), ('optimistic', 5.15, 2.27), ('nominal_altoct', 2.61, 1.62), ('optimistic_altoct', 5.15, 2.27)]
+S-s12-3 NO [('current_gauss', 0.25, 0.5), ('nominal', 1.67, 1.29), ('optimistic', 2.14, 1.46), ('nominal_altoct', 1.67, 1.29), ('optimistic_altoct', 2.14, 1.46)]
+S-s12-3 IO [('current_gauss', 0.25, 0.5), ('nominal', 1.67, 1.29), ('optimistic', 2.14, 1.46), ('nominal_altoct', 1.67, 1.29), ('optimistic_altoct', 2.14, 1.46)]
+S-s12-4 NO [('current_gauss', 0.63, 0.79), ('nominal', 8.87, 2.98), ('optimistic', 17.46, 4.18), ('nominal_altoct', 8.87, 2.98), ('optimistic_altoct', 17.46, 4.18)]
+S-s12-4 IO [('current_gauss', 0.63, 0.79), ('nominal', 8.87, 2.98), ('optimistic', 17.46, 4.18), ('nominal_altoct', 8.87, 2.98), ('optimistic_altoct', 17.46, 4.18)]
+S-s12-5 NO [('current_gauss', 0.93, 0.96), ('nominal', 13.69, 3.7), ('optimistic', 28.17, 5.31), ('nominal_altoct', 13.69, 3.7), ('optimistic_altoct', 28.17, 5.31)]
+S-s12-5 IO [('current_gauss', 0.93, 0.96), ('nominal', 13.69, 3.7), ('optimistic', 28.17, 5.31), ('nominal_altoct', 13.69, 3.7), ('optimistic_altoct', 28.17, 5.31)]
+S-s12-6 NO [('current_gauss', 0.54, 0.73), ('nominal', 1.13, 1.06), ('optimistic', 1.18, 1.09), ('nominal_altoct', 1.13, 1.06), ('optimistic_altoct', 1.18, 1.09)]
+S-s12-6 IO [('current_gauss', 0.54, 0.73), ('nominal', 1.13, 1.06), ('optimistic', 1.18, 1.09), ('nominal_altoct', 1.13, 1.06), ('optimistic_altoct', 1.18, 1.09)]
+S-s13-1 NO [('current_gauss', 0.12, 0.34), ('nominal', 0.12, 0.34), ('optimistic', 0.12, 0.34), ('nominal_altoct', 0.12, 0.34), ('optimistic_altoct', 0.12, 0.34)]
+S-s13-1 IO [('current_gauss', 0.02, 0.14), ('nominal', 0.02, 0.14), ('optimistic', 0.02, 0.14), ('nominal_altoct', 0.02, 0.14), ('optimistic_altoct', 0.02, 0.14)]
+S-s13-2 NO [('current_gauss', 0.08, 0.29), ('nominal', 0.08, 0.29), ('optimistic', 0.08, 0.29), ('nominal_altoct', 0.08, 0.29), ('optimistic_altoct', 0.08, 0.29)]
+S-s13-2 IO [('current_gauss', 0.25, 0.5), ('nominal', 0.25, 0.5), ('optimistic', 0.25, 0.5), ('nominal_altoct', 0.25, 0.5), ('optimistic_altoct', 0.25, 0.5)]
+S-s13-3 NO [('current_gauss', 0.36, 0.6), ('nominal', 0.36, 0.6), ('optimistic', 0.36, 0.6), ('nominal_altoct', 0.36, 0.6), ('optimistic_altoct', 0.36, 0.6)]
+S-s13-3 IO [('current_gauss', 0.16, 0.4), ('nominal', 0.16, 0.4), ('optimistic', 0.16, 0.4), ('nominal_altoct', 0.16, 0.4), ('optimistic_altoct', 0.16, 0.4)]
+S-s13-4 NO [('current_gauss', 0.12, 0.34), ('nominal', 0.12, 0.34), ('optimistic', 0.12, 0.34), ('nominal_altoct', 0.12, 0.34), ('optimistic_altoct', 0.12, 0.34)]
+S-s13-4 IO [('current_gauss', 0.25, 0.5), ('nominal', 0.25, 0.5), ('optimistic', 0.25, 0.5), ('nominal_altoct', 0.25, 0.5), ('optimistic_altoct', 0.25, 0.5)]
+S-s13-5 NO [('current_gauss', 0.74, 0.86), ('nominal', 0.74, 0.86), ('optimistic', 0.74, 0.86), ('nominal_altoct', 0.74, 0.86), ('optimistic_altoct', 0.74, 0.86)]
+S-s13-5 IO [('current_gauss', 0.44, 0.66), ('nominal', 0.44, 0.66), ('optimistic', 0.44, 0.66), ('nominal_altoct', 0.44, 0.66), ('optimistic_altoct', 0.44, 0.66)]
+S-s13-6 NO [('current_gauss', 0.78, 0.88), ('nominal', 0.78, 0.88), ('optimistic', 0.78, 0.88), ('nominal_altoct', 0.78, 0.88), ('optimistic_altoct', 0.78, 0.88)]
+S-s13-6 IO [('current_gauss', 0.47, 0.69), ('nominal', 0.47, 0.69), ('optimistic', 0.47, 0.69), ('nominal_altoct', 0.47, 0.69), ('optimistic_altoct', 0.47, 0.69)]
+S-s23-1 NO [('current_gauss', 28.98, 5.38), ('nominal', 48.1, 6.94), ('optimistic', 68.81, 8.3), ('nominal_altoct', 2.1, 1.45), ('optimistic_altoct', 3.0, 1.73)]
+S-s23-1 IO [('current_gauss', 0.81, 0.9), ('nominal', 1.22, 1.11), ('optimistic', 1.75, 1.32), ('nominal_altoct', 48.1, 6.94), ('optimistic_altoct', 68.81, 8.3)]
+S-s23-2 NO [('current_gauss', 21.44, 4.63), ('nominal', 51.34, 7.17), ('optimistic', 141.22, 11.88), ('nominal_altoct', 0.66, 0.81), ('optimistic_altoct', 1.82, 1.35)]
+S-s23-2 IO [('current_gauss', 0.82, 0.91), ('nominal', 1.72, 1.31), ('optimistic', 4.73, 2.17), ('nominal_altoct', 51.34, 7.17), ('optimistic_altoct', 141.22, 11.88)]
+S-s23-3 NO [('current_gauss', 16.05, 4.01), ('nominal', 33.5, 5.79), ('optimistic', 66.47, 8.15), ('nominal_altoct', 1.57, 1.25), ('optimistic_altoct', 3.12, 1.77)]
+S-s23-3 IO [('current_gauss', 1.55, 1.24), ('nominal', 2.87, 1.69), ('optimistic', 5.7, 2.39), ('nominal_altoct', 33.5, 5.79), ('optimistic_altoct', 66.47, 8.15)]
+S-s23-4 NO [('current_gauss', 1.27, 1.13), ('nominal', 3.04, 1.74), ('optimistic', 8.38, 2.89), ('nominal_altoct', 38.89, 6.24), ('optimistic_altoct', 107.11, 10.35)]
+S-s23-4 IO [('current_gauss', 21.63, 4.65), ('nominal', 45.36, 6.74), ('optimistic', 124.93, 11.18), ('nominal_altoct', 3.04, 1.74), ('optimistic_altoct', 8.38, 2.89)]
+S-s23-5 NO [('current_gauss', 0.58, 0.76), ('nominal', 1.4, 1.18), ('optimistic', 3.84, 1.96), ('nominal_altoct', 83.9, 9.16), ('optimistic_altoct', 230.77, 15.19)]
+S-s23-5 IO [('current_gauss', 44.5, 6.67), ('nominal', 93.28, 9.66), ('optimistic', 256.58, 16.02), ('nominal_altoct', 1.4, 1.18), ('optimistic_altoct', 3.84, 1.96)]
+S-s23-6 NO [('current_gauss', 2.87, 1.69), ('nominal', 6.88, 2.62), ('optimistic', 19.12, 4.37), ('nominal_altoct', 28.9, 5.38), ('optimistic_altoct', 80.27, 8.96)]
+S-s23-6 IO [('current_gauss', 16.42, 4.05), ('nominal', 34.53, 5.88), ('optimistic', 95.9, 9.79), ('nominal_altoct', 6.88, 2.62), ('optimistic_altoct', 19.12, 4.37)]
+S-dcp-1 NO [('current_gauss', 16.26, 4.03), ('nominal', 33.24, 5.77), ('optimistic', 114.28, 10.69), ('nominal_altoct', 33.24, 5.77), ('optimistic_altoct', 114.28, 10.69)]
+S-dcp-1 IO [('current_gauss', 0.17, 0.42), ('nominal', 0.29, 0.54), ('optimistic', 0.81, 0.9), ('nominal_altoct', 0.29, 0.54), ('optimistic_altoct', 0.81, 0.9)]
+S-dcp-2 NO [('current_gauss', 3.23, 1.8), ('nominal', 6.63, 2.57), ('optimistic', 23.31, 4.83), ('nominal_altoct', 6.63, 2.57), ('optimistic_altoct', 23.31, 4.83)]
+S-dcp-2 IO [('current_gauss', 2.07, 1.44), ('nominal', 3.49, 1.87), ('optimistic', 9.7, 3.11), ('nominal_altoct', 3.49, 1.87), ('optimistic_altoct', 9.7, 3.11)]
+S-dcp-3 NO [('current_gauss', 3.3, 1.82), ('nominal', 6.74, 2.6), ('optimistic', 23.17, 4.81), ('nominal_altoct', 6.74, 2.6), ('optimistic_altoct', 23.17, 4.81)]
+S-dcp-3 IO [('current_gauss', 2.01, 1.42), ('nominal', 3.38, 1.84), ('optimistic', 9.31, 3.05), ('nominal_altoct', 3.38, 1.84), ('optimistic_altoct', 9.31, 3.05)]
+S-dcp-4 NO [('current_gauss', 3.3, 1.82), ('nominal', 6.74, 2.6), ('optimistic', 23.17, 4.81), ('nominal_altoct', 6.74, 2.6), ('optimistic_altoct', 23.17, 4.81)]
+S-dcp-4 IO [('current_gauss', 2.01, 1.42), ('nominal', 3.38, 1.84), ('optimistic', 9.31, 3.05), ('nominal_altoct', 3.38, 1.84), ('optimistic_altoct', 9.31, 3.05)]
+S-dcp-5 NO [('current_gauss', 3.6, 1.9), ('nominal', 7.4, 2.72), ('optimistic', 26.02, 5.1), ('nominal_altoct', 7.4, 2.72), ('optimistic_altoct', 26.02, 5.1)]
+S-dcp-5 IO [('current_gauss', 1.83, 1.35), ('nominal', 3.1, 1.76), ('optimistic', 8.6, 2.93), ('nominal_altoct', 3.1, 1.76), ('optimistic_altoct', 8.6, 2.93)]
+S-dcp-6 NO [('current_gauss', 2.07, 1.44), ('nominal', 4.23, 2.06), ('optimistic', 14.56, 3.82), ('nominal_altoct', 4.23, 2.06), ('optimistic_altoct', 14.56, 3.82)]
+S-dcp-6 IO [('current_gauss', 2.99, 1.73), ('nominal', 5.04, 2.24), ('optimistic', 13.86, 3.72), ('nominal_altoct', 5.04, 2.24), ('optimistic_altoct', 13.86, 3.72)]
+{
+ "P3": 0.0026997960632601866,
+ "P5": 5.733031437583866e-07,
+ "exclusion": {
+  "current_gauss/NO": {
+   "M": 35,
+   "n_excl_3sigma": 10,
+   "n_excl_5sigma": 3,
+   "frac_3sigma": 0.2857142857142857,
+   "frac_5sigma": 0.08571428571428572,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 4,
+     "excl5": 0
+    },
+    "F": {
+     "n": 2,
+     "excl3": 0,
+     "excl5": 0
+    },
+    "B": {
+     "n": 3,
+     "excl3": 2,
+     "excl5": 2
+    },
+    "S": {
+     "n": 24,
+     "excl3": 4,
+     "excl5": 1
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-GR1",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "K-E1",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s23-1",
+    "S-s23-2",
+    "S-s23-3",
+    "S-dcp-1"
+   ]
+  },
+  "current_gauss/IO": {
+   "M": 34,
+   "n_excl_3sigma": 11,
+   "n_excl_5sigma": 6,
+   "frac_3sigma": 0.3235294117647059,
+   "frac_5sigma": 0.17647058823529413,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 5,
+     "excl5": 4
+    },
+    "B": {
+     "n": 4,
+     "excl3": 3,
+     "excl5": 1
+    },
+    "S": {
+     "n": 24,
+     "excl3": 3,
+     "excl5": 1
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s23-4",
+    "S-s23-5",
+    "S-s23-6"
+   ]
+  },
+  "nominal/NO": {
+   "M": 35,
+   "n_excl_3sigma": 17,
+   "n_excl_5sigma": 9,
+   "frac_3sigma": 0.4857142857142857,
+   "frac_5sigma": 0.2571428571428571,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 6,
+     "excl5": 2
+    },
+    "F": {
+     "n": 2,
+     "excl3": 2,
+     "excl5": 0
+    },
+    "B": {
+     "n": 3,
+     "excl3": 3,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 6,
+     "excl5": 4
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "K-E1",
+    "F2LO-GR2",
+    "F2LO-TBM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-5",
+    "S-s23-1",
+    "S-s23-2",
+    "S-s23-3",
+    "S-dcp-1"
+   ]
+  },
+  "nominal/IO": {
+   "M": 34,
+   "n_excl_3sigma": 13,
+   "n_excl_5sigma": 11,
+   "frac_3sigma": 0.38235294117647056,
+   "frac_5sigma": 0.3235294117647059,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 5,
+     "excl5": 5
+    },
+    "B": {
+     "n": 4,
+     "excl3": 3,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 5,
+     "excl5": 3
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-5",
+    "S-s23-4",
+    "S-s23-5",
+    "S-s23-6"
+   ]
+  },
+  "optimistic/NO": {
+   "M": 35,
+   "n_excl_3sigma": 24,
+   "n_excl_5sigma": 17,
+   "frac_3sigma": 0.6857142857142857,
+   "frac_5sigma": 0.4857142857142857,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 6,
+     "excl5": 6
+    },
+    "F": {
+     "n": 2,
+     "excl3": 2,
+     "excl5": 2
+    },
+    "B": {
+     "n": 3,
+     "excl3": 3,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 13,
+     "excl5": 6
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "K-E1",
+    "F2LO-GR2",
+    "F2LO-TBM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-4",
+    "S-s12-5",
+    "S-s23-1",
+    "S-s23-2",
+    "S-s23-3",
+    "S-s23-6",
+    "S-dcp-1",
+    "S-dcp-2",
+    "S-dcp-3",
+    "S-dcp-4",
+    "S-dcp-5",
+    "S-dcp-6"
+   ]
+  },
+  "optimistic/IO": {
+   "M": 34,
+   "n_excl_3sigma": 19,
+   "n_excl_5sigma": 12,
+   "frac_3sigma": 0.5588235294117647,
+   "frac_5sigma": 0.35294117647058826,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 5,
+     "excl5": 5
+    },
+    "B": {
+     "n": 4,
+     "excl3": 4,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 10,
+     "excl5": 4
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "BL-CDSV-I",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-4",
+    "S-s12-5",
+    "S-s23-4",
+    "S-s23-5",
+    "S-s23-6",
+    "S-dcp-2",
+    "S-dcp-3",
+    "S-dcp-4",
+    "S-dcp-6"
+   ]
+  },
+  "nominal_altoct/NO": {
+   "M": 35,
+   "n_excl_3sigma": 17,
+   "n_excl_5sigma": 14,
+   "frac_3sigma": 0.4857142857142857,
+   "frac_5sigma": 0.4,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 6,
+     "excl5": 5
+    },
+    "F": {
+     "n": 2,
+     "excl3": 2,
+     "excl5": 2
+    },
+    "B": {
+     "n": 3,
+     "excl3": 3,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 6,
+     "excl5": 4
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "K-E1",
+    "F2LO-GR2",
+    "F2LO-TBM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-5",
+    "S-s23-4",
+    "S-s23-5",
+    "S-s23-6",
+    "S-dcp-1"
+   ]
+  },
+  "nominal_altoct/IO": {
+   "M": 34,
+   "n_excl_3sigma": 7,
+   "n_excl_5sigma": 5,
+   "frac_3sigma": 0.20588235294117646,
+   "frac_5sigma": 0.14705882352941177,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 0,
+     "excl5": 0
+    },
+    "B": {
+     "n": 4,
+     "excl3": 2,
+     "excl5": 2
+    },
+    "S": {
+     "n": 24,
+     "excl3": 5,
+     "excl5": 3
+    }
+   },
+   "excluded_3sigma": [
+    "BL-CDSV-I",
+    "BL-CDSV-II",
+    "S-s12-1",
+    "S-s12-5",
+    "S-s23-1",
+    "S-s23-2",
+    "S-s23-3"
+   ]
+  },
+  "optimistic_altoct/NO": {
+   "M": 35,
+   "n_excl_3sigma": 23,
+   "n_excl_5sigma": 17,
+   "frac_3sigma": 0.6571428571428571,
+   "frac_5sigma": 0.4857142857142857,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 6,
+     "excl5": 6
+    },
+    "F": {
+     "n": 2,
+     "excl3": 2,
+     "excl5": 2
+    },
+    "B": {
+     "n": 3,
+     "excl3": 3,
+     "excl5": 3
+    },
+    "S": {
+     "n": 24,
+     "excl3": 12,
+     "excl5": 6
+    }
+   },
+   "excluded_3sigma": [
+    "K-A4a-TBM",
+    "K-A4a-GR1",
+    "K-A4a-GR2",
+    "K-A4a-HEX",
+    "K-A4b-BM",
+    "K-E1",
+    "F2LO-GR2",
+    "F2LO-TBM",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-4",
+    "S-s12-5",
+    "S-s23-4",
+    "S-s23-5",
+    "S-s23-6",
+    "S-dcp-1",
+    "S-dcp-2",
+    "S-dcp-3",
+    "S-dcp-4",
+    "S-dcp-5",
+    "S-dcp-6"
+   ]
+  },
+  "optimistic_altoct/IO": {
+   "M": 34,
+   "n_excl_3sigma": 15,
+   "n_excl_5sigma": 6,
+   "frac_3sigma": 0.4411764705882353,
+   "frac_5sigma": 0.17647058823529413,
+   "by_family": {
+    "K": {
+     "n": 6,
+     "excl3": 0,
+     "excl5": 0
+    },
+    "B": {
+     "n": 4,
+     "excl3": 4,
+     "excl5": 2
+    },
+    "S": {
+     "n": 24,
+     "excl3": 11,
+     "excl5": 4
+    }
+   },
+   "excluded_3sigma": [
+    "BL-CDSV-I",
+    "BL-CDSV-II",
+    "BL-RMSV-1",
+    "BL-RMSV-4",
+    "S-s12-1",
+    "S-s12-4",
+    "S-s12-5",
+    "S-s23-1",
+    "S-s23-2",
+    "S-s23-3",
+    "S-s23-6",
+    "S-dcp-2",
+    "S-dcp-3",
+    "S-dcp-4",
+    "S-dcp-6"
+   ]
+  }
+ },
+ "centres": {
+  "NO": {
+   "bestfit": {
+    "s12sq": 0.3088,
+    "s13sq": 0.02249,
+    "s23sq": 0.47,
+    "dcp_deg": 207
+   },
+   "alt_octant": {
+    "s12sq": 0.3088,
+    "s13sq": 0.02249,
+    "s23sq": 0.55,
+    "dcp_deg": 207
+   }
+  },
+  "IO": {
+   "bestfit": {
+    "s12sq": 0.3088,
+    "s13sq": 0.02261,
+    "s23sq": 0.555,
+    "dcp_deg": 283
+   },
+   "alt_octant": {
+    "s12sq": 0.3088,
+    "s13sq": 0.02261,
+    "s23sq": 0.47,
+    "dcp_deg": 283
+   }
+  }
+ },
+ "sidak": {
+  "NO": {
+   "M": 35,
+   "3sigma": {
+    "p_global": 0.0026997960632601866,
+    "p_local": 7.723836226336545e-05,
+    "Z_local": 3.952811251837403
+   },
+   "5sigma": {
+    "p_global": 5.733031437583866e-07,
+    "p_local": 1.638009439197674e-08,
+    "Z_local": 5.64644352000112
+   },
+   "p0.05": {
+    "p_global": 0.05,
+    "p_local": 0.0014644493428053185,
+    "Z_local": 3.1816376084204343
+   }
+  },
+  "IO": {
+   "M": 34,
+   "3sigma": {
+    "p_global": 0.0026997960632601866,
+    "p_local": 7.950998848615942e-05,
+    "Z_local": 3.9458722845182965
+   },
+   "5sigma": {
+    "p_global": 5.733031437583866e-07,
+    "p_local": 1.6861861906747322e-08,
+    "Z_local": 5.6414555039777365
+   },
+   "p0.05": {
+    "p_global": 0.05,
+    "p_local": 0.0015074889008961367,
+    "Z_local": 3.1732380050237716
+   }
+  }
+ }
+}
+scan NO s12sq
+scan NO s23sq
+scan NO dcp_deg
+scan IO s12sq
+scan IO s23sq
+scan IO dcp_deg
