@@ -1,0 +1,13 @@
+C1-S random |Z|=3 0/90 [0.000, 0.040]
+C1-S random |Z|=4 85/150 [0.483, 0.647]
+C1-S top |Z|=3 217/450 [0.435, 0.529]
+C1-S top |Z|=4 750/750 [0.995, 1.000]
+111323 quark params 9 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+122223 quark params 9 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+132223 quark params 9 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+11121322 quark params 12 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+11121323 quark params 12 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+11122223 quark params 12 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+11132223 quark params 12 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+12132223 quark params 12 Jacobian rank (8 obs) at bank points [8, 8, 8, 8, 8]
+Y2 pass k<N: C3-P1 {'Z': ['12', '22', '23'], 'e': 'F', 'ce': [None, None, None, 1.0], 'nu': 'IR', 'cnu': [-0.5, -3.0, -1.0, 0.5], 'cR': [-3.0, 6.0, -3.0, -6.0], 'extra': ['12']} 14 5 chi2 0.08 maxpull 0.16

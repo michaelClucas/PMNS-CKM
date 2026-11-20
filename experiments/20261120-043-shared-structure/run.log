@@ -1,0 +1,422 @@
+2026-11-20T19:50:27Z claims.md SHA-256 8fc6f81c1541f408a38d2d14cf6ba0c444aaa7841c2e192fb707f16675018719 (pre-registration, before any step-3 fit)
+2026-11-20T20:04:19Z launch stage0.py 30 starts, 3 workers
+<PMNS-CKM>\experiments\20261120-043-shared-structure\lib43.py:97: RuntimeWarning: invalid value encountered in matmul
+  res.extend(list((z @ self.Winv.T).T))
+11 12 13  proxy 298 official 317 maxpull 13.39 viable False bank 0 6s
+11 12 22  proxy 6.64e+03 official 7.87e+03 maxpull 60.71 viable False bank 0 4s
+11 12 23  proxy 322 official 295 maxpull 11.07 viable False bank 0 48s
+11 13 22  proxy 1.16e+05 official 1.17e+05 maxpull 331.13 viable False bank 0 1s
+11 13 23  proxy 8.04e-14 official 8.04e-14 maxpull 0.00 viable True bank 7 16s
+11 22 23  proxy 1.13e+05 official 1.14e+05 maxpull 331.13 viable False bank 0 4s
+12 13 22  proxy 3.68e+03 official 3.68e+03 maxpull 60.65 viable False bank 0 17s
+12 13 23  proxy 304 official 280 maxpull 10.82 viable False bank 0 26s
+12 22 23  proxy 2.17e-16 official 2.16e-16 maxpull 0.00 viable True bank 9 40s
+13 22 23  proxy 1.33e-15 official 1.33e-15 maxpull 0.00 viable True bank 7 4s
+11 12 13 22  proxy 2.22e-14 official 2.22e-14 maxpull 0.00 viable True bank 19 37s
+11 12 13 23  proxy 2.57e-11 official 2.57e-11 maxpull 0.00 viable True bank 8 39s
+11 12 22 23  proxy 2.46e-18 official 2.46e-18 maxpull 0.00 viable True bank 29 8s
+11 13 22 23  proxy 1.27e-14 official 1.27e-14 maxpull 0.00 viable True bank 17 19s
+12 13 22 23  proxy 7.69e-19 official 7.69e-19 maxpull 0.00 viable True bank 25 6s
+stage0 done 117.77144861221313
+2026-11-20T20:06:43Z launch screen.py 30 10
+111323 19208 screen min 18 n<4 0 n<25 4 top C [3.0, -4.5, 1.5, 2.0]
+122223 19208 screen min 1.11 n<4 12 n<25 76 top C [4.5, 2.0, 1.0, 6.0]
+132223 19208 screen min 3.02 n<4 4 n<25 20 top C [-1.5, -4.5, 6.0, 2.0]
+11121322 268912 screen min 0.0397 n<4 376 n<25 2300 top C [4.5, -2.0, -6.0, -0.5, 1.5]
+11121323 268912 screen min 0.0676 n<4 56 n<25 376 top C [-6.0, -2.0, -3.0, 6.0, 1.5]
+11122223 268912 screen min 0.0707 n<4 640 n<25 4676 top C [0.5, 3.0, -6.0, 3.0, 3.0]
+11132223 268912 screen min 0.0261 n<4 520 n<25 3996 top C [0.5, -2.0, 0.5, 6.0, 1.5]
+12132223 268912 screen min 0.0313 n<4 1348 n<25 4472 top C [1.5, -1.0, 6.0, 1.0, 1.5]
+screen done
+2026-11-20T20:08:29Z launch main.py 3 workers scale 0.4 (pre-registered targets x0.4; starts 2 (C1-S) / 3 (others) instead of 4/6, budget)
+jobs 792 {'C1-S': 320, 'C2-F': 24, 'C1-F': 16, 'C2-S': 152, 'C1-P1': 60, 'C3-P1': 60, 'C1-P2': 60, 'C3-P2': 60, 'C3-SS': 40}
+1/792 13s last C1-S pass False chi2 39.4
+11/792 24s last C3-SS pass False chi2 inf
+21/792 33s last C1-S pass True chi2 3.74e-15
+31/792 41s last C3-SS pass False chi2 inf
+Process SpawnPoolWorker-1:
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-3:
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+Process SpawnPoolWorker-2:
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<pythoncore-3.14-64>\Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+2026-11-20T20:09:40Z pilot main.py stopped after 36 fits (kept as fits_pilot_scale0.4.jsonl, not used in results); it ran faster than estimated, so rerun at pre-registered sizes: screen 150/30, scale 1.0, starts 4 (Y1) / 6 (Y2)
+111323 19208 screen min 18 n<4 0 n<25 4 top C [3.0, -4.5, 1.5, 2.0]
+122223 19208 screen min 1.11 n<4 12 n<25 76 top C [4.5, 2.0, 1.0, 6.0]
+132223 19208 screen min 3.02 n<4 4 n<25 20 top C [-1.5, -4.5, 6.0, 2.0]
+11121322 268912 screen min 0.0397 n<4 376 n<25 2300 top C [4.5, -2.0, -6.0, -0.5, 1.5]
+11121323 268912 screen min 0.0676 n<4 56 n<25 376 top C [-6.0, -2.0, -3.0, 6.0, 1.5]
+11122223 268912 screen min 0.0707 n<4 640 n<25 4676 top C [0.5, 3.0, -6.0, 3.0, 3.0]
+11132223 268912 screen min 0.0261 n<4 520 n<25 3996 top C [0.5, -2.0, 0.5, 6.0, 1.5]
+12132223 268912 screen min 0.0313 n<4 1348 n<25 4472 top C [1.5, -1.0, 6.0, 1.0, 1.5]
+screen done
+2026-11-20T20:13:49Z launch main.py 3 1.0
+jobs 2512 {'C1-S': 1440, 'C2-F': 24, 'C1-F': 16, 'C2-S': 332, 'C1-P1': 150, 'C3-P1': 150, 'C1-P2': 150, 'C3-P2': 150, 'C3-SS': 100}
+1/2512 21s last C1-S pass True chi2 1.14e-11
+11/2512 40s last C3-SS pass False chi2 inf
+21/2512 63s last C3-SS pass False chi2 inf
+31/2512 89s last C2-F pass True chi2 0.013
+41/2512 125s last C3-P2 pass False chi2 35.2
+51/2512 146s last C2-F pass True chi2 0.013
+<PMNS-CKM>\experiments\20261120-043-shared-structure\lib43.py:97: RuntimeWarning: invalid value encountered in matmul
+  res.extend(list((z @ self.Winv.T).T))
+61/2512 172s last C1-S pass True chi2 7.13e-16
+71/2512 187s last C3-P2 pass True chi2 0.013
+81/2512 200s last C2-F pass True chi2 0.013
+91/2512 211s last C3-SS pass False chi2 inf
+101/2512 223s last C3-SS pass False chi2 inf
+111/2512 239s last C1-S pass True chi2 1.46e-10
+121/2512 250s last C1-S pass True chi2 6.12
+131/2512 268s last C3-SS pass False chi2 inf
+141/2512 281s last C1-S pass True chi2 1.22e-15
+151/2512 289s last C1-S pass True chi2 2.43
+161/2512 300s last C3-P1 pass False chi2 inf
+171/2512 313s last C3-P2 pass False chi2 inf
+181/2512 322s last C2-F pass True chi2 0.013
+191/2512 333s last C3-P2 pass True chi2 3.15
+201/2512 349s last C1-P2 pass True chi2 6.52e-11
+211/2512 359s last C1-P2 pass True chi2 1.46e-16
+221/2512 376s last C3-P1 pass False chi2 933
+231/2512 395s last C1-S pass True chi2 2.58e-13
+241/2512 413s last C3-SS pass False chi2 inf
+251/2512 429s last C2-S pass False chi2 inf
+261/2512 438s last C1-P2 pass True chi2 2.68e-11
+271/2512 451s last C1-S pass True chi2 2.49e-10
+281/2512 460s last C1-S pass True chi2 5.61e-11
+291/2512 476s last C3-P2 pass True chi2 0.253
+301/2512 489s last C1-P2 pass True chi2 8.22e-20
+311/2512 503s last C3-SS pass False chi2 inf
+321/2512 523s last C1-S pass True chi2 1.72e-10
+331/2512 543s last C1-P1 pass True chi2 1.78e-17
+341/2512 564s last C1-P2 pass True chi2 4.48e-11
+351/2512 576s last C1-S pass True chi2 0.303
+361/2512 591s last C3-P1 pass False chi2 918
+371/2512 618s last C1-S pass True chi2 2.08e-10
+381/2512 639s last C2-S pass False chi2 inf
+391/2512 662s last C1-S pass True chi2 1.39e-17
+401/2512 676s last C1-S pass False chi2 39.4
+411/2512 699s last C1-S pass False chi2 11.3
+421/2512 724s last C2-S pass False chi2 inf
+431/2512 744s last C1-S pass True chi2 1.72e-14
+441/2512 751s last C1-S pass True chi2 1.41e-13
+451/2512 762s last C2-S pass False chi2 inf
+461/2512 780s last C1-P2 pass True chi2 9.71e-17
+471/2512 790s last C1-S pass False chi2 53.4
+481/2512 797s last C2-S pass False chi2 inf
+491/2512 809s last C1-P1 pass False chi2 1.35e+03
+501/2512 817s last C3-P2 pass False chi2 146
+511/2512 830s last C3-P2 pass True chi2 0.013
+521/2512 841s last C3-P2 pass True chi2 0.013
+531/2512 852s last C1-S pass True chi2 3.56e-13
+541/2512 865s last C2-S pass False chi2 inf
+551/2512 883s last C3-SS pass False chi2 inf
+561/2512 895s last C3-P1 pass False chi2 inf
+571/2512 906s last C2-S pass False chi2 inf
+581/2512 920s last C1-P2 pass True chi2 3.23e-12
+591/2512 939s last C1-S pass True chi2 7.32e-11
+601/2512 958s last C1-S pass False chi2 19.6
+611/2512 972s last C1-P1 pass False chi2 120
+621/2512 985s last C3-P2 pass True chi2 0.013
+631/2512 993s last C3-P1 pass False chi2 inf
+641/2512 1007s last C1-S pass True chi2 7.02e-12
+651/2512 1015s last C2-S pass False chi2 inf
+661/2512 1026s last C1-P1 pass False chi2 1.8e+03
+671/2512 1043s last C2-S pass False chi2 inf
+681/2512 1060s last C3-SS pass False chi2 inf
+691/2512 1075s last C2-S pass False chi2 inf
+701/2512 1088s last C3-P1 pass False chi2 158
+711/2512 1101s last C1-S pass True chi2 1.14e-11
+721/2512 1111s last C3-P2 pass False chi2 257
+731/2512 1120s last C3-P2 pass True chi2 0.013
+741/2512 1136s last C1-P2 pass True chi2 0.00844
+751/2512 1147s last C3-P2 pass False chi2 inf
+761/2512 1163s last C3-P2 pass True chi2 6.86
+771/2512 1177s last C3-SS pass False chi2 inf
+<PMNS-CKM>\experiments\20261120-043-shared-structure\lib43.py:97: RuntimeWarning: invalid value encountered in matmul
+  res.extend(list((z @ self.Winv.T).T))
+781/2512 1186s last C1-P1 pass False chi2 39.8
+791/2512 1194s last C1-S pass False chi2 2.01e+04
+801/2512 1207s last C1-S pass False chi2 54
+811/2512 1215s last C3-P2 pass False chi2 inf
+821/2512 1227s last C1-P2 pass True chi2 2.53e-10
+831/2512 1240s last C3-P2 pass True chi2 1.31
+841/2512 1255s last C3-P2 pass False chi2 inf
+851/2512 1260s last C1-P1 pass True chi2 9.77e-12
+861/2512 1275s last C1-S pass True chi2 11.1
+871/2512 1288s last C3-P2 pass False chi2 inf
+881/2512 1293s last C3-P1 pass False chi2 inf
+891/2512 1300s last C1-P1 pass False chi2 450
+901/2512 1315s last C1-P1 pass False chi2 3.44e+03
+911/2512 1333s last C2-S pass False chi2 inf
+921/2512 1346s last C2-S pass False chi2 inf
+931/2512 1366s last C1-S pass True chi2 5.58e-09
+941/2512 1387s last C3-P2 pass False chi2 inf
+951/2512 1407s last C1-S pass False chi2 2.99e+04
+961/2512 1431s last C1-P1 pass True chi2 1.12e-12
+971/2512 1441s last C3-P1 pass False chi2 inf
+981/2512 1450s last C3-P1 pass False chi2 inf
+991/2512 1472s last C1-P2 pass True chi2 3.24e-16
+1001/2512 1488s last C3-P2 pass True chi2 0.013
+1011/2512 1499s last C3-P2 pass False chi2 15.4
+1021/2512 1509s last C1-S pass False chi2 95.6
+1031/2512 1528s last C3-P2 pass False chi2 411
+1041/2512 1535s last C1-P2 pass True chi2 1.01e-12
+1051/2512 1548s last C2-S pass False chi2 1.93e+06
+1061/2512 1563s last C1-P2 pass True chi2 2.98e-15
+1071/2512 1569s last C3-P1 pass False chi2 980
+1081/2512 1583s last C1-P1 pass True chi2 1.38e-13
+1091/2512 1602s last C1-P2 pass True chi2 1.2
+1101/2512 1624s last C2-S pass False chi2 inf
+1111/2512 1640s last C1-P2 pass True chi2 5.8e-15
+1121/2512 1654s last C2-S pass False chi2 inf
+1131/2512 1670s last C1-P2 pass True chi2 4.2e-11
+1141/2512 1681s last C1-S pass False chi2 265
+1151/2512 1698s last C3-P2 pass False chi2 inf
+1161/2512 1711s last C1-S pass True chi2 1.39e-17
+1171/2512 1720s last C1-P1 pass True chi2 1.62e-15
+1181/2512 1733s last C1-P2 pass True chi2 2.13e-16
+1191/2512 1746s last C3-P1 pass False chi2 664
+1201/2512 1758s last C1-S pass True chi2 1.06e-15
+1211/2512 1764s last C1-S pass True chi2 2.47
+1221/2512 1772s last C1-S pass True chi2 1.11e-15
+1231/2512 1780s last C2-S pass False chi2 450
+1241/2512 1789s last C1-S pass True chi2 0.303
+1251/2512 1799s last C1-S pass False chi2 95.3
+1261/2512 1819s last C2-S pass False chi2 3.06e+03
+1271/2512 1835s last C1-S pass False chi2 14.1
+1281/2512 1847s last C1-S pass False chi2 12.9
+1291/2512 1856s last C1-S pass True chi2 1.99
+1301/2512 1892s last C2-S pass False chi2 1.94e+03
+1311/2512 1910s last C1-S pass True chi2 1.72e-10
+1321/2512 1921s last C1-S pass True chi2 2.04
+1331/2512 1936s last C2-S pass False chi2 inf
+1341/2512 1943s last C2-S pass False chi2 inf
+1351/2512 1953s last C1-S pass True chi2 1.14
+1361/2512 1966s last C1-S pass True chi2 1.1e-11
+1371/2512 1980s last C2-S pass False chi2 inf
+1381/2512 1993s last C2-S pass False chi2 471
+1391/2512 2004s last C1-S pass False chi2 6.77e+03
+1401/2512 2014s last C2-S pass False chi2 inf
+1411/2512 2022s last C1-S pass True chi2 0.323
+1421/2512 2030s last C1-S pass True chi2 1.74e-15
+1431/2512 2037s last C1-S pass True chi2 9.35e-08
+1441/2512 2044s last C1-S pass True chi2 2.47
+<PMNS-CKM>\experiments\20261120-043-shared-structure\lib43.py:97: RuntimeWarning: invalid value encountered in matmul
+  res.extend(list((z @ self.Winv.T).T))
+1451/2512 2049s last C2-S pass False chi2 inf
+1461/2512 2058s last C1-S pass True chi2 2.71e-11
+1471/2512 2066s last C1-S pass True chi2 1.13e-10
+1481/2512 2076s last C2-S pass False chi2 inf
+1491/2512 2080s last C1-S pass True chi2 2.68e-12
+1501/2512 2086s last C1-S pass True chi2 9.26
+1511/2512 2094s last C2-S pass False chi2 inf
+1521/2512 2102s last C2-S pass False chi2 inf
+1531/2512 2113s last C1-S pass False chi2 19.3
+1541/2512 2123s last C1-S pass True chi2 8.23e-15
+1551/2512 2135s last C2-S pass False chi2 inf
+1561/2512 2138s last C1-S pass True chi2 11.1
+1571/2512 2150s last C1-S pass True chi2 5.58e-09
+1581/2512 2154s last C2-S pass False chi2 inf
+1591/2512 2161s last C2-S pass False chi2 5.16e+03
+1601/2512 2167s last C2-S pass False chi2 inf
+1611/2512 2171s last C1-S pass False chi2 319
+1621/2512 2181s last C1-S pass True chi2 2.02e-16
+1631/2512 2186s last C1-S pass False chi2 8.97e+03
+1641/2512 2195s last C2-S pass False chi2 inf
+1651/2512 2202s last C1-S pass True chi2 2.47
+1661/2512 2208s last C1-S pass False chi2 8.46e+03
+1671/2512 2217s last C1-S pass True chi2 3.39e-15
+1681/2512 2225s last C2-S pass False chi2 inf
+1691/2512 2233s last C1-S pass False chi2 76.9
+1701/2512 2245s last C1-S pass False chi2 302
+1711/2512 2249s last C1-S pass True chi2 7.09e-14
+1721/2512 2256s last C1-S pass True chi2 9.54e-15
+1731/2512 2262s last C2-S pass False chi2 1.6e+06
+1741/2512 2268s last C1-S pass True chi2 5.25e-15
+1751/2512 2273s last C1-S pass True chi2 1.05e-11
+1761/2512 2276s last C1-S pass True chi2 0.153
+1771/2512 2280s last C1-S pass False chi2 25
+1781/2512 2286s last C1-S pass True chi2 3.74e-15
+1791/2512 2292s last C1-S pass False chi2 16.3
+1801/2512 2296s last C1-S pass True chi2 6.86e-17
+1811/2512 2300s last C1-S pass True chi2 1.44e-10
+1821/2512 2302s last C1-S pass True chi2 1.37
+1831/2512 2307s last C1-S pass True chi2 1.35e-05
+1841/2512 2312s last C1-S pass True chi2 1.99e-15
+1851/2512 2317s last C1-S pass True chi2 1.14e-11
+1861/2512 2321s last C1-S pass True chi2 2.43
+1871/2512 2325s last C1-S pass True chi2 0.00394
+1881/2512 2327s last C1-S pass True chi2 1.2e-12
+1891/2512 2333s last C1-S pass True chi2 0.208
+1901/2512 2341s last C1-S pass True chi2 2.31e-07
+1911/2512 2347s last C1-S pass True chi2 2.99e-15
+1921/2512 2355s last C1-S pass True chi2 1.37e-09
+1931/2512 2360s last C1-S pass True chi2 1.28e-06
+1941/2512 2365s last C1-S pass False chi2 45.3
+1951/2512 2368s last C1-S pass True chi2 2.24e-18
+1961/2512 2372s last C1-S pass True chi2 6.86e-17
+1971/2512 2375s last C1-S pass True chi2 5.95e-14
+1981/2512 2380s last C1-S pass True chi2 3.11e-13
+1991/2512 2385s last C1-S pass True chi2 1.42e-16
+2001/2512 2391s last C1-S pass True chi2 0.574
+2011/2512 2394s last C1-S pass True chi2 1.8
+2021/2512 2398s last C1-S pass True chi2 2.26e-10
+2031/2512 2403s last C1-S pass True chi2 6.25
+2041/2512 2407s last C1-S pass True chi2 4.53e-10
+2051/2512 2411s last C1-S pass False chi2 24.1
+2061/2512 2415s last C1-S pass True chi2 7.98e-17
+2071/2512 2419s last C1-S pass False chi2 19.3
+2081/2512 2423s last C1-S pass False chi2 95.3
+2091/2512 2427s last C1-S pass True chi2 1.65e-11
+2101/2512 2430s last C1-S pass True chi2 0.208
+2111/2512 2436s last C1-S pass False chi2 111
+2121/2512 2439s last C1-S pass True chi2 2.2e-15
+2131/2512 2441s last C1-S pass True chi2 2.97e-15
+2141/2512 2445s last C1-S pass True chi2 1.01e-10
+2151/2512 2448s last C1-S pass True chi2 0.28
+2161/2512 2452s last C1-S pass True chi2 4.35e-15
+2171/2512 2456s last C1-S pass True chi2 2.04
+2181/2512 2458s last C1-S pass True chi2 6.06e-15
+2191/2512 2461s last C1-S pass True chi2 3.51e-14
+2201/2512 2465s last C1-S pass False chi2 14.1
+2211/2512 2467s last C1-S pass True chi2 2.34
+2221/2512 2471s last C1-S pass True chi2 7.06e-11
+2231/2512 2476s last C1-S pass True chi2 2.69e-12
+2241/2512 2479s last C1-S pass False chi2 25
+2251/2512 2482s last C1-S pass True chi2 1.44e-13
+2261/2512 2487s last C1-S pass True chi2 8.55e-12
+2271/2512 2491s last C1-S pass True chi2 1.74e-15
+2281/2512 2495s last C1-S pass True chi2 1.28e-10
+2291/2512 2497s last C1-S pass True chi2 3.5e-14
+2301/2512 2502s last C1-S pass True chi2 2.64e-15
+2311/2512 2505s last C1-S pass False chi2 39.4
+2321/2512 2506s last C1-S pass False chi2 45.5
+2331/2512 2509s last C1-S pass True chi2 7.14e-12
+2341/2512 2513s last C1-S pass True chi2 2.08e-12
+2351/2512 2517s last C1-S pass True chi2 0.00293
+2361/2512 2521s last C1-S pass True chi2 7.77e-11
+2371/2512 2525s last C1-S pass False chi2 3.88e+03
+2381/2512 2528s last C1-S pass True chi2 0.456
+2391/2512 2534s last C1-S pass False chi2 14.1
+2401/2512 2538s last C1-S pass False chi2 20.5
+2411/2512 2540s last C1-S pass True chi2 6.25
+2421/2512 2543s last C1-S pass True chi2 1.43e-10
+2431/2512 2548s last C1-S pass False chi2 16.1
+2441/2512 2551s last C1-S pass True chi2 7.35e-11
+2451/2512 2555s last C1-S pass True chi2 3.99e-11
+2461/2512 2559s last C1-S pass True chi2 2.99e-15
+2471/2512 2563s last C1-S pass True chi2 2.83e-16
+2481/2512 2568s last C1-S pass True chi2 1.3e-12
+2491/2512 2572s last C1-S pass True chi2 3.82e-13
+2501/2512 2575s last C1-S pass True chi2 2.51e-17
+2511/2512 2588s last C1-S pass False chi2 53.5
+main done 2587.9772305488586
+2026-11-20T20:57:44Z main done; summarize.py

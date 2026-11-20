@@ -1,0 +1,11 @@
+fit cm NO s1 exit 0
+fit aks s1 exit 0
+fit cm NO s2 exit 0
+fit aks s2 exit 0
+fit cm IO s1 exit 0
+fit cm proxy s1 exit 0
+bound42 exit 0
+fit cm NO s3 exit 0
+aks_R_scan exit 0 (foreground)
+cm_pmns_check exit 0 (foreground)
+reproduce_aks, reproduce_cm exit 0 (foreground; output in .json)
