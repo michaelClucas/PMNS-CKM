@@ -1,0 +1,104 @@
+Per-scale best fits (chi2 over seeds; spread = max - min over seeds)
+| structure | scale | k_cont + bits | chi2 | p | seeds spread | worst pulls |
+|---|---|---|---|---|---|---|
+| F6 | MZ | 6 + 0 | 613.51 | 5.99e-134 | 8.9e-10 (4) | ckm_s13 -14.4, ckm_s23 +12.8, mr_s_b -11.6 |
+| F6 | G10 | 6 + 0 | 691.65 | 6.45e-151 | 2.8e-10 (3) | mr_s_b -15.1, ckm_s23 +13.7, ckm_s13 -13.2 |
+| F6 | G30 | 6 + 0 | 662.56 | 1.34e-144 | 1.8e-09 (4) | mr_s_b -14.5, ckm_s23 +13.6, ckm_s13 -13.1 |
+| F6 | G30 + eta_b -0.45 | 7 + 0 | 460.63 | 3.51e-102 | local | ckm_s13 -13.5, ckm_s23 +10.6, mr_s_b -9.1 |
+| DHR | MZ | 5 + 0 | 498.70 | 9.11e-108 | 1.8e-10 (4) | ckm_s23 +14.2, ckm_s13 -12.9, mr_c_t -9.1 |
+| DHR | G10 | 5 + 0 | 390.33 | 2.76e-84 | 7.4e-11 (3) | ckm_s13 -13.2, ckm_s23 +11.9, mr_u_c +6.5 |
+| DHR | G30 | 5 + 0 | 386.00 | 2.38e-83 | 2.8e-10 (4) | ckm_s13 -13.0, ckm_s23 +12.0, mr_u_c +6.3 |
+| DHR | G30 + eta_b +0.15 | 6 + 0 | 338.17 | 3.69e-74 | local | ckm_s13 -15.2, ckm_s23 +7.6, mr_u_c +6.3 |
+| RRR1 | MZ | 6 + 0 | 363.99 | 9.15e-80 | 43 (5) | ckm_s13 -15.9, ckm_s23 +7.8, mr_u_c +6.8 |
+| RRR1 | G10 | 6 + 0 | 329.47 | 2.86e-72 | 38 (4) | ckm_s13 -15.2, ckm_s23 +7.4, mr_u_c +6.2 |
+| RRR1 | G30 | 6 + 0 | 322.27 | 1.05e-70 | 36 (5) | ckm_s13 -15.1, ckm_s23 +7.4, mr_u_c +6.1 |
+| RRR1 | G30 + eta_b -0.45 | 7 + 0 | 299.99 | 3.3e-67 | local | ckm_s13 -14.6, ckm_s23 +7.0, mr_u_c +5.7 |
+| RRR2 | MZ | 7 + 0 | 273.65 | 1.82e-61 | 39 (5) | ckm_s13 -13.8, ckm_s23 +6.7, mr_u_c +5.8 |
+| RRR2 | G10 | 7 + 0 | 258.22 | 4.2e-58 | 2.6e-11 (4) | ckm_s13 -13.5, ckm_s23 +6.5, mr_u_c +5.4 |
+| RRR2 | G30 | 7 + 0 | 254.87 | 2.25e-57 | 1e-10 (5) | ckm_s13 -13.4, ckm_s23 +6.5, mr_u_c +5.3 |
+| RRR2 | G30 + eta_b -0.45 | 8 + 0 | 245.99 | nan | local | ckm_s13 -13.2, ckm_s23 +6.3, mr_u_c +5.1 |
+| RRR3 | MZ | 6 + 0 | 97.86 | 5.62e-22 | 30 (5) | ckm_s13 -7.9, mr_u_c +4.4, mr_c_t +2.9 |
+| RRR3 | G10 | 6 + 0 | 138.51 | 8.38e-31 | 5.9e-11 (4) | ckm_s13 -9.9, mr_u_c +4.8, mr_c_t +3.2 |
+| RRR3 | G30 | 6 + 0 | 132.49 | 1.7e-29 | 30 (5) | ckm_s13 -9.7, mr_u_c +4.7, mr_c_t +3.1 |
+| RRR3 | G30 + eta_b -0.30 | 7 + 0 | 4.95 | 0.0261 | local | mr_d_s +2.0, ckm_s13 -0.6, ckm_s12 -0.5 |
+| RRR4 | MZ | 6 + 0 | 379.11 | 4.76e-83 | 3.6e-10 (4) | ckm_s13 -16.1, ckm_s23 +7.9, mr_u_c +7.0 |
+| RRR4 | G10 | 6 + 0 | 343.63 | 2.4e-75 | 0 (3) | ckm_s13 -15.4, ckm_s23 +7.5, mr_u_c +6.4 |
+| RRR4 | G30 | 6 + 0 | 335.74 | 1.24e-73 | 2.6e-10 (4) | ckm_s13 -15.2, ckm_s23 +7.4, mr_u_c +6.3 |
+| RRR4 | G30 + eta_b -0.45 | 7 + 0 | 305.66 | 1.93e-68 | local | ckm_s13 -14.6, ckm_s23 +7.0, mr_u_c +5.7 |
+| RRR5 | MZ | 6 + 0 | 20.80 | 3.05e-05 | 3.4e+02 (5) | ckm_s13 -3.4, mr_u_c +2.4, mr_d_s -1.1 |
+| RRR5 | G10 | 6 + 0 | 36.31 | 1.31e-08 | 4.1e+02 (4) | ckm_s13 -4.7, mr_u_c +2.9, mr_d_s -1.3 |
+| RRR5 | G30 | 6 + 0 | 34.21 | 3.72e-08 | 4e+02 (5) | ckm_s13 -4.6, mr_u_c +2.8, mr_d_s -1.3 |
+| RRR5 | G30 + eta_b -0.25 | 7 + 0 | 0.95 | 0.33 | local | mr_d_s -0.6, ckm_s13 +0.5, mr_u_c -0.4 |
+| GR1 | MZ | 7 + 0 | 5.54 | 0.0186 | 1.6e-10 (5) | mr_d_s +1.6, ckm_delta_rad -1.0, ckm_s13 +0.7 |
+| GR1 | G10 | 7 + 0 | 0.14 | 0.707 | 3.4e-11 (4) | mr_d_s -0.2, ckm_s13 -0.1, ckm_delta_rad +0.1 |
+| GR1 | G30 | 7 + 0 | 0.00 | 0.988 | 9.4e+02 (5) | mr_d_s -0.0, ckm_delta_rad +0.0, ckm_s13 -0.0 |
+| BB | MZ | 7 + 0 | 0.00 | 0.995 | 7.6e-14 (6) | mr_d_s +0.0, ckm_s13 -0.0, ckm_s23 +0.0 |
+| BB | G10 | 7 + 0 | 1.07 | 0.3 | 1.4e-12 (3) | mr_d_s -0.6, ckm_s13 +0.5, ckm_delta_rad +0.4 |
+| BB | G30 | 7 + 0 | 0.27 | 0.606 | 1.4e-11 (4) | mr_d_s -0.3, ckm_s13 +0.3, ckm_delta_rad +0.2 |
+| BB | SM3 | 7 + 0 | 0.16 | 0.685 | 1.1e-11 (3) | mr_d_s -0.2, ckm_s13 +0.2, ckm_delta_rad +0.1 |
+| BB | SM5 | 7 + 0 | 0.96 | 0.327 | 2.6e-11 (3) | mr_d_s -0.6, ckm_s13 +0.4, ckm_delta_rad +0.4 |
+| BB | SM7 | 7 + 0 | 1.94 | 0.164 | 1.3e-11 (3) | mr_d_s -0.9, ckm_s13 +0.6, ckm_delta_rad +0.5 |
+| BB | SM9 | 7 + 0 | 2.92 | 0.0874 | 8.7e-11 (3) | mr_d_s -1.2, ckm_s13 +0.7, ckm_delta_rad +0.6 |
+| BB | SM12 | 7 + 0 | 4.28 | 0.0386 | 3.9e-11 (3) | mr_d_s -1.5, ckm_delta_rad +0.8, ckm_s13 +0.7 |
+| BB | SM16 | 7 + 0 | 5.82 | 0.0159 | 8.7e-11 (3) | mr_d_s -1.8, ckm_delta_rad +0.9, ckm_s13 +0.8 |
+| LG_S8 | MZ | 8 + 0 | 230.06 | nan | 3.5e-10 (4) | ckm_s13 -12.3, ckm_s23 +6.4, mr_u_c +5.2 |
+| LG_S8 | G10 | 8 + 0 | 220.11 | nan | 0.23 (3) | ckm_s13 -12.2, ckm_s23 +6.2, mr_u_c +4.9 |
+| LG_S8 | G30 | 8 + 0 | 219.06 | nan | 0.23 (4) | ckm_s13 -12.2, ckm_s23 +6.2, mr_u_c +4.9 |
+| LG_S9 | MZ | 7 + 0 | 309.35 | 3.03e-69 | 1.5e+03 (5) | ckm_s13 -14.3, ckm_s23 +7.5, mr_u_c +6.2 |
+| LG_S9 | G10 | 7 + 0 | 283.57 | 1.25e-63 | 1.6e+03 (4) | ckm_s13 -13.8, ckm_s23 +7.2, mr_u_c +5.7 |
+| LG_S9 | G30 | 7 + 0 | 279.29 | 1.07e-62 | 1.6e+03 (5) | ckm_s13 -13.7, ckm_s23 +7.1, mr_u_c +5.6 |
+| LG_S10 | MZ | 7 + 0 | 77.69 | 1.21e-18 | 1.8e+03 (5) | ckm_s13 -7.0, mr_u_c +3.9, mr_c_t +2.6 |
+| LG_S10 | G10 | 7 + 0 | 115.81 | 5.22e-27 | 1.8e+03 (4) | ckm_s13 -9.0, mr_u_c +4.4, mr_c_t +2.9 |
+| LG_S10 | G30 | 7 + 0 | 111.43 | 4.76e-26 | 1.8e+03 (5) | ckm_s13 -8.8, mr_u_c +4.3, mr_c_t +2.8 |
+| LG_S12 | MZ | 8 + 0 | 184.06 | nan | 2e-07 (4) | ckm_s13 -11.1, ckm_s23 +5.2, mr_u_c +4.7 |
+| LG_S12 | G10 | 8 + 0 | 173.49 | nan | 3.9e-11 (3) | ckm_s13 -10.8, ckm_s23 +5.1, mr_u_c +4.4 |
+| LG_S12 | G30 | 8 + 0 | 176.01 | nan | 1.5e-06 (4) | ckm_s13 -11.0, ckm_s23 +5.1, mr_u_c +4.4 |
+| LG_S13 | MZ | 8 + 0 | 0.00 | nan | 2.2e-18 (4) | ckm_s23 +0.0, ckm_s13 +0.0, mr_s_b +0.0 |
+| LG_S13 | G10 | 8 + 0 | 0.05 | nan | 8.2e-12 (3) | mr_d_s -0.1, ckm_s13 -0.1, ckm_delta_rad +0.1 |
+| LG_S13 | G30 | 8 + 0 | 0.00 | nan | 0.00022 (4) | ckm_delta_rad +0.0, mr_s_b +0.0, ckm_s12 -0.0 |
+| LG_S15 | MZ | 7 + 0 | 19.83 | 8.46e-06 | 7.8e-12 (5) | ckm_s13 -3.4, mr_u_c +2.4, mr_c_t +0.9 |
+| LG_S15 | G10 | 7 + 0 | 35.13 | 3.08e-09 | 4.7e+04 (4) | ckm_s13 -4.7, mr_u_c +3.0, ckm_s23 +1.3 |
+| LG_S15 | G30 | 7 + 0 | 33.05 | 8.99e-09 | 5.3e-12 (5) | ckm_s13 -4.6, mr_u_c +2.9, ckm_s23 +1.2 |
+| F4 | MZ | 8 + 0 | 0.00 | nan | 1.1e-17 (4) | ckm_delta_rad -0.0, ckm_s23 -0.0, mr_d_s +0.0 |
+| F4 | G10 | 8 + 0 | 0.00 | nan | 6.2e-18 (3) | ckm_delta_rad -0.0, ckm_s13 +0.0, mr_c_t -0.0 |
+| F4 | G30 | 8 + 0 | 0.00 | nan | 7.9e-18 (4) | ckm_s12 +0.0, mr_u_c +0.0, mr_s_b -0.0 |
+| GST | MZ | 7 + 0 | 0.01 | 0.936 | 4.2e-15 (2) | mr_d_s +0.1, ckm_s12 -0.0, mr_s_b -0.0 |
+| HR | MZ | 7 + 0 | 373.13 | 3.9e-83 | 1.7e-13 (2) | ckm_s13 -16.1, ckm_s23 +7.9, mr_u_c +7.2 |
+| TDTS | MZ | 7 + 1 | 15.95 | 6.5e-05 | 1.4e-14 (2) | mr_d_s -3.1, ckm_delta_rad +2.4, ckm_s12 +0.7 |
+| ALPHA90 | MZ | 7 + 1 | 0.42 | 0.519 | 5.6e-16 (2) | ckm_delta_rad +0.6, ckm_s13 +0.2, ckm_s23 -0.2 |
+| FX | MZ | 5 + 1 | 442.27 | 1.54e-95 | 3.2e-10 (2) | ckm_s13 -15.8, ckm_delta_rad +8.3, mr_u_c +8.0 |
+| D7 | MZ | 7 + 0 | 15.16 | 9.89e-05 | 1e-13 (2) | ckm_s12 -3.9, ckm_s13 +0.0, ckm_s23 +0.0 |
+| HS | MZ | 5 + 0 | 16.79 | 0.00078 | 15 (3) | mr_c_t -3.2, mr_s_b +2.1, ckm_s23 +0.5 |
+| HS | SM3 | 5 + 0 | 8.44 | 0.0378 | 16 (3) | mr_c_t -2.2, mr_s_b +1.5, ckm_s23 +0.5 |
+| HS | SM5 | 5 + 0 | 1.58 | 0.665 | 18 (4) | mr_c_t -0.8, mr_s_b +0.6, ckm_s13 -0.5 |
+| HS | SM7 | 5 + 0 | 0.78 | 0.855 | 20 (4) | ckm_s13 -0.6, ckm_s23 +0.5, mr_c_t +0.3 |
+| HS | SM9 | 5 + 0 | 2.97 | 0.396 | 23 (4) | mr_c_t +1.1, mr_s_b -0.9, ckm_s13 -0.7 |
+| HS | SM12 | 5 + 0 | 9.00 | 0.0292 | 1.8e-13 (4) | mr_c_t +2.1, mr_s_b -1.7, ckm_s13 -0.9 |
+| HS | SM16 | 5 + 0 | 19.10 | 0.000261 | 0.36 (3) | mr_c_t +3.0, mr_s_b -2.6, ckm_s13 -1.0 |
+
+Primary rows (best allowed option per structure)
+GST      M_Z                            k 7+0 chi2 0.01 p 0.936 max|pull| 0.1 [mr_d_s +0.1, ckm_s12 -0.0, mr_s_b -0.0]
+BB       SM mu 1e3 (benchmark)          k 7+2 chi2 0.16 p 0.685 max|pull| 0.2 [mr_d_s -0.2, ckm_s13 +0.2, ckm_delta_rad +0.1]
+HS       SM mu 7 (scale fitted)         k 6+0 chi2 0.78 p 0.678 max|pull| 0.6 [ckm_s13 -0.6, ckm_s23 +0.5, mr_c_t +0.3]
+ALPHA90  M_Z                            k 7+1 chi2 0.42 p 0.519 max|pull| 0.6 [ckm_delta_rad +0.6, ckm_s13 +0.2, ckm_s23 -0.2]
+RRR5     GUT tanb 30, eta_b -0.25       k 7+1 chi2 0.95 p 0.33 max|pull| 0.6 [mr_d_s -0.6, ckm_s13 +0.5, mr_u_c -0.4]; drop ckm_s13: chi2_7 1.4, its pull at 7-key fit -7.1
+RRR3     GUT tanb 30, eta_b -0.30       k 7+1 chi2 4.95 p 0.0261 max|pull| 2.0 [mr_d_s +2.0, ckm_s13 -0.6, ckm_s12 -0.5]; drop ckm_s13: chi2_7 4.3, its pull at 7-key fit -13.3
+GR1      M_Z                            k 7+0 chi2 5.54 p 0.0186 max|pull| 1.6 [mr_d_s +1.6, ckm_delta_rad -1.0, ckm_s13 +0.7]; drop mr_d_s: chi2_7 0.0, its pull at 7-key fit -10.9
+D7       M_Z                            k 7+0 chi2 15.16 p 9.89e-05 max|pull| 3.9 [ckm_s12 -3.9, ckm_s13 +0.0, ckm_s23 +0.0]; drop ckm_s12: chi2_7 0.0, its pull at 7-key fit -3.9
+TDTS     M_Z                            k 7+1 chi2 15.95 p 6.5e-05 max|pull| 3.1 [mr_d_s -3.1, ckm_delta_rad +2.4, ckm_s12 +0.7]; drop mr_d_s: chi2_7 0.0, its pull at 7-key fit -5.1
+LG_S15   M_Z                            k 7+0 chi2 19.83 p 8.46e-06 max|pull| 3.4 [ckm_s13 -3.4, mr_u_c +2.4, mr_c_t +0.9]; drop ckm_s13: chi2_7 0.0, its pull at 7-key fit -5.8
+LG_S10   M_Z                            k 7+0 chi2 77.69 p 1.21e-18 max|pull| 7.0 [ckm_s13 -7.0, mr_u_c +3.9, mr_c_t +2.6]; drop ckm_s13: chi2_7 4.3, its pull at 7-key fit -13.6
+RRR2     GUT tanb 30                    k 7+1 chi2 254.87 p 2.25e-57 max|pull| 13.4 [ckm_s13 -13.4, ckm_s23 +6.5, mr_u_c +5.3]; drop ckm_s13: chi2_7 0.0, its pull at 7-key fit -20.4
+RRR1     GUT tanb 30, eta_b -0.45       k 7+1 chi2 299.99 p 3.3e-67 max|pull| 14.6 [ckm_s13 -14.6, ckm_s23 +7.0, mr_u_c +5.7]; drop ckm_s13: chi2_7 2.5, its pull at 7-key fit -21.0
+RRR4     GUT tanb 30, eta_b -0.45       k 7+1 chi2 305.66 p 1.93e-68 max|pull| 14.6 [ckm_s13 -14.6, ckm_s23 +7.0, mr_u_c +5.7]; drop ckm_s13: chi2_7 7.4, its pull at 7-key fit -21.3
+LG_S9    M_Z                            k 7+0 chi2 309.35 p 3.03e-69 max|pull| 14.3 [ckm_s13 -14.3, ckm_s23 +7.5, mr_u_c +6.2]; drop ckm_s13: chi2_7 2.0, its pull at 7-key fit -23.0
+DHR      GUT tanb 30, eta_b +0.15       k 6+1 chi2 338.17 p 3.69e-74 max|pull| 15.2 [ckm_s13 -15.2, ckm_s23 +7.6, mr_u_c +6.3]; drop ckm_s13: chi2_7 167.6, its pull at 7-key fit -16.8
+HR       M_Z                            k 7+0 chi2 373.13 p 3.9e-83 max|pull| 16.1 [ckm_s13 -16.1, ckm_s23 +7.9, mr_u_c +7.2]; drop ckm_s13: chi2_7 0.0, its pull at 7-key fit -22.9
+FX       M_Z                            k 5+1 chi2 442.27 p 1.54e-95 max|pull| 15.8 [ckm_s13 -15.8, ckm_delta_rad +8.3, mr_u_c +8.0]; drop ckm_s13: chi2_7 85.7, its pull at 7-key fit -22.3
+F6       GUT tanb 30, eta_b -0.45       k 7+1 chi2 460.63 p 3.51e-102 max|pull| 13.5 [ckm_s13 -13.5, ckm_s23 +10.6, mr_s_b -9.1]; drop ckm_s13: chi2_7 302.6, its pull at 7-key fit -21.4
+LG_S13   M_Z                            k 8+0 chi2 0.00 p nan max|pull| 0.0 [ckm_s23 +0.0, ckm_s13 +0.0, mr_s_b +0.0]
+F4       M_Z                            k 8+0 chi2 0.00 p nan max|pull| 0.0 [ckm_delta_rad -0.0, ckm_s23 -0.0, mr_d_s +0.0]
+LG_S12   M_Z                            k 8+0 chi2 184.06 p nan max|pull| 11.1 [ckm_s13 -11.1, ckm_s23 +5.2, mr_u_c +4.7]; drop ckm_s13: chi2_7 0.0, its pull at 7-key fit -18.4
+LG_S8    M_Z                            k 8+0 chi2 230.06 p nan max|pull| 12.3 [ckm_s13 -12.3, ckm_s23 +6.4, mr_u_c +5.2]; drop ckm_s13: chi2_7 0.0, its pull at 7-key fit -23.5
+
+errors: 0

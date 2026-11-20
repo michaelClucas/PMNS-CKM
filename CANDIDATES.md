@@ -22,6 +22,7 @@ Leaderboard of candidate relations. k = fitted free parameters (incl. data-selec
 | G41 | four-zero quarks + fixed 10/126 Clebsch leptons, compressive subset (exp 041) | 8 + 5 bits | 15 | ∞ (Gaussian 4137) | not run | passes compression; fails fit quality |
 | AKS | A4×SU(5) CSD2 (1301.6764; exps 040, 042) | 9 + 5 bits (20 strict) | 16 | 161.0, p 2e-31 | not run | known model; fails fit quality (θ23 octant, R +8.3σ bounds) |
 | CM13 | SU(5)×T' (1307.7711; exps 040, 042) | 7 + 2 bits | 16 | 764.2, p 1e-158 | not run | known model; passes compression; fails fit quality (δ_CKM ≤ 46°, R, m_b/m_τ) |
+| G44L | predictive quark grammar (k 6) + Georgi-Jarlskog Y_e, Y_ν = Y_u (exp 044) | 6 + ≈ 18 bits | 15 | ∞ (Gaussian ≥ 8192) | not run | fails compression (bits) and fit quality |
 | SO10-FN | real 10+126+120 SO(10) (hep-ph/0612132) | 16 + ~3 bits | 17 | 0.30 (1 dof) | not run | known model; not compressive; predicts neither δ_ℓ nor PMNS from quarks (exp 014) |
 
 Dropped in iteration 5: T1 and F2-LO ("no evidence" under the protocol, exp 018).

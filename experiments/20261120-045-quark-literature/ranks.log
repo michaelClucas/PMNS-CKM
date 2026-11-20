@@ -1,0 +1,21 @@
+F6       symbols  8 rank 6 pinned ['fu12', 'fu23'] -> fit params 6
+DHR      symbols  7 rank 5 pinned ['fu12', 'fu23'] -> fit params 5
+RRR1     symbols  8 rank 6 pinned ['fu12', 'fd23'] -> fit params 6
+RRR2     symbols  9 rank 7 pinned ['fu12', 'fu23'] -> fit params 7
+RRR3     symbols  8 rank 6 pinned ['fu13', 'fd12'] -> fit params 6
+RRR4     symbols  8 rank 6 pinned ['fu12', 'fu23'] -> fit params 6
+RRR5     symbols  8 rank 6 pinned ['fu13', 'fu23'] -> fit params 6
+GR1      symbols  9 rank 7 pinned ['fu13', 'fu23'] -> fit params 7
+BB       symbols  7 rank 7 pinned [] -> fit params 7
+LG_S8    symbols  8 rank 8 pinned [] -> fit params 8
+LG_S9    symbols  7 rank 7 pinned [] -> fit params 7
+LG_S10   symbols  7 rank 7 pinned [] -> fit params 7
+LG_S12   symbols  8 rank 8 pinned [] -> fit params 8
+LG_S13   symbols  8 rank 8 pinned [] -> fit params 8
+LG_S15   symbols  7 rank 7 pinned [] -> fit params 7
+F4       symbols 10 rank 8 pinned ['fu12', 'fu23'] -> fit params 8
+
+Harrison-Scott benchmark (published params), paper Table 1 fitted column at 1e4 TeV:
+paper: mu/mc 2.00e-3, md/ms 4.97e-2, mc/mt 3.46e-3, ms/mb 1.968e-2, lambda 0.22499, A 0.876, rhobar 0.1519, etabar 0.3477
+mod: mu/mc 0.002002 md/ms 0.04976 mc/mt 0.003455 ms/mb 0.01968 lambda 0.22499 A 0.8758 rhobar 0.1519 etabar 0.3477 alpha 91.31 delta 66.44
+cplx: mu/mc 0.01268 md/ms 0.04976 mc/mt 0.003536 ms/mb 0.01968 lambda 0.22397 A 0.8831 rhobar 0.1443 etabar -0.3394 alpha -91.40 delta 293.00

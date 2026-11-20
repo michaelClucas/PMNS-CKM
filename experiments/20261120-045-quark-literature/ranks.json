@@ -1,0 +1,266 @@
+{
+ "F6": {
+  "n_symbols": 8,
+  "rank": 6,
+  "pinned_phases": [
+   "fu12",
+   "fu23"
+  ],
+  "n_fit_params": 6,
+  "fit_params": [
+   "lu12",
+   "lu23",
+   "ld12",
+   "fd12",
+   "ld23",
+   "fd23"
+  ]
+ },
+ "DHR": {
+  "n_symbols": 7,
+  "rank": 5,
+  "pinned_phases": [
+   "fu12",
+   "fu23"
+  ],
+  "n_fit_params": 5,
+  "fit_params": [
+   "lu12",
+   "lu23",
+   "ld12",
+   "fd12",
+   "sd22"
+  ]
+ },
+ "RRR1": {
+  "n_symbols": 8,
+  "rank": 6,
+  "pinned_phases": [
+   "fu12",
+   "fd23"
+  ],
+  "n_fit_params": 6,
+  "fit_params": [
+   "lu12",
+   "su22",
+   "ld12",
+   "fd12",
+   "sd22",
+   "ld23"
+  ]
+ },
+ "RRR2": {
+  "n_symbols": 9,
+  "rank": 7,
+  "pinned_phases": [
+   "fu12",
+   "fu23"
+  ],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu12",
+   "lu23",
+   "ld12",
+   "fd12",
+   "sd22",
+   "ld23",
+   "fd23"
+  ]
+ },
+ "RRR3": {
+  "n_symbols": 8,
+  "rank": 6,
+  "pinned_phases": [
+   "fu13",
+   "fd12"
+  ],
+  "n_fit_params": 6,
+  "fit_params": [
+   "lu13",
+   "su22",
+   "ld12",
+   "sd22",
+   "ld23",
+   "fd23"
+  ]
+ },
+ "RRR4": {
+  "n_symbols": 8,
+  "rank": 6,
+  "pinned_phases": [
+   "fu12",
+   "fu23"
+  ],
+  "n_fit_params": 6,
+  "fit_params": [
+   "lu12",
+   "su22",
+   "lu23",
+   "ld12",
+   "fd12",
+   "sd22"
+  ]
+ },
+ "RRR5": {
+  "n_symbols": 8,
+  "rank": 6,
+  "pinned_phases": [
+   "fu13",
+   "fu23"
+  ],
+  "n_fit_params": 6,
+  "fit_params": [
+   "lu13",
+   "su22",
+   "lu23",
+   "ld12",
+   "fd12",
+   "sd22"
+  ]
+ },
+ "GR1": {
+  "n_symbols": 9,
+  "rank": 7,
+  "pinned_phases": [
+   "fu13",
+   "fu23"
+  ],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu13",
+   "su22",
+   "lu23",
+   "ld12",
+   "fd12",
+   "ld23",
+   "fd23"
+  ]
+ },
+ "BB": {
+  "n_symbols": 7,
+  "rank": 7,
+  "pinned_phases": [],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu12",
+   "fu12",
+   "lu23",
+   "fu23",
+   "ld12",
+   "ld23",
+   "ld32"
+  ]
+ },
+ "LG_S8": {
+  "n_symbols": 8,
+  "rank": 8,
+  "pinned_phases": [],
+  "n_fit_params": 8,
+  "fit_params": [
+   "lu13",
+   "lu22",
+   "ld13",
+   "ld22",
+   "fd22",
+   "ld23",
+   "fd23",
+   "fd33"
+  ]
+ },
+ "LG_S9": {
+  "n_symbols": 7,
+  "rank": 7,
+  "pinned_phases": [],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu13",
+   "lu22",
+   "fu33",
+   "ld13",
+   "ld22",
+   "ld23",
+   "fd33"
+  ]
+ },
+ "LG_S10": {
+  "n_symbols": 7,
+  "rank": 7,
+  "pinned_phases": [],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu12",
+   "lu22",
+   "fu22",
+   "ld13",
+   "ld22",
+   "ld23",
+   "fd33"
+  ]
+ },
+ "LG_S12": {
+  "n_symbols": 8,
+  "rank": 8,
+  "pinned_phases": [],
+  "n_fit_params": 8,
+  "fit_params": [
+   "lu13",
+   "lu22",
+   "lu23",
+   "fu33",
+   "ld13",
+   "ld22",
+   "fd22",
+   "fd23"
+  ]
+ },
+ "LG_S13": {
+  "n_symbols": 8,
+  "rank": 8,
+  "pinned_phases": [],
+  "n_fit_params": 8,
+  "fit_params": [
+   "lu12",
+   "lu22",
+   "lu23",
+   "fu33",
+   "ld13",
+   "ld22",
+   "fd22",
+   "fd23"
+  ]
+ },
+ "LG_S15": {
+  "n_symbols": 7,
+  "rank": 7,
+  "pinned_phases": [],
+  "n_fit_params": 7,
+  "fit_params": [
+   "lu12",
+   "lu22",
+   "lu23",
+   "fu33",
+   "ld13",
+   "ld22",
+   "fd33"
+  ]
+ },
+ "F4": {
+  "n_symbols": 10,
+  "rank": 8,
+  "pinned_phases": [
+   "fu12",
+   "fu23"
+  ],
+  "n_fit_params": 8,
+  "fit_params": [
+   "lu12",
+   "su22",
+   "lu23",
+   "ld12",
+   "fd12",
+   "sd22",
+   "ld23",
+   "fd23"
+  ]
+ }
+}

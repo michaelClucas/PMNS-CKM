@@ -1,0 +1,10 @@
+eta F6       min chi2 460.63 at eta_b -0.45
+eta DHR      min chi2 338.17 at eta_b 0.15
+eta RRR1     min chi2 299.99 at eta_b -0.45
+eta RRR2     min chi2 245.99 at eta_b -0.45
+eta RRR3     min chi2 4.95 at eta_b -0.3
+eta RRR4     min chi2 305.66 at eta_b -0.45
+eta RRR5     min chi2 5.92 at eta_b -0.15
+eta exit 0
+eta RRR5     min chi2 0.95 at eta_b -0.25
+eta RRR3     min chi2 4.95 at eta_b -0.3

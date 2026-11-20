@@ -1,0 +1,139 @@
+2026-11-20T21:16:54Z grammar.md SHA-256 920108fee42aa3f9c734abe8251c36081845c79e83ca18a0bffa36a8eef30d9a (pre-registration, before any G44 fit)
+2026-11-20T21:24:18Z enum: A 64438 entries, B 20337940 entries (29300 pattern+tie sets), B sample 3000 (seed 4401); G44 total 20402378 = 24.28 bits; 38s
+2026-11-20T21:26:20Z filter A: CP filter killed 5849/64438 (110s)
+2026-11-20T21:26:21Z filter A: 7005 distinct sector families
+2026-11-20T21:26:34Z   sector 0/7005 124s
+2026-11-20T21:28:04Z   sector 2000/7005 214s
+2026-11-20T21:31:04Z   sector 4000/7005 394s
+2026-11-20T21:36:58Z   sector 6000/7005 748s
+2026-11-20T21:38:38Z filter A: survivors per scale {'MZ': 58477, 'GUT10': 58589, 'GUT30': 56981}; alive at any scale 58589/64438 (848s)
+2026-11-20T21:39:00Z fit A MZ: 58477 survivors, 0 done, running 58477 with 3 workers
+2026-11-20T21:39:14Z   fit A MZ 0/58477 pass so far 0 15s
+2026-11-20T21:39:43Z   fit A MZ 1000/58477 pass so far 0 43s
+2026-11-20T21:40:25Z   fit A MZ 2000/58477 pass so far 0 85s
+2026-11-20T21:41:20Z   fit A MZ 3000/58477 pass so far 0 140s
+2026-11-20T21:42:01Z   fit A MZ 4000/58477 pass so far 0 181s
+2026-11-20T21:42:28Z   fit A MZ 5000/58477 pass so far 1 208s
+2026-11-20T21:43:11Z   fit A MZ 6000/58477 pass so far 1 251s
+2026-11-20T21:44:01Z   fit A MZ 7000/58477 pass so far 1 302s
+2026-11-20T21:44:39Z   fit A MZ 8000/58477 pass so far 1 339s
+2026-11-20T21:45:09Z   fit A MZ 9000/58477 pass so far 1 369s
+2026-11-20T21:45:42Z   fit A MZ 10000/58477 pass so far 1 403s
+2026-11-20T21:46:13Z   fit A MZ 11000/58477 pass so far 2 433s
+2026-11-20T21:46:33Z   fit A MZ 12000/58477 pass so far 2 453s
+2026-11-20T21:46:51Z   fit A MZ 13000/58477 pass so far 2 472s
+2026-11-20T21:47:14Z   fit A MZ 14000/58477 pass so far 2 495s
+2026-11-20T21:47:41Z   fit A MZ 15000/58477 pass so far 2 521s
+2026-11-20T21:48:25Z   fit A MZ 16000/58477 pass so far 2 565s
+2026-11-20T21:49:03Z   fit A MZ 17000/58477 pass so far 3 603s
+2026-11-20T21:49:31Z   fit A MZ 18000/58477 pass so far 3 632s
+2026-11-20T21:49:58Z   fit A MZ 19000/58477 pass so far 3 659s
+2026-11-20T21:50:41Z   fit A MZ 20000/58477 pass so far 3 701s
+2026-11-20T21:51:45Z   fit A MZ 21000/58477 pass so far 3 765s
+2026-11-20T21:52:21Z   fit A MZ 22000/58477 pass so far 3 801s
+2026-11-20T21:52:49Z   fit A MZ 23000/58477 pass so far 3 830s
+2026-11-20T21:53:33Z   fit A MZ 24000/58477 pass so far 3 873s
+2026-11-20T21:54:42Z   fit A MZ 25000/58477 pass so far 3 942s
+2026-11-20T21:55:35Z   fit A MZ 26000/58477 pass so far 4 995s
+2026-11-20T21:56:04Z   fit A MZ 27000/58477 pass so far 5 1024s
+2026-11-20T21:56:48Z   fit A MZ 28000/58477 pass so far 5 1068s
+2026-11-20T21:57:51Z   fit A MZ 29000/58477 pass so far 5 1131s
+2026-11-20T21:58:31Z   fit A MZ 30000/58477 pass so far 5 1171s
+2026-11-20T21:59:07Z   fit A MZ 31000/58477 pass so far 5 1207s
+2026-11-20T22:00:08Z   fit A MZ 32000/58477 pass so far 5 1268s
+2026-11-20T22:00:43Z   fit A MZ 33000/58477 pass so far 5 1303s
+2026-11-20T22:01:06Z   fit A MZ 34000/58477 pass so far 6 1326s
+2026-11-20T22:01:33Z   fit A MZ 35000/58477 pass so far 6 1353s
+2026-11-20T22:02:37Z   fit A MZ 36000/58477 pass so far 6 1418s
+2026-11-20T22:03:49Z   fit A MZ 37000/58477 pass so far 6 1489s
+2026-11-20T22:04:28Z   fit A MZ 38000/58477 pass so far 6 1528s
+2026-11-20T22:09:16Z   fit A MZ 39000/58477 pass so far 6 1816s
+2026-11-20T22:11:25Z   fit A MZ 40000/58477 pass so far 6 1946s
+2026-11-20T22:12:44Z   fit A MZ 41000/58477 pass so far 6 2024s
+2026-11-20T22:13:43Z   fit A MZ 42000/58477 pass so far 6 2083s
+2026-11-20T22:14:59Z   fit A MZ 43000/58477 pass so far 6 2159s
+2026-11-20T22:16:41Z   fit A MZ 44000/58477 pass so far 7 2262s
+2026-11-20T22:18:02Z   fit A MZ 45000/58477 pass so far 8 2343s
+2026-11-20T22:19:12Z   fit A MZ 46000/58477 pass so far 8 2413s
+2026-11-20T22:21:23Z   fit A MZ 47000/58477 pass so far 8 2544s
+2026-11-20T22:23:41Z   fit A MZ 48000/58477 pass so far 8 2681s
+2026-11-20T22:25:35Z   fit A MZ 49000/58477 pass so far 8 2795s
+2026-11-20T22:26:55Z   fit A MZ 50000/58477 pass so far 8 2875s
+2026-11-20T22:28:08Z   fit A MZ 51000/58477 pass so far 8 2949s
+2026-11-20T22:29:16Z   fit A MZ 52000/58477 pass so far 8 3016s
+2026-11-20T22:30:42Z   fit A MZ 53000/58477 pass so far 8 3102s
+2026-11-20T22:31:41Z   fit A MZ 54000/58477 pass so far 8 3161s
+2026-11-20T22:32:40Z   fit A MZ 55000/58477 pass so far 9 3220s
+2026-11-20T22:33:34Z   fit A MZ 56000/58477 pass so far 9 3275s
+2026-11-20T22:34:38Z   fit A MZ 57000/58477 pass so far 9 3339s
+2026-11-20T22:35:35Z   fit A MZ 58000/58477 pass so far 9 3395s
+2026-11-20T22:36:02Z fit A MZ: finished 58477 in 3422s, pass 9
+2026-11-20T22:36:28Z gut_subset A: MZ chi2 < 200.0: 901; random check sample of the rest: 600
+2026-11-20T22:36:44Z deviation: GUT10/GUT30 fits run only on the gut_subset ids (MZ chi2 < 200 plus 600 random others as a check of the cut), not on all filter survivors, for wall-time reasons
+2026-11-20T22:36:52Z fit A GUT10: 58589 survivors, 0 done, running 1501 with 3 workers
+2026-11-20T22:37:09Z   fit A GUT10 0/1501 pass so far 0 17s
+2026-11-20T22:37:58Z   fit A GUT10 1000/1501 pass so far 11 66s
+2026-11-20T22:38:14Z fit A GUT10: finished 1501 in 82s, pass 16
+2026-11-20T22:38:19Z fit A GUT30: 56981 survivors, 0 done, running 1463 with 3 workers
+2026-11-20T22:38:30Z   fit A GUT30 0/1463 pass so far 0 11s
+2026-11-20T22:40:43Z   fit A GUT30 1000/1463 pass so far 7 144s
+2026-11-20T22:41:43Z fit A GUT30: finished 1463 in 204s, pass 11
+2026-11-20T22:41:51Z filter B: CP filter killed 132/3000 (4s)
+2026-11-20T22:41:51Z filter B: 4249 distinct sector families
+2026-11-20T22:42:05Z   sector 0/4249 17s
+2026-11-20T22:44:05Z   sector 2000/4249 138s
+2026-11-20T22:45:27Z   sector 4000/4249 219s
+2026-11-20T22:45:35Z filter B: survivors per scale {'MZ': 1752, 'GUT10': 1744, 'GUT30': 1751}; alive at any scale 1776/3000 (227s)
+2026-11-20T22:45:37Z fit B MZ: 1752 survivors, 0 done, running 1752 with 3 workers
+2026-11-20T22:45:42Z   fit B MZ 0/1752 pass so far 0 6s
+2026-11-20T22:46:08Z   fit B MZ 1000/1752 pass so far 1 31s
+2026-11-20T22:46:41Z fit B MZ: finished 1752 in 64s, pass 1
+2026-11-20T22:46:57Z validate near A MZ: 95 refits
+2026-11-20T22:48:22Z validate near A MZ: done in 85s, fit_ok 8/95
+2026-11-20T22:48:25Z validate near A GUT10: 73 refits
+2026-11-20T22:49:02Z validate near A GUT10: done in 37s, fit_ok 17/73
+2026-11-20T22:49:05Z validate near A GUT30: 69 refits
+2026-11-20T22:50:03Z validate near A GUT30: done in 58s, fit_ok 12/69
+2026-11-20T22:50:06Z validate near B MZ: 2 refits
+2026-11-20T22:50:18Z validate near B MZ: done in 12s, fit_ok 1/2
+2026-11-20T22:50:23Z validate miss A MZ: 150 refits
+2026-11-20T22:52:48Z validate miss A MZ: done in 145s, fit_ok 0/150
+2026-11-20T22:54:05Z lepton A47963 GUT30 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:54:16Z lepton A6624 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:54:25Z lepton A47963 GUT30 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:54:27Z lepton A20114 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:54:44Z lepton A6624 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:54:53Z lepton A52778 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:55:11Z lepton A20114 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:55:18Z lepton A6842 MZ I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:55:26Z lepton A52778 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:55:50Z lepton A48143 GUT30 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:06Z lepton A6842 MZ MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:15Z lepton A48143 GUT30 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:16Z lepton A20128 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:31Z lepton A47977 MZ I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:48Z lepton A29333 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:56:51Z lepton A47977 MZ MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:57:07Z lepton A20128 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:57:15Z lepton A59097 GUT30 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:57:19Z lepton A29333 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:57:30Z lepton A46880 MZ I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:57:59Z lepton A1197 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:03Z lepton A59097 GUT30 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:10Z lepton A46880 MZ MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:18Z lepton A47857 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:28Z lepton A47857 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:36Z lepton A7094 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:44Z lepton A11250 MZ I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:44Z lepton A7094 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:52Z lepton A47843 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:58:59Z lepton A47843 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:04Z lepton B41 MZ I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:04Z lepton A1197 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:11Z lepton B41 MZ MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:24Z lepton A11250 MZ MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:39Z lepton A7096 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T22:59:47Z lepton A20058 GUT10 I1: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T23:00:06Z lepton A7096 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T23:00:30Z lepton A20058 GUT10 MRdiag: N15 chi2 inf maxpull inf; held-out PMNS inf
+2026-11-20T23:02:38Z lepton.py runs: '19,4,5,37,8,21 a', '29,17,27,10,12,13 b', '14,18,1,9,22,24,38 c' (survivors.json indices, one per fingerprint class at its best scale); all 38 N15 fits chi2 inf, N10 held-out stage chi2 >= 2901
