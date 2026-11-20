@@ -1,0 +1,4 @@
+SM C NO sign=[0.0, 0.0] DE 622.13 polished 506.24 nfev 307712 (264s)
+SUMMARY {"variant": "C", "scenario": "SM", "seed": 1, "best_chi2_gut_de": 506.23931749995467, "committed_best_chi2_gut": 10564.062761888054, "best_max_abs_nuisance_pull": 5.123731787996537}
+MSSM_tb10_ms3TeV C NO sign=[0.0, 0.0] DE 815.90 polished 372.56 nfev 307712 (270s)
+SUMMARY {"variant": "C", "scenario": "MSSM_tb10_ms3TeV", "seed": 1, "best_chi2_gut_de": 372.5560142225598, "committed_best_chi2_gut": null, "best_max_abs_nuisance_pull": 3.302688653694601}

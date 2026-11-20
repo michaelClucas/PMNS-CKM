@@ -27,6 +27,13 @@ N1  CKM-side hierarchical null. PMNS data and tables are the base universe's (re
     (N1_PRIOR). Every CKM record (global fit and direct_*) is centred on the fake value
     and keeps the real record's absolute errors. Masses stay at the base values. This is
     the test of a CKM-PMNS link.
+N1lam  Lambda-matched N1 (exp 028's primary null, exp 033 helper n1lam_universe). lambda and
+    A are drawn from the base universe's CKM posterior: split normal with the centre and
+    +/- errors of its `lambda` and `A` records (real PDG values for real data), in that
+    order, one standard normal each; then exactly n1_universe with lambda and A pinned to
+    the draws, so rhobar, etabar ~ U[-1, 1] (N1LAM_PRIOR) and everything else is as N1.
+    It asks whether the CKM carries information beyond the Cabibbo scale (lambda, A).
+    With rng = default_rng([28, 2, i]) it reproduces exp 028's fake i exactly.
 N2  Shifted-data null. CKM and masses are the base universe's. For each ordering the PMNS
     data centre is redrawn from a smooth prior that is not built from pattern values:
     s12sq, s13sq, s23sq uniform on the NuFIT 3 sigma range of that ordering widened x3
@@ -122,8 +129,10 @@ from .mixing import standard_matrix as _standard_matrix
 from .stats import fake_universe_rate
 
 PMNS_KEYS = _ev.PMNS_KEYS
-NULLS = ("N1", "N2", "N3")
+NULLS = ("N1", "N2", "N3", "N1lam")
 N1_PRIOR = {"lambda": (0.05, 0.5), "A": (0.3, 2.0), "rhobar": (-1.0, 1.0), "etabar": (-1.0, 1.0)}
+# N1lam: rhobar, etabar ranges as N1; width scales the lambda, A posterior errors (0 pins them at the centre)
+N1LAM_PRIOR = {"rhobar": (-1.0, 1.0), "etabar": (-1.0, 1.0), "width": 1.0}
 N2_WIDEN = 3.0
 N3_PRIOR = {"decades": 1.0, "heavy_decades": 0.2, "ratios": ("u_c", "d_s", "s_b", "e_mu", "mu_tau")}
 N3_RATIOS = ("u_c", "c_t", "d_s", "s_b", "b_tau", "e_mu", "mu_tau")
@@ -137,7 +146,7 @@ N3_MC_MIN = 1.0             # GeV, lower clip of a fake m_c(m_c)
 N3_MB_RANGE = (2.5, 50.0)   # GeV, clip of a fake m_b(m_b); m_c is also kept below 0.8 m_b
 RATE_LIMIT = 0.01
 CL = 0.95
-_NULL_CODE = {"N1": 1, "N2": 2, "inject": 3, "N3": 4}
+_NULL_CODE = {"N1": 1, "N2": 2, "inject": 3, "N3": 4, "N1lam": 5}
 _ORD_CODE = {"NO": 0, "IO": 1}
 
 
@@ -357,7 +366,32 @@ def n3_universe(base: Universe, rng, prior: Mapping | None = None) -> Universe:
                    truth={"factors": fac, "masses": {k: v["value"] for k, v in masses.items()}})
 
 
-_MAKERS = {"N1": n1_universe, "N2": n2_universe, "N3": n3_universe}
+def split_normal(rng, rec, width: float = 1.0) -> float:
+    """One split-normal draw from a record: value + z err_plus (z > 0) or z err_minus (z <= 0),
+    z ~ N(0, 1) (one rng.standard_normal call, as exp 028). width scales both errors."""
+    z = float(rng.standard_normal())
+    return float(rec["value"] + width * z * (rec["err_plus"] if z > 0 else rec["err_minus"]))
+
+
+def n1lam_universe(base: Universe, rng, prior: Mapping | None = None) -> Universe:
+    """N1lam: lambda and A from the base CKM posterior (split normal), rhobar and etabar from
+    the N1 prior, everything else as n1_universe (module docstring). prior overrides
+    N1LAM_PRIOR ({"rhobar": (lo, hi), "etabar": (lo, hi), "width": w}).
+    truth = {"wolfenstein": {...}, "lambda_A_centre": (lambda, A record values)}."""
+    pr = dict(N1LAM_PRIOR, **(prior or {}))
+    bad = set(pr) - set(N1LAM_PRIOR)
+    if bad:
+        raise ValueError(f"unknown N1lam prior keys {sorted(bad)}; known {tuple(N1LAM_PRIOR)}")
+    recs = base.load_ckm()
+    lam = split_normal(rng, recs["lambda"], pr["width"])
+    A = split_normal(rng, recs["A"], pr["width"])
+    u = n1_universe(base, rng, prior={"lambda": (lam, lam), "A": (A, A),
+                                      "rhobar": tuple(pr["rhobar"]), "etabar": tuple(pr["etabar"])})
+    truth = dict(u.truth, lambda_A_centre=(float(recs["lambda"]["value"]), float(recs["A"]["value"])))
+    return replace(u, kind="N1lam", truth=truth)
+
+
+_MAKERS = {"N1": n1_universe, "N2": n2_universe, "N3": n3_universe, "N1lam": n1lam_universe}
 
 
 def make_fake(null: str, base: Universe, rng, prior: Mapping | None = None) -> Universe:
@@ -625,7 +659,8 @@ def run_null(pipeline: Callable, null: str = "N1", ordering: str = "NO", n_fakes
     The result's .info is src.infogain.null_info (B_ckm, S_rank, chi2 rate) of the reference's
     chi2_global (else chi2) against the fakes run (exp 026; None if no finite chi2).
     workers: processes (1 = in-process). prior: N1 overrides {"lambda": (lo, hi), ...},
-    N2 {"widen": x} or N3 {"decades", "heavy_decades", "ratios"}. hit_fn(fake_summary,
+    N2 {"widen": x}, N3 {"decades", "heavy_decades", "ratios"} or N1lam {"rhobar", "etabar",
+    "width"}. hit_fn(fake_summary,
     ref_summary) -> bool; summaries are dicts with N, k, max_abs_pull, p_global, ... (or the
     pipeline's own mapping). pool: an existing multiprocessing pool (not closed here);
     fakes then go in blocks of 4 x workers so an early stop wastes little work.

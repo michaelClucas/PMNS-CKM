@@ -1,0 +1,141 @@
+[
+ {
+  "exp": "015 BSV",
+  "fit": "C MSSM_tb10_ms3TeV NO",
+  "seed": 1,
+  "committed_chi2": null,
+  "de_chi2": 372.5560142225598,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 3.3; DE popsize 15 maxiter 600",
+  "pmns_gut": {
+   "s12sq": 0.29400000765551787,
+   "s13sq": 0.021693135789211997,
+   "s23sq": 0.17104839120704285,
+   "dcp_deg": 357.29637266683477
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "C SM NO",
+  "seed": 1,
+  "committed_chi2": 10564.062761888054,
+  "de_chi2": 506.23931749995467,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 5.1; DE popsize 15 maxiter 600",
+  "pmns_gut": {
+   "s12sq": 0.3100005410354875,
+   "s13sq": 0.01900003963191495,
+   "s23sq": 0.1656677929433306,
+   "dcp_deg": 0.21741157500413635
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0 MSSM_tb10_ms3TeV NO",
+  "seed": 1,
+  "committed_chi2": 3752.5805062797613,
+  "de_chi2": 1997.4995487973388,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 37.9; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.32000007713342,
+   "s13sq": 0.019338575486895913,
+   "s23sq": 0.14591008672735992,
+   "dcp_deg": 0.9692111136826341
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0 MSSM_tb55_ms3TeV NO",
+  "seed": 1,
+  "committed_chi2": 3511.626763793819,
+  "de_chi2": 1993.7008016034806,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 37.8; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.30600002993797115,
+   "s13sq": 0.020090246757339884,
+   "s23sq": 0.14396826600408075,
+   "dcp_deg": 0.8941677940771561
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0 SM NO",
+  "seed": 1,
+  "committed_chi2": 4607.446936295571,
+  "de_chi2": 2194.047274314838,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 38.5; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.3379129139964526,
+   "s13sq": 0.018895863117260374,
+   "s23sq": 0.14302141775318764,
+   "dcp_deg": 1.0632569963150376
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0eta MSSM_tb10_ms3TeV NO",
+  "seed": 1,
+  "committed_chi2": 3542.9095956475107,
+  "de_chi2": 1989.7756502646084,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 37.8; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.3160000457579076,
+   "s13sq": 0.019374276205955228,
+   "s23sq": 0.14523439789228335,
+   "dcp_deg": 0.9338340481448902
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0eta MSSM_tb55_ms3TeV NO",
+  "seed": 1,
+  "committed_chi2": 3252.2976833606012,
+  "de_chi2": 1975.8381040587421,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 37.7; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.3010447544686779,
+   "s13sq": 0.02012885818456989,
+   "s23sq": 0.1429418935384737,
+   "dcp_deg": 0.8429783101040909
+  }
+ },
+ {
+  "exp": "015 BSV",
+  "fit": "R0eta SM NO",
+  "seed": 1,
+  "committed_chi2": 3689.0494602514887,
+  "de_chi2": 2007.293823685185,
+  "note": "fit-stage chi2_gut, N 18; max nuisance pull 38.1; DE popsize 15 maxiter 400",
+  "pmns_gut": {
+   "s12sq": 0.31803803038635864,
+   "s13sq": 0.01904914894370667,
+   "s23sq": 0.14028399502803718,
+   "dcp_deg": 0.8832681349102737
+  }
+ },
+ {
+  "exp": "016 2O",
+  "fit": "joint, N 15",
+  "seed": 1,
+  "committed_chi2": 68.84064586139408,
+  "de_chi2": 872.8128116931567,
+  "note": "tau +0.064+1.174i; worst pull s13sq -18.5",
+  "pmns_gut": null
+ },
+ {
+  "exp": "016 2O",
+  "fit": "joint, N 15",
+  "seed": 2,
+  "committed_chi2": 68.84064586139408,
+  "de_chi2": 75.43259115585471,
+  "note": "tau +0.171+0.901i; worst pull s12sq +5.0",
+  "pmns_gut": null
+ },
+ {
+  "exp": "016 2O",
+  "fit": "joint, N 15 (committed point in DE init)",
+  "seed": 3,
+  "committed_chi2": 68.84064586139408,
+  "de_chi2": 68.83944642368581,
+  "note": "tau -0.205+1.069i; worst pull s12sq +5.3",
+  "pmns_gut": null
+ }
+]

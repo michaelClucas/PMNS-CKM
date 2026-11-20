@@ -1,0 +1,12 @@
+OOM 0.0: detected 0/8 = 0.00 CP95 [0.000, 0.369]; 300-rule 0/8; median rank 0.225; rank<=0.05 0; median dT 0.09 bits; I_meas median 0.00; oracle None/8, oracle median rank None
+OOM 0.5: detected 0/10 = 0.00 CP95 [0.000, 0.308]; 300-rule 0/10; median rank 0.590; rank<=0.05 0; median dT -0.03 bits; I_meas median 0.41; oracle 0/10, oracle median rank 0.187
+OOM 1.0: detected 0/15 = 0.00 CP95 [0.000, 0.218]; 300-rule 0/15; median rank 0.510; rank<=0.05 1; median dT -0.02 bits; I_meas median 0.79; oracle 0/15, oracle median rank 0.2105
+OOM 2.0: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.610; rank<=0.05 0; median dT -0.07 bits; I_meas median 1.55; oracle 1/20, oracle median rank 0.14925
+OOM 4.0: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.215; rank<=0.05 2; median dT 0.20 bits; I_meas median 2.89; oracle 6/20, oracle median rank 0.01125
+OOM 8.0: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.570; rank<=0.05 2; median dT -0.04 bits; I_meas median 5.37; oracle 10/20, oracle median rank 0.007
+OOM 12.0: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.555; rank<=0.05 0; median dT -0.07 bits; I_meas median 6.05; oracle 13/20, oracle median rank 0.00375
+IM F2: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.600; rank<=0.05 1; median dT -0.04 bits; rho,eta in box 20/20
+IM MN: detected 0/20 = 0.00 CP95 [0.000, 0.168]; 300-rule 0/20; median rank 0.690; rank<=0.05 2; median dT -0.15 bits; rho,eta in box 20/20
+IM MNu: detected 3/20 = 0.15 CP95 [0.032, 0.379]; 300-rule 1/20; median rank 0.165; rank<=0.05 5; median dT 2.45 bits; rho,eta in box 20/20
+min detectable I_link at 50% power (pipeline): None
+min detectable I_link at 50% power (oracle): 8.0

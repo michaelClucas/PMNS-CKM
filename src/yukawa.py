@@ -6,6 +6,9 @@
     takagi(m)                 -> (U, m_i)   U^T m U = diag(m_i) real >= 0, ascending
     seesaw_type1(Y_nu, M_R)   -> m_nu = -Y_nu^* M_R^-1 Y_nu^dag
     majorana_phases(U, delta) -> (alpha21, alpha31) in radians, [0, 2 pi)
+    observables_batch(Y_u, Y_d, Y_e, m_nu, ordering="auto")  -> dict of arrays (exp 033; same
+        convention and keys as observables, batched over a leading axis; rows with non-finite
+        input give nan; used by src.theoryspace)
 
 Convention (one, used everywhere in this module)
 ------------------------------------------------
@@ -69,7 +72,8 @@ from .mixing import extract_angles
 
 TWO_PI = 2.0 * np.pi
 
-__all__ = ["observables", "left_rotation", "takagi", "seesaw_type1", "majorana_phases", "OUTPUT_KEYS"]
+__all__ = ["observables", "observables_batch", "left_rotation", "takagi", "seesaw_type1", "majorana_phases",
+           "OUTPUT_KEYS"]
 
 OUTPUT_KEYS = ("ckm_s12", "ckm_s13", "ckm_s23", "ckm_delta_rad", "s12sq", "s13sq", "s23sq", "dcp_deg",
                "mr_u_c", "mr_c_t", "mr_d_s", "mr_s_b", "mr_e_mu", "mr_mu_tau", "mr_b_tau", "R_clebsch",
@@ -182,3 +186,86 @@ def observables(Y_u, Y_d, Y_e, m_nu=None, *, Y_nu=None, M_R=None, ordering="auto
         return out
     return out, {"V_ckm": V, "U_pmns": U, "U_u": Uu, "U_d": Ud, "U_e": Ue, "U_nu": Un, "y_u": yu, "y_d": yd,
                  "y_e": ye, "m_nu": mn, "ordering": o, "m_nu_matrix": np.asarray(m_nu, complex)}
+
+
+# ---------------------------------------------------------------- batched path (exp 033)
+
+def _batch(Y, name):
+    Y = np.asarray(Y, dtype=complex)
+    if Y.ndim != 3 or Y.shape[1:] != (3, 3):
+        raise ValueError(f"{name} must have shape (B, 3, 3), got {Y.shape}")
+    return Y
+
+
+def _dag(M):
+    return np.conj(np.swapaxes(M, -1, -2))
+
+
+def observables_batch(Y_u, Y_d, Y_e, m_nu, *, ordering="auto", nu_mass_scale_eV=None, sym_tol=1e-8):
+    """observables() over a batch: Y_u, Y_d, Y_e, m_nu of shape (B, 3, 3) -> dict of (B,) arrays.
+
+    Same convention, keys, ordering rule and Takagi phase fixing as observables(); agrees with it
+    row by row to rounding (tests/test_theoryspace.py). Rows where any input entry is non-finite,
+    or where m_nu is not symmetric (relative tolerance sym_tol), give nan in every key. Also returns
+    "io" (1.0 for IO, 0.0 for NO, nan for bad rows). No details; for the seesaw path pass
+    m_nu = seesaw_type1 applied per row (or compute -Y_nu^* M_R^-1 Y_nu^dag in batch yourself).
+    """
+    Yu, Yd, Ye, m = (_batch(Y, n) for Y, n in ((Y_u, "Y_u"), (Y_d, "Y_d"), (Y_e, "Y_e"), (m_nu, "m_nu")))
+    B = len(Yu)
+    if not (len(Yd) == len(Ye) == len(m) == B):
+        raise ValueError("all inputs need the same batch size")
+    good = np.all(np.isfinite(np.stack([Yu, Yd, Ye, m])), axis=(0, 2, 3))
+    scale = np.max(np.abs(np.where(good[:, None, None], m, 0)), axis=(1, 2))
+    asym = np.max(np.abs(np.where(good[:, None, None], m - np.swapaxes(m, 1, 2), 0)), axis=(1, 2))
+    good &= ~((scale > 0) & (asym > sym_tol * scale))
+    keys = OUTPUT_KEYS + ("io",) + (("dm21sq_eV2", "dm3l_sq_eV2") if nu_mass_scale_eV is not None else ())
+    out = {k: np.full(B, np.nan) for k in keys}
+    if not good.any():
+        return out
+    Yu, Yd, Ye, m = Yu[good], Yd[good], Ye[good], m[good]
+
+    def lrot(Y):
+        w, U = np.linalg.eigh(Y @ _dag(Y))
+        return U, np.sqrt(np.clip(w, 0.0, None))
+
+    Uu, yu = lrot(Yu)
+    Ud, yd = lrot(Yd)
+    Ue, ye = lrot(Ye)
+    w, Un = np.linalg.eigh(_dag(m) @ m)
+    d = np.einsum("bji,bjk,bki->bi", Un, m, Un)  # diag(U^T m U)
+    Un = Un * np.exp(-0.5j * np.angle(d))[:, None, :]
+    mn = np.sqrt(np.clip(w, 0.0, None))
+    a2, b2, c2 = mn[:, 0] ** 2, mn[:, 1] ** 2, mn[:, 2] ** 2
+    if ordering == "auto":
+        io = ~((b2 - a2) < (c2 - b2))
+    elif ordering in ("NO", "IO"):
+        io = np.full(len(mn), ordering == "IO")
+    else:
+        raise ValueError("ordering must be 'auto', 'NO' or 'IO'")
+    Un = np.where(io[:, None, None], Un[:, :, [1, 2, 0]], Un)
+    mn = np.where(io[:, None], mn[:, [1, 2, 0]], mn)
+    V = _dag(Uu) @ Ud
+    U = _dag(Ue) @ Un
+    q12, q13, q23, qd = extract_angles(V)
+    l12, l13, l23, ld = extract_angles(U)
+    a21 = np.mod(2 * np.angle(U[:, 0, 1] * np.conj(U[:, 0, 0])), TWO_PI)
+    a31 = np.mod(2 * (np.angle(U[:, 0, 2] * np.conj(U[:, 0, 0])) + ld), TWO_PI)
+    dm21 = mn[:, 1] ** 2 - mn[:, 0] ** 2
+    dm3l = mn[:, 2] ** 2 - np.where(io, mn[:, 1] ** 2, mn[:, 0] ** 2)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        g = {
+            "ckm_s12": np.sin(q12), "ckm_s13": np.sin(q13), "ckm_s23": np.sin(q23), "ckm_delta_rad": qd,
+            "s12sq": np.sin(l12) ** 2, "s13sq": np.sin(l13) ** 2, "s23sq": np.sin(l23) ** 2,
+            "dcp_deg": np.degrees(ld),
+            "mr_u_c": yu[:, 0] / yu[:, 1], "mr_c_t": yu[:, 1] / yu[:, 2], "mr_d_s": yd[:, 0] / yd[:, 1],
+            "mr_s_b": yd[:, 1] / yd[:, 2], "mr_e_mu": ye[:, 0] / ye[:, 1], "mr_mu_tau": ye[:, 1] / ye[:, 2],
+            "mr_b_tau": yd[:, 2] / ye[:, 2], "dm_ratio": dm21 / np.abs(dm3l),
+            "alpha21_deg": np.degrees(a21), "alpha31_deg": np.degrees(a31), "io": io.astype(float),
+        }
+        g["R_clebsch"] = g["mr_e_mu"] / g["mr_d_s"]
+    if nu_mass_scale_eV is not None:
+        f = float(nu_mass_scale_eV) ** 2
+        g["dm21sq_eV2"], g["dm3l_sq_eV2"] = dm21 * f, dm3l * f
+    for k in keys:
+        out[k][good] = g[k]
+    return out

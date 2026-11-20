@@ -1,0 +1,15 @@
+SM R0 NO sign=[0.0, 0.0] DE 2194.05 polished 2194.05 nfev 102656 (90s)
+SM R0 NO sign=[3.14, 0.0] DE 5204.69 polished 5204.69 nfev 63744 (134s)
+SM R0 NO sign=[0.0, 3.14] DE 4215.36 polished 4215.36 nfev 102656 (236s)
+SM R0 NO sign=[3.14, 3.14] DE 5999.50 polished 5999.50 nfev 102656 (307s)
+SUMMARY {"variant": "R0", "scenario": "SM", "seed": 1, "best_chi2_gut_de": 2194.047274314838, "committed_best_chi2_gut": 4607.446936295571, "best_max_abs_nuisance_pull": 38.483424381891375}
+MSSM_tb10_ms3TeV R0 NO sign=[0.0, 0.0] DE 1997.50 polished 1997.50 nfev 102656 (90s)
+MSSM_tb10_ms3TeV R0 NO sign=[3.14, 0.0] DE 4754.98 polished 4754.98 nfev 71168 (154s)
+MSSM_tb10_ms3TeV R0 NO sign=[0.0, 3.14] DE 3755.78 polished 3755.78 nfev 59904 (210s)
+MSSM_tb10_ms3TeV R0 NO sign=[3.14, 3.14] DE 5546.59 polished 5546.59 nfev 102656 (304s)
+SUMMARY {"variant": "R0", "scenario": "MSSM_tb10_ms3TeV", "seed": 1, "best_chi2_gut_de": 1997.4995487973388, "committed_best_chi2_gut": 3752.5805062797613, "best_max_abs_nuisance_pull": 37.88654420004408}
+MSSM_tb55_ms3TeV R0 NO sign=[0.0, 0.0] DE 1993.70 polished 1993.70 nfev 102656 (100s)
+MSSM_tb55_ms3TeV R0 NO sign=[3.14, 0.0] DE 4961.19 polished 4961.19 nfev 86528 (200s)
+MSSM_tb55_ms3TeV R0 NO sign=[0.0, 3.14] DE 3775.82 polished 3775.82 nfev 102656 (329s)
+MSSM_tb55_ms3TeV R0 NO sign=[3.14, 3.14] DE 2325.97 polished 2325.97 nfev 102656 (453s)
+SUMMARY {"variant": "R0", "scenario": "MSSM_tb55_ms3TeV", "seed": 1, "best_chi2_gut_de": 1993.7008016034806, "committed_best_chi2_gut": 3511.626763793819, "best_max_abs_nuisance_pull": 37.77849680953969}

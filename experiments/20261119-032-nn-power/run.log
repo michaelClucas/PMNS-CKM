@@ -1,0 +1,4 @@
+2026-11-19T23:21:33Z pre-registration README sha256 86bb4b9ba9fade7d9d75372b443a9ae65ebb9fd25958554c2bb91b8b0d27ea99
+2026-11-19T23:22:43Z start main: 200 tasks, 5 workers
+2026-11-20T01:46:47Z done main: exit codes [0, 4294967295, 4294967295, 4294967295, 0]
+2026-11-20T01:46:53Z workers stopped by deadline (173/200 tasks done)

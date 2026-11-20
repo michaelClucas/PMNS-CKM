@@ -1,0 +1,334 @@
+[
+ {
+  "claim": "SU5-CSD3 p_global (chi2 22.40, N14, k_cont 9)",
+  "quoted": 0.00044,
+  "recomputed": 0.0004390457780029925,
+  "source": "exp 022 README",
+  "match": true
+ },
+ {
+  "claim": "SU5-CSD3 analytic bound chi2>=14.7 -> best possible p",
+  "quoted": null,
+  "recomputed": 0.011724131750096406,
+  "source": "exp 022 README",
+  "match": null
+ },
+ {
+  "claim": "2O p (chi2 68.84, N15, k_cont 10)",
+  "quoted": 1.8e-13,
+  "recomputed": 1.7857654753634992e-13,
+  "source": "exp 016 fit_ours_ours.json",
+  "match": true
+ },
+ {
+  "claim": "BL-CDSV NO p_global (8.21, N4, k_cont 1)",
+  "quoted": 0.042,
+  "recomputed": 0.04186527218425576,
+  "source": "exp 027 README",
+  "match": true
+ },
+ {
+  "claim": "BL-CDSV IO p_global (6.20, N4, k_cont 1)",
+  "quoted": 0.1,
+  "recomputed": 0.10227502654693751,
+  "source": "exp 030 README",
+  "match": true
+ },
+ {
+  "claim": "TM1 NO p_global (5.1, N4, k_cont 2)",
+  "quoted": 0.078,
+  "recomputed": 0.07808166600115318,
+  "source": "exp 013 results.csv",
+  "match": true
+ },
+ {
+  "claim": "TM1 IO p_global (3.3, N4, k_cont 2)",
+  "quoted": 0.191,
+  "recomputed": 0.19204990862075405,
+  "source": "exp 013 results.csv",
+  "match": true
+ },
+ {
+  "claim": "F2-LO p (7.21, N4, k_cont 1)",
+  "quoted": 0.065,
+  "recomputed": 0.06547389310727901,
+  "source": "exp 018 README",
+  "match": true
+ },
+ {
+  "claim": "S4 tau-only lepton lead p (5.84, N7, k_cont 5)",
+  "quoted": 0.054,
+  "recomputed": 0.05393368730035601,
+  "source": "exp 017 README",
+  "match": true
+ },
+ {
+  "claim": "RMSV p (4.79, N4, k_cont 2)",
+  "quoted": 0.091,
+  "recomputed": 0.09117267892259787,
+  "source": "exp 027 README",
+  "match": true
+ },
+ {
+  "claim": "2O p from JSON chi2",
+  "quoted": 1.7857262603909066e-13,
+  "recomputed": 1.7857262603909066e-13,
+  "source": "exp 016 fit_ours_ours.json",
+  "match": true
+ },
+ {
+  "claim": "025 conv rank",
+  "quoted": 0.021,
+  "recomputed": 0.0205,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "025 conv CP95 lo",
+  "quoted": 0.015,
+  "recomputed": 0.014750334750278316,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "025 conv CP95 hi",
+  "quoted": 0.028,
+  "recomputed": 0.0277086565796092,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "025 point rank",
+  "quoted": 0.032,
+  "recomputed": 0.0315,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "025 T_point bits",
+  "quoted": 1.8,
+  "recomputed": 1.7989261452741163,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "025 T_conv bits",
+  "quoted": 1.54,
+  "recomputed": 1.5361330749219682,
+  "source": "exp 025 results.json",
+  "match": true
+ },
+ {
+  "claim": "028 NO T_conv",
+  "quoted": -0.99,
+  "recomputed": -0.9921439850017538,
+  "source": "exp 028 results_NO.json",
+  "match": true
+ },
+ {
+  "claim": "028 NO N1lam rank",
+  "quoted": 0.52,
+  "recomputed": 0.5215,
+  "source": "exp 028 results_NO.json",
+  "match": true
+ },
+ {
+  "claim": "028 NO N1lam CP95 one-sided upper",
+  "quoted": 0.54,
+  "recomputed": 0.5400908923869674,
+  "source": "exp 028 results_NO.json",
+  "match": true
+ },
+ {
+  "claim": "028 NO plain N1 rank",
+  "quoted": 0.38,
+  "recomputed": 0.377,
+  "source": "exp 028 results_NO.json",
+  "match": true
+ },
+ {
+  "claim": "028 NO Dirichlet N1lam pass fraction",
+  "quoted": 0.0,
+  "recomputed": 0.0,
+  "source": "exp 028",
+  "match": true
+ },
+ {
+  "claim": "028 pmns_best used (NO)",
+  "quoted": null,
+  "recomputed": {
+   "s12sq": 0.3088,
+   "s13sq": 0.02249,
+   "s23sq": 0.47,
+   "dcp_deg": 207
+  },
+  "source": "results_NO.json",
+  "match": null
+ },
+ {
+  "claim": "028 IO T_conv",
+  "quoted": 0.69,
+  "recomputed": 0.6897654132212603,
+  "source": "exp 028 results_IO.json",
+  "match": true
+ },
+ {
+  "claim": "028 IO N1lam rank",
+  "quoted": 0.6,
+  "recomputed": 0.598,
+  "source": "exp 028 results_IO.json",
+  "match": true
+ },
+ {
+  "claim": "pmns_best identical in exps 025 and 028 (NO)",
+  "quoted": null,
+  "recomputed": true,
+  "source": "025 results.json real vs 028 results_NO.json real.best",
+  "match": true
+ },
+ {
+  "claim": "030 N1 NO power / 200-fake rate",
+  "quoted": null,
+  "recomputed": [
+   0.05,
+   0.37
+  ],
+  "source": "exp 030 JSON",
+  "match": null
+ },
+ {
+  "claim": "030 N1 NO one-sided CP95 upper of rate",
+  "quoted": 0.42983662444273407,
+  "recomputed": 0.42983662444273407,
+  "source": "exp 030 JSON",
+  "match": true
+ },
+ {
+  "claim": "030 N1 IO power / 200-fake rate",
+  "quoted": null,
+  "recomputed": [
+   0.0,
+   0.365
+  ],
+  "source": "exp 030 JSON",
+  "match": null
+ },
+ {
+  "claim": "030 N1 IO one-sided CP95 upper of rate",
+  "quoted": 0.4247346903828951,
+  "recomputed": 0.4247346903828951,
+  "source": "exp 030 JSON",
+  "match": true
+ },
+ {
+  "claim": "030 N2 NO power / 200-fake rate",
+  "quoted": null,
+  "recomputed": [
+   0.0,
+   0.815
+  ],
+  "source": "exp 030 JSON",
+  "match": null
+ },
+ {
+  "claim": "030 N2 NO one-sided CP95 upper of rate",
+  "quoted": 0.8589267403090945,
+  "recomputed": 0.8589267403090945,
+  "source": "exp 030 JSON",
+  "match": true
+ },
+ {
+  "claim": "030 N2 IO power / 200-fake rate",
+  "quoted": null,
+  "recomputed": [
+   0.0,
+   0.78
+  ],
+  "source": "exp 030 JSON",
+  "match": null
+ },
+ {
+  "claim": "030 N2 IO one-sided CP95 upper of rate",
+  "quoted": 0.8273210049380139,
+  "recomputed": 0.8273210049380139,
+  "source": "exp 030 JSON",
+  "match": true
+ },
+ {
+  "claim": "018 power T1_N1_NO",
+  "quoted": null,
+  "recomputed": 0.0,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "018 power T1_N1_IO",
+  "quoted": null,
+  "recomputed": 0.0,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "018 power T1_N2_NO",
+  "quoted": null,
+  "recomputed": 0.0,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "018 power T1_N2_IO",
+  "quoted": null,
+  "recomputed": 0.0,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "018 power F2LO_N1_NO",
+  "quoted": null,
+  "recomputed": 0.0,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "018 power F2LO_N2_NO",
+  "quoted": null,
+  "recomputed": 0.05,
+  "source": "exp 018",
+  "match": null
+ },
+ {
+  "claim": "020 random-tau CP95 lo (98/100)",
+  "quoted": 0.93,
+  "recomputed": 0.9296160675289299,
+  "source": "exp 020 README",
+  "match": true
+ },
+ {
+  "claim": "020 random-tau CP95 hi (98/100)",
+  "quoted": 0.998,
+  "recomputed": 0.9975686631760574,
+  "source": "exp 020 README",
+  "match": true
+ },
+ {
+  "claim": "029 Sidak local Z for global 3 sigma, M=35",
+  "quoted": 3.95,
+  "recomputed": 3.952811251837403,
+  "source": "exp 029 README",
+  "match": true
+ },
+ {
+  "claim": "029 Sidak local Z for global 3 sigma, M=34",
+  "quoted": 3.95,
+  "recomputed": 3.9458722845182965,
+  "source": "exp 029 README",
+  "match": true
+ },
+ {
+  "claim": "029 Sidak if M counted all 37 relations x 2 orderings (74)",
+  "quoted": null,
+  "recomputed": 4.128382517049292,
+  "source": "sensitivity",
+  "match": null
+ }
+]

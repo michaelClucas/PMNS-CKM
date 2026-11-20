@@ -284,3 +284,45 @@ def pmns_profile_1d(ordering, param, values=None, analysis=DEFAULT_ANALYSIS, rel
     out = np.interp(v, x, y)
     out = np.where((v < x[0]) | (v > x[-1]) | ~np.isfinite(v), np.inf, out)
     return out + off if off else out
+
+
+# ---------------------------------------------------------------- Delta m^2 ratio (exp 033)
+
+def dm_ratio(dm21sq, dm3l_sq):
+    """Delta m^2_21 / |Delta m^2_3l| (positive for both orderings; array-like or scalar).
+
+    dm3l_sq is Delta m^2_31 (NO, > 0) or Delta m^2_32 (IO, < 0), as load_pmns and src.yukawa
+    give it; the ratio is the src.evaluate `dm_ratio` definition."""
+    r = np.asarray(dm21sq, dtype=float) / np.abs(np.asarray(dm3l_sq, dtype=float))
+    return float(r) if r.ndim == 0 else r
+
+
+def load_dm_ratio(ordering: str, analysis: str = DEFAULT_ANALYSIS) -> dict:
+    """IO-aware Delta m^2 ratio record from the NuFIT 6.1 best fit of one ordering.
+
+    load_pmns("IO") gives Delta m^2_32 < 0, so a naive dm21 / dm3l is negative there. This
+    returns {"value": dm21 / |dm3l| (> 0), "err_plus", "err_minus", "dm21sq_eV2",
+    "dm3l_sq_eV2" (signed, as NuFIT), "dm3l_abs_eV2", "ordering", "analysis", "scale",
+    "scheme", "source"}. Errors: linear propagation of the two 1 sigma splittings treated as
+    independent, each side taken from the side of the inputs that moves the ratio that way
+    (err_plus uses dm21 err_plus and the error towards smaller |dm3l|, which is err_minus for
+    NO and err_plus for IO). For scoring use src.evaluate (`dm_ratio` key), which profiles
+    the two NuFIT 1D tables instead of using these errors.
+    """
+    _check_ordering(ordering)
+    p = load_pmns(ordering, analysis)
+    r21, r3l = p["dm21sq_1e-5eV2"], p["dm3l_sq_1e-3eV2"]
+    d21, d3l = r21["value"] * 1e-5, r3l["value"] * 1e-3
+    a3l = abs(d3l)
+    # errors on |dm3l| towards smaller / larger magnitude
+    if d3l > 0:
+        a_down, a_up = r3l["err_minus"] * 1e-3, r3l["err_plus"] * 1e-3
+    else:
+        a_down, a_up = r3l["err_plus"] * 1e-3, r3l["err_minus"] * 1e-3
+    r = d21 / a3l
+    ep = r * float(np.hypot(r21["err_plus"] * 1e-5 / d21, a_down / a3l))
+    em = r * float(np.hypot(r21["err_minus"] * 1e-5 / d21, a_up / a3l))
+    return {"value": r, "err_plus": ep, "err_minus": em, "dm21sq_eV2": d21, "dm3l_sq_eV2": d3l,
+            "dm3l_abs_eV2": a3l, "ordering": ordering, "analysis": analysis, "scale": "low energy",
+            "scheme": "Delta m^2_21 / |Delta m^2_3l| (3l = 31 for NO, 32 for IO)",
+            "source": r21["source"].rsplit(",", 1)[0] + f", {ordering} (ratio derived, exp 033)"}

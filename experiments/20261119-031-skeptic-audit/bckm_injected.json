@@ -1,0 +1,42 @@
+{
+ "N1_NO": {
+  "n_injections": 20,
+  "B_ckm_min": -0.14625781335380703,
+  "B_ckm_median": 1.3391175922630167,
+  "B_ckm_max": 2.3099956706275515,
+  "frac_le_2bits": 0.85,
+  "injected_null_n_run_median": 5.0,
+  "real_data_B_ckm": -0.23420472909317075,
+  "power": 0.05
+ },
+ "N1_IO": {
+  "n_injections": 20,
+  "B_ckm_min": -1.9011282443647561,
+  "B_ckm_median": 0.6746971421213106,
+  "B_ckm_max": 2.2922277264619524,
+  "frac_le_2bits": 0.85,
+  "injected_null_n_run_median": 6.5,
+  "real_data_B_ckm": -1.0958737168650061,
+  "power": 0.0
+ },
+ "N2_NO": {
+  "n_injections": 20,
+  "B_ckm_min": -2.0410904935445418,
+  "B_ckm_median": 1.1367341891080631,
+  "B_ckm_max": 2.114567371276877,
+  "frac_le_2bits": 0.9,
+  "injected_null_n_run_median": 4.5,
+  "real_data_B_ckm": -2.41050918894278,
+  "power": 0.0
+ },
+ "N2_IO": {
+  "n_injections": 20,
+  "B_ckm_min": -4.013824343478358,
+  "B_ckm_median": -0.3739951762427389,
+  "B_ckm_max": 0.9693535114310726,
+  "frac_le_2bits": 1.0,
+  "injected_null_n_run_median": 2.0,
+  "real_data_B_ckm": -2.1184439052183057,
+  "power": 0.0
+ }
+}
