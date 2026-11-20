@@ -1,0 +1,9 @@
+L4 8 bits world 0: sigma 0.06767 I(coarse) 7.999 I(fine) 8.003
+L4 8 bits world 1: sigma 0.06351 I(coarse) 7.997 I(fine) 7.998
+L4 8 bits world 2: sigma 0.06851 I(coarse) 8.000 I(fine) 7.994
+L4 12 bits world 0: sigma 0.03208 I(coarse) 12.000 I(fine) 11.961
+L4 12 bits world 1: sigma 0.03113 I(coarse) 12.000 I(fine) 11.963
+L4 12 bits world 2: sigma 0.03135 I(coarse) 12.000 I(fine) 11.916
+L2 12 bits world 0: sigma 0.007294 I(coarse) 11.999 I(fine) 11.990
+L2 12 bits world 1: sigma 0.006658 I(coarse) 11.998 I(fine) 11.983
+L2 12 bits world 2: sigma 0.008238 I(coarse) 11.999 I(fine) 11.974

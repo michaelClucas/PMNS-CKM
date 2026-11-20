@@ -1,0 +1,41 @@
+{"seed": 1, "quark_chi2": 3.1117784057632243e-09, "n_starts": 1, "secs": 197.6735987663269}
+{"seed": 2, "quark_chi2": 3.3519320329754734e-06, "n_starts": 1, "secs": 199.94794154167175}
+{"seed": 3, "quark_chi2": 25.07008959491304, "n_starts": 1, "secs": 189.86417984962463}
+done 1 1/3 NO
+done 1 1 NO
+done 1 -3 NO
+done 1 9/2 NO
+done 1 4/9 NO
+done 1 6 NO
+done -3 1 NO
+done -3 1/3 NO
+done -3 -3 NO
+done -3 4/9 NO
+done -3 9/2 NO
+done -3 6 NO
+done 1/3 -3 NO
+done 1/3 1 NO
+done 1/3 1/3 NO
+done 1/3 9/2 NO
+done 1/3 4/9 NO
+done 1/3 6 NO
+done 9/2 -3 NO
+done 9/2 1 NO
+done 9/2 1/3 NO
+done 9/2 9/2 NO
+done 9/2 4/9 NO
+done 9/2 6 NO
+done 4/9 -3 NO
+done 4/9 1 NO
+done 4/9 1/3 NO
+done 4/9 9/2 NO
+done 4/9 4/9 NO
+done 6 1 NO
+done 4/9 6 NO
+done 6 -3 NO
+done 6 1/3 NO
+done 6 9/2 NO
+done 6 4/9 NO
+done 6 6 NO
+done -3 -3 IO
+finished

@@ -1,0 +1,11 @@
+GEN: kept 40000 (acc 0.0181) R2 0.026  sd marg 0.698 cond 0.689 (0.02 bits)  at real quarks: log10 r = -2.113 [-2.791, -1.418] vs obs -1.524  (neighbour dist 2.76)  461s
+GEN took 461s (budget 420s)
+CTRL: kept 40000 (acc 0.0113) R2 -0.001  sd marg 0.737 cond 0.738 (-0.00 bits)  at real quarks: log10 r = -1.726 [-2.592, -0.877] vs obs -1.524  (neighbour dist 2.36)  752s
+CTRL took 752s (budget 420s)
+MN: kept 40000 (acc 0.105) R2 0.232  sd marg 0.552 cond 0.484 (0.19 bits)  at real quarks: log10 r = -2.483 [-2.821, -2.065] vs obs -1.524  (neighbour dist 2.09)  130s
+FN: kept 10204 (acc 0.000637) R2 0.067  sd marg 0.768 cond 0.742 (0.05 bits)  at real quarks: log10 r = -1.757 [-2.581, -0.810] vs obs -1.524  (neighbour dist 2.90)  693s
+FN took 693s (budget 420s)
+SU5: kept 40000 (acc 0.178) R2 -0.000  sd marg 0.401 cond 0.401 (-0.00 bits)  at real quarks: log10 r = -1.927 [-2.392, -1.410] vs obs -1.524  (neighbour dist 3.22)  220s
+S4SO: kept 40000 (acc 0.0403) R2 -0.000  sd marg 0.582 cond 0.582 (-0.00 bits)  at real quarks: log10 r = -1.949 [-2.635, -1.368] vs obs -1.524  (neighbour dist 1.85)  1342s
+S4SO took 1342s (budget 420s)
+(stopped here after S4SO: MOD and F2 were run as separate processes, run_dmratio_families_MOD.log / _F2.log)

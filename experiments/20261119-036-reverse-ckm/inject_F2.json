@@ -1,0 +1,202 @@
+[
+ {
+  "index": 0,
+  "T": -0.22855483124786868,
+  "T_point": -0.1522558900309963,
+  "k": 32,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.02859138881761014,
+  "k300": null
+ },
+ {
+  "index": 1,
+  "T": -0.24219718794500444,
+  "T_point": -0.2873957549409011,
+  "k": 44,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.04705862659525906,
+  "k300": null
+ },
+ {
+  "index": 2,
+  "T": 0.14563483210501893,
+  "T_point": 0.06549733917710578,
+  "k": 20,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.03922965853795857,
+  "k300": null
+ },
+ {
+  "index": 3,
+  "T": -0.2763809959611594,
+  "T_point": -0.32582166698863363,
+  "k": 53,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.012989987230842992,
+  "k300": null
+ },
+ {
+  "index": 4,
+  "T": -0.18883310066876868,
+  "T_point": -0.1401357091353305,
+  "k": 67,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.039079378020032474,
+  "k300": null
+ },
+ {
+  "index": 5,
+  "T": 0.01477928298514719,
+  "T_point": 0.03362399748895825,
+  "k": 66,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.034969275689579415,
+  "k300": null
+ },
+ {
+  "index": 6,
+  "T": 0.1872379749124633,
+  "T_point": 0.2523795384835197,
+  "k": 25,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.20133754492856415,
+  "k300": null
+ },
+ {
+  "index": 7,
+  "T": 0.055373896371497366,
+  "T_point": 0.002014597260737514,
+  "k": 68,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.06920225468238561,
+  "k300": null
+ },
+ {
+  "index": 8,
+  "T": -0.14205991195127332,
+  "T_point": -0.1596172249772882,
+  "k": 43,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.061558398820663385,
+  "k300": null
+ },
+ {
+  "index": 9,
+  "T": 0.03932975259492988,
+  "T_point": 0.10074309943912173,
+  "k": 19,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.05895220728386108,
+  "k300": null
+ },
+ {
+  "index": 10,
+  "T": -0.20184542798339322,
+  "T_point": -0.3655883565285454,
+  "k": 50,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.00906423386400168,
+  "k300": null
+ },
+ {
+  "index": 11,
+  "T": 0.5008435865740024,
+  "T_point": 0.4185173199407745,
+  "k": 75,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.1564632617800239,
+  "k300": null
+ },
+ {
+  "index": 12,
+  "T": 0.16484869464863472,
+  "T_point": 0.1364251620865054,
+  "k": 80,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.07280965029738073,
+  "k300": null
+ },
+ {
+  "index": 13,
+  "T": -0.3110972849173699,
+  "T_point": -0.3789712080454294,
+  "k": 55,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.01960904856446266,
+  "k300": null
+ },
+ {
+  "index": 14,
+  "T": 0.07924052281837834,
+  "T_point": -0.009084223040608009,
+  "k": 58,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.06716382505770824,
+  "k300": null
+ },
+ {
+  "index": 15,
+  "T": -0.05910079507616839,
+  "T_point": -0.1514357345112821,
+  "k": 45,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.040431431664569306,
+  "k300": null
+ },
+ {
+  "index": 16,
+  "T": -0.23362536856999938,
+  "T_point": -0.3599998231215817,
+  "k": 97,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.14672737101302813,
+  "k300": null
+ },
+ {
+  "index": 17,
+  "T": 0.22502461978220634,
+  "T_point": 0.29271025730623706,
+  "k": 17,
+  "n_eval": 400,
+  "detected": false,
+  "T_minus_median_fake": 0.16677854451538732,
+  "k300": 12
+ },
+ {
+  "index": 18,
+  "T": -0.29099192159531295,
+  "T_point": -0.2596979152207761,
+  "k": 53,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": -0.008189247378748599,
+  "k300": null
+ },
+ {
+  "index": 19,
+  "T": 0.1193120869597406,
+  "T_point": 0.029516253090430634,
+  "k": 35,
+  "n_eval": 100,
+  "detected": false,
+  "T_minus_median_fake": 0.03666040736896825,
+  "k300": null
+ }
+]

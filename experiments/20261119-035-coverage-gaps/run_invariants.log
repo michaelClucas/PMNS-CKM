@@ -1,0 +1,51 @@
+grammar: 1428 relations (G1 1134, G2 294), 11 bits
+[NO] separability check, max |grid - src.data| = 2.84e-14
+[NO] screen: 161 of 1428 with chi2_screen < 9; best 5:
+      0.075  |U_e1|^2 = 3 |Vus|^1   (T = 0.6755 +- 0.002)
+      0.096  J_l = -3 J_q^0.5 / lambda^0   (T = -0.01686 +- 0.00032)
+      0.107  |U_e1|^2 = 3 |Vcd|^1   (T = 0.6751 +- 0.002)
+      0.142  J_l = -3/2 J_q^1 / lambda^4   (T = -0.01844 +- 0.00073)
+      0.187  |U_mu1|^2 = 1/2 |Vcd|^1   (T = 0.1125 +- 0.00034)
+[IO] separability check, max |grid - src.data| = 2.84e-14
+[IO] screen: 108 of 1428 with chi2_screen < 9; best 5:
+      0.047  |U_e1|^2 = 3 |Vus|^1   (T = 0.6755 +- 0.002)
+      0.051  |U_e1|^2 = 3 |Vcd|^1   (T = 0.6751 +- 0.002)
+      0.059  |U_tau2|^2 = 2 |Vts|^0.5   (T = 0.4058 +- 0.0036)
+      0.120  |U_tau2|^2 = 2 |Vcb|^0.5   (T = 0.4093 +- 0.0037)
+      0.176  |U_e2|^2 = 3/2 |Vts|^0.5   (T = 0.3044 +- 0.0027)
+official refits: 271
+[NO] refitted 160; all pulls < 2 sigma: 141; fit_ok (p_global > 0.05 too): 123; compression_ok: 0
+    chi2 0.005 chi2_g 0.005 p_g 0.945 maxpull 0.07 N 5 k 16  J_l = -1/2 J_q^0.333 / lambda^0
+    chi2 0.008 chi2_g 0.008 p_g 0.930 maxpull 0.09 N 6 k 17  J_l = -2/3 J_q^0.5 / lambda^1
+    chi2 0.008 chi2_g 0.008 p_g 0.928 maxpull 0.09 N 5 k 16  J_l = -3 J_q^0.5 / lambda^0
+    chi2 0.008 chi2_g 0.008 p_g 0.928 maxpull 0.09 N 5 k 15  |U_e1|^2 = 3 |Vus|^1
+    chi2 0.012 chi2_g 0.012 p_g 0.913 maxpull 0.11 N 5 k 15  |U_e1|^2 = 3 |Vcd|^1
+    chi2 0.063 chi2_g 0.063 p_g 0.801 maxpull 0.21 N 5 k 16  |U_mu1|^2 = 1/2 |Vcd|^1
+    chi2 0.066 chi2_g 0.066 p_g 0.797 maxpull 0.22 N 5 k 16  |U_mu1|^2 = 1/2 |Vus|^1
+    chi2 0.075 chi2_g 0.075 p_g 0.784 maxpull 0.27 N 6 k 17  J_l = -1/3 J_q^1 / lambda^5
+    chi2 0.077 chi2_g 0.077 p_g 0.781 maxpull 0.28 N 6 k 17  J_l = -1/2 J_q^0.5 / lambda^1
+    chi2 0.085 chi2_g 0.085 p_g 0.771 maxpull 0.29 N 6 k 17  J_l = -1 J_q^1 / lambda^4
+    chi2 0.088 chi2_g 0.088 p_g 0.767 maxpull 0.30 N 6 k 17  J_l = -3/2 J_q^1 / lambda^4
+    chi2 0.146 chi2_g 0.146 p_g 0.703 maxpull 0.38 N 5 k 16  J_l = -2 J_q^0.5 / lambda^0
+    chi2 0.213 chi2_g 0.213 p_g 0.644 maxpull 0.46 N 5 k 16  J_l = -1/3 J_q^0.333 / lambda^0
+    chi2 0.312 chi2_g 0.312 p_g 0.576 maxpull 0.56 N 5 k 16  J_l = -2/3 J_q^0.333 / lambda^0
+    chi2 0.372 chi2_g 0.372 p_g 0.542 maxpull 0.60 N 5 k 16  |U_tau1|^2 = 1 |Vcb|^0.5
+[NO] sanity theta13 = theta_C/sqrt2 (|U_e3|^2 = 1/2 |Vus|^2): chi2 23.55, pull s13sq +4.68
+[IO] refitted 109; all pulls < 2 sigma: 91; fit_ok (p_global > 0.05 too): 49; compression_ok: 0
+    chi2 0.008 chi2_g 1.494 p_g 0.222 maxpull 0.09 N 5 k 15  |U_e1|^2 = 3 |Vus|^1
+    chi2 0.008 chi2_g 1.494 p_g 0.222 maxpull 0.09 N 5 k 16  |U_tau2|^2 = 2 |Vts|^0.5
+    chi2 0.009 chi2_g 1.495 p_g 0.221 maxpull 0.10 N 5 k 16  |U_mu1|^2 = 1/3 |Vus|^0.5
+    chi2 0.009 chi2_g 1.495 p_g 0.221 maxpull 0.10 N 5 k 16  |U_mu1|^2 = 1/3 |Vcd|^0.5
+    chi2 0.012 chi2_g 1.498 p_g 0.221 maxpull 0.11 N 5 k 15  |U_e1|^2 = 3 |Vcd|^1
+    chi2 0.021 chi2_g 1.507 p_g 0.220 maxpull 0.14 N 5 k 16  |U_tau1|^2 = 1/3 |Vus|^0.5
+    chi2 0.021 chi2_g 1.507 p_g 0.220 maxpull 0.15 N 5 k 16  |U_tau1|^2 = 1/3 |Vcd|^0.5
+    chi2 0.048 chi2_g 1.534 p_g 0.216 maxpull 0.22 N 5 k 16  |U_tau2|^2 = 2 |Vcb|^0.5
+    chi2 0.072 chi2_g 1.558 p_g 0.212 maxpull 0.27 N 5 k 16  J_l = -1 J_q^0.333 / lambda^0
+    chi2 0.077 chi2_g 1.563 p_g 0.211 maxpull 0.28 N 5 k 16  |U_mu2|^2 = 3/2 |Vts|^0.5
+    chi2 0.093 chi2_g 1.579 p_g 0.209 maxpull 0.30 N 5 k 16  |U_mu1|^2 = 3 |Vus|^2
+    chi2 0.096 chi2_g 1.582 p_g 0.209 maxpull 0.31 N 5 k 16  |U_mu1|^2 = 3 |Vcd|^2
+    chi2 0.120 chi2_g 1.605 p_g 0.205 maxpull 0.35 N 5 k 16  |U_tau1|^2 = 3 |Vus|^2
+    chi2 0.124 chi2_g 1.610 p_g 0.204 maxpull 0.35 N 5 k 16  |U_tau1|^2 = 3 |Vcd|^2
+    chi2 0.127 chi2_g 1.613 p_g 0.204 maxpull 0.36 N 5 k 16  |U_mu2|^2 = 3/2 |Vcb|^0.5
+[IO] sanity theta13 = theta_C/sqrt2 (|U_e3|^2 = 1/2 |Vus|^2): chi2 20.26, pull s13sq +4.36
+done in 561 s

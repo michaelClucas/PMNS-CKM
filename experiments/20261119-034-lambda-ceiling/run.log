@@ -1,0 +1,8 @@
+2026-11-20T02:11:22Z pre-registration section sha256 00b571ca1de5ea13929c88322de560df976a01bbb22db92d66f28b34cfcde6d8
+2026-11-20T02:11:22Z start: 250 pipeline tasks (2 workers x 2 threads), 520 oracle tasks (1 worker), deadline 04:15Z
+2026-11-20T02:24:57Z pipeline workers and driver stopped at 9/250 for Deviation 1 (oracle worker kept running, its deadline stop now via restart script check)
+2026-11-20T02:24:57Z restart pipeline workers (block 25), deadline 04:15Z
+2026-11-20T03:17:09Z oracle-only worker done; extra pipeline worker (1 thread, reverse order), deadline 04:15Z
+2026-11-20T03:17:48Z interim analyze.py run (oracle complete, pipeline 71/250); nothing changed after it
+2026-11-20T04:01:18Z pipeline end: exit codes [0, 0]; done 250/250
+2026-11-20T04:01:51Z all 250 pipeline and 520 oracle-only worlds done; remaining worker processes stopped

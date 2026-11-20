@@ -1,0 +1,61 @@
+2026-11-20T02:04:55Z prereg.md SHA-256 360edfc00cf5f254e7cc464b0f4c538eb20c7331e0147fc06ed0aa9cfec4aad3 (before any real-data evaluation, before training and oracle runs)
+2026-11-20T02:07:53Z start training queue (2 slots while oracle runs; 3rd slot added after)
+2026-11-20T02:13:51Z oracle restarted (first run stopped during level 1: too slow; bisection now 100 points x 20 iterations; marginal includes the true x; levels 1,2,4,6,8,12)
+2026-11-20T02:19:43Z oracle restarted again: 30 worlds per level, bisection 16 iterations on a 5000-point prior subset below level 8
+finished train q1 s1 rc 0
+finished train q1 s0 rc 0
+finished train q0 s0 rc 0
+finished train q1 s2 rc 0
+finished train q0 s1 rc 0
+finished train q0 s2 rc 0
+2026-11-20T02:54:24Z worlds GEN: 20 in-box worlds from 52000 accepted / 3618456 raw draws
+2026-11-20T02:54:50Z heldout GEN: I = 0.266 +- 0.021 bits (per seed 0.290, 0.250, 0.257), n 2966
+2026-11-20T02:54:50Z heldout CTRL: I = -0.078 +- 0.011 bits (per seed -0.068, -0.088, -0.078), n 3034
+2026-11-20T02:54:50Z heldout F1: I = 0.082 +- 0.013 bits (per seed 0.092, 0.073, 0.079), n 3001
+2026-11-20T02:54:50Z heldout F2: I = 0.304 +- 0.015 bits (per seed 0.383, 0.237, 0.293), n 3039
+2026-11-20T02:54:50Z heldout MN: I = 3.292 +- 0.046 bits (per seed 3.301, 3.254, 3.323), n 2960
+2026-11-20T02:55:20Z real inputs: CKM {'s12': (0.22517, 0.00068, 0.00068), 's13': (0.003763, 8.8e-05, 8.3e-05), 's23': (0.04189, 0.00081, 0.00069), 'delta_rad': (1.154, 0.025, 0.025)}; m [-2.7044, -2.4292, -1.2959, -1.7277, -2.3238, -1.2301, -1.5244]; PMNS centre [0.3088, 0.02249, 0.47, 207.0]
+2026-11-20T03:00:56Z REAL: T = 0.284 bits (point 0.321); N2 fakes >= real: 486/2000 = 0.2430, one-sided CP95 upper 0.2593, passed False; point rank 0.2465; fake T q05/50/95 [0.049, 0.219, 0.351] (342s)
+2026-11-20T03:01:37Z inject GEN world 0: T -0.104, k 88/100, detected False, T - med fake -0.238 (20s)
+2026-11-20T03:01:54Z inject GEN world 1: T -0.060, k 98/100, detected False, T - med fake -0.529 (17s)
+2026-11-20T03:02:12Z inject GEN world 2: T -1.169, k 82/100, detected False, T - med fake -0.169 (17s)
+2026-11-20T03:02:30Z inject GEN world 3: T 0.758, k 80/100, detected False, T - med fake -0.132 (18s)
+2026-11-20T03:02:47Z inject GEN world 4: T -0.571, k 13/100, detected False, T - med fake +0.098 (17s)
+2026-11-20T03:03:37Z inject GEN world 5: T 0.686, k 23/300, detected False, T - med fake +0.219 (50s)
+2026-11-20T03:03:53Z inject GEN world 6: T 0.080, k 44/100, detected False, T - med fake +0.013 (16s)
+2026-11-20T03:04:10Z inject GEN world 7: T 0.049, k 26/100, detected False, T - med fake +0.079 (17s)
+2026-11-20T03:04:27Z inject GEN world 8: T 1.233, k 100/100, detected False, T - med fake -1.027 (16s)
+2026-11-20T03:04:43Z inject GEN world 9: T 0.583, k 60/100, detected False, T - med fake -0.143 (16s)
+2026-11-20T03:05:00Z inject GEN world 10: T 0.106, k 37/100, detected False, T - med fake +0.084 (17s)
+2026-11-20T03:05:25Z inject GEN world 11: T 0.086, k 45/100, detected False, T - med fake +0.058 (25s)
+2026-11-20T03:05:47Z inject GEN world 12: T -0.922, k 82/100, detected False, T - med fake -0.251 (22s)
+2026-11-20T03:06:49Z inject GEN world 13: T 0.570, k 19/300, detected False, T - med fake +0.171 (62s)
+2026-11-20T03:07:08Z inject GEN world 14: T 0.157, k 96/100, detected False, T - med fake -0.431 (19s)
+2026-11-20T03:07:27Z inject GEN world 15: T 0.856, k 39/100, detected False, T - med fake +0.050 (19s)
+2026-11-20T03:08:04Z inject GEN world 16: T 1.167, k 13/200, detected False, T - med fake +0.261 (36s)
+2026-11-20T03:08:24Z inject GEN world 17: T 1.643, k 93/100, detected False, T - med fake -0.191 (20s)
+2026-11-20T03:08:44Z inject GEN world 18: T 1.540, k 40/100, detected False, T - med fake +0.189 (20s)
+2026-11-20T03:09:03Z inject GEN world 19: T -1.977, k 81/100, detected False, T - med fake -0.181 (20s)
+2026-11-20T03:09:03Z inject GEN: detected 0/20 CP95 [0.000, 0.168]; median T - med fake -0.060
+2026-11-20T03:09:27Z worlds F2: 20 in-box worlds from 2000 accepted / 4253 raw draws
+2026-11-20T03:10:40Z inject F2 world 0: T -0.229, k 32/100, detected False, T - med fake +0.029 (22s)
+2026-11-20T03:10:59Z inject F2 world 1: T -0.242, k 44/100, detected False, T - med fake +0.047 (19s)
+2026-11-20T03:11:18Z inject F2 world 2: T 0.146, k 20/100, detected False, T - med fake +0.039 (20s)
+2026-11-20T03:11:36Z inject F2 world 3: T -0.276, k 53/100, detected False, T - med fake -0.013 (18s)
+2026-11-20T03:11:57Z inject F2 world 4: T -0.189, k 67/100, detected False, T - med fake -0.039 (20s)
+2026-11-20T03:12:15Z inject F2 world 5: T 0.015, k 66/100, detected False, T - med fake -0.035 (19s)
+2026-11-20T03:12:34Z inject F2 world 6: T 0.187, k 25/100, detected False, T - med fake +0.201 (19s)
+2026-11-20T03:12:53Z inject F2 world 7: T 0.055, k 68/100, detected False, T - med fake -0.069 (19s)
+2026-11-20T03:13:12Z inject F2 world 8: T -0.142, k 43/100, detected False, T - med fake +0.062 (19s)
+2026-11-20T03:13:31Z inject F2 world 9: T 0.039, k 19/100, detected False, T - med fake +0.059 (20s)
+2026-11-20T03:13:50Z inject F2 world 10: T -0.202, k 50/100, detected False, T - med fake -0.009 (19s)
+2026-11-20T03:14:14Z inject F2 world 11: T 0.501, k 75/100, detected False, T - med fake -0.156 (23s)
+2026-11-20T03:14:36Z inject F2 world 12: T 0.165, k 80/100, detected False, T - med fake -0.073 (22s)
+2026-11-20T03:14:54Z inject F2 world 13: T -0.311, k 55/100, detected False, T - med fake -0.020 (18s)
+2026-11-20T03:15:12Z inject F2 world 14: T 0.079, k 58/100, detected False, T - med fake -0.067 (18s)
+2026-11-20T03:15:29Z inject F2 world 15: T -0.059, k 45/100, detected False, T - med fake +0.040 (18s)
+2026-11-20T03:15:47Z inject F2 world 16: T -0.234, k 97/100, detected False, T - med fake -0.147 (18s)
+2026-11-20T03:17:01Z inject F2 world 17: T 0.225, k 17/400, detected False, T - med fake +0.167 (73s)
+2026-11-20T03:17:19Z inject F2 world 18: T -0.291, k 53/100, detected False, T - med fake -0.008 (19s)
+2026-11-20T03:17:40Z inject F2 world 19: T 0.119, k 35/100, detected False, T - med fake +0.037 (21s)
+2026-11-20T03:17:40Z inject F2: detected 0/20 CP95 [0.000, 0.168]; median T - med fake -0.009

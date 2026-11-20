@@ -1,0 +1,41 @@
+grammar: 448 relations, 9 bits
+[NO] r = 0.02990 (rel err 0.016); GUT->low factor 1.0000; screen best 8:
+    z -1.002  pred 0.02943  r = 1/2 (mr_mu_tau)^1  [MZ]
+    z -1.006  pred 0.02943  r = 1/2 (mr_mu_tau)^1  [GUT]
+    z +1.158  pred 0.03050  r = 1/2 (mr_c_t)^0.5  [MZ]
+    z +1.590  pred 0.03078  r = (mr_d_s)^0.5 (mr_s_b)^0.5  [MZ]
+    z +1.824  pred 0.03081  r = (mr_s_b)^0.5 (lambda)^1  [MZ]
+    z -1.847  pred 0.02895  r = (mr_c_t)^0.5 (lambda)^0.5  [MZ]
+    z -2.456  pred 0.02865  r = 1/2 (mr_c_t)^0.5  [GUT]
+    z -2.923  pred 0.02857  r = 2 (mr_mu_tau)^1.5  [MZ]
+[NO] screen |z| < 2: 6; |z| < 1: 0
+[NO] official refits 9, all pulls < 2: 6, fit_ok: 6, compression_ok: 0
+    chi2 0.8218 p_g 0.365 maxpull 0.91 N 2 k 10  r = 1/2 (mr_mu_tau)^1  [MZ]
+    chi2 0.8297 p_g 0.362 maxpull 0.91 N 2 k 10  r = 1/2 (mr_mu_tau)^1  [GUT]
+    chi2 1.6115 p_g 0.204 maxpull 1.12 N 2 k 10  r = 1/2 (mr_c_t)^0.5  [MZ]
+    chi2 2.9791 p_g 0.084 maxpull 1.55 N 3 k 11  r = (mr_c_t)^0.5 (lambda)^0.5  [MZ]
+    chi2 3.1612 p_g 0.075 maxpull 1.58 N 3 k 11  r = (mr_d_s)^0.5 (mr_s_b)^0.5  [MZ]
+    chi2 3.7796 p_g 0.052 maxpull 1.83 N 3 k 11  r = (mr_s_b)^0.5 (lambda)^1  [MZ]
+    chi2 5.3640 p_g 0.021 maxpull 2.09 N 2 k 10  r = 1/2 (mr_c_t)^0.5  [GUT]
+    chi2 7.5482 p_g 0.006 maxpull 2.75 N 2 k 10  r = 2 (mr_mu_tau)^1.5  [MZ]
+    chi2 7.5753 p_g 0.006 maxpull 2.75 N 2 k 10  r = 2 (mr_mu_tau)^1.5  [GUT]
+[NO] best |z| 1.002: p_loc 6.78e-03, Sidak over 448: 0.953; fake-target rate 3752/5000 = 0.750; fakes with any member |z| < 1: 0.750
+[IO] r = 0.03015 (rel err 0.016); GUT->low factor 1.0010; screen best 8:
+    z +0.664  pred 0.03050  r = 1/2 (mr_c_t)^0.5  [MZ]
+    z +1.112  pred 0.03078  r = (mr_d_s)^0.5 (mr_s_b)^0.5  [MZ]
+    z +1.290  pred 0.03081  r = (mr_s_b)^0.5 (lambda)^1  [MZ]
+    z -1.445  pred 0.02946  r = 1/2 (mr_mu_tau)^1  [GUT]
+    z -1.505  pred 0.02943  r = 1/2 (mr_mu_tau)^1  [MZ]
+    z -2.285  pred 0.02895  r = (mr_c_t)^0.5 (lambda)^0.5  [MZ]
+    z -2.827  pred 0.02868  r = 1/2 (mr_c_t)^0.5  [GUT]
+    z -3.324  pred 0.02859  r = 2 (mr_mu_tau)^1.5  [GUT]
+[IO] screen |z| < 2: 5; |z| < 1: 1
+[IO] official refits 7, all pulls < 2: 5, fit_ok: 5, compression_ok: 0
+    chi2 0.4675 p_g 0.162 maxpull 0.63 N 2 k 10  r = 1/2 (mr_c_t)^0.5  [MZ]
+    chi2 1.3832 p_g 0.090 maxpull 1.06 N 3 k 11  r = (mr_d_s)^0.5 (mr_s_b)^0.5  [MZ]
+    chi2 1.7220 p_g 0.073 maxpull 1.24 N 3 k 11  r = (mr_s_b)^0.5 (lambda)^1  [MZ]
+    chi2 2.0396 p_g 0.060 maxpull 1.43 N 2 k 10  r = 1/2 (mr_mu_tau)^1  [GUT]
+    chi2 2.2048 p_g 0.055 maxpull 1.48 N 2 k 10  r = 1/2 (mr_mu_tau)^1  [MZ]
+    chi2 5.0951 p_g 0.010 maxpull 2.06 N 3 k 11  r = (mr_c_t)^0.5 (lambda)^0.5  [MZ]
+    chi2 7.7609 p_g 0.002 maxpull 2.54 N 2 k 10  r = 1/2 (mr_c_t)^0.5  [GUT]
+[IO] best |z| 0.664: p_loc 5.10e-03, Sidak over 448: 0.899; fake-target rate 2958/5000 = 0.592; fakes with any member |z| < 1: 0.761

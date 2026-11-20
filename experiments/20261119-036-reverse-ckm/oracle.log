@@ -1,0 +1,13 @@
+2026-11-20T02:19:50Z box lo [0.2491, 0.0172, 0.277, 0.0] hi [0.36970000000000003, 0.027699999999999995, 0.7419999999999999, 360.0]; N2 centre check [0.2829519742181047, 0.026965622159712502, 0.7093728108311818, 105.0425777060487]
+2026-11-20T02:19:51Z dchi2 check: max |diff| 8.88e-16 ([5.787, 6.428, 1.111, 4.712, 11.185] vs [5.787, 6.428, 1.111, 4.712, 11.185])
+2026-11-20T02:19:51Z I_max = I(x; yhat) under U(B) = 7.53 bits; per block {s12sq: 2.12, s13sq: 2.14, s23sq_dcp: 3.28}
+2026-11-20T02:19:52Z needed rank < 13/2000: -log2 = 7.27 bits
+2026-11-20T02:19:56Z perfect link, truth uniform: detected 923/1000 = 0.923 CP95 [0.905, 0.939]; rank q10/50/90 [0.0, 0.001, 0.005]
+2026-11-20T02:19:57Z perfect link, truth bestfit: detected 187/200 = 0.935 CP95 [0.891, 0.965]; rank q10/50/90 [0.0, 0.0005, 0.0045]
+2026-11-20T02:21:41Z level 1 bits: I_link med 1.05, I_meas med 0.50; oracle detected 0/30 CP95 [0.000, 0.116]; rank median 0.307 (111s)
+2026-11-20T02:24:15Z level 2 bits: I_link med 2.02, I_meas med 0.99; oracle detected 3/30 CP95 [0.021, 0.265]; rank median 0.138 (264s)
+2026-11-20T02:26:43Z level 4 bits: I_link med 4.06, I_meas med 1.96; oracle detected 3/30 CP95 [0.021, 0.265]; rank median 0.087 (413s)
+2026-11-20T02:30:03Z level 6 bits: I_link med 6.07, I_meas med 2.75; oracle detected 7/30 CP95 [0.099, 0.423]; rank median 0.031 (613s)
+2026-11-20T02:36:53Z level 8 bits: I_link med 8.05, I_meas med 3.38; oracle detected 15/30 CP95 [0.313, 0.687]; rank median 0.007 (1022s)
+2026-11-20T02:45:06Z level 12 bits: I_link med 12.04, I_meas med 2.78; oracle detected 12/30 CP95 [0.227, 0.594]; rank median 0.011 (1516s)
+2026-11-20T02:45:06Z done 1516s
