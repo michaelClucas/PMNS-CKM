@@ -1,0 +1,258 @@
+usym=True conj=False nuconj=False phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours +167.51  paper +80.99  dev 86.5 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours -18.153  paper -68.1  dev 49.9 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=False nuconj=False phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours +80.993  paper +80.99  dev 0.00257 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours +18.153  paper -68.1  dev 86.3 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=False nuconj=True phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours +167.51  paper +80.99  dev 86.5 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours +18.153  paper -68.1  dev 86.3 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=False nuconj=True phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours +80.993  paper +80.99  dev 0.00257 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours -18.153  paper -68.1  dev 49.9 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=True nuconj=False phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours -167.51  paper +80.99  dev 249 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours +18.153  paper -68.1  dev 86.3 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=True nuconj=False phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours -80.993  paper +80.99  dev 162 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours -18.153  paper -68.1  dev 49.9 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=True nuconj=True phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours -167.51  paper +80.99  dev 249 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours -18.153  paper -68.1  dev 49.9 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=True conj=True nuconj=True phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours -80.993  paper +80.99  dev 162 deg
+   sin2_2t12   ours +0.99622  paper +0.8254  dev 0.207
+   sin2_2t23   ours +0.99675  paper +0.9967  dev 4.92e-05
+   sin2_2t13   ours +0.14263  paper +0.1007  dev 0.416
+   dl_deg      ours +18.153  paper -68.1  dev 86.3 deg
+   R_nu        ours +0.041198  paper +0.03118  dev 0.321
+   ordering NO m_i/m_3 [0.5953 0.6163 1.    ]
+usym=False conj=False nuconj=False phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours +167.51  paper +80.99  dev 86.5 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours -67.877  paper -68.1  dev 0.223 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=False nuconj=False phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours +80.993  paper +80.99  dev 0.00257 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours +67.877  paper -68.1  dev 136 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=False nuconj=True phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours +167.51  paper +80.99  dev 86.5 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours +67.877  paper -68.1  dev 136 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=False nuconj=True phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours +80.993  paper +80.99  dev 0.00257 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours -67.877  paper -68.1  dev 0.223 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=True nuconj=False phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours -167.51  paper +80.99  dev 249 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours +67.877  paper -68.1  dev 136 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=True nuconj=False phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours -80.993  paper +80.99  dev 162 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours -67.877  paper -68.1  dev 0.223 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=True nuconj=True phisign=1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.23357  paper +0.2257  dev 0.0349
+   Vcb         ours +0.098521  paper +0.03996  dev 1.47
+   Vub         ours +0.002937  paper +0.003701  dev 0.206
+   Vtd         ours +0.025794  paper +0.009173  dev 1.81
+   dq_deg      ours -167.51  paper +80.99  dev 249 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours -67.877  paper -68.1  dev 0.223 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+usym=False conj=True nuconj=True phisign=-1
+   sqrt_mu_mc  ours +0.061028  paper +0.061  dev 0.000462
+   sqrt_mc_mt  ours +0.059812  paper +0.06  dev 0.00313
+   md_ms       ours +0.049397  paper +0.049  dev 0.0081
+   ms_mb       ours +0.027349  paper +0.027  dev 0.0129
+   Vus         ours +0.22569  paper +0.2257  dev 4.58e-05
+   Vcb         ours +0.039956  paper +0.03996  dev 8.98e-05
+   Vub         ours +0.0037003  paper +0.003701  dev 0.000201
+   Vtd         ours +0.009172  paper +0.009173  dev 0.000113
+   dq_deg      ours -80.993  paper +80.99  dev 162 deg
+   sin2_2t12   ours +0.82631  paper +0.8254  dev 0.0011
+   sin2_2t23   ours +0.9967  paper +0.9967  dev 2.29e-06
+   sin2_2t13   ours +0.10062  paper +0.1007  dev 0.000836
+   dl_deg      ours +67.877  paper -68.1  dev 136 deg
+   R_nu        ours +0.030995  paper +0.03118  dev 0.00594
+   ordering NO m_i/m_3 [0.6054 0.6209 1.    ]
+
+variants reproducing ALL published numbers (rel dev < 1.5%, phases < 2 deg): ['usym=False conj=False nuconj=True phisign=-1']

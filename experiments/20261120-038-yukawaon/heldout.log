@@ -1,0 +1,8 @@
+acceptance 0.314, kept 400, chi2_q range 912.70-932.63
+s12sq      median 0.2252  2.5-97.5% [0.009603, 0.2273]
+s13sq      median 0.003349  2.5-97.5% [0.001654, 0.7727]
+s23sq      median 0.5148  2.5-97.5% [0.5105, 0.5362]
+dcp_deg    median 297.2  2.5-97.5% [0.5077, 359.7]
+chi2_pmns  median 1489  2.5-97.5% [1427, nan]
+NuFIT NO best fit: {'s12sq': 0.3088, 's13sq': 0.02249, 's23sq': 0.47, 'dcp_deg': 207}
+fraction with PMNS Delta chi2 (4 params, joint) < 9.49 (95% for 4 dof): 0.0

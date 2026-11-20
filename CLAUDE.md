@@ -8,6 +8,6 @@ Research program: find a quantitative relation between the CKM and PMNS mixing m
 - Count free parameters honestly: fitted constants, data-selected discrete choices, and unfixed coefficients all count.
 - All measured values come from `data/` through the loader in `src/`. Don't hardcode measured numbers in experiment scripts.
 - Python lives in `.venv/`. Add dependencies to `requirements.txt` with pinned versions.
-- 14 CPU cores, Intel iGPU, no CUDA. Long jobs run in the background and log to `experiments/<id>/run.log`.
+- CPU: this program owns logical CPUs 4-8 only (5 CPUs); 0-3 are reserved for the user. Run every compute command as `python tools/pin.py <command>` and size threads/workers to 5 total. Intel iGPU, no CUDA. Long jobs run in the background and log to `experiments/<id>/run.log`.
 - Repo is public. No personal info, credentials, or absolute local paths in committed files. Don't change the git identity, don't force-push.
 - Use "candidate" for every finding unless `BREAKTHROUGH.md` exists.

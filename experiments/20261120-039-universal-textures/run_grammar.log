@@ -1,0 +1,161 @@
+gen 50000/1500000 finite 0.894 3s
+gen 100000/1500000 finite 0.893 6s
+gen 150000/1500000 finite 0.894 9s
+gen 200000/1500000 finite 0.894 12s
+gen 250000/1500000 finite 0.892 17s
+gen 300000/1500000 finite 0.895 24s
+gen 350000/1500000 finite 0.895 29s
+gen 400000/1500000 finite 0.894 32s
+gen 450000/1500000 finite 0.893 36s
+gen 500000/1500000 finite 0.893 39s
+gen 550000/1500000 finite 0.894 43s
+gen 600000/1500000 finite 0.893 45s
+gen 650000/1500000 finite 0.896 49s
+gen 700000/1500000 finite 0.893 53s
+gen 750000/1500000 finite 0.893 55s
+gen 800000/1500000 finite 0.893 60s
+gen 850000/1500000 finite 0.894 64s
+gen 900000/1500000 finite 0.892 68s
+gen 950000/1500000 finite 0.895 72s
+gen 1000000/1500000 finite 0.895 76s
+gen 1050000/1500000 finite 0.893 80s
+gen 1100000/1500000 finite 0.893 83s
+gen 1150000/1500000 finite 0.893 87s
+gen 1200000/1500000 finite 0.893 91s
+gen 1250000/1500000 finite 0.893 94s
+gen 1300000/1500000 finite 0.891 98s
+gen 1350000/1500000 finite 0.891 101s
+gen 1400000/1500000 finite 0.894 105s
+gen 1450000/1500000 finite 0.894 108s
+gen 1500000/1500000 finite 0.896 111s
+== train
+Traceback (most recent call last):
+  File "<repo>\tools\pin.py", line 35, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<repo>\tools\pin.py", line 31, in main
+    return subprocess.call(sys.argv[1:], env=env)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 396, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1553, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+== search
+Traceback (most recent call last):
+  File "<repo>\tools\pin.py", line 35, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<repo>\tools\pin.py", line 31, in main
+    return subprocess.call(sys.argv[1:], env=env)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 396, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1553, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+== verify top
+Traceback (most recent call last):
+  File "<repo>\tools\pin.py", line 35, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<repo>\tools\pin.py", line 31, in main
+    return subprocess.call(sys.argv[1:], env=env)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 396, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1553, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+(launch above failed: pin.py needs the interpreter path with .exe; relaunched)
+== train
+epoch 0 loss 0.3598 val MAE (raw units) mean 0.9611 222s
+(train stopped after epoch 0 at 222 s/epoch with h=512 on 2 threads; restarted with h=256, 6 epochs to fit the wall budget)
+== train
+epoch 0 loss 0.3234 val MAE (raw units) mean 0.8177 69s
+<repo>\experiments\20261120-039-universal-textures\grammar.py", line 280, in <module>
+    {"gen": gen, "train": train, "search": search, "verify": lambda: verify(sys.argv[2])}[cmd]()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "<repo>\experiments\20261120-039-universal-textures\grammar.py", line 184, in search
+    ck = torch.load(ART / "emulator.pt")
+  File "<repo>\.venv\Lib\site-packages\torch\serialization.py", line 1566, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "<repo>\.venv\Lib\site-packages\torch\serialization.py", line 796, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "<repo>\.venv\Lib\site-packages\torch\serialization.py", line 777, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<repo>\\artifacts\\exp039\\emulator.pt'
+== verify top
+Traceback (most recent call last):
+  File "<repo>\experiments\20261120-039-universal-textures\grammar.py", line 280, in <module>
+    {"gen": gen, "train": train, "search": search, "verify": lambda: verify(sys.argv[2])}[cmd]()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "<repo>\experiments\20261120-039-universal-textures\grammar.py", line 280, in <lambda>
+    {"gen": gen, "train": train, "search": search, "verify": lambda: verify(sys.argv[2])}[cmd]()
+                                                                     ~~~~~~^^^^^^^^^^^^^
+  File "<repo>\experiments\20261120-039-universal-textures\grammar.py", line 265, in verify
+    S = json.load(open(HERE / "search.json"))
+                  ~~~~^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<repo>\\experiments\\20261120-039-universal-textures\\search.json'
+(second train stopped: after the CPU-rule change the process got ~0.4 core (221 CPU s in 10 min); rerun with 2 epochs, search 128 starts x 200 steps, verify top 3)
+== train
+(third train stopped at the 3 h wall budget: no epoch finished in 7 min under CPU contention; part (c) emulator not trained)

@@ -1,0 +1,91 @@
+28 jobs
+FZ4U {'eta': 1, 'nu': 'dirac'} MZ 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  103s
+FZ4U {'eta': 1, 'nu': 'seesaw'} MZ 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  106s
+FZ4U {'eta': 1, 'nu': 'dirac'} MZ 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  113s
+FZ4U {'eta': 1, 'nu': 'seesaw'} MZ 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  64s
+FZ4U {'eta': -1, 'nu': 'dirac'} MZ 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  76s
+FZ4U {'eta': -1, 'nu': 'dirac'} MZ 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  91s
+FZ4U {'eta': -1, 'nu': 'seesaw'} MZ 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  46s
+FZ4U {'eta': -1, 'nu': 'seesaw'} MZ 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  59s
+DEMU {'nu': 'seesaw'} MZ 1 chi2 inf k 10 N 15 p_glob 0.0 maxpull inf  66s
+DEMU {'nu': 'dirac'} MZ 1 chi2 inf k 10 N 15 p_glob 0.0 maxpull inf  80s
+DEMFX {'ordering': 'NO'} MZ 1 chi2 4441.33 k 9 N 15 p_glob 0.0 maxpull 46.16  85s
+FZ4U {'eta': 1, 'nu': 'dirac'} GUT 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  78s
+DEMFX {'ordering': 'IO'} MZ 1 chi2 4475.63 k 9 N 15 p_glob 0.0 maxpull 46.16  87s
+FZ4U {'eta': 1, 'nu': 'dirac'} GUT 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  97s
+FZ4U {'eta': 1, 'nu': 'seesaw'} GUT 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  79s
+FZ4U {'eta': 1, 'nu': 'seesaw'} GUT 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  82s
+FZ4U {'eta': -1, 'nu': 'seesaw'} GUT 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  80s
+FZ4U {'eta': -1, 'nu': 'dirac'} GUT 1 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  114s
+FZ4U {'eta': -1, 'nu': 'dirac'} GUT 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  121s
+FZ4U {'eta': -1, 'nu': 'seesaw'} GUT 2 chi2 inf k 13 N 15 p_glob 0.0 maxpull inf  109s
+DEMU {'nu': 'dirac'} GUT 1 chi2 inf k 10 N 15 p_glob 0.0 maxpull inf  154s
+DEMU {'nu': 'seesaw'} GUT 1 chi2 inf k 10 N 15 p_glob 0.0 maxpull inf  132s
+DEMFX {'ordering': 'NO'} GUT 1 chi2 4955.23 k 9 N 15 p_glob 0.0 maxpull 46.16  126s
+DEMFX {'ordering': 'IO'} GUT 1 chi2 5117.02 k 9 N 15 p_glob 0.0 maxpull 46.16  169s
+FZ4F {'eta': 1, 'nu': 'seesaw'} MZ 1 chi2 0.2 k 16 N 15 p_glob 0.6561300444410787 maxpull 0.44  271s
+FZ4F {'eta': 1, 'nu': 'dirac'} MZ 1 chi2 1.99 k 16 N 15 p_glob 0.1579335213524056 maxpull 1.02  340s
+FZ4F {'eta': -1, 'nu': 'dirac'} MZ 1 chi2 3.62 k 16 N 15 p_glob 0.05715144362657367 maxpull 1.9  354s
+FZ4F {'eta': -1, 'nu': 'seesaw'} MZ 1 chi2 3.21 k 16 N 15 p_glob 0.07336513077861863 maxpull 1.79  259s
+== batch 2
+6 jobs
+DEMU2 {'nu': 'seesaw'} MZ 1 chi2 inf k 11 N 15 p_glob 0.0 maxpull inf  135s
+DEMU2 {'nu': 'dirac'} MZ 1 chi2 inf k 11 N 15 p_glob 0.0 maxpull inf  150s
+DEMU2 {'nu': 'dirac'} GUT 1 chi2 inf k 11 N 15 p_glob 0.0 maxpull inf  170s
+DEMFX2 {'ordering': 'NO'} MZ 1 chi2 2232.97 k 10 N 15 p_glob 0.0 maxpull 31.88  140s
+DEMU2 {'nu': 'seesaw'} GUT 1 chi2 inf k 11 N 15 p_glob 0.0 maxpull inf  156s
+DEMFX2 {'ordering': 'IO'} MZ 1 chi2 2498.32 k 10 N 15 p_glob 0.0 maxpull 32.69  165s
+== heldout
+<repo>\experiments\20261120-039-universal-textures\heldout.py:53: RuntimeWarning: divide by zero encountered in log
+  near = pts[np.abs(np.log(pts[:, 3] / 0.0299)) < 0.3] if len(pts) else pts
+FZ4U {'eta': 1, 'nu': 'dirac'} stage1 chi2 27.24 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf {'s12sq': [0.004804066792926002, 0.48053895529949353], 's13sq': [1.2907001355711127e-05, 0.043500026339434554], 's23sq': [0.0016449849287220402, 0.008837445929035815], 'n': 110}
+FZ4U {'eta': 1, 'nu': 'seesaw'} stage1 chi2 27.24 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf {'s12sq': [0.4384067524679902, 0.4384067524679902], 's13sq': [0.026690682546009308, 0.026690682546009308], 's23sq': [0.005339123195064362, 0.005339123195064362], 'n': 1}
+FZ4U {'eta': -1, 'nu': 'dirac'} stage1 chi2 27.17 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf {'s12sq': [0.004914813245941674, 0.555457613093217], 's13sq': [1.9905580568584493e-05, 0.04758401573766016], 's23sq': [0.0018212919593566434, 0.005708039705273773], 'n': 110}
+FZ4U {'eta': -1, 'nu': 'seesaw'} stage1 chi2 27.17 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf {'s12sq': [0.49927862585104105, 0.49927862585104105], 's13sq': [0.028139842079183894, 0.028139842079183894], 's23sq': [0.004515988083435143, 0.004515988083435143], 'n': 1}
+DEMU {'nu': 'dirac'} stage1 chi2 2860.89 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf {'s12sq': [0.15260027150224412, 0.43026790412575217], 's13sq': [2.0050506764987554e-05, 0.004088910502429652], 's23sq': [0.0034674735648986014, 0.052372724577020545], 'n': 200}
+DEMU {'nu': 'seesaw'} stage1 chi2 2860.89 N 10 | stage2 chi2 inf N 5 p 0.0 maxpull inf None
+== grammar gen
+ALLDONE
+== batch 3
+12 jobs
+FZ4S {'eta': 1, 'nu': 'seesaw', 'shift': [1, 0]} MZ 1 chi2 inf k 15 N 15 p_glob 0.0 maxpull inf  172s
+FZ4S {'eta': -1, 'nu': 'dirac', 'shift': [1, 0]} MZ 1 chi2 inf k 15 N 15 p_glob 0.0 maxpull inf  208s
+FZ4S {'eta': 1, 'nu': 'dirac', 'shift': [1, 0]} MZ 1 chi2 inf k 15 N 15 p_glob 0.0 maxpull inf  218s
+FZ4S {'eta': -1, 'nu': 'seesaw', 'shift': [1, 0]} MZ 1 chi2 inf k 15 N 15 p_glob 0.0 maxpull inf  187s
+FZ4S {'eta': 1, 'nu': 'seesaw', 'shift': [0, 1]} MZ 1 chi2 41.36 k 15 N 15 p_glob 2.2618524958309607e-08 maxpull 4.64  300s
+FZ4S {'eta': 1, 'nu': 'dirac', 'shift': [0, 1]} MZ 1 chi2 252.83 k 15 N 15 p_glob 1.595414459516062e-53 maxpull 14.68  313s
+FZ4S {'eta': -1, 'nu': 'dirac', 'shift': [0, 1]} MZ 1 chi2 625.57 k 15 N 15 p_glob 4.525136236345063e-134 maxpull 18.11  293s
+FZ4S {'eta': -1, 'nu': 'seesaw', 'shift': [0, 1]} MZ 1 chi2 179.88 k 15 N 15 p_glob 7.894716501562681e-38 maxpull 8.98  233s
+FZ4S {'eta': 1, 'nu': 'dirac', 'shift': [1, 1]} MZ 1 chi2 209.35 k 15 N 15 p_glob 3.6590202032001675e-44 maxpull 13.06  237s
+== batch 4
+Traceback (most recent call last):
+  File "<repo>\tools\pin.py", line 35, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<repo>\tools\pin.py", line 31, in main
+    return subprocess.call(sys.argv[1:], env=env)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 396, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<local>", line 1553, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified

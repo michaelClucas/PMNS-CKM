@@ -1,0 +1,13 @@
+K-A4a-TBM    n  722 gain median 0.878 99% 44.581 max 228.170 | refined chi2 < 60: n 149 max gain 8.886
+K-A4a-GR1    n  722 gain median 0.709 99% 43.473 max 225.788 | refined chi2 < 60: n 149 max gain 7.849
+K-A4a-GR2    n  722 gain median 0.709 99% 45.539 max 226.667 | refined chi2 < 60: n 149 max gain 6.085
+K-A4a-HEX    n  722 gain median 0.576 99% 46.819 max 221.630 | refined chi2 < 60: n 148 max gain 6.878
+K-A4b-BM     n  794 gain median 0.681 99% 6.986 max 17.808 | refined chi2 < 60: n 372 max gain 17.808
+K-E1         n  800 gain median 26.443 99% 66.256 max 68.350 | refined chi2 < 60: n 800 max gain 68.350
+F2LO-GR2     n  661 gain median 0.013 99% 0.133 max 0.209 | refined chi2 < 60: n 81 max gain 0.078
+F2LO-TBM     n  661 gain median 0.021 99% 0.139 max 0.200 | refined chi2 < 60: n 82 max gain 0.081
+BL-CDSV-I    n  435 gain median 0.166 99% 49.283 max 70.721 | refined chi2 < 60: n 56 max gain 0.589
+BL-CDSV-II   n  198 gain median 0.190 99% 54.325 max 74.618 | refined chi2 < 60: n 55 max gain 0.464
+BL-RMSV-1    n  700 gain median 5.666 99% 39.974 max 76.774 | refined chi2 < 60: n 420 max gain 40.561
+BL-RMSV-2    n  694 gain median 4.827 99% 31.579 max 106.922 | refined chi2 < 60: n 508 max gain 30.691
+BL-RMSV-4    n  641 gain median 4.888 99% 831.779 max 1002.486 | refined chi2 < 60: n 258 max gain 19.872

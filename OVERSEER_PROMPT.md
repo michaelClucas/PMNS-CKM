@@ -69,9 +69,10 @@ Every brief you write for a subagent states: the goal of that task, the files to
 
 ## Compute
 
-- Machine: 14 CPU cores, Intel integrated graphics, no CUDA. Plan for CPU. Check once whether PyTorch XPU works on the iGPU (`torch.xpu.is_available()`), record the answer in `STATE.md`, and use it only if it is actually faster on a benchmark.
+- Machine: 14 logical CPUs, Intel integrated graphics (no CUDA, treat as CPU-only).
+- **Hard CPU allocation.** This program owns logical CPUs 4-8 (5 CPUs) and nothing else. CPUs 0-3 are reserved for the user's own work and must never be used. Other CPUs belong to other programs. Launch every compute process (python scripts, training, tests, julia, lean/lake builds, MCMC) through `python tools/pin.py <command> [args...]`, which sets Windows CPU affinity (inherited by child processes) and thread-pool env vars to 5. Size thread counts and parallel workers to 5 CPUs total across all subagents running at once. Run `powershell -File tools/repin.ps1` at the start of every iteration, before dispatching subagents, and after they return: it re-pins any process from this repo that escaped. Report in `STATE.md` if it had to fix anything.
 - Python environment: `.venv` in the repo root (gitignored), dependencies pinned in `requirements.txt`.
-- Long jobs (> 2 minutes) run in the background with logs to `experiments/<id>/run.log`. Don't oversubscribe the cores: total concurrent jobs across all subagents ≤ 12 cores, leaving 2 for the machine.
+- Long jobs (> 2 minutes) run in the background with logs to `experiments/<id>/run.log`.
 - Use as much compute as an experiment actually needs. Before a run longer than an hour, the subagent states in its README why the expected information is worth it.
 
 ## Each iteration
