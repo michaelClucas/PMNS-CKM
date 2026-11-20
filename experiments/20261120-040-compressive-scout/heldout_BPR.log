@@ -1,0 +1,4 @@
+{"stage1_chi2": 174.46507115082937, "stage2_chi2": Infinity, "combined_chi2": Infinity, "p_global": 0.0}
+stage1 pulls {'ckm_s12': 0.46, 'ckm_s13': -7.18, 'ckm_s23': 3.43, 'ckm_delta_rad': 1.04, 'mr_u_c': 2.51, 'mr_c_t': 1.54, 'mr_d_s': 0.39, 'mr_s_b': 4.59, 'mr_e_mu': -1.15, 'mr_mu_tau': -1.08, 'mr_b_tau': 8.95}
+stage2 pulls {'s12sq': -inf, 's13sq': -37.21, 's23sq': 1.57, 'dcp_deg': 2.26, 'dm_ratio': 0.14}
+stage2 pred {'s12sq': 0.0031188497422253688, 's13sq': 0.0027108507332149756, 's23sq': 0.5057686901704426, 'dcp_deg': 358.83771005142944, 'dm_ratio': 0.029963974910217513}

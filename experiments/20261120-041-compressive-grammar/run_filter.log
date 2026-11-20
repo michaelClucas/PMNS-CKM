@@ -1,0 +1,44 @@
+s23sq NO 2sigma [0.4436, 0.5746], 3sigma [0.4325, 0.5870]; crit 14.07
+quark fit seed 1 chi2 0.0 {'lzu': -3.6363, 'vu': -0.5527, 'lxu': -0.3005, 'lzd': -2.256, 'vd': -0.541, 'lxd': -0.3467, 'p1': 3.3648, 'p2': 0.1258} 103s
+quark fit seed 2 chi2 0.0 {'lzu': -3.6363, 'vu': -0.5527, 'lxu': -0.3005, 'lzd': -2.256, 'vd': -0.541, 'lxd': -0.3468, 'p1': 3.3648, 'p2': 0.1258} 189s
+quark fit seed 3 chi2 0.0 {'lzu': -3.684, 'vu': 0.54, 'lxu': -0.3971, 'lzd': -2.2554, 'vd': 0.5683, 'lxd': -0.3476, 'p1': 3.3105, 'p2': 6.1624} 261s
+quark fit seed 4 chi2 0.0 {'lzu': -3.6363, 'vu': -0.5527, 'lxu': -0.3005, 'lzd': -2.256, 'vd': -0.541, 'lxd': -0.3468, 'p1': 3.3648, 'p2': 0.1258} 339s
+branch 1 scale 1.0: 2838/4000 quark-allowed
+branch 1 scale 4.0: 287/4000 quark-allowed
+branch 1 scale 16.0: 3/4000 quark-allowed
+branch 2 scale 1.0: 2862/4000 quark-allowed
+branch 2 scale 4.0: 271/4000 quark-allowed
+branch 2 scale 16.0: 2/4000 quark-allowed
+{'eid': 0, 'entry': 'hhh-dirac', 'n_finite': 6263, 's23_min': 0.0015244878742404924, 's23_max': 0.0019312251048786465, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 220290.0929395461}
+{'eid': 1, 'entry': 'hhh-I1', 'n_finite': 6263, 's23_min': 0.001524487874240513, 's23_max': 0.001931225104878674, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 220294.01191401045}
+{'eid': 2, 'entry': 'hhh-IIFd', 'n_finite': 6263, 's23_min': 0.12770723608738233, 's23_max': 0.20329126743156226, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': None}
+{'eid': 3, 'entry': 'hhh-IIFu', 'n_finite': 6263, 's23_min': 0.12770723608738233, 's23_max': 0.20329126743156226, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': None}
+{'eid': 4, 'entry': 'hhH-dirac', 'n_finite': 6263, 's23_min': 0.00045600341069598933, 's23_max': 0.0009171500649595094, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 115142.7022748455}
+{'eid': 5, 'entry': 'hhH-I1', 'n_finite': 6263, 's23_min': 0.0004560034106959725, 's23_max': 0.0009171500649594762, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 86258.29719730256}
+{'eid': 6, 'entry': 'hhH-IIFd', 'n_finite': 6263, 's23_min': 0.33086423162220946, 's23_max': 0.3852439336271204, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 4466340.275621321}
+{'eid': 7, 'entry': 'hhH-IIFu', 'n_finite': 6263, 's23_min': 0.33086423162220946, 's23_max': 0.3852439336271204, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 4466340.275621321}
+{'eid': 8, 'entry': 'hHh-dirac', 'n_finite': 6263, 's23_min': 0.000858341475348312, 's23_max': 0.01171190695159307, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 827051.587174954}
+{'eid': 9, 'entry': 'hHh-I1', 'n_finite': 6263, 's23_min': 0.0008583414753483091, 's23_max': 0.011711906951593075, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 374895.0083579246}
+{'eid': 10, 'entry': 'hHh-IIFd', 'n_finite': 6263, 's23_min': 0.9221204184465944, 's23_max': 0.941092503392313, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 301918.6280674344}
+{'eid': 11, 'entry': 'hHh-IIFu', 'n_finite': 6263, 's23_min': 0.9221204184465944, 's23_max': 0.941092503392313, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 301918.6280674344}
+{'eid': 12, 'entry': 'hHH-dirac', 'n_finite': 6263, 's23_min': 0.0026300706582566705, 's23_max': 0.03250943793431224, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 1674676.8650250891}
+{'eid': 13, 'entry': 'hHH-I1', 'n_finite': 6263, 's23_min': 0.002630070658256674, 's23_max': 0.03250943793431227, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 773007.9885317143}
+{'eid': 14, 'entry': 'hHH-IIFd', 'n_finite': 6263, 's23_min': 0.9318347129420885, 's23_max': 0.9609731477309199, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 995673.7580888191}
+{'eid': 15, 'entry': 'hHH-IIFu', 'n_finite': 6263, 's23_min': 0.9485152256740002, 's23_max': 0.9753544948147489, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 1118869.7853662265}
+{'eid': 16, 'entry': 'Hhh-dirac', 'n_finite': 6263, 's23_min': 0.0013268612432966683, 's23_max': 0.0016897866599294765, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 7233705.468342903}
+{'eid': 17, 'entry': 'Hhh-I1', 'n_finite': 6263, 's23_min': 0.0013268612432966638, 's23_max': 0.001689786659929494, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 7233709.432494489}
+{'eid': 18, 'entry': 'Hhh-IIFd', 'n_finite': 6263, 's23_min': 0.9998010795206729, 's23_max': 0.999890193112128, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 13393052.872728791}
+{'eid': 19, 'entry': 'Hhh-IIFu', 'n_finite': 6263, 's23_min': 0.9998010795206729, 's23_max': 0.999890193112128, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 13393052.872728791}
+{'eid': 20, 'entry': 'HhH-dirac', 'n_finite': 6263, 's23_min': 0.0004578184497837294, 's23_max': 0.000913364098694009, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 114879.68830303468}
+{'eid': 21, 'entry': 'HhH-I1', 'n_finite': 6263, 's23_min': 0.0004578184497837229, 's23_max': 0.0009133640986939867, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 85995.16946971953}
+{'eid': 22, 'entry': 'HhH-IIFd', 'n_finite': 6263, 's23_min': 6.86071362801954e-05, 's23_max': 0.9997363906787116, 'n_in_2sigma': 119, 'killed': False, 'min_total_soft_chi2_sampled': 4443053.828362561}
+{'eid': 23, 'entry': 'HhH-IIFu', 'n_finite': 6263, 's23_min': 0.0001208198184743475, 's23_max': 0.9963577624907106, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 4464042.408534771}
+{'eid': 24, 'entry': 'HHh-dirac', 'n_finite': 6263, 's23_min': 0.000860097254973736, 's23_max': 0.011742375765425845, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 826929.1259803355}
+{'eid': 25, 'entry': 'HHh-I1', 'n_finite': 6263, 's23_min': 0.0008600972549737337, 's23_max': 0.011742375765425861, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 374771.2873319152}
+{'eid': 26, 'entry': 'HHh-IIFd', 'n_finite': 6263, 's23_min': 0.9221503391214222, 's23_max': 0.9412019719069584, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 310222.47039498464}
+{'eid': 27, 'entry': 'HHh-IIFu', 'n_finite': 6263, 's23_min': 0.9220578140687622, 's23_max': 0.9410350456458395, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 310114.38302034215}
+{'eid': 28, 'entry': 'HHH-dirac', 'n_finite': 6263, 's23_min': 0.002631458857778222, 's23_max': 0.03253585836185842, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 1674666.063731101}
+{'eid': 29, 'entry': 'HHH-I1', 'n_finite': 6263, 's23_min': 0.0026314588577782162, 's23_max': 0.032535858361858405, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 772996.8737408422}
+{'eid': 30, 'entry': 'HHH-IIFd', 'n_finite': 6263, 's23_min': 0.9318062559778878, 's23_max': 0.9609745402278048, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 995814.5535154076}
+{'eid': 31, 'entry': 'HHH-IIFu', 'n_finite': 6263, 's23_min': 0.948493761582681, 's23_max': 0.9753558127915901, 'n_in_2sigma': 0, 'killed': True, 'min_total_soft_chi2_sampled': 1118858.267029486}
+killed 31 of 32

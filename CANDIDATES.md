@@ -16,6 +16,10 @@ Leaderboard of candidate relations. k = fitted free parameters (incl. data-selec
 | YUK | Koide-Nishiura yukawaon (1510.05370; exp 038) | 6 + 4 bits | 13 | 1027, p 1.7e-217 (30% floor: 41.1, p 7.7e-7) | not run | known model; passes compression; fails fit quality (m_u/m_c, m_s/m_b) |
 | FZ4U | universal four-zero texture (hep-ph/0212195; exp 039) | 11 + 2 bits | 15 | ∞ (sin²θ23 ≈ 0.01), Gaussian ≈ 1159 | not run | passes compression; fails fit quality |
 | DEMU | universal democratic breaking (hep-ph/9912358; exp 039) | 10-11 | 15 | ∞ (V_ub -20σ, δ_q = 0) | not run | fails fit quality |
+| BPR | Babu-Pati-Rastogi SO(10) (hep-ph/0502152; exp 040) | 13 + 1 bit | 16 | ∞ (s12² ≈ 0.005, s13² -36σ) | not run | known model; passes compression; fails fit quality |
+| AB | Albright-Barr lopsided SO(10) (hep-ph/0502161; exp 040) | 12 + 1 bit | 16 | 246.7, p 3e-52 | not run | known model; passes compression; fails fit quality; PMNS accommodated by M_R |
+| UTZ | Δ(27) universal texture zero (1710.01741; exp 040) | 14 honest | 15 | 1395 LO / 386 HO | not run | known model; fails compression and fit |
+| G41 | four-zero quarks + fixed 10/126 Clebsch leptons, compressive subset (exp 041) | 8 + 5 bits | 15 | ∞ (Gaussian 4137) | not run | passes compression; fails fit quality |
 | SO10-FN | real 10+126+120 SO(10) (hep-ph/0612132) | 16 + ~3 bits | 17 | 0.30 (1 dof) | not run | known model; not compressive; predicts neither δ_ℓ nor PMNS from quarks (exp 014) |
 
 Dropped in iteration 5: T1 and F2-LO ("no evidence" under the protocol, exp 018).

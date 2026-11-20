@@ -1,0 +1,10 @@
+bound_R_bpr exit 0
+bound_R exit 0
+fit_bpr qcl s1 exit 1
+fit UTZ s1 exit 0
+fit_bpr full s1 exit 0
+fit AB s1 exit 0
+fit UTZHO s1 exit 0
+heldout BPR s1 exit 0
+fit AB s2 tb30 exit 0
+fit_bpr full s2 tb30 exit 0

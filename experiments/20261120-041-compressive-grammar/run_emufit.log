@@ -1,0 +1,33 @@
+32 jobs, 2 workers
+31 HHH-IIFu seed 0 chi2 inf soft 14826.3 p_glob 0.0 maxpull inf  13s
+15 hHH-IIFu seed 0 chi2 inf soft 14284.9 p_glob 0.0 maxpull inf  16s
+14 hHH-IIFd seed 0 chi2 inf soft 14137.0 p_glob 0.0 maxpull inf  6s
+30 HHH-IIFd seed 0 chi2 inf soft 27225.6 p_glob 0.0 maxpull inf  6s
+3 hhh-IIFu seed 0 chi2 nan soft 1000000000.0 p_glob None maxpull nan ValueError('m_nu vanishes for this entry (no 126 position)') 0s
+4 hhH-dirac seed 0 chi2 inf soft 17359.8 p_glob 0.0 maxpull inf  6s
+2 hhh-IIFd seed 0 chi2 nan soft 1000000000.0 p_glob None maxpull nan ValueError('m_nu vanishes for this entry (no 126 position)') 0s
+28 HHH-dirac seed 0 chi2 inf soft 16188.9 p_glob 0.0 maxpull inf  13s
+24 HHh-dirac seed 0 chi2 inf soft 20001.7 p_glob 0.0 maxpull inf  6s
+12 hHH-dirac seed 0 chi2 inf soft 15247.2 p_glob 0.0 maxpull inf  10s
+13 hHH-I1 seed 0 chi2 inf soft 19322.9 p_glob 0.0 maxpull inf  6s
+20 HhH-dirac seed 0 chi2 inf soft 16530.0 p_glob 0.0 maxpull inf  10s
+29 HHH-I1 seed 0 chi2 inf soft 19719.4 p_glob 0.0 maxpull inf  6s
+5 hhH-I1 seed 0 chi2 inf soft 19164.7 p_glob 0.0 maxpull inf  7s
+21 HhH-I1 seed 0 chi2 inf soft 19915.3 p_glob 0.0 maxpull inf  8s
+25 HHh-I1 seed 0 chi2 inf soft 23816.8 p_glob 0.0 maxpull inf  4s
+27 HHh-IIFu seed 0 chi2 inf soft 27473.5 p_glob 0.0 maxpull inf  7s
+9 hHh-I1 seed 0 chi2 inf soft 19760.3 p_glob 0.0 maxpull inf  7s
+26 HHh-IIFd seed 0 chi2 inf soft 28325.1 p_glob 0.0 maxpull inf  7s
+16 Hhh-dirac seed 0 chi2 inf soft 53925.1 p_glob 0.0 maxpull inf  9s
+8 hHh-dirac seed 0 chi2 inf soft 347488.0 p_glob 0.0 maxpull inf  6s
+17 Hhh-I1 seed 0 chi2 inf soft 54434.9 p_glob 0.0 maxpull inf  6s
+0 hhh-dirac seed 0 chi2 inf soft 33515.4 p_glob 0.0 maxpull inf  13s
+23 HhH-IIFu seed 0 chi2 inf soft 4376755.2 p_glob 0.0 maxpull inf  5s
+22 HhH-IIFd seed 0 chi2 inf soft 4375863.5 p_glob 0.0 maxpull inf  5s
+1 hhh-I1 seed 0 chi2 inf soft 35159.0 p_glob 0.0 maxpull inf  11s
+6 hhH-IIFd seed 0 chi2 inf soft 4375080.3 p_glob 0.0 maxpull inf  7s
+7 hhH-IIFu seed 0 chi2 inf soft 4375073.9 p_glob 0.0 maxpull inf  4s
+19 Hhh-IIFu seed 0 chi2 inf soft 7209892.7 p_glob 0.0 maxpull inf  11s
+18 Hhh-IIFd seed 0 chi2 inf soft 7207404.1 p_glob 0.0 maxpull inf  14s
+10 hHh-IIFd seed 0 chi2 inf soft 18521.0 p_glob 0.0 maxpull inf  8s
+11 hHh-IIFu seed 0 chi2 inf soft 71258.8 p_glob 0.0 maxpull inf  8s

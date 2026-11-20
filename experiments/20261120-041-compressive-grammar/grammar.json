@@ -1,0 +1,420 @@
+{
+ "k_table": {
+  "N": 15,
+  "N_minus_2": 13,
+  "k_cont": 8,
+  "phase_bits": 2,
+  "G32": {
+   "size": 32,
+   "bits": 7,
+   "k": 15,
+   "compression_ok_by_count": false
+  },
+  "G8": {
+   "size": 8,
+   "ids": [
+    9,
+    10,
+    13,
+    14,
+    25,
+    26,
+    29,
+    30
+   ],
+   "bits": 5,
+   "k": 13,
+   "compression_ok_by_count": true
+  },
+  "k_distribution": {
+   "k=13 (G8 members)": 8,
+   "k=15 (G32 only)": 24
+  }
+ },
+ "entries": [
+  {
+   "id": 0,
+   "name": "hhh-dirac",
+   "reps": [
+    0,
+    0,
+    0
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 1,
+   "name": "hhh-I1",
+   "reps": [
+    0,
+    0,
+    0
+   ],
+   "nu": "I1",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 2,
+   "name": "hhh-IIFd",
+   "reps": [
+    0,
+    0,
+    0
+   ],
+   "nu": "IIFd",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 3,
+   "name": "hhh-IIFu",
+   "reps": [
+    0,
+    0,
+    0
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 4,
+   "name": "hhH-dirac",
+   "reps": [
+    0,
+    0,
+    1
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 5,
+   "name": "hhH-I1",
+   "reps": [
+    0,
+    0,
+    1
+   ],
+   "nu": "I1",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 6,
+   "name": "hhH-IIFd",
+   "reps": [
+    0,
+    0,
+    1
+   ],
+   "nu": "IIFd",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 7,
+   "name": "hhH-IIFu",
+   "reps": [
+    0,
+    0,
+    1
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 8,
+   "name": "hHh-dirac",
+   "reps": [
+    0,
+    1,
+    0
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 9,
+   "name": "hHh-I1",
+   "reps": [
+    0,
+    1,
+    0
+   ],
+   "nu": "I1",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 10,
+   "name": "hHh-IIFd",
+   "reps": [
+    0,
+    1,
+    0
+   ],
+   "nu": "IIFd",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 11,
+   "name": "hHh-IIFu",
+   "reps": [
+    0,
+    1,
+    0
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 12,
+   "name": "hHH-dirac",
+   "reps": [
+    0,
+    1,
+    1
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 13,
+   "name": "hHH-I1",
+   "reps": [
+    0,
+    1,
+    1
+   ],
+   "nu": "I1",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 14,
+   "name": "hHH-IIFd",
+   "reps": [
+    0,
+    1,
+    1
+   ],
+   "nu": "IIFd",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 15,
+   "name": "hHH-IIFu",
+   "reps": [
+    0,
+    1,
+    1
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 16,
+   "name": "Hhh-dirac",
+   "reps": [
+    1,
+    0,
+    0
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 17,
+   "name": "Hhh-I1",
+   "reps": [
+    1,
+    0,
+    0
+   ],
+   "nu": "I1",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 18,
+   "name": "Hhh-IIFd",
+   "reps": [
+    1,
+    0,
+    0
+   ],
+   "nu": "IIFd",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 19,
+   "name": "Hhh-IIFu",
+   "reps": [
+    1,
+    0,
+    0
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 20,
+   "name": "HhH-dirac",
+   "reps": [
+    1,
+    0,
+    1
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 21,
+   "name": "HhH-I1",
+   "reps": [
+    1,
+    0,
+    1
+   ],
+   "nu": "I1",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 22,
+   "name": "HhH-IIFd",
+   "reps": [
+    1,
+    0,
+    1
+   ],
+   "nu": "IIFd",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 23,
+   "name": "HhH-IIFu",
+   "reps": [
+    1,
+    0,
+    1
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 24,
+   "name": "HHh-dirac",
+   "reps": [
+    1,
+    1,
+    0
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 25,
+   "name": "HHh-I1",
+   "reps": [
+    1,
+    1,
+    0
+   ],
+   "nu": "I1",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 26,
+   "name": "HHh-IIFd",
+   "reps": [
+    1,
+    1,
+    0
+   ],
+   "nu": "IIFd",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 27,
+   "name": "HHh-IIFu",
+   "reps": [
+    1,
+    1,
+    0
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 28,
+   "name": "HHH-dirac",
+   "reps": [
+    1,
+    1,
+    1
+   ],
+   "nu": "dirac",
+   "in_G8": false,
+   "k": 15
+  },
+  {
+   "id": 29,
+   "name": "HHH-I1",
+   "reps": [
+    1,
+    1,
+    1
+   ],
+   "nu": "I1",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 30,
+   "name": "HHH-IIFd",
+   "reps": [
+    1,
+    1,
+    1
+   ],
+   "nu": "IIFd",
+   "in_G8": true,
+   "k": 13
+  },
+  {
+   "id": 31,
+   "name": "HHH-IIFu",
+   "reps": [
+    1,
+    1,
+    1
+   ],
+   "nu": "IIFu",
+   "in_G8": false,
+   "k": 15
+  }
+ ]
+}

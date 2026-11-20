@@ -1,0 +1,14 @@
+sin th12q  ours 0.22585  paper 0.226
+sin th23q  ours 0.01911  paper 0.0191
+sin th13q  ours 0.0041977  paper 0.0042
+sin dq     ours 0.5609  paper 0.561
+sin th12l  ours 0.55368  paper 0.554
+sin th23l  ours 0.77825  paper 0.778
+sin th13l  ours 0.15241  paper 0.152
+sin dl     ours -0.90513  paper -0.905
+dm_ratio   ours 0.020898  paper 0.0213
+md/ms      ours 0.04421  paper 0.045
+ms/mb      ours 0.020356  paper 0.02
+me/mmu     ours 0.0055816  paper 0.0056364
+mmu/mtau   ours 0.055379  paper 0.055
+mc/mt      ours 0.0027093  paper 0.0027

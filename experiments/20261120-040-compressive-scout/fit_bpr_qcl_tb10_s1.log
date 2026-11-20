@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<repo>\experiments\20261120-040-compressive-scout\fit_bpr.py", line 80, in <module>
+    out = run(mode, seed, tb)
+  File "<repo>\experiments\20261120-040-compressive-scout\fit_bpr.py", line 65, in run
+    fr = ev.fit_and_evaluate(lambda th: model_fn({**fixed, **th}), bounds, "NO", use, k_discrete=K_BITS,
+                             periodic=PERIODIC, seed=seed, mass_floor=FLOOR, scale=scale(tb), method="de",
+                             optimizer_options={"popsize": popsize, "maxiter": maxiter, "tol": 1e-10})
+  File "<repo>\src\evaluate.py", line 1120, in fit_and_evaluate
+    res = scorer(model_fn(theta), k=k, k_discrete=k_discrete, ordering_selected=ordering_selected)
+  File "<repo>\src\evaluate.py", line 864, in __call__
+    p = self._prep(pred)
+  File "<repo>\src\evaluate.py", line 795, in _prep
+    raise ValueError(f"non-finite predictions {bad}")
+ValueError: non-finite predictions ['ckm_s12', 'ckm_s13', 'ckm_s23', 'ckm_delta_rad', 'mr_u_c', 'mr_c_t', 'mr_d_s', 'mr_s_b', 'mr_e_mu', 'mr_mu_tau', 'mr_b_tau']
