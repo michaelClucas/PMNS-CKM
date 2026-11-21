@@ -1,0 +1,3 @@
+RRR5 eta_l 0.3: N10 chi2 198 max pull 10.6 [('mr_e_mu', 10.6), ('mr_mu_tau', -5.4), ('mr_s_b', 4.8)]
+RRR5 eta_l 0.45: N10 chi2 158.7 max pull 10.6 [('mr_e_mu', 10.6), ('ckm_s12', -4.2), ('ckm_delta_rad', -3.0)]
+RRR5 eta_l 0.6: N10 chi2 146.7 max pull 10.6 [('mr_e_mu', 10.6), ('ckm_s12', -4.1), ('ckm_delta_rad', -3.0)]

@@ -1,0 +1,9 @@
+== textures.py 300 2026-11-20T23:13:38Z
+own observables vs src.yukawa: max relative deviation 1.62e-10
+A6842 MZ: claimed chi2 0.4681, recomputed independently 0.4681
+A6842 MZ: refit chi2 0.4681 (warm+NM), fit_ok True, p 0.791, max|pull| 0.61, best random-start chi2 314.5454, 0 random starts within 0.5, 28s
+A6624 GUT10: claimed chi2 0.2025, recomputed independently 0.2025
+A6624 GUT10: refit chi2 0.1975 (warm+NM), fit_ok True, p 0.906, max|pull| 0.21, best random-start chi2 412.9683, 0 random starts within 0.5, 28s
+A47977 MZ: claimed chi2 0.6685, recomputed independently 0.6685
+A47977 MZ: refit chi2 0.6684 (random+NM), fit_ok True, p 0.716, max|pull| 0.63, best random-start chi2 0.9481, 1 random starts within 0.5, 29s
+A6842_freephase MZ: refit chi2 0.0000 (perturb+NM), fit_ok False, p nan, max|pull| 0.00, best random-start chi2 21.8412, 0 random starts within 0.5, 65s

@@ -1,0 +1,62 @@
+45 jobs, 1 processes, sobol 6, warm 6
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el -0.15 s1 chi2 inf soft 1.089e+04 maxpull inf 13s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el -0.15 s2 chi2 inf soft 1.455e+04 maxpull inf 16s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el -0.15 s3 chi2 inf soft 1.089e+04 maxpull inf 17s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.00 s1 chi2 3.805 soft 3.805 maxpull 1.95 18s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.00 s2 chi2 3.268 soft 3.268 maxpull 1.81 25s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.00 s3 chi2 inf soft 1.089e+04 maxpull inf 17s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.15 s1 chi2 inf soft 1.057e+04 maxpull inf 22s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.15 s2 chi2 inf soft 1.101e+04 maxpull inf 18s
+RRR5 GJ Ynu=u MR=D G30 eb -0.25 el +0.15 s3 chi2 inf soft 1.089e+04 maxpull inf 11s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el -0.15 s1 chi2 inf soft 1.268e+04 maxpull inf 13s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el -0.15 s2 chi2 inf soft 1.268e+04 maxpull inf 11s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el -0.15 s3 chi2 inf soft 1.261e+04 maxpull inf 17s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.00 s1 chi2 inf soft 1.268e+04 maxpull inf 15s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.00 s2 chi2 inf soft 1.268e+04 maxpull inf 15s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.00 s3 chi2 inf soft 1.261e+04 maxpull inf 19s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.15 s1 chi2 inf soft 1.268e+04 maxpull inf 13s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.15 s2 chi2 inf soft 1.268e+04 maxpull inf 13s
+RRR5 GJ Ynu=d MR=D G30 eb -0.25 el +0.15 s3 chi2 inf soft 1.261e+04 maxpull inf 17s
+BB XE Ynu=u MR=D SM3 eb +0.00 el +0.00 s1 chi2 3.028e-06 soft 3.028e-06 maxpull 0.00 61s
+BB XE Ynu=u MR=D SM3 eb +0.00 el +0.00 s2 chi2 3.028e-06 soft 3.028e-06 maxpull 0.00 53s
+BB XE Ynu=u MR=D SM3 eb +0.00 el +0.00 s3 chi2 3.028e-06 soft 3.028e-06 maxpull 0.00 66s
+BB XE Ynu=u MR=D SM6 eb +0.00 el +0.00 s1 chi2 131.1 soft 131.1 maxpull 11.38 10s
+BB XE Ynu=u MR=D SM6 eb +0.00 el +0.00 s2 chi2 inf soft 1.089e+04 maxpull inf 18s
+Process SpawnPoolWorker-1:
+Traceback (most recent call last):
+  File "<python>/Lib\multiprocessing\pool.py", line 131, in worker
+    put((job, i, result))
+    ~~~^^^^^^^^^^^^^^^^^^
+  File "<python>/Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<python>/Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python>/Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<python>/Lib\multiprocessing\process.py", line 320, in _bootstrap
+    self.run()
+    ~~~~~~~~^^
+  File "<python>/Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python>/Lib\multiprocessing\pool.py", line 136, in worker
+    put((job, i, (False, wrapped)))
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python>/Lib\multiprocessing\queues.py", line 394, in put
+    self._writer.send_bytes(obj)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<python>/Lib\multiprocessing\connection.py", line 210, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<python>/Lib\multiprocessing\connection.py", line 299, in _send_bytes
+    ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+              ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 232] The pipe is being closed

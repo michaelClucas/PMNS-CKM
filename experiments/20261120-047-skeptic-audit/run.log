@@ -1,0 +1,35 @@
+== refit AKS start 2026-11-20T23:14:51Z
+AKS: stored DE chi2 [160.964, 160.964], recomputed [160.964, 160.964]
+{"config": "AKS", "old_chi2": [160.96449328216235, 160.9644932807553], "new_chi2": 160.9644932807553, "N": 16, "k": 14, "dof": 7, "p_global": 2.010058978038021e-31, "max_abs_pull": 7.528510433327526, "fit_ok": false, "compression_ok": true, "best_sobol_start": 506.4783052573466, "median_sobol_start": 41892.499859851596, "best_warm_start": 160.9644932807553, "n_starts_within_1": 2, "nfev": 121977, "seconds": 148.7291944026947}
+pulls {'s23sq': -7.53, 'mr_d_s': -6.07, 'mr_e_mu': 3.92, 'dcp_deg': -2.58, 'mr_b_tau': 2.1, 's13sq': -1.8, 's12sq': -1.71, 'mr_mu_tau': 1.26, 'ckm_delta_rad': 0.96, 'mr_s_b': -0.87, 'ckm_s13': 0.62, 'dm_ratio': -0.48, 'ckm_s23': -0.45, 'ckm_s12': -0.14, 'mr_c_t': 0.13, 'mr_u_c': -0.03}
+== refit AKS end 2026-11-20T23:17:25Z
+== refit YK start 2026-11-20T23:17:26Z
+YK: stored DE chi2 [1027.177, 1027.046], recomputed [1027.177, 1027.046, 1426.128]
+{"config": "YK", "old_chi2": [1027.177275340877, 1027.0460546023728], "new_chi2": 1027.0460536561172, "N": 13, "k": 10, "dof": 7, "p_global": 1.724733613279185e-217, "max_abs_pull": 22.87471239033415, "fit_ok": false, "compression_ok": true, "best_sobol_start": 26500.959389579028, "median_sobol_start": 209486.28712456778, "best_warm_start": 1027.0494219253042, "n_starts_within_1": 2, "nfev": 69990, "seconds": 164.19726586341858}
+pulls {'mr_u_c': 22.87, 'mr_s_b': 20.16, 'ckm_delta_rad': 5.34, 'ckm_s12': 3.89, 's13sq': 3.87, 'dcp_deg': -2.71, 's23sq': 1.45, 'mr_d_s': -0.64, 'dm_ratio': 0.52, 's12sq': 0.26, 'ckm_s13': -0.11, 'mr_c_t': -0.08, 'ckm_s23': 0.08}
+== refit YK end 2026-11-20T23:20:19Z
+== refit CMNO start 2026-11-20T23:20:19Z
+CMNO: stored DE chi2 [764.243, 1271.484, 764.295], recomputed [764.243, 1271.484, 764.295]
+{"config": "CMNO", "old_chi2": [764.2434204646769, 1271.484482740655, 764.2952143569355], "{"config": "AB5", "old_chi2": [246.67956589401834], "new_chi2": 246.67948273189927, "N": 16, "k": 13, "dof": 4, "p_global": 3.379410001620353e-52, "max_abs_pull": 10.882310661569704, "fit_ok": false, "compression_ok": true, "best_sobol_start": 283.1712903706897, "median_sobol_start": 12850.44619317595, "best_warm_start": 246.67956589401822, "n_starts_within_1": 2, "nfev": 212734, "seconds": 284.4499342441559}
+pulls {'mr_b_tau': 10.88, 'mr_s_b': 6.86, 'mr_e_mu': 4.89, 'ckm_s23': 4.3, 'mr_d_s': -3.94, 'ckm_s13': -3.25, 'mr_mu_tau': -2.08, 'mr_c_t': -1.77, 'ckm_delta_rad': 1.54, 'ckm_s12': -0.78, 'mr_u_c': -0.15, 'dm_ratio': -0.0, 's12sq': -0.0, 'dcp_deg': -0.0, 's13sq': 0.0, 's23sq': 0.0}
+it CMIO start 2026-11-20T23:24:20Z
+CMIO: stored DE chi2 [855.622], recomputed [855.622]
+{"config": "CMIO", "old_chi2": [855.6223476522815], "new_chi2": 855.6223476388592, "N": 16, "k": 9, "dof": 9, "p_global": 1.0745918735051192e-178, "max_abs_pull": 15.229576598499719, "fit_ok": false, "compression_ok": true, "best_sobol_start": 1183.8624551289245, "median_sobol_start": 252129.43983420194, "best_warm_start": 855.6223476522815, "n_starts_within_1": 2, "nfev": 78746, "seconds": 108.71617674827576}
+pulls {'ckm_delta_rad': -15.23, 'mr_e_mu': 14.92, 'mr_b_tau': 13.45, 's23sq': -8.8, 'ckm_s12': -6.43, 'mr_s_b': 5.56, 's12sq': 4.85, 'ckm_s13': -4.45, 'dcp_deg': 3.14, 'mr_c_t': 2.35, 'mr_mu_tau': -1.76, 's13sq': -1.6, 'mr_u_c': -0.31, 'ckm_s23': -0.09, 'mr_d_s': 0.0, 'dm_ratio': -0.0}
+== refit CMIO end 2026-11-20T23:26:17Z
+== refit AB5 end 2026-11-20T23:27:02Z
+== refit UTZ start 2026-11-20T23:27:02Z
+UTZ: stored DE chi2 [1394.998], recomputed [1394.998]
+{"config": "UTZ", "old_chi2": [1394.998315834852], "new_chi2": 1394.9983154989068, "N": 15, "k": 14, "dof": 5, "p_global": 1.6694661637016512e-299, "max_abs_pull": 24.88865276151285, "fit_ok": false, "compression_ok": false, "best_sobol_start": 1418.2811600221528, "median_sobol_start": 15596.953404393003, "best_warm_start": 1394.9983159120509, "n_starts_within_1": 3, "nfev": 165293, "seconds": 308.2509925365448}
+pulls {'ckm_s23': -24.89, 'ckm_delta_rad': -23.48, 's13sq': 9.16, 'mr_s_b': 5.89, 'ckm_s13': 4.95, 'mr_c_t': 4.92, 'dm_ratio': -4.46, 's23sq': 4.12, 'dcp_deg': 1.99, 's12sq': -1.94, 'mr_mu_tau': 1.87, 'ckm_s12': 1.22, 'mr_d_s': 1.01, 'mr_u_c': -0.77, 'mr_e_mu': -0.35}
+== refit UTZ end 2026-11-20T23:32:18Z
+== refit UTZHO start 2026-11-20T23:32:18Z
+UTZHO: stored DE chi2 [385.588], recomputed [385.588, 1394.998]
+{"config": "UTZHO", "old_chi2": [385.5883276714479], "new_chi2": 385.5882047368389, "N": 15, "k": 16, "dof": 4, "p_global": 3.6134808225179784e-82, "max_abs_pull": 8.140454261718206, "fit_ok": false, "compression_ok": false, "best_sobol_start": 636.4329218895925, "median_sobol_start": 17347.68434560566, "best_warm_start": 385.5883276714479, "n_starts_within_1": 1, "nfev": 238508, "seconds": 683.214893579483}
+pulls {'ckm_s23': -8.14, 'mr_mu_tau': 7.98, 's23sq': 7.65, 'mr_d_s': -6.54, 'ckm_s13': -6.03, 's12sq': -5.93, 's13sq': 5.26, 'mr_e_mu': 4.06, 'mr_u_c': -2.55, 'ckm_delta_rad': -2.25, 'dm_ratio': -2.22, 'dcp_deg': 1.99, 'ckm_s12': 1.55, 'mr_c_t': 1.0, 'mr_s_b': -0.38}
+== refit UTZHO end 2026-11-20T23:44:00Z
+== refit AB30 start 2026-11-20T23:44:00Z
+AB30: stored DE chi2 [269.932], recomputed [269.932]
+{"config": "AB30", "old_chi2": [269.93157268381486], "new_chi2": 269.9314821218878, "N": 16, "k": 13, "dof": 4, "p_global": 3.300296093518389e-57, "max_abs_pull": 11.10165880284044, "fit_ok": false, "compression_ok": true, "best_sobol_start": 472.4358538319565, "median_sobol_start": 14964.924306310071, "best_warm_start": 269.9315726933803, "n_starts_within_1": 1, "nfev": 205109, "seconds": 53259.54767417908}
+pulls {'mr_b_tau': 11.1, 'mr_s_b': 6.97, 'mr_e_mu': 5.12, 'ckm_s23': 5.02, 'mr_d_s': -3.9, 'ckm_s13': -3.74, 'mr_c_t': -2.35, 'mr_mu_tau': -1.84, 'ckm_delta_rad': 1.66, 'ckm_s12': -0.84, 'mr_u_c': -0.08, 'dcp_deg': -0.04, 'dm_ratio': -0.0, 's12sq': -0.0, 's13sq': 0.0, 's23sq': 0.0}
+== refit AB30 end 2026-11-21T14:31:56Z

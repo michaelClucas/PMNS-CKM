@@ -1,0 +1,12 @@
+GJ eta_b +0.00: chi2 >= 51.58  md/ms 0.0423 me/mmu 0.00508 R 0.1199 pulls {'mr_d_s': -6.273474857177775, 'mr_e_mu': 3.495552832792417}
+GJ eta_b -0.15: chi2 >= 51.50  md/ms 0.0423 me/mmu 0.00507 R 0.1199 pulls {'mr_d_s': -6.268310295651406, 'mr_e_mu': 3.4933886034488455}
+GJ eta_b -0.25: chi2 >= 51.45  md/ms 0.0423 me/mmu 0.00507 R 0.1199 pulls {'mr_d_s': -6.265367993235333, 'mr_e_mu': 3.492155532412333}
+GJ eta_b -0.35: chi2 >= 51.41  md/ms 0.0423 me/mmu 0.00507 R 0.1199 pulls {'mr_d_s': -6.262853908521764, 'mr_e_mu': 3.4911022940516023}
+HS R=1 SM5: chi2 >= 2114.4 pulls {'mr_d_s': -34.61428141077184, 'mr_s_b': 13.673559910796762, 'mr_e_mu': 2.417676946962598, 'mr_mu_tau': -28.37101229566859}
+HS R=1 SM7: chi2 >= 2089.0 pulls {'mr_d_s': -34.61445198656575, 'mr_s_b': 13.715233518790736, 'mr_e_mu': 2.4172952002802908, 'mr_mu_tau': -27.903589005131177}
+HS R=1 SM9: chi2 >= 2068.5 pulls {'mr_d_s': -34.61459112494777, 'mr_s_b': 13.744551978708278, 'mr_e_mu': 2.4170167084869183, 'mr_mu_tau': -27.52298487607972}
+M_R=1 u central: dm_ratio 1.919e-10 delta chi2 inf
+M_R=1 u +5sigma(2%): dm_ratio 2.810e-10 delta chi2 inf
+M_R=1 d central: dm_ratio 1.228e-07 delta chi2 inf
+M_R=1 d +5sigma(2%): dm_ratio 1.798e-07 delta chi2 inf
+dm_ratio data NO {'dm21sq_eV2': 7.537e-05, 'dm3l_sq_eV2': 0.002521, 'dm_ratio': 0.02989686632288775}
